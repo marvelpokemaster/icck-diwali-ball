@@ -176,8 +176,8 @@ function Landing() {
               price="$100"
               buttonText="Buy Tickets"
               noteText="Dinner, dance & performances"
-              gradientFrom="#293D89"
-              gradientTo="#16275F"
+              gradientFrom="#303F86"
+              gradientTo="#1B285F"
               illustration={
                 <IndianDancerIllustration className="h-20 w-16 xs:h-24 xs:w-20 sm:h-32 sm:w-28 md:h-36 md:w-32" />
               }
@@ -191,8 +191,8 @@ function Landing() {
               price="$125"
               buttonText="Register Now"
               noteText="Honoring business excellence"
-              gradientFrom="#8A2851"
-              gradientTo="#641A3D"
+              gradientFrom="#8A3152"
+              gradientTo="#641C3D"
               illustration={
                 <GoldTrophyIllustration className="h-20 w-16 xs:h-22 xs:w-18 sm:h-28 sm:w-26 md:h-32 md:w-28" />
               }
@@ -208,8 +208,8 @@ function Landing() {
               badgeText="SAVE 15%"
               buttonText="GET THE BUNDLE"
               noteText="Both events at a discounted price"
-              gradientFrom="#8F2952"
-              gradientTo="#701A40"
+              gradientFrom="#87304F"
+              gradientTo="#611A3A"
               illustration={
                 <FourIconBundleEmblem className="h-16 w-16 xs:h-18 xs:w-18 sm:h-26 sm:w-26 md:h-28 md:w-28" />
               }

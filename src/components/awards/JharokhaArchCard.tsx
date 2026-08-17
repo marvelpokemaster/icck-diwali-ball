@@ -41,9 +41,9 @@ export function JharokhaArchCard({
         <div
           className="absolute -top-2.5 z-40 whitespace-nowrap rounded-sm px-2 py-0.5 font-black uppercase shadow-lg sm:-top-3.5 sm:rounded-md sm:px-4 sm:py-1"
           style={{
-            background: "linear-gradient(90deg, #A87518, #D9A441, #A87518)",
+            background: "linear-gradient(90deg, #9B711D, #D2A13A, #9B711D)",
             color: "#111A3A",
-            border: "1px solid #7B5522",
+            border: "1px solid #9B711D",
             fontSize: "clamp(7px, 1.5vw, 10px)",
             letterSpacing: "0.08em",
           }}
@@ -67,9 +67,9 @@ export function JharokhaArchCard({
           </linearGradient>
           
           <linearGradient id={`goldGrad-${cardId}`} x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#F1C45B" />
-            <stop offset="35%" stopColor="#D9A441" />
-            <stop offset="70%" stopColor="#A87518" />
+            <stop offset="0%" stopColor="#E1B95A" />
+            <stop offset="35%" stopColor="#D2A13A" />
+            <stop offset="70%" stopColor="#9B711D" />
             <stop offset="100%" stopColor="#7B5522" />
           </linearGradient>
         </defs>
@@ -149,9 +149,9 @@ export function JharokhaArchCard({
             search={search}
             className="inline-flex w-full items-center justify-center rounded-sm px-1.5 py-1 font-sans font-black uppercase tracking-tighter shadow-md transition hover:brightness-110 sm:rounded-md sm:px-4 sm:py-2 sm:tracking-wider"
             style={{
-              background: "linear-gradient(90deg, #C8891C, #E8B840, #C8891C)",
+              background: "linear-gradient(90deg, #9B711D, #E1B95A, #9B711D)",
               color: "#111A3A",
-              border: "1px solid #A87518",
+              border: "1px solid #9B711D",
               fontSize: "clamp(8px, 2vw, 13px)",
             }}
           >
