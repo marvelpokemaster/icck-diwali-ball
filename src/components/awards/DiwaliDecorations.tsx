@@ -191,6 +191,85 @@ export function DualMandalaEmblem({ className = "w-32 h-20" }: { className?: str
   );
 }
 
+/* Rich Glowing Gold Filigree 4-Quadrant Mandala Emblem for Card 3 */
+export function FourIconBundleEmblem({ className = "w-24 h-24" }: { className?: string }) {
+  return (
+    <div className={`relative flex items-center justify-center ${className}`}>
+      <div className="absolute inset-0 bg-amber-400/30 blur-xl rounded-full animate-pulse" />
+      <svg className="w-full h-full relative z-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="emblemGoldGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#FFF7ED" />
+            <stop offset="35%" stopColor="#FEF08A" />
+            <stop offset="70%" stopColor="#E5C158" />
+            <stop offset="100%" stopColor="#92400E" />
+          </linearGradient>
+          <radialGradient id="quadrantBg" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#500724" />
+            <stop offset="100%" stopColor="#1e1b4b" />
+          </radialGradient>
+        </defs>
+
+        {/* Outer Circular Gold Filigree Ring & Filigree Scallops */}
+        <circle cx="50" cy="50" r="47" fill="url(#quadrantBg)" stroke="url(#emblemGoldGrad)" strokeWidth="3.5" />
+        <circle cx="50" cy="50" r="42" fill="none" stroke="#FEF08A" strokeWidth="1.2" strokeDasharray="4 2" opacity="0.85" />
+
+        {/* 4 Quadrant Background Divisions */}
+        <path d="M50 10 A40 40 0 0 0 10 50 L50 50 Z" fill="#252270" opacity="0.4" />
+        <path d="M50 10 A40 40 0 0 1 90 50 L50 50 Z" fill="#881337" opacity="0.4" />
+        <path d="M10 50 A40 40 0 0 0 50 90 L50 50 Z" fill="#881337" opacity="0.4" />
+        <path d="M90 50 A40 40 0 0 1 50 90 L50 50 Z" fill="#252270" opacity="0.4" />
+
+        {/* Gold Filigree Quadrant Separators */}
+        <line x1="50" y1="10" x2="50" y2="90" stroke="url(#emblemGoldGrad)" strokeWidth="2" opacity="0.9" />
+        <line x1="10" y1="50" x2="90" y2="50" stroke="url(#emblemGoldGrad)" strokeWidth="2" opacity="0.9" />
+        <circle cx="50" cy="50" r="28" fill="none" stroke="#FEF08A" strokeWidth="1" opacity="0.5" />
+
+        {/* 1. Top-Left Quadrant: Indian Dancer Motif */}
+        <g transform="translate(20, 18) scale(0.3)">
+          <path d="M50 15 C35 25, 20 45, 15 75 C35 82, 65 82, 85 75 C80 45, 65 25, 50 15 Z" fill="#F472B6" />
+          <circle cx="50" cy="10" r="7" fill="#FEF08A" />
+        </g>
+
+        {/* 2. Top-Right Quadrant: Gold Trophy Motif */}
+        <g transform="translate(56, 18) scale(0.3)">
+          <path d="M22 15 L78 15 L70 55 C65 65 35 65 30 55 Z" fill="url(#emblemGoldGrad)" />
+          <rect x="28" y="68" width="44" height="12" fill="#FEF08A" rx="2" />
+        </g>
+
+        {/* 3. Bottom-Left Quadrant: Wine Glasses / Dinner Motif */}
+        <g transform="translate(20, 54) scale(0.3)">
+          <path d="M25 20 L45 20 L35 50 L35 70 M22 70 L48 70" stroke="#FEF08A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+          <path d="M55 20 L75 20 L65 50 L65 70 M52 70 L78 70" stroke="#FEF08A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
+          <path d="M27 30 Q35 35 43 30" stroke="#F59E0B" strokeWidth="2" fill="none" />
+          <path d="M57 30 Q65 35 73 30" stroke="#F59E0B" strokeWidth="2" fill="none" />
+        </g>
+
+        {/* 4. Bottom-Right Quadrant: Fireworks Sparkle Motif */}
+        <g transform="translate(56, 54) scale(0.3)">
+          {[0, 45, 90, 135, 180, 225, 270, 315].map((ang, i) => (
+            <line
+              key={i}
+              x1="50"
+              y1="50"
+              x2={50 + 26 * Math.cos((ang * Math.PI) / 180)}
+              y2={50 + 26 * Math.sin((ang * Math.PI) / 180)}
+              stroke="#FEF08A"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+          ))}
+          <circle cx="50" cy="50" r="6" fill="#FFF7ED" />
+        </g>
+
+        {/* Center Golden Filigree Flower Core */}
+        <circle cx="50" cy="50" r="7" fill="#FEF08A" stroke="#92400E" strokeWidth="1.5" />
+        <circle cx="50" cy="50" r="3.5" fill="#BE123C" />
+      </svg>
+    </div>
+  );
+}
+
 export function RangoliMandala({ className = "w-48 h-48" }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
