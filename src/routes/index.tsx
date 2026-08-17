@@ -185,21 +185,21 @@ function Landing() {
               search={{ preset: "ball" }}
             />
 
-            {/* Card 2 — Burgundy */}
+            {/* Card 2 — Crimson / Wine Red */}
             <JharokhaArchCard
               title="ICCK BUSINESS AWARDS"
               price="$125"
               buttonText="Register Now"
               noteText="Honoring business excellence"
-              gradientFrom="#8A3152"
-              gradientTo="#641C3D"
+              gradientFrom="#9B3157"
+              gradientTo="#711D40"
               illustration={
                 <GoldTrophyIllustration className="h-20 w-16 xs:h-22 xs:w-18 sm:h-28 sm:w-26 md:h-32 md:w-28" />
               }
               to="/awards"
             />
 
-            {/* Card 3 — Burgundy with ribbon */}
+            {/* Card 3 — Dark Plum / Deep Burgundy */}
             <JharokhaArchCard
               ribbonText="DISCOUNTED BUNDLE"
               title="BUNDLE REGISTRATION"
@@ -208,8 +208,8 @@ function Landing() {
               badgeText="SAVE 15%"
               buttonText="GET THE BUNDLE"
               noteText="Both events at a discounted price"
-              gradientFrom="#87304F"
-              gradientTo="#611A3A"
+              gradientFrom="#732442"
+              gradientTo="#50162F"
               illustration={
                 <FourIconBundleEmblem className="h-16 w-16 xs:h-18 xs:w-18 sm:h-26 sm:w-26 md:h-28 md:w-28" />
               }
