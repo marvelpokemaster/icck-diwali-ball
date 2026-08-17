@@ -4,14 +4,14 @@ import { toast } from "sonner";
 import { useEffect } from "react";
 import icckLogo from "@/assets/icck-logo.png";
 import heroBg from "@/assets/hero-india-korea.jpg";
-import bottomRangoliMandala from "@/assets/bottom-rangoli-mandala.png";
 import { 
   DiyaLamp, 
   HangingDiyaString, 
   IndianDancerIllustration, 
   GoldTrophyIllustration, 
   FourIconBundleEmblem,
-  FireworkSparkle
+  FireworkSparkle,
+  RangoliMandala 
 } from "@/components/awards/DiwaliDecorations";
 import { JharokhaArchCard } from "@/components/awards/JharokhaArchCard";
 import { HeaderCartouche, ScallopedTrim } from "@/components/awards/JharokhaArchFrame";
@@ -195,7 +195,7 @@ function Landing() {
               <FireworkSparkle className="w-5 h-5 text-amber-300 animate-pulse shrink-0 hidden sm:block" />
               <Link
                 to="/awards"
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-5 sm:px-6 py-2.5 sm:py-2 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.12em] sm:tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-5 sm:px-6 py-2.5 sm:py-2 fon[...]"
               >
                 <Ticket className="h-4 w-4" /> VIEW ALL EVENTS
               </Link>
@@ -205,7 +205,7 @@ function Landing() {
             <div className="w-full sm:w-auto flex items-center gap-1.5">
               <button
                 onClick={() => toast.success("🎆 Festive firecrackers launched! We'll email you event updates.")}
-                className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-5 sm:px-6 py-2.5 sm:py-2 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.12em] sm:tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110"
+                className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-5 sm:px-6 py-2.5 sm:py-2 font-sans t[...]"
               >
                 SIGN UP FOR UPDATES
               </button>
@@ -214,15 +214,11 @@ function Landing() {
 
           </div>
 
-          {/* Bottom Festive Floral Mandala Arc Image */}
-          <div className="mt-3 flex justify-center items-center gap-3 overflow-hidden">
-            <DiyaLamp className="w-8 sm:w-10 h-8 sm:h-10 drop-shadow-[0_0_12px_rgba(251,191,36,0.95)] shrink-0" />
-            <img
-              src={bottomRangoliMandala}
-              alt="Festive Floral Mandala"
-              className="w-48 xs:w-56 sm:w-80 md:w-[380px] h-auto object-contain drop-shadow-[0_4px_25px_rgba(251,191,36,0.7)] hover:scale-105 transition-transform duration-300 pointer-events-none"
-            />
-            <DiyaLamp className="w-8 sm:w-10 h-8 sm:h-10 drop-shadow-[0_0_12px_rgba(251,191,36,0.95)] shrink-0" />
+          {/* Bottom Rangoli Emblem flanked by Diya Lamps */}
+          <div className="mt-2 flex justify-center items-center gap-3 overflow-hidden">
+            <DiyaLamp className="w-7 sm:w-9 h-7 sm:h-9 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)] opacity-90 shrink-0" />
+            <RangoliMandala className="w-24 h-24 sm:w-36 sm:h-36 opacity-90 drop-shadow-[0_4px_15px_rgba(251,191,36,0.6)]" />
+            <DiyaLamp className="w-7 sm:w-9 h-7 sm:h-9 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)] opacity-90 shrink-0" />
           </div>
 
           {/* Quick Navigation Footer Links */}
