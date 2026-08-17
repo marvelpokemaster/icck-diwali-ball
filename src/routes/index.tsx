@@ -228,7 +228,21 @@ function Landing() {
               <FireworkSparkle className="hidden h-4 w-4 shrink-0 animate-pulse text-amber-400 sm:block" />
               <Link
                 to="/awards"
-                className="inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-amber-400 px-5 py-2 font-sans text-[11px] font-black uppercase tracking-[0.1em] text-amber-950 shadow-[0_4px_14px_rgba(0,0,0,0.35)] transition hover:bg-amber-500 sm:w-auto sm:text-sm"
+                className="inline-flex w-full items-center justify-center gap-1.5 rounded-full px-5 py-2 font-sans text-[11px] font-black uppercase tracking-[0.1em] transition sm:w-auto sm:text-sm"
+                style={{
+                  background: "linear-gradient(to bottom, #E7B85A 0%, #D39C3F 45%, #B77B25 100%)",
+                  color: "#18203D",
+                  border: "1px solid #9F6D20",
+                  boxShadow: "0 2px 5px rgba(0,0,0,0.28)",
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLElement).style.background =
+                    "linear-gradient(to bottom, #F0C56A 0%, #DDA64A 45%, #BD822C 100%)";
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLElement).style.background =
+                    "linear-gradient(to bottom, #E7B85A 0%, #D39C3F 45%, #B77B25 100%)";
+                }}
               >
                 <Ticket className="h-3.5 w-3.5" />
                 VIEW ALL EVENTS
@@ -242,7 +256,21 @@ function Landing() {
                     "🎆 Festive firecrackers launched! We'll email you event updates."
                   )
                 }
-                className="inline-flex w-full items-center justify-center rounded-full bg-amber-400 px-5 py-2 font-sans text-[11px] font-black uppercase tracking-[0.1em] text-amber-950 shadow-[0_4px_14px_rgba(0,0,0,0.35)] transition hover:bg-amber-500 sm:w-auto sm:text-sm"
+                className="inline-flex w-full items-center justify-center rounded-full px-5 py-2 font-sans text-[11px] font-black uppercase tracking-[0.1em] transition sm:w-auto sm:text-sm"
+                style={{
+                  background: "linear-gradient(to bottom, #E7B85A 0%, #D39C3F 45%, #B77B25 100%)",
+                  color: "#18203D",
+                  border: "1px solid #9F6D20",
+                  boxShadow: "0 2px 5px rgba(0,0,0,0.28)",
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLElement).style.background =
+                    "linear-gradient(to bottom, #F0C56A 0%, #DDA64A 45%, #BD822C 100%)";
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLElement).style.background =
+                    "linear-gradient(to bottom, #E7B85A 0%, #D39C3F 45%, #B77B25 100%)";
+                }}
               >
                 SIGN UP FOR UPDATES
               </button>
