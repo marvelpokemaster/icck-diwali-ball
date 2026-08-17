@@ -122,7 +122,7 @@ function Landing() {
             <Link to="/nominate" className="hover:text-gold">
               Submit a nomination
             </Link>
-            <Link to="/register" className="hover:text-gold">
+            <Link to="/register" search={{ preset: undefined }} className="hover:text-gold">
               Registration & invoice
             </Link>
             <Link to="/admin" className="hover:text-gold">
