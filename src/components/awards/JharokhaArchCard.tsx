@@ -34,11 +34,11 @@ export function JharokhaArchCard({
   const cardId = title.replace(/[^a-zA-Z0-9]/g, "");
 
   return (
-    <div className="relative flex flex-col items-center w-full max-w-[305px] sm:max-w-[325px] mx-auto h-[415px] drop-shadow-[0_16px_36px_rgba(0,0,0,0.9)]">
+    <div className="relative flex flex-col items-center w-full max-w-[105px] xs:max-w-[125px] sm:max-w-[260px] md:max-w-[305px] mx-auto h-[240px] xs:h-[270px] sm:h-[380px] md:h-[415px] drop-shadow-[0_8px_24px_rgba(0,0,0,0.85)]">
       
       {/* Top Floating Ribbon Badge if present */}
       {ribbonText && (
-        <div className="absolute -top-3.5 z-40 bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] text-[#0c1445] font-black uppercase text-[10px] sm:text-xs tracking-[0.14em] px-4 py-1.5 rounded-md shadow-2xl border border-amber-200">
+        <div className="absolute -top-2.5 sm:-top-3.5 z-40 bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] text-[#0c1445] font-black uppercase text-[6px] xs:text-[7px] sm:text-[9.5px] md:text-xs tracking-tight sm:tracking-[0.14em] px-1.5 sm:px-4 py-0.5 sm:py-1 rounded-sm sm:rounded-md shadow-xl border border-amber-200 whitespace-nowrap">
           {ribbonText}
         </div>
       )}
@@ -101,49 +101,49 @@ export function JharokhaArchCard({
         />
       </svg>
 
-      {/* Inner Card Content Overlay — Illustrations Positioned Comfortably Lower */}
-      <div className="relative z-20 w-full h-full px-4 pt-9 pb-3 flex flex-col items-center justify-between text-center">
+      {/* Inner Card Content Overlay — Responsively Scaled for Mobile 3-in-a-Row */}
+      <div className="relative z-20 w-full h-full px-1 sm:px-4 pt-4 sm:pt-9 pb-1.5 sm:pb-3 flex flex-col items-center justify-between text-center">
         
-        {/* Top Section: Vector Illustration Shifted a Little Down */}
-        <div className="h-32 flex items-center justify-center shrink-0 mt-3">
+        {/* Top Section: Vector Illustration */}
+        <div className="h-14 xs:h-18 sm:h-28 md:h-32 flex items-center justify-center shrink-0 mt-0.5 sm:mt-2">
           {illustration}
         </div>
         
-        {/* Middle Section: Bolder Title, Larger Price & Badge */}
-        <div className="flex flex-col items-center gap-1 w-full my-auto">
-          <h2 className="font-serif text-sm sm:text-base font-black uppercase tracking-wider text-white px-1 leading-tight mt-1">
+        {/* Middle Section: Title, Price & Badge */}
+        <div className="flex flex-col items-center gap-0.5 sm:gap-1 w-full my-auto">
+          <h2 className="font-serif text-[7px] xs:text-[8.5px] sm:text-xs md:text-sm font-black uppercase tracking-tight sm:tracking-wider text-white px-0.5 leading-tight">
             {title}
           </h2>
 
-          <div className="flex items-baseline justify-center gap-2 my-0.5">
-            <span className="font-serif text-4xl sm:text-5xl font-black text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+          <div className="flex items-baseline justify-center gap-0.5 sm:gap-1.5 my-0.5">
+            <span className="font-serif text-xs xs:text-sm sm:text-3xl md:text-4xl font-black text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               {price}
             </span>
             {strikePrice && (
-              <span className="text-sm line-through text-white/80 font-bold">
+              <span className="text-[6px] xs:text-[7.5px] sm:text-xs line-through text-white/80 font-bold">
                 {strikePrice}
               </span>
             )}
           </div>
 
           {badgeText && (
-            <span className="rounded-full bg-amber-400/25 px-3.5 py-0.5 text-[10px] sm:text-[10.5px] font-black uppercase tracking-wider text-[#FEF08A] border border-amber-300/50 shadow-md">
+            <span className="rounded-full bg-amber-400/25 px-1 sm:px-3 py-0.2 text-[5.5px] xs:text-[6.5px] sm:text-[9.5px] font-black uppercase tracking-tighter sm:tracking-wider text-[#FEF08A] border border-amber-300/50">
               {badgeText}
             </span>
           )}
         </div>
 
-        {/* Bottom Section: Wider & Prominent CTA Button + Clean Note Text */}
-        <div className="w-full space-y-1.5 shrink-0 pt-0.5">
+        {/* Bottom Section: CTA Button & Note Text */}
+        <div className="w-full space-y-0.5 sm:space-y-1.5 shrink-0 pt-0.5">
           <Link
             to={to}
             search={search}
-            className="w-full inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-5 py-2 font-sans text-xs sm:text-sm font-black uppercase tracking-wider text-[#0c1445] shadow-xl transition hover:brightness-110 hover:scale-[1.02] active:scale-[0.98]"
+            className="w-full inline-flex items-center justify-center rounded-sm sm:rounded-md bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-1 sm:px-4 py-0.5 sm:py-2 font-sans text-[6.5px] xs:text-[8px] sm:text-xs md:text-sm font-black uppercase tracking-tighter sm:tracking-wider text-[#0c1445] shadow-md transition hover:brightness-110"
           >
             {buttonText}
           </Link>
 
-          <p className="text-[10.5px] font-bold text-white/95 leading-tight pt-0.5">
+          <p className="text-[5.5px] xs:text-[7px] sm:text-[9.5px] md:text-[10.5px] font-bold text-white/95 leading-tight scale-90 sm:scale-100">
             {noteText}
           </p>
         </div>

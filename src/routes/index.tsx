@@ -65,26 +65,26 @@ function Landing() {
           <DiyaLamp className="hidden sm:block w-6.5 h-6.5 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)]" />
 
           {/* Center Octagonal Cartouche Badge */}
-          <HeaderCartouche className="mx-auto py-0.5 px-3 bg-[#0f172a]/90 border border-amber-300">
+          <HeaderCartouche className="mx-auto py-0.5 px-2 sm:px-3 bg-[#0f172a]/90 border border-amber-300">
             {/* Full-Color Official ICCK Logo */}
             <img
               src={icckLogo}
               alt="ICCK Official Logo"
               width={940}
               height={347}
-              className="h-5 sm:h-6 w-auto object-contain"
+              className="h-3.5 sm:h-6 w-auto object-contain"
             />
 
-            <div className="text-center sm:text-left border-l border-amber-400/40 pl-2.5">
-              <p className="font-serif text-xs sm:text-sm font-black uppercase tracking-[0.14em] text-[#FEF08A] drop-shadow leading-none">
+            <div className="text-center sm:text-left border-l border-amber-400/40 pl-1.5 sm:pl-2.5">
+              <p className="font-serif text-[8.5px] sm:text-sm font-black uppercase tracking-[0.1em] sm:tracking-[0.14em] text-[#FEF08A] drop-shadow leading-none">
                 ICCK DIWALI CELEBRATIONS
               </p>
-              <p className="text-[8px] sm:text-[9.5px] tracking-widest text-white/90 uppercase font-semibold mt-0.5 leading-none">
+              <p className="text-[6.5px] sm:text-[9.5px] tracking-widest text-white/90 uppercase font-semibold mt-0.5 leading-none">
                 Year 2026 &middot; Diwali Theme &middot; Geometric Motifs
               </p>
             </div>
 
-            <DiyaLamp className="w-5 h-5 drop-shadow-[0_0_8px_rgba(251,191,36,0.9)]" />
+            <DiyaLamp className="w-3.5 sm:w-5 h-3.5 sm:h-5 drop-shadow-[0_0_8px_rgba(251,191,36,0.9)]" />
           </HeaderCartouche>
 
           {/* Right Diya Lamp */}
@@ -111,22 +111,22 @@ function Landing() {
           <HangingDiyaString className="w-8 h-40" />
         </div>
 
-        <section className="relative z-20 mx-auto max-w-5xl px-2 text-center">
+        <section className="relative z-20 mx-auto max-w-5xl px-1 sm:px-2 text-center">
           
           {/* Main Compact Title Banner */}
-          <div className="mt-0.5 mb-1.5">
-            <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-black leading-[1.02] tracking-wide text-[#FEF08A] drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)] uppercase">
+          <div className="mt-0.5 mb-1 sm:mb-1.5">
+            <h1 className="font-serif text-lg sm:text-3xl lg:text-4xl font-black leading-[1.02] tracking-wide text-[#FEF08A] drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)] uppercase">
               ICCK Diwali Ball:
               <br />
               <span className="italic text-white drop-shadow-[0_2px_12px_rgba(255,255,255,0.6)]">Illuminate Your Celebration!</span>
             </h1>
-            <p className="mt-0.5 text-[9.5px] sm:text-[11px] tracking-[0.16em] text-white/90 uppercase font-semibold">
+            <p className="mt-0.5 text-[8px] sm:text-[11px] tracking-[0.16em] text-white/90 uppercase font-semibold">
               Year 2026 &middot; Diwali Theme &middot; Geometric Motifs
             </p>
           </div>
 
-          {/* ---------------- 3. GRAND EXPANDED POINTED ARCH CARDS ---------------- */}
-          <div className="mt-1.5 grid gap-3 md:gap-4 md:grid-cols-3 items-end max-w-4xl mx-auto px-1">
+          {/* ---------------- 3. ALWAYS 3 CARDS SIDE-BY-SIDE IN A STRAIGHT ROW ---------------- */}
+          <div className="mt-1 grid grid-cols-3 gap-1 sm:gap-3 md:gap-4 items-end max-w-4xl mx-auto px-0.5 sm:px-1">
             
             {/* Card 1: ICCK DIWALI BALL (Vibrant Royal Indigo Blue) */}
             <JharokhaArchCard
@@ -136,7 +136,7 @@ function Landing() {
               noteText="Dinner, dance & performances"
               gradientFrom="#253494"
               gradientTo="#0f1854"
-              illustration={<IndianDancerIllustration className="w-36 h-40" />}
+              illustration={<IndianDancerIllustration className="w-14 sm:w-32 md:w-36 h-16 sm:h-36 md:h-40" />}
               to="/register"
               search={{ preset: "ball" }}
             />
@@ -149,7 +149,7 @@ function Landing() {
               noteText="Honoring business excellence"
               gradientFrom="#ab1d53"
               gradientTo="#520829"
-              illustration={<GoldTrophyIllustration className="w-34 h-36" />}
+              illustration={<GoldTrophyIllustration className="w-14 sm:w-30 md:w-34 h-14 sm:h-32 md:h-36" />}
               to="/awards"
             />
 
@@ -164,7 +164,7 @@ function Landing() {
               noteText="Both events at a discounted price"
               gradientFrom="#c2185b"
               gradientTo="#880e4f"
-              illustration={<FourIconBundleEmblem className="w-34 h-34" />}
+              illustration={<FourIconBundleEmblem className="w-14 sm:w-30 md:w-34 h-14 sm:h-30 md:h-34" />}
               to="/register"
               search={{ preset: "bundle" }}
             />
@@ -172,39 +172,39 @@ function Landing() {
           </div>
 
           {/* ---------------- 4. BOTTOM ACTION BUTTONS & SPARKLERS ---------------- */}
-          <div className="mt-2.5 flex flex-col sm:flex-row items-center justify-center gap-2.5 relative">
+          <div className="mt-2 sm:mt-2.5 flex flex-row items-center justify-center gap-1.5 sm:gap-2.5 relative">
             
-            <div className="flex items-center gap-1.5 w-full sm:w-auto">
-              <FireworkSparkle className="w-5.5 h-5.5 text-amber-300 animate-pulse shrink-0 hidden sm:block" />
+            <div className="flex items-center gap-1.5">
+              <FireworkSparkle className="w-4 sm:w-5.5 h-4 sm:h-5.5 text-amber-300 animate-pulse shrink-0 hidden sm:block" />
               <Link
                 to="/awards"
-                className="inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-6 py-2 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110 hover:scale-[1.02] sm:w-auto"
+                className="inline-flex items-center justify-center gap-1 rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-2.5 sm:px-6 py-1 sm:py-2 font-sans text-[7.5px] sm:text-xs md:text-sm font-black uppercase tracking-[0.08em] sm:tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110"
               >
-                <Ticket className="h-4 w-4" /> VIEW ALL EVENTS
+                <Ticket className="h-2.5 sm:h-4 w-2.5 sm:w-4" /> VIEW ALL EVENTS
               </Link>
             </div>
 
-            <div className="flex items-center gap-1.5 w-full sm:w-auto">
+            <div className="flex items-center gap-1.5">
               <button
                 onClick={() => toast.success("🎆 Festive firecrackers launched! We'll email you event updates.")}
-                className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-6 py-2 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110 hover:scale-[1.02] sm:w-auto"
+                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-2.5 sm:px-6 py-1 sm:py-2 font-sans text-[7.5px] sm:text-xs md:text-sm font-black uppercase tracking-[0.08em] sm:tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110"
               >
                 SIGN UP FOR UPDATES
               </button>
-              <FireworkSparkle className="w-5.5 h-5.5 text-amber-300 animate-pulse shrink-0 hidden sm:block" />
+              <FireworkSparkle className="w-4 sm:w-5.5 h-4 sm:h-5.5 text-amber-300 animate-pulse shrink-0 hidden sm:block" />
             </div>
 
           </div>
 
           {/* Bottom Rangoli Emblem */}
           <div className="mt-1 flex justify-center items-center overflow-hidden">
-            <RangoliMandala className="w-28 h-28 sm:w-36 sm:h-36 opacity-90 drop-shadow-[0_4px_15px_rgba(251,191,36,0.6)]" />
+            <RangoliMandala className="w-20 h-20 sm:w-36 sm:h-36 opacity-90 drop-shadow-[0_4px_15px_rgba(251,191,36,0.6)]" />
           </div>
 
           {/* Quick Navigation Footer Links */}
-          <nav className="mt-1 pb-1 flex flex-wrap justify-center gap-x-4 gap-y-1 text-[10px] font-bold uppercase tracking-wider text-white/80">
+          <nav className="mt-0.5 pb-1 flex flex-wrap justify-center gap-x-3 sm:gap-x-4 gap-y-0.5 text-[8px] sm:text-[10px] font-bold uppercase tracking-wider text-white/80">
             <Link to="/nominate" className="hover:text-white transition-colors">
-              Submit a nomination
+              Submit nomination
             </Link>
             <Link to="/register" search={{ preset: undefined }} className="hover:text-white transition-colors">
               Registration &amp; invoice
