@@ -66,6 +66,10 @@
   --color-gold-light: var(--gold-light);
   --color-gold-dark: var(--gold-dark);
   --color-gold-foreground: var(--gold-foreground);
+  --color-festive-deep: var(--festive-deep);
+  --color-festive-indigo: var(--festive-indigo);
+  --color-festive-magenta: var(--festive-magenta);
+  --color-festive-rose: var(--festive-rose);
   --font-display: "Cinzel", Georgia, serif;
   --font-sans: "Barlow", system-ui, sans-serif;
 }
@@ -79,6 +83,11 @@
   --gold-light: oklch(0.9 0.09 92);
   --gold-dark: oklch(0.63 0.115 78);
   --gold-foreground: oklch(0.21 0.05 262);
+  --festive-deep: oklch(0.24 0.11 275);
+  --festive-indigo: oklch(0.36 0.16 285);
+  --festive-magenta: oklch(0.46 0.21 349);
+  --festive-rose: oklch(0.55 0.21 5);
+  --gradient-marigold: linear-gradient(180deg, var(--gold-light), var(--gold-dark));
   --gradient-gold: linear-gradient(135deg, var(--gold-dark), var(--gold-light) 45%, var(--gold) 100%);
   --gradient-navy: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
   --shadow-elegant: 0 24px 60px -24px oklch(0.19 0.055 262 / 0.45);
@@ -208,4 +217,15 @@
 
 @utility animate-rise {
   animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@utility bg-gradient-marigold {
+  background-image: var(--gradient-marigold);
+}
+
+@utility bg-rangoli {
+  background-image:
+    radial-gradient(circle at 12% 88%, oklch(0.55 0.21 5 / 0.35) 0 12%, transparent 13%),
+    radial-gradient(circle at 88% 90%, oklch(0.46 0.21 349 / 0.3) 0 10%, transparent 11%),
+    radial-gradient(circle at 50% 0%, oklch(0.79 0.128 85 / 0.18) 0 22%, transparent 23%);
 }
