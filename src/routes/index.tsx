@@ -125,8 +125,8 @@ function Landing() {
             </p>
           </div>
 
-          {/* ---------------- 3. ALWAYS 3 CARDS SIDE-BY-SIDE IN A STRAIGHT ROW ---------------- */}
-          <div className="mt-1 grid grid-cols-3 gap-1 sm:gap-3 md:gap-4 items-end max-w-4xl mx-auto px-1">
+          {/* ---------------- 3. EXPANDED MOBILE 3-COLUMNS SPANNING FULL WIDTH ---------------- */}
+          <div className="mt-1 grid grid-cols-3 gap-1 sm:gap-3 md:gap-4 items-end w-full max-w-[420px] sm:max-w-4xl mx-auto px-0.5 sm:px-1">
             
             {/* Card 1: ICCK DIWALI BALL (Vibrant Royal Indigo Blue) */}
             <JharokhaArchCard
@@ -136,7 +136,7 @@ function Landing() {
               noteText="Dinner, dance & performances"
               gradientFrom="#253494"
               gradientTo="#0f1854"
-              illustration={<IndianDancerIllustration className="w-16 xs:w-20 sm:w-32 md:w-36 h-20 xs:h-24 sm:h-36 md:h-40" />}
+              illustration={<IndianDancerIllustration className="w-18 xs:w-22 sm:w-32 md:w-36 h-22 xs:h-26 sm:h-36 md:h-40" />}
               to="/register"
               search={{ preset: "ball" }}
             />
@@ -149,7 +149,7 @@ function Landing() {
               noteText="Honoring business excellence"
               gradientFrom="#ab1d53"
               gradientTo="#520829"
-              illustration={<GoldTrophyIllustration className="w-16 xs:w-18 sm:w-30 md:w-34 h-18 xs:h-22 sm:h-32 md:h-36" />}
+              illustration={<GoldTrophyIllustration className="w-18 xs:w-20 sm:w-30 md:w-34 h-20 xs:h-24 sm:h-32 md:h-36" />}
               to="/awards"
             />
 
@@ -164,22 +164,22 @@ function Landing() {
               noteText="Both events at a discounted price"
               gradientFrom="#c2185b"
               gradientTo="#880e4f"
-              illustration={<FourIconBundleEmblem className="w-16 xs:w-18 sm:w-30 md:w-34 h-16 xs:h-18 sm:h-30 md:h-34" />}
+              illustration={<FourIconBundleEmblem className="w-18 xs:w-20 sm:w-30 md:w-34 h-18 xs:h-20 sm:h-30 md:h-34" />}
               to="/register"
               search={{ preset: "bundle" }}
             />
 
           </div>
 
-          {/* ---------------- 4. BOTTOM ACTION BUTTONS: FULL-WIDTH STACKED ON MOBILE (EXACT MATCH FOR REF IMAGE 15) ---------------- */}
-          <div className="mt-3 sm:mt-3.5 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2.5 w-full max-w-[340px] sm:max-w-none mx-auto relative px-3 sm:px-0">
+          {/* ---------------- 4. FULL-WIDTH STACKED BUTTONS ON MOBILE (MATCHING EXACT PROPORTIONS OF REF IMAGE 15) ---------------- */}
+          <div className="mt-3.5 sm:mt-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2.5 w-full max-w-[360px] sm:max-w-none mx-auto relative px-3 sm:px-0">
             
             {/* Button 1: VIEW ALL EVENTS */}
             <div className="w-full sm:w-auto flex items-center gap-1.5">
               <FireworkSparkle className="w-5 h-5 text-amber-300 animate-pulse shrink-0 hidden sm:block" />
               <Link
                 to="/awards"
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-4 sm:px-6 py-2.5 sm:py-2 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.12em] sm:tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-5 sm:px-6 py-2.5 sm:py-2 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.12em] sm:tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110"
               >
                 <Ticket className="h-4 w-4" /> VIEW ALL EVENTS
               </Link>
@@ -189,7 +189,7 @@ function Landing() {
             <div className="w-full sm:w-auto flex items-center gap-1.5">
               <button
                 onClick={() => toast.success("🎆 Festive firecrackers launched! We'll email you event updates.")}
-                className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-4 sm:px-6 py-2.5 sm:py-2 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.12em] sm:tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110"
+                className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-5 sm:px-6 py-2.5 sm:py-2 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.12em] sm:tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110"
               >
                 SIGN UP FOR UPDATES
               </button>
@@ -199,7 +199,7 @@ function Landing() {
           </div>
 
           {/* Bottom Rangoli Emblem */}
-          <div className="mt-1.5 flex justify-center items-center overflow-hidden">
+          <div className="mt-2 flex justify-center items-center overflow-hidden">
             <RangoliMandala className="w-24 h-24 sm:w-36 sm:h-36 opacity-90 drop-shadow-[0_4px_15px_rgba(251,191,36,0.6)]" />
           </div>
 
