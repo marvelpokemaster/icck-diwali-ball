@@ -173,7 +173,7 @@ export function JharokhaArchCard({
         <CardMiddleFiligreeMotif />
 
         {/* Bottom Section: CTA Button & Note */}
-        <div className="w-full space-y-1 pt-1">
+        <div className="w-full space-y-2 pt-1 pb-2">
           <Link
             to={to}
             search={search}
@@ -182,7 +182,7 @@ export function JharokhaArchCard({
             {buttonText}
           </Link>
 
-          <p className="text-[10px] font-semibold text-white/90 leading-tight">
+          <p className="text-xs font-bold text-white leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
             {noteText}
           </p>
         </div>
