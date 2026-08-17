@@ -101,11 +101,11 @@ export function JharokhaArchCard({
         />
       </svg>
 
-      {/* Inner Card Content Overlay — Expanded Width for Mobile 3-in-a-Row */}
-      <div className="relative z-20 w-full h-full px-1.5 sm:px-4 pt-3.5 xs:pt-4 sm:pt-9 pb-1.5 sm:pb-3 flex flex-col items-center justify-between text-center">
+      {/* Inner Card Content Overlay — Illustrations Shifted a Little Down on Mobile View */}
+      <div className="relative z-20 w-full h-full px-1.5 sm:px-4 pt-6 xs:pt-7 sm:pt-9 pb-1.5 sm:pb-3 flex flex-col items-center justify-between text-center">
         
-        {/* Top Section: Vector Illustration */}
-        <div className="h-18 xs:h-22 sm:h-28 md:h-32 flex items-center justify-center shrink-0 mt-0.5 sm:mt-2">
+        {/* Top Section: Vector Illustration Shifted Down on Mobile */}
+        <div className="h-18 xs:h-22 sm:h-28 md:h-32 flex items-center justify-center shrink-0 mt-2.5 xs:mt-3 sm:mt-2">
           {illustration}
         </div>
         
