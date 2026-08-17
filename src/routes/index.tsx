@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Ticket } from "lucide-react";
 import { toast } from "sonner";
 import { useEffect } from "react";
-import icckLogo from "@/assets/icck-logo.png";
+import icckLogo from "@/assets/logo.svg";
 import heroBg from "@/assets/hero-india-korea.jpg";
 import { 
   DiyaLamp, 

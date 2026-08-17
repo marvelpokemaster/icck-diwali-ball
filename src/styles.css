@@ -1,3 +1,22 @@
+/* ─── Pretendard Variable Font (ICCK Brand Typography) ────────────────────── */
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/variable/woff2/PretendardVariable.woff2')
+       format('woff2-variations');
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/static/woff2/Pretendard-Regular.woff2')
+       format('woff2');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
@@ -62,8 +81,13 @@ body.festive-cursor-active * {
   --color-festive-indigo: var(--festive-indigo);
   --color-festive-magenta: var(--festive-magenta);
   --color-festive-rose: var(--festive-rose);
+  /* ── ICCK Official Brand Palette ── */
+  --color-icck-blue: var(--icck-blue);
+  --color-icck-gold: var(--icck-gold);
+  --color-icck-red: var(--icck-red);
+  --color-icck-yellow: var(--icck-yellow);
   --font-display: "Cinzel", Georgia, serif;
-  --font-sans: "Barlow", system-ui, sans-serif;
+  --font-sans: "Pretendard", "Barlow", system-ui, sans-serif;
 }
 
 :root {
@@ -79,6 +103,11 @@ body.festive-cursor-active * {
   --festive-indigo: oklch(0.36 0.16 285);
   --festive-magenta: oklch(0.46 0.21 349);
   --festive-rose: oklch(0.55 0.21 5);
+  /* ── ICCK Official Brand Colors ── */
+  --icck-blue: #1A3E70;
+  --icck-gold: #8B6F4C;
+  --icck-red: #B7182E;
+  --icck-yellow: #F59C00;
   --gradient-marigold: linear-gradient(180deg, var(--gold-light), var(--gold-dark));
   --gradient-gold: linear-gradient(135deg, var(--gold-dark), var(--gold-light) 45%, var(--gold) 100%);
   --gradient-navy: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);

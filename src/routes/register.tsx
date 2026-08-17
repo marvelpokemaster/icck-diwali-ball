@@ -4,7 +4,7 @@ import { ArrowLeft, Printer } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import icckLogo from "@/assets/icck-logo.png";
+import icckLogo from "@/assets/logo.svg";
 
 const title = "Registration & Invoice | ICCK Business Awards 2026";
 const description =
@@ -58,6 +58,7 @@ function RegisterPage() {
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [individual, setIndividual] = useState<string | null>(preset ?? null);
   const [individualQty, setIndividualQty] = useState(1);
   const [table, setTable] = useState<string | null>(null);
@@ -106,9 +107,8 @@ function RegisterPage() {
             <div className="grid gap-4 sm:grid-cols-2">
               <TextField label="Full name" value={name} onChange={setName} />
               <TextField label="Company" value={company} onChange={setCompany} />
-              <div className="sm:col-span-2">
-                <TextField label="Email" value={email} onChange={setEmail} type="email" />
-              </div>
+              <TextField label="Email" value={email} onChange={setEmail} type="email" />
+              <TextField label="Phone" value={phone} onChange={setPhone} type="tel" />
             </div>
 
             <Group
@@ -166,6 +166,7 @@ function RegisterPage() {
                   <p className="mt-1 font-medium">{name || "—"}</p>
                   <p>{company || "—"}</p>
                   <p>{email || "—"}</p>
+                  {phone && <p>{phone}</p>}
                 </div>
                 <div className="sm:text-right">
                   <p className="font-semibold uppercase tracking-wide text-slate-500">From</p>
