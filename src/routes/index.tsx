@@ -168,7 +168,7 @@ function Landing() {
           {/* ============================================================
               EVENT CARDS — 3 columns, royal blue + burgundy
           ============================================================= */}
-          <div className="mx-auto mt-0 grid w-full max-w-[420px] grid-cols-3 items-end gap-1 px-0.5 sm:max-w-4xl sm:gap-2 md:gap-3">
+          <div className="mx-auto mt-0 grid w-full max-w-[420px] grid-cols-3 items-end gap-1 px-0.5 sm:max-w-4xl sm:gap-2">
 
             {/* Card 1 — Royal Blue / Steel Blue */}
             <JharokhaArchCard
@@ -222,7 +222,7 @@ function Landing() {
           {/* ============================================================
               CTA BUTTONS — amber-400 gold
           ============================================================= */}
-          <div className="mx-auto mt-2 flex w-full max-w-[360px] flex-col items-center justify-center gap-1.5 sm:mt-2.5 sm:max-w-none sm:flex-row sm:gap-3">
+          <div className="mx-auto mt-1 flex w-full max-w-[360px] flex-col items-center justify-center gap-1.5 sm:mt-1 sm:max-w-none sm:flex-row sm:gap-3">
 
             <div className="flex w-full items-center gap-1.5 sm:w-auto">
               <FireworkSparkle className="hidden h-4 w-4 shrink-0 animate-pulse text-amber-400 sm:block" />
