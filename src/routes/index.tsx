@@ -85,7 +85,13 @@ function Landing() {
           TOP GOLD HEADER — full-width, clearly visible warm gold band
           Desktop target: ~56px. Mobile: ~48px.
       ================================================================= */}
-      <header className="relative z-30 w-full bg-gradient-to-r from-[#d97706] via-[#fbbf24] to-[#d97706] py-2 sm:py-2.5 shadow-[0_4px_20px_rgba(0,0,0,0.5)] border-b border-amber-600">
+      <header
+        className="relative z-30 w-full shadow-[0_4px_20px_rgba(0,0,0,0.5)]"
+        style={{
+          background: "linear-gradient(90deg, #A86F18 0%, #D9A441 30%, #F1C45B 50%, #D9A441 70%, #A86F18 100%)",
+          borderBottom: "1px solid #7B5522",
+        }}
+      >
         <div className="mx-auto flex max-w-5xl items-center justify-between px-3 py-2 sm:py-3">
 
           {/* Left diya */}
@@ -144,7 +150,8 @@ function Landing() {
           ============================================================= */}
           <div className="mb-1.5 mt-0">
             <h1
-              className="font-serif text-xl font-black uppercase leading-[1.05] tracking-wide drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] sm:text-3xl lg:text-4xl text-[#fbbf24]"
+              className="font-serif text-xl font-black uppercase leading-[1.05] tracking-wide drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] sm:text-3xl lg:text-4xl"
+              style={{ color: "#F0C866" }}
             >
               ICCK Diwali Ball:
               <br />
@@ -213,15 +220,15 @@ function Landing() {
           </div>
 
           {/* ============================================================
-              CTA BUTTONS — antique gold, side-by-side on desktop
+              CTA BUTTONS — amber-400 gold
           ============================================================= */}
           <div className="mx-auto mt-2 flex w-full max-w-[360px] flex-col items-center justify-center gap-1.5 sm:mt-2.5 sm:max-w-none sm:flex-row sm:gap-3">
 
             <div className="flex w-full items-center gap-1.5 sm:w-auto">
-              <FireworkSparkle className="hidden h-4 w-4 shrink-0 animate-pulse sm:block text-amber-400" />
+              <FireworkSparkle className="hidden h-4 w-4 shrink-0 animate-pulse text-amber-400 sm:block" />
               <Link
                 to="/awards"
-                className="inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-[#f59e0b] via-[#fbbf24] to-[#d97706] px-5 py-2 font-sans text-[11px] sm:text-sm font-black uppercase tracking-[0.1em] text-[#0c1445] border border-amber-300 shadow-[0_4px_14px_rgba(0,0,0,0.35)] transition hover:brightness-110 sm:w-auto"
+                className="inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-amber-400 px-5 py-2 font-sans text-[11px] font-black uppercase tracking-[0.1em] text-amber-950 shadow-[0_4px_14px_rgba(0,0,0,0.35)] transition hover:bg-amber-500 sm:w-auto sm:text-sm"
               >
                 <Ticket className="h-3.5 w-3.5" />
                 VIEW ALL EVENTS
@@ -235,11 +242,11 @@ function Landing() {
                     "🎆 Festive firecrackers launched! We'll email you event updates."
                   )
                 }
-                className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#f59e0b] via-[#fbbf24] to-[#d97706] px-5 py-2 font-sans text-[11px] sm:text-sm font-black uppercase tracking-[0.1em] text-[#0c1445] border border-amber-300 shadow-[0_4px_14px_rgba(0,0,0,0.35)] transition hover:brightness-110 sm:w-auto"
+                className="inline-flex w-full items-center justify-center rounded-full bg-amber-400 px-5 py-2 font-sans text-[11px] font-black uppercase tracking-[0.1em] text-amber-950 shadow-[0_4px_14px_rgba(0,0,0,0.35)] transition hover:bg-amber-500 sm:w-auto sm:text-sm"
               >
                 SIGN UP FOR UPDATES
               </button>
-              <FireworkSparkle className="hidden h-4 w-4 shrink-0 animate-pulse sm:block text-amber-400" />
+              <FireworkSparkle className="hidden h-4 w-4 shrink-0 animate-pulse text-amber-400 sm:block" />
             </div>
 
           </div>
