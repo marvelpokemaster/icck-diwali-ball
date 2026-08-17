@@ -111,10 +111,10 @@ function Landing() {
           <HangingDiyaString className="w-8 h-40" />
         </div>
 
-        <section className="relative z-20 mx-auto max-w-5xl px-1 sm:px-2 text-center">
+        <section className="relative z-20 mx-auto max-w-5xl px-1.5 sm:px-2 text-center">
           
           {/* Main Compact Title Banner */}
-          <div className="mt-0.5 mb-1 sm:mb-1.5">
+          <div className="mt-0.5 mb-1.5 sm:mb-2">
             <h1 className="font-serif text-lg sm:text-3xl lg:text-4xl font-black leading-[1.02] tracking-wide text-[#FEF08A] drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)] uppercase">
               ICCK Diwali Ball:
               <br />
@@ -136,7 +136,7 @@ function Landing() {
               noteText="Dinner, dance & performances"
               gradientFrom="#253494"
               gradientTo="#0f1854"
-              illustration={<IndianDancerIllustration className="w-14 sm:w-32 md:w-36 h-16 sm:h-36 md:h-40" />}
+              illustration={<IndianDancerIllustration className="w-16 sm:w-32 md:w-36 h-20 sm:h-36 md:h-40" />}
               to="/register"
               search={{ preset: "ball" }}
             />
@@ -149,7 +149,7 @@ function Landing() {
               noteText="Honoring business excellence"
               gradientFrom="#ab1d53"
               gradientTo="#520829"
-              illustration={<GoldTrophyIllustration className="w-14 sm:w-30 md:w-34 h-14 sm:h-32 md:h-36" />}
+              illustration={<GoldTrophyIllustration className="w-16 sm:w-30 md:w-34 h-18 sm:h-32 md:h-36" />}
               to="/awards"
             />
 
@@ -164,45 +164,47 @@ function Landing() {
               noteText="Both events at a discounted price"
               gradientFrom="#c2185b"
               gradientTo="#880e4f"
-              illustration={<FourIconBundleEmblem className="w-14 sm:w-30 md:w-34 h-14 sm:h-30 md:h-34" />}
+              illustration={<FourIconBundleEmblem className="w-16 sm:w-30 md:w-34 h-16 sm:h-30 md:h-34" />}
               to="/register"
               search={{ preset: "bundle" }}
             />
 
           </div>
 
-          {/* ---------------- 4. BOTTOM ACTION BUTTONS & SPARKLERS ---------------- */}
-          <div className="mt-2 sm:mt-2.5 flex flex-row items-center justify-center gap-1.5 sm:gap-2.5 relative">
+          {/* ---------------- 4. BOTTOM ACTION BUTTONS: STACKED FULL-WIDTH ON MOBILE (MATCHING REF IMAGE) ---------------- */}
+          <div className="mt-2.5 sm:mt-3 flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 max-w-xs sm:max-w-none mx-auto relative px-2 sm:px-0">
             
-            <div className="flex items-center gap-1.5">
-              <FireworkSparkle className="w-4 sm:w-5.5 h-4 sm:h-5.5 text-amber-300 animate-pulse shrink-0 hidden sm:block" />
+            {/* Button 1: VIEW ALL EVENTS */}
+            <div className="w-full sm:w-auto flex items-center gap-1.5">
+              <FireworkSparkle className="w-5 h-5 text-amber-300 animate-pulse shrink-0 hidden sm:block" />
               <Link
                 to="/awards"
-                className="inline-flex items-center justify-center gap-1 rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-2.5 sm:px-6 py-1 sm:py-2 font-sans text-[7.5px] sm:text-xs md:text-sm font-black uppercase tracking-[0.08em] sm:tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-4 sm:px-6 py-2 sm:py-2 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.12em] sm:tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110"
               >
-                <Ticket className="h-2.5 sm:h-4 w-2.5 sm:w-4" /> VIEW ALL EVENTS
+                <Ticket className="h-3.5 sm:h-4 w-3.5 sm:w-4" /> VIEW ALL EVENTS
               </Link>
             </div>
 
-            <div className="flex items-center gap-1.5">
+            {/* Button 2: SIGN UP FOR UPDATES */}
+            <div className="w-full sm:w-auto flex items-center gap-1.5">
               <button
                 onClick={() => toast.success("🎆 Festive firecrackers launched! We'll email you event updates.")}
-                className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-2.5 sm:px-6 py-1 sm:py-2 font-sans text-[7.5px] sm:text-xs md:text-sm font-black uppercase tracking-[0.08em] sm:tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110"
+                className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-4 sm:px-6 py-2 sm:py-2 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.12em] sm:tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110"
               >
                 SIGN UP FOR UPDATES
               </button>
-              <FireworkSparkle className="w-4 sm:w-5.5 h-4 sm:h-5.5 text-amber-300 animate-pulse shrink-0 hidden sm:block" />
+              <FireworkSparkle className="w-5 h-5 text-amber-300 animate-pulse shrink-0 hidden sm:block" />
             </div>
 
           </div>
 
           {/* Bottom Rangoli Emblem */}
-          <div className="mt-1 flex justify-center items-center overflow-hidden">
-            <RangoliMandala className="w-20 h-20 sm:w-36 sm:h-36 opacity-90 drop-shadow-[0_4px_15px_rgba(251,191,36,0.6)]" />
+          <div className="mt-1.5 flex justify-center items-center overflow-hidden">
+            <RangoliMandala className="w-24 h-24 sm:w-36 sm:h-36 opacity-90 drop-shadow-[0_4px_15px_rgba(251,191,36,0.6)]" />
           </div>
 
           {/* Quick Navigation Footer Links */}
-          <nav className="mt-0.5 pb-1 flex flex-wrap justify-center gap-x-3 sm:gap-x-4 gap-y-0.5 text-[8px] sm:text-[10px] font-bold uppercase tracking-wider text-white/80">
+          <nav className="mt-0.5 pb-1 flex flex-wrap justify-center gap-x-3 sm:gap-x-4 gap-y-0.5 text-[8.5px] sm:text-[10px] font-bold uppercase tracking-wider text-white/80">
             <Link to="/nominate" className="hover:text-white transition-colors">
               Submit nomination
             </Link>
