@@ -111,22 +111,22 @@ function Landing() {
           <HangingDiyaString className="w-8 h-40" />
         </div>
 
-        <section className="relative z-20 mx-auto max-w-5xl px-1.5 sm:px-2 text-center">
+        <section className="relative z-20 mx-auto max-w-5xl px-1 sm:px-2 text-center">
           
           {/* Main Compact Title Banner */}
           <div className="mt-0.5 mb-1.5 sm:mb-2">
-            <h1 className="font-serif text-lg sm:text-3xl lg:text-4xl font-black leading-[1.02] tracking-wide text-[#FEF08A] drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)] uppercase">
+            <h1 className="font-serif text-base xs:text-lg sm:text-3xl lg:text-4xl font-black leading-[1.02] tracking-wide text-[#FEF08A] drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)] uppercase">
               ICCK Diwali Ball:
               <br />
               <span className="italic text-white drop-shadow-[0_2px_12px_rgba(255,255,255,0.6)]">Illuminate Your Celebration!</span>
             </h1>
-            <p className="mt-0.5 text-[8px] sm:text-[11px] tracking-[0.16em] text-white/90 uppercase font-semibold">
+            <p className="mt-0.5 text-[7.5px] xs:text-[8.5px] sm:text-[11px] tracking-[0.16em] text-white/90 uppercase font-semibold">
               Year 2026 &middot; Diwali Theme &middot; Geometric Motifs
             </p>
           </div>
 
           {/* ---------------- 3. ALWAYS 3 CARDS SIDE-BY-SIDE IN A STRAIGHT ROW ---------------- */}
-          <div className="mt-1 grid grid-cols-3 gap-1 sm:gap-3 md:gap-4 items-end max-w-4xl mx-auto px-0.5 sm:px-1">
+          <div className="mt-1 grid grid-cols-3 gap-1 sm:gap-3 md:gap-4 items-end max-w-4xl mx-auto px-1">
             
             {/* Card 1: ICCK DIWALI BALL (Vibrant Royal Indigo Blue) */}
             <JharokhaArchCard
@@ -136,7 +136,7 @@ function Landing() {
               noteText="Dinner, dance & performances"
               gradientFrom="#253494"
               gradientTo="#0f1854"
-              illustration={<IndianDancerIllustration className="w-16 sm:w-32 md:w-36 h-20 sm:h-36 md:h-40" />}
+              illustration={<IndianDancerIllustration className="w-16 xs:w-20 sm:w-32 md:w-36 h-20 xs:h-24 sm:h-36 md:h-40" />}
               to="/register"
               search={{ preset: "ball" }}
             />
@@ -149,7 +149,7 @@ function Landing() {
               noteText="Honoring business excellence"
               gradientFrom="#ab1d53"
               gradientTo="#520829"
-              illustration={<GoldTrophyIllustration className="w-16 sm:w-30 md:w-34 h-18 sm:h-32 md:h-36" />}
+              illustration={<GoldTrophyIllustration className="w-16 xs:w-18 sm:w-30 md:w-34 h-18 xs:h-22 sm:h-32 md:h-36" />}
               to="/awards"
             />
 
@@ -164,24 +164,24 @@ function Landing() {
               noteText="Both events at a discounted price"
               gradientFrom="#c2185b"
               gradientTo="#880e4f"
-              illustration={<FourIconBundleEmblem className="w-16 sm:w-30 md:w-34 h-16 sm:h-30 md:h-34" />}
+              illustration={<FourIconBundleEmblem className="w-16 xs:w-18 sm:w-30 md:w-34 h-16 xs:h-18 sm:h-30 md:h-34" />}
               to="/register"
               search={{ preset: "bundle" }}
             />
 
           </div>
 
-          {/* ---------------- 4. BOTTOM ACTION BUTTONS: STACKED FULL-WIDTH ON MOBILE (MATCHING REF IMAGE) ---------------- */}
-          <div className="mt-2.5 sm:mt-3 flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2.5 max-w-xs sm:max-w-none mx-auto relative px-2 sm:px-0">
+          {/* ---------------- 4. BOTTOM ACTION BUTTONS: FULL-WIDTH STACKED ON MOBILE (EXACT MATCH FOR REF IMAGE 15) ---------------- */}
+          <div className="mt-3 sm:mt-3.5 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2.5 w-full max-w-[340px] sm:max-w-none mx-auto relative px-3 sm:px-0">
             
             {/* Button 1: VIEW ALL EVENTS */}
             <div className="w-full sm:w-auto flex items-center gap-1.5">
               <FireworkSparkle className="w-5 h-5 text-amber-300 animate-pulse shrink-0 hidden sm:block" />
               <Link
                 to="/awards"
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-4 sm:px-6 py-2 sm:py-2 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.12em] sm:tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-4 sm:px-6 py-2.5 sm:py-2 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.12em] sm:tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110"
               >
-                <Ticket className="h-3.5 sm:h-4 w-3.5 sm:w-4" /> VIEW ALL EVENTS
+                <Ticket className="h-4 w-4" /> VIEW ALL EVENTS
               </Link>
             </div>
 
@@ -189,7 +189,7 @@ function Landing() {
             <div className="w-full sm:w-auto flex items-center gap-1.5">
               <button
                 onClick={() => toast.success("🎆 Festive firecrackers launched! We'll email you event updates.")}
-                className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-4 sm:px-6 py-2 sm:py-2 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.12em] sm:tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110"
+                className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-4 sm:px-6 py-2.5 sm:py-2 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.12em] sm:tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110"
               >
                 SIGN UP FOR UPDATES
               </button>
