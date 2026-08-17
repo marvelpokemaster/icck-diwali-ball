@@ -88,8 +88,8 @@ function Landing() {
       <header
         className="relative z-30 w-full shadow-[0_4px_20px_rgba(0,0,0,0.5)]"
         style={{
-          background: "linear-gradient(90deg, #A86F18 0%, #D9A441 30%, #F1C45B 50%, #D9A441 70%, #A86F18 100%)",
-          borderBottom: "1px solid #7B5522",
+          background: "linear-gradient(90deg, #144e66 0%, #2596be 50%, #144e66 100%)",
+          borderBottom: "1px solid #144e66",
         }}
       >
         <div className="mx-auto flex max-w-5xl items-center justify-between px-3 py-2 sm:py-3">
@@ -170,14 +170,14 @@ function Landing() {
           ============================================================= */}
           <div className="mx-auto mt-0 grid w-full max-w-[420px] grid-cols-3 items-end gap-1 px-0.5 sm:max-w-4xl sm:gap-2 md:gap-3">
 
-            {/* Card 1 — Royal Blue / Steel Blue */}
+            {/* Card 1 — Royal Blue */}
             <JharokhaArchCard
               title="ICCK DIWALI BALL"
               price="$100"
               buttonText="Buy Tickets"
               noteText="Dinner, dance & performances"
-              gradientFrom="#2596be"
-              gradientTo="#175069"
+              gradientFrom="#303F86"
+              gradientTo="#1B285F"
               illustration={
                 <IndianDancerIllustration className="h-20 w-16 xs:h-24 xs:w-20 sm:h-32 sm:w-28 md:h-36 md:w-32" />
               }
@@ -225,14 +225,14 @@ function Landing() {
           <div className="mx-auto mt-2 flex w-full max-w-[360px] flex-col items-center justify-center gap-1.5 sm:mt-2.5 sm:max-w-none sm:flex-row sm:gap-3">
 
             <div className="flex w-full items-center gap-1.5 sm:w-auto">
-              <FireworkSparkle className="hidden h-4 w-4 shrink-0 animate-pulse sm:block" style={{ color: "#F1C45B" }} />
+              <FireworkSparkle className="hidden h-4 w-4 shrink-0 animate-pulse sm:block" style={{ color: "#2596be" }} />
               <Link
                 to="/awards"
                 className="inline-flex w-full items-center justify-center gap-1.5 rounded-full px-5 py-2 font-sans text-[11px] font-black uppercase tracking-[0.1em] transition hover:brightness-110 sm:w-auto sm:text-sm"
                 style={{
-                  background: "linear-gradient(90deg, #C8891C, #E8B840, #C8891C)",
-                  color: "#111A3A",
-                  border: "1px solid #A87518",
+                  background: "linear-gradient(90deg, #1d7aa1, #2596be, #1d7aa1)",
+                  color: "#ffffff",
+                  border: "1px solid #2596be",
                   boxShadow: "0 4px 14px rgba(0,0,0,0.35)",
                 }}
               >
@@ -250,15 +250,15 @@ function Landing() {
                 }
                 className="inline-flex w-full items-center justify-center rounded-full px-5 py-2 font-sans text-[11px] font-black uppercase tracking-[0.1em] transition hover:brightness-110 sm:w-auto sm:text-sm"
                 style={{
-                  background: "linear-gradient(90deg, #C8891C, #E8B840, #C8891C)",
-                  color: "#111A3A",
-                  border: "1px solid #A87518",
+                  background: "linear-gradient(90deg, #1d7aa1, #2596be, #1d7aa1)",
+                  color: "#ffffff",
+                  border: "1px solid #2596be",
                   boxShadow: "0 4px 14px rgba(0,0,0,0.35)",
                 }}
               >
                 SIGN UP FOR UPDATES
               </button>
-              <FireworkSparkle className="hidden h-4 w-4 shrink-0 animate-pulse sm:block" style={{ color: "#F1C45B" }} />
+              <FireworkSparkle className="hidden h-4 w-4 shrink-0 animate-pulse sm:block" style={{ color: "#2596be" }} />
             </div>
 
           </div>
