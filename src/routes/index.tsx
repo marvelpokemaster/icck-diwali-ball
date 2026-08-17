@@ -172,27 +172,29 @@ function Landing() {
 
           </div>
 
-          {/* ---------------- 4. ULTRA-COMPACT BOTTOM ACTION BUTTONS & SPARKLERS ---------------- */}
-          <div className="mt-2.5 flex flex-col sm:flex-row items-center justify-center gap-2 relative">
+          {/* ---------------- 4. BOTTOM ACTION BUTTONS & SPARKLERS ---------------- */}
+          <div className="mt-4 flex flex-col items-center justify-center gap-3 relative w-full max-w-sm mx-auto">
             
-            <div className="flex items-center gap-1.5 w-full sm:w-auto">
-              <FireworkSparkle className="w-6 h-6 text-amber-300 animate-pulse shrink-0 hidden sm:block" />
+            <div className="flex items-center gap-2 w-full">
+              <FireworkSparkle className="w-7 h-7 text-amber-300 animate-pulse shrink-0 hidden sm:block" />
               <Link
                 to="/awards"
-                className="inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] px-6 py-2 font-sans text-xs font-black uppercase tracking-[0.14em] text-[#0c1445] shadow-xl transition hover:brightness-110 hover:scale-[1.02] sm:w-auto"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] px-8 py-4 font-sans text-sm font-black uppercase tracking-[0.14em] text-[#0c1445] shadow-xl transition hover:brightness-110 hover:scale-[1.02]"
               >
-                <Ticket className="h-3.5 w-3.5" /> VIEW ALL EVENTS
+                <Ticket className="h-4 w-4" /> VIEW ALL EVENTS
               </Link>
+              <FireworkSparkle className="w-7 h-7 text-amber-300 animate-pulse shrink-0 hidden sm:block" />
             </div>
 
-            <div className="flex items-center gap-1.5 w-full sm:w-auto">
+            <div className="flex items-center gap-2 w-full">
+              <FireworkSparkle className="w-7 h-7 text-amber-300 animate-pulse shrink-0 hidden sm:block" />
               <button
                 onClick={() => toast.success("🎆 Festive firecrackers launched! We'll email you event updates.")}
-                className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] px-6 py-2 font-sans text-xs font-black uppercase tracking-[0.14em] text-[#0c1445] shadow-xl transition hover:brightness-110 hover:scale-[1.02] sm:w-auto"
+                className="inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] px-8 py-4 font-sans text-sm font-black uppercase tracking-[0.14em] text-[#0c1445] shadow-xl transition hover:brightness-110 hover:scale-[1.02]"
               >
                 SIGN UP FOR UPDATES
               </button>
-              <FireworkSparkle className="w-6 h-6 text-amber-300 animate-pulse shrink-0 hidden sm:block" />
+              <FireworkSparkle className="w-7 h-7 text-amber-300 animate-pulse shrink-0 hidden sm:block" />
             </div>
 
           </div>
