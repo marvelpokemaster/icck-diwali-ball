@@ -170,14 +170,14 @@ function Landing() {
           ============================================================= */}
           <div className="mx-auto mt-0 grid w-full max-w-[420px] grid-cols-3 items-end gap-1 px-0.5 sm:max-w-4xl sm:gap-2 md:gap-3">
 
-            {/* Card 1 — Royal Blue */}
+            {/* Card 1 — Royal Blue / Steel Blue */}
             <JharokhaArchCard
               title="ICCK DIWALI BALL"
               price="$100"
               buttonText="Buy Tickets"
               noteText="Dinner, dance & performances"
-              gradientFrom="#303F86"
-              gradientTo="#1B285F"
+              gradientFrom="#2596be"
+              gradientTo="#175069"
               illustration={
                 <IndianDancerIllustration className="h-20 w-16 xs:h-24 xs:w-20 sm:h-32 sm:w-28 md:h-36 md:w-32" />
               }
