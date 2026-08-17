@@ -12,8 +12,12 @@ const description =
 
 export const Route = createFileRoute("/register")({
   validateSearch: (search: Record<string, unknown>) => ({
-    preset: search.preset === "bundle" || search.preset === "ball" ? search.preset : undefined,
+    preset:
+      search["preset"] === "bundle" || search["preset"] === "ball"
+        ? (search["preset"] as "bundle" | "ball")
+        : undefined,
   }),
+
   head: () => ({
     meta: [
       { title },
