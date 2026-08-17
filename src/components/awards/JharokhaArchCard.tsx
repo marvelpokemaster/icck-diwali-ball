@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "@tanstack/react-router";
-import { DiyaLamp } from "./DiwaliDecorations";
 
 interface JharokhaArchCardProps {
   title: string;
@@ -18,32 +17,6 @@ interface JharokhaArchCardProps {
   isTwinArch?: boolean;
 }
 
-/* Festive Golden Filigree Divider Motif to fill card height elegantly */
-function CardMiddleFiligreeMotif() {
-  return (
-    <div className="my-1.5 flex flex-col items-center justify-center gap-1 w-full opacity-90">
-      <svg className="w-36 h-5 overflow-visible" viewBox="0 0 160 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Center Diamond Gem */}
-        <polygon points="80,2 86,10 80,18 74,10" fill="#FEF08A" stroke="#92400E" strokeWidth="0.8" />
-        <circle cx="80" cy="10" r="2" fill="#BE123C" />
-
-        {/* Left Filigree Scroll */}
-        <path d="M70 10 Q50 3 30 10 Q15 15 5 10" stroke="#FEF08A" strokeWidth="1.2" fill="none" />
-        <circle cx="5" cy="10" r="1.8" fill="#F59E0B" />
-        <circle cx="40" cy="7" r="1.5" fill="#FEF08A" />
-
-        {/* Right Filigree Scroll */}
-        <path d="M90 10 Q110 3 130 10 Q145 15 155 10" stroke="#FEF08A" strokeWidth="1.2" fill="none" />
-        <circle cx="155" cy="10" r="1.8" fill="#F59E0B" />
-        <circle cx="120" cy="7" r="1.5" fill="#FEF08A" />
-      </svg>
-
-      {/* Mini Burning Diya Accent */}
-      <DiyaLamp className="w-5 h-5 drop-shadow-[0_0_6px_rgba(245,158,11,0.8)]" />
-    </div>
-  );
-}
-
 export function JharokhaArchCard({
   title,
   price,
@@ -57,42 +30,32 @@ export function JharokhaArchCard({
   to,
   search,
   ribbonText,
-  isTwinArch = false,
 }: JharokhaArchCardProps) {
   const cardId = title.replace(/[^a-zA-Z0-9]/g, "");
 
   return (
-    <div className="relative flex flex-col items-center w-full max-w-sm mx-auto h-[500px] drop-shadow-[0_12px_28px_rgba(0,0,0,0.85)]">
+    <div className="relative flex flex-col items-center w-full max-w-[305px] sm:max-w-[325px] mx-auto h-[415px] drop-shadow-[0_16px_36px_rgba(0,0,0,0.9)]">
       
       {/* Top Floating Ribbon Badge if present */}
       {ribbonText && (
-        <div className="absolute -top-3.5 z-40 bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] text-[#0c1445] font-black uppercase text-[9px] sm:text-[10px] tracking-[0.14em] px-3.5 py-1 rounded-md shadow-xl border border-amber-200">
+        <div className="absolute -top-3.5 z-40 bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] text-[#0c1445] font-black uppercase text-[10px] sm:text-xs tracking-[0.14em] px-4 py-1.5 rounded-md shadow-2xl border border-amber-200">
           {ribbonText}
         </div>
       )}
 
-      {/* Synchronized Arch Background & Double Gold/White Border SVG Container */}
+      {/* Pointed Jharokha Arch Background & Double Gold/White Border SVG Container */}
       <svg
-        className="absolute inset-0 w-full h-full z-0 pointer-events-none"
-        viewBox="0 0 300 410"
+        className="absolute inset-0 w-full h-full z-0 pointer-events-none overflow-visible"
+        viewBox="0 0 300 415"
         fill="none"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          {isTwinArch ? (
-            <linearGradient id={`bgGrad-${cardId}`} x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stopColor="#1e1b4b" />
-              <stop offset="35%" stopColor="#252270" />
-              <stop offset="65%" stopColor="#881337" />
-              <stop offset="100%" stopColor="#590624" />
-            </linearGradient>
-          ) : (
-            <linearGradient id={`bgGrad-${cardId}`} x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor={gradientFrom} />
-              <stop offset="100%" stopColor={gradientTo} />
-            </linearGradient>
-          )}
+          <linearGradient id={`bgGrad-${cardId}`} x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor={gradientFrom} />
+            <stop offset="100%" stopColor={gradientTo} />
+          </linearGradient>
           
           <linearGradient id={`goldGrad-${cardId}`} x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor="#FFF7ED" />
@@ -104,33 +67,33 @@ export function JharokhaArchCard({
 
         {/* Outer Pointed Jharokha Arch Path Fill & Gold Outer Border */}
         <path
-          d="M 150,10 
-             C 158,22 176,33 204,39 
-             C 252,50 284,68 284,105 
-             L 284,385 
-             Q 284,398 268,398 
-             L 32,398 
-             Q 16,398 16,385 
-             L 16,105 
-             C 16,68 48,50 96,39 
-             C 124,33 142,22 150,10 Z"
+          d="M 150,6 
+             C 158,18 176,27 204,32 
+             C 252,41 284,56 284,86 
+             L 284,402 
+             Q 284,412 268,412 
+             L 32,412 
+             Q 16,412 16,402 
+             L 16,86 
+             C 16,56 48,41 96,32 
+             C 124,27 142,18 150,6 Z"
           fill={`url(#bgGrad-${cardId})`}
           stroke={`url(#goldGrad-${cardId})`}
-          strokeWidth="3.2"
+          strokeWidth="3.5"
         />
 
-        {/* Inner Crisp White Accent Filigree Border */}
+        {/* Inner Crisp White Accent Filigree Border (Ends BEFORE note text) */}
         <path
-          d="M 150,17 
-             C 156,26 171,36 197,41 
-             C 243,51 274,68 274,103 
-             L 274,378 
-             Q 274,390 260,390 
-             L 40,390 
-             Q 26,390 26,378 
-             L 26,103 
-             C 26,68 57,51 103,41 
-             C 129,36 144,26 150,17 Z"
+          d="M 150,12 
+             C 156,22 171,30 197,34 
+             C 243,42 274,56 274,84 
+             L 274,360 
+             Q 274,368 260,368 
+             L 40,368 
+             Q 26,368 26,360 
+             L 26,84 
+             C 26,56 57,42 103,34 
+             C 129,30 144,22 150,12 Z"
           stroke="#ffffff"
           strokeWidth="1.2"
           strokeDasharray="4 3"
@@ -138,51 +101,49 @@ export function JharokhaArchCard({
         />
       </svg>
 
-      {/* Inner Card Responsive Content Overlay */}
-      <div className="relative z-20 w-full h-full px-4 pt-10 pb-5 flex flex-col items-center justify-between text-center">
+      {/* Inner Card Content Overlay — Illustrations Positioned Comfortably Lower */}
+      <div className="relative z-20 w-full h-full px-4 pt-9 pb-3 flex flex-col items-center justify-between text-center">
         
-        {/* Top Section: Illustration & Title */}
-        <div className="flex flex-col items-center gap-1 w-full">
-          <div className="h-28 flex items-center justify-center">
-            {illustration}
-          </div>
-          
-          <h2 className="font-serif text-sm sm:text-base font-bold uppercase tracking-wider text-white px-1 leading-tight">
+        {/* Top Section: Vector Illustration Shifted a Little Down */}
+        <div className="h-32 flex items-center justify-center shrink-0 mt-3">
+          {illustration}
+        </div>
+        
+        {/* Middle Section: Bolder Title, Larger Price & Badge */}
+        <div className="flex flex-col items-center gap-1 w-full my-auto">
+          <h2 className="font-serif text-sm sm:text-base font-black uppercase tracking-wider text-white px-1 leading-tight mt-1">
             {title}
           </h2>
 
-          <div className="flex items-baseline justify-center gap-1.5 mt-0.5">
-            <span className="font-serif text-3xl sm:text-4xl font-black text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+          <div className="flex items-baseline justify-center gap-2 my-0.5">
+            <span className="font-serif text-4xl sm:text-5xl font-black text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
               {price}
             </span>
             {strikePrice && (
-              <span className="text-[11px] sm:text-xs line-through text-white/80">
+              <span className="text-sm line-through text-white/80 font-bold">
                 {strikePrice}
               </span>
             )}
           </div>
 
           {badgeText && (
-            <span className="rounded-full bg-amber-400/20 px-2.5 py-0.5 text-[9px] font-black uppercase tracking-wider text-[#FEF08A] border border-amber-300/40">
+            <span className="rounded-full bg-amber-400/25 px-3.5 py-0.5 text-[10px] sm:text-[10.5px] font-black uppercase tracking-wider text-[#FEF08A] border border-amber-300/50 shadow-md">
               {badgeText}
             </span>
           )}
         </div>
 
-        {/* Middle Festive Golden Filigree Ornament filling space matching royal theme */}
-        <CardMiddleFiligreeMotif />
-
-        {/* Bottom Section: CTA Button & Note */}
-        <div className="w-full space-y-2 pt-1 pb-2">
+        {/* Bottom Section: Wider & Prominent CTA Button + Clean Note Text */}
+        <div className="w-full space-y-1.5 shrink-0 pt-0.5">
           <Link
             to={to}
             search={search}
-            className="w-full inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] px-4 py-3 font-sans text-sm font-black uppercase tracking-wider text-[#0c1445] shadow-md transition hover:brightness-110 hover:scale-[1.02] active:scale-[0.98]"
+            className="w-full inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-5 py-2 font-sans text-xs sm:text-sm font-black uppercase tracking-wider text-[#0c1445] shadow-xl transition hover:brightness-110 hover:scale-[1.02] active:scale-[0.98]"
           >
             {buttonText}
           </Link>
 
-          <p className="text-xs font-bold text-white leading-tight drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+          <p className="text-[10.5px] font-bold text-white/95 leading-tight pt-0.5">
             {noteText}
           </p>
         </div>

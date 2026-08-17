@@ -2,161 +2,258 @@ import React from "react";
 
 export function DiyaLamp({ className = "w-8 h-8" }: { className?: string }) {
   return (
-    <svg className={`overflow-visible ${className}`} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className={className} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <radialGradient id="diyaFlameGlow" cx="50%" cy="30%" r="40%">
+        <radialGradient id="flameGlow" cx="50%" cy="50%" r="50%">
           <stop offset="0%" stopColor="#FFF7ED" />
-          <stop offset="40%" stopColor="#F59E0B" />
-          <stop offset="80%" stopColor="#EF4444" />
-          <stop offset="100%" stopColor="transparent" />
+          <stop offset="30%" stopColor="#F59E0B" />
+          <stop offset="70%" stopColor="#D97706" />
+          <stop offset="100%" stopColor="#78350F" stopOpacity="0" />
         </radialGradient>
-        <linearGradient id="brassGrad" x1="0" y1="0" x2="1" y2="1">
+        <linearGradient id="brassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#FEF08A" />
-          <stop offset="50%" stopColor="#E5C158" />
-          <stop offset="100%" stopColor="#92400E" />
+          <stop offset="40%" stopColor="#F59E0B" />
+          <stop offset="80%" stopColor="#B45309" />
+          <stop offset="100%" stopColor="#78350F" />
         </linearGradient>
-
-        {/* CSS Keyframes for Flame Flickering & Dancing Motion */}
-        <style>{`
-          @keyframes flameDance {
-            0% { transform: scale(1) rotate(0deg) translateY(0px); opacity: 0.95; }
-            25% { transform: scale(1.08, 0.94) rotate(-3deg) translateY(-1px); opacity: 1; }
-            50% { transform: scale(0.95, 1.06) rotate(3deg) translateY(-2px); opacity: 0.9; }
-            75% { transform: scale(1.04, 0.97) rotate(-2deg) translateY(-1px); opacity: 1; }
-            100% { transform: scale(1) rotate(0deg) translateY(0px); opacity: 0.95; }
-          }
-          @keyframes flamePulse {
-            0%, 100% { transform: scale(1); opacity: 0.7; }
-            50% { transform: scale(1.25); opacity: 0.95; }
-          }
-          @keyframes risingSpark {
-            0% { transform: translateY(0) scale(1); opacity: 0.9; }
-            100% { transform: translateY(-25px) scale(0.2); opacity: 0; }
-          }
-          .animate-flame-dance {
-            animation: flameDance 1.4s ease-in-out infinite alternate;
-            transform-origin: 50px 48px;
-          }
-          .animate-flame-pulse {
-            animation: flamePulse 2s ease-in-out infinite alternate;
-            transform-origin: 50px 32px;
-          }
-          .animate-spark-1 {
-            animation: risingSpark 1.6s ease-out infinite;
-          }
-          .animate-spark-2 {
-            animation: risingSpark 2.1s ease-out infinite 0.7s;
-          }
-        `}</style>
       </defs>
-
-      {/* Luminous Pulsing Flame Aura */}
-      <circle cx="50" cy="32" r="28" fill="url(#diyaFlameGlow)" className="animate-flame-pulse" />
-
-      {/* Rising Spark Embers from Flame Tip */}
-      <circle cx="50" cy="20" r="1.5" fill="#FEF08A" className="animate-spark-1" />
-      <circle cx="48" cy="18" r="1.2" fill="#F59E0B" className="animate-spark-2" />
-
-      {/* Dancing / Flickering Outer Flame */}
+      {/* Outer Flame Glow */}
+      <circle cx="50" cy="30" r="28" fill="url(#flameGlow)" opacity="0.85" />
+      {/* Flame Drop */}
       <path
-        d="M50 8 C55 20, 61 28, 61 38 C61 47, 55 50, 50 50 C45 50, 39 47, 39 38 C39 28, 45 20, 50 8 Z"
-        fill="#F59E0B"
-        className="animate-flame-dance"
-      />
-
-      {/* Dancing Inner Flame Core */}
-      <path
-        d="M50 16 C53 24, 57 30, 57 38 C57 43, 53 46, 50 46 C47 46, 43 43, 43 38 C43 30, 47 24, 50 16 Z"
-        fill="#FEF08A"
-        className="animate-flame-dance"
-      />
-
-      {/* Brass Diya Base Body */}
-      <path
-        d="M15 50 C15 50 20 78 50 78 C80 78 85 50 85 50 C85 50 92 48 88 56 C80 74 65 85 50 85 C35 85 20 74 12 56 C8 48 15 50 15 50 Z"
-        fill="url(#brassGrad)"
-        stroke="#B8860B"
+        d="M50 8 Q60 25 50 42 Q40 25 50 8 Z"
+        fill="#FFF7ED"
+        stroke="#F59E0B"
         strokeWidth="1.5"
       />
-      <path d="M15 50 Q50 62 85 50 Q50 56 15 50 Z" fill="#92400E" />
-      <path d="M38 82 L62 82 L66 90 L34 90 Z" fill="url(#brassGrad)" stroke="#92400E" strokeWidth="1" />
-    </svg>
-  );
-}
-
-export function HangingDiyaString({ className = "w-6 h-48" }: { className?: string }) {
-  return (
-    <svg className={`overflow-visible ${className}`} viewBox="0 0 60 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      {/* String */}
-      <line x1="30" y1="0" x2="30" y2="160" stroke="#E5C158" strokeWidth="2" strokeDasharray="4 3" />
-      {/* Decorative Beads */}
-      <circle cx="30" cy="30" r="5" fill="#F59E0B" />
-      <circle cx="30" cy="65" r="5" fill="#EF4444" />
-      <circle cx="30" cy="100" r="5" fill="#F59E0B" />
-      <circle cx="30" cy="135" r="5" fill="#FEF08A" />
-      {/* Diya at bottom with dancing flame */}
-      <g transform="translate(-20, 110)">
-        <DiyaLamp className="w-18 h-18" />
-      </g>
-    </svg>
-  );
-}
-
-export function IndianDancerIllustration({ className = "w-24 h-32" }: { className?: string }) {
-  return (
-    <div className={`relative ${className}`}>
-      <div className="absolute inset-0 bg-yellow-400/20 blur-xl rounded-full animate-pulse" />
+      <path
+        d="M50 16 Q55 27 50 38 Q45 27 50 16 Z"
+        fill="#F59E0B"
+      />
+      <circle cx="50" cy="32" r="4" fill="#FEF08A" />
       
-      <svg className="w-full h-full relative z-10" viewBox="0 0 100 130" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="lehengaGrad" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="#EC4899" />
-            <stop offset="50%" stopColor="#BE123C" />
-            <stop offset="100%" stopColor="#F59E0B" />
-          </linearGradient>
-          <linearGradient id="dupattaGrad" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#FEF08A" />
-            <stop offset="100%" stopColor="#F59E0B" />
-          </linearGradient>
-        </defs>
+      {/* Diya Clay / Brass Bowl Base */}
+      <path
+        d="M15 50 Q50 90 85 50 Q50 62 15 50 Z"
+        fill="url(#brassGrad)"
+        stroke="#451A03"
+        strokeWidth="2"
+      />
+      {/* Ornate Rim Motifs */}
+      <path
+        d="M20 52 Q50 64 80 52"
+        stroke="#FEF08A"
+        strokeWidth="2.5"
+        strokeDasharray="4 2"
+        fill="none"
+      />
+      {/* Stand Base */}
+      <path
+        d="M38 72 L62 72 L68 85 L32 85 Z"
+        fill="url(#brassGrad)"
+        stroke="#451A03"
+        strokeWidth="1.5"
+      />
+    </svg>
+  );
+}
 
-        <circle cx="50" cy="22" r="8" fill="#FDBA74" />
-        <circle cx="50" cy="19" r="1.5" fill="#EF4444" />
-        <path d="M42 16 Q50 8 58 16 Z" fill="#F59E0B" />
-        <circle cx="50" cy="10" r="3" fill="#FEF08A" />
-
-        <path d="M25 36 Q38 28 50 30 Q62 28 75 36" stroke="#FDBA74" strokeWidth="4" strokeLinecap="round" />
-        <circle cx="23" cy="37" r="2.5" fill="#EF4444" />
-        <circle cx="77" cy="37" r="2.5" fill="#EF4444" />
-
-        <path d="M43 30 L57 30 L54 44 L46 44 Z" fill="#BE123C" stroke="#FEF08A" strokeWidth="1" />
-        <path d="M40 32 Q50 38 60 32" stroke="url(#dupattaGrad)" strokeWidth="3" />
-
-        <path
-          d="M50 44 C30 52, 12 75, 8 105 C30 112, 70 112, 92 105 C88 75, 70 52, 50 44 Z"
-          fill="url(#lehengaGrad)"
-          stroke="#FEF08A"
-          strokeWidth="2"
-        />
-
-        <path d="M8 105 Q50 115 92 105" stroke="#FEF08A" strokeWidth="4" fill="none" />
-        <path d="M50 44 L25 108 M50 44 L50 111 M50 44 L75 108" stroke="#FEF08A" strokeWidth="1.5" opacity="0.7" />
-
-        <path d="M40 108 L36 120 M60 108 L64 120" stroke="#FDBA74" strokeWidth="3.5" strokeLinecap="round" />
-        <circle cx="35" cy="120" r="2" fill="#FEF08A" />
-        <circle cx="65" cy="120" r="2" fill="#FEF08A" />
+export function HangingDiyaString({ className = "w-8 h-48" }: { className?: string }) {
+  return (
+    <div className={`flex flex-col items-center ${className}`}>
+      {/* Vertical Beaded String */}
+      <svg className="w-full h-full" viewBox="0 0 40 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <line x1="20" y1="0" x2="20" y2="200" stroke="#FEF08A" strokeWidth="2" strokeDasharray="3 3" />
+        <circle cx="20" cy="30" r="4" fill="#F59E0B" stroke="#78350F" strokeWidth="1" />
+        <circle cx="20" cy="70" r="5" fill="#DC2626" stroke="#78350F" strokeWidth="1" />
+        <circle cx="20" cy="110" r="4" fill="#F59E0B" stroke="#78350F" strokeWidth="1" />
+        <circle cx="20" cy="150" r="6" fill="#FEF08A" stroke="#78350F" strokeWidth="1.5" />
+        <g transform="translate(-10, 150) scale(0.6)">
+          <DiyaLamp className="w-16 h-16" />
+        </g>
       </svg>
     </div>
   );
 }
 
-export function GoldTrophyIllustration({ className = "w-24 h-28" }: { className?: string }) {
+export function IndianDancerIllustration({ className = "w-24 h-28" }: { className?: string }) {
   return (
-    <div className={`relative ${className}`}>
+    <div className={`relative flex items-center justify-center ${className}`}>
+      {/* Background Starburst Aura */}
+      <div className="absolute inset-0 bg-amber-400/20 blur-lg rounded-full animate-pulse" />
+      <svg className="w-full h-full relative z-10" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="skirtGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#F43F5E" />
+            <stop offset="50%" stopColor="#BE123C" />
+            <stop offset="100%" stopColor="#881337" />
+          </linearGradient>
+          <linearGradient id="dupattaGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="#F59E0B" />
+            <stop offset="100%" stopColor="#FEF08A" />
+          </linearGradient>
+        </defs>
+        
+        {/* Background Starburst Sparkles */}
+        {[15, 45, 75, 105, 135, 165].map((ang, i) => (
+          <line
+            key={i}
+            x1="50"
+            y1="50"
+            x2={50 + 42 * Math.cos((ang * Math.PI) / 180)}
+            y2={50 + 42 * Math.sin((ang * Math.PI) / 180)}
+            stroke="#FEF08A"
+            strokeWidth="1"
+            strokeDasharray="2 4"
+            opacity="0.6"
+          />
+        ))}
+
+        {/* Flared Ghagra / Dance Skirt */}
+        <path
+          d="M50 45 Q20 70 10 100 Q50 112 90 100 Q80 70 50 45 Z"
+          fill="url(#skirtGrad)"
+          stroke="#FEF08A"
+          strokeWidth="2"
+        />
+        {/* Gold Border Motifs on Skirt */}
+        <path
+          d="M14 96 Q50 108 86 96"
+          stroke="#F59E0B"
+          strokeWidth="4"
+          fill="none"
+        />
+        <path
+          d="M16 92 Q50 104 84 92"
+          stroke="#FEF08A"
+          strokeWidth="1.5"
+          strokeDasharray="3 2"
+          fill="none"
+        />
+
+        {/* Dupatta / Shawl Flow */}
+        <path
+          d="M32 35 C15 45 5 70 15 85 C25 65 35 48 45 42 Z"
+          fill="url(#dupattaGrad)"
+          opacity="0.9"
+        />
+        <path
+          d="M68 35 C85 45 95 70 85 85 C75 65 65 48 55 42 Z"
+          fill="url(#dupattaGrad)"
+          opacity="0.9"
+        />
+
+        {/* Torso & Choli */}
+        <path
+          d="M40 32 L60 32 L55 48 L45 48 Z"
+          fill="#F59E0B"
+          stroke="#78350F"
+          strokeWidth="1"
+        />
+
+        {/* Head & Hair Crown */}
+        <circle cx="50" cy="22" r="8" fill="#FDE047" />
+        <circle cx="50" cy="22" r="6.5" fill="#78350F" />
+        {/* Bindi & Maang Tikka */}
+        <circle cx="50" cy="20" r="1.5" fill="#DC2626" />
+        <line x1="50" y1="14" x2="50" y2="18" stroke="#FEF08A" strokeWidth="1.5" />
+
+        {/* Dance Mudra Arms */}
+        <path
+          d="M40 34 C30 25 22 15 28 10 C32 14 38 24 42 32 Z"
+          fill="#FDE047"
+          stroke="#78350F"
+          strokeWidth="1"
+        />
+        <path
+          d="M60 34 C70 25 78 15 72 10 C68 14 62 24 58 32 Z"
+          fill="#FDE047"
+          stroke="#78350F"
+          strokeWidth="1"
+        />
+      </svg>
+    </div>
+  );
+}
+
+export function GoldTrophyIllustration({ className = "w-24 h-24" }: { className?: string }) {
+  return (
+    <div className={`relative flex items-center justify-center ${className}`}>
       <div className="absolute inset-0 bg-amber-400/25 blur-xl rounded-full animate-pulse" />
-      <svg className="w-full h-full relative z-10" viewBox="0 0 100 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg className="w-full h-full relative z-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="trophyGold" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stopColor="#FFF7ED" />
+            <stop offset="30%" stopColor="#FEF08A" />
+            <stop offset="70%" stopColor="#F59E0B" />
+            <stop offset="100%" stopColor="#B45309" />
+          </linearGradient>
+          <linearGradient id="baseGold" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#78350F" />
+            <stop offset="50%" stopColor="#451A03" />
+            <stop offset="100%" stopColor="#1E1B4B" />
+          </linearGradient>
+        </defs>
+
+        {/* Sparkle Rays */}
+        {[0, 45, 90, 135, 180, 225, 270, 315].map((ang, i) => (
+          <line
+            key={i}
+            x1="50"
+            y1="40"
+            x2={50 + 38 * Math.cos((ang * Math.PI) / 180)}
+            y2={40 + 38 * Math.sin((ang * Math.PI) / 180)}
+            stroke="#FEF08A"
+            strokeWidth="1.5"
+            strokeDasharray="3 3"
+            opacity="0.75"
+          />
+        ))}
+
+        {/* Handles */}
+        <path
+          d="M20 18 C10 18 10 42 28 42 M80 18 C90 18 90 42 72 42"
+          stroke="url(#trophyGold)"
+          strokeWidth="5"
+          fill="none"
+          strokeLinecap="round"
+        />
+
+        {/* Cup Body */}
+        <path
+          d="M25 12 L75 12 L68 48 C62 62 38 62 32 48 Z"
+          fill="url(#trophyGold)"
+          stroke="#78350F"
+          strokeWidth="1.5"
+        />
+
+        {/* Embossed Star */}
+        <polygon
+          points="50,22 53,30 62,30 55,35 58,43 50,38 42,43 45,35 38,30 47,30"
+          fill="#FFF7ED"
+          stroke="#B45309"
+          strokeWidth="1"
+        />
+
+        {/* Stem */}
+        <rect x="44" y="60" width="12" height="14" fill="url(#trophyGold)" stroke="#78350F" strokeWidth="1" />
+        
+        {/* Tiered Pedestal Base */}
+        <path d="M30 74 L70 74 L75 88 L25 88 Z" fill="url(#baseGold)" stroke="#F59E0B" strokeWidth="1.5" />
+        <rect x="22" y="88" width="56" height="6" fill="url(#trophyGold)" rx="1.5" />
+      </svg>
+    </div>
+  );
+}
+
+/* Two Interlocking Scalloped Blue & Red Circular Badges for Card 3 */
+export function DualInterlockingBadges({ className = "w-24 h-22" }: { className?: string }) {
+  return (
+    <div className={`relative flex items-center justify-center ${className}`}>
+      <div className="absolute inset-0 bg-amber-400/30 blur-lg rounded-full animate-pulse" />
+      <svg className="w-full h-full relative z-10" viewBox="0 0 140 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="badgeGoldGrad" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor="#FFF7ED" />
             <stop offset="40%" stopColor="#FEF08A" />
             <stop offset="80%" stopColor="#E5C158" />
@@ -164,110 +261,39 @@ export function GoldTrophyIllustration({ className = "w-24 h-28" }: { className?
           </linearGradient>
         </defs>
 
-        <path d="M22 25 C8 25 8 50 26 55" stroke="url(#trophyGold)" strokeWidth="6" strokeLinecap="round" fill="none" />
-        <path d="M78 25 C92 25 92 50 74 55" stroke="url(#trophyGold)" strokeWidth="6" strokeLinecap="round" fill="none" />
+        {/* 1. Left Scalloped Circle (Blue `#1e1b4b`) */}
+        <g>
+          <circle cx="45" cy="40" r="34" fill="#1e1b4b" stroke="url(#badgeGoldGrad)" strokeWidth="3" />
+          <circle cx="45" cy="40" r="29" fill="none" stroke="#FEF08A" strokeWidth="1" strokeDasharray="3 2" opacity="0.8" />
+          
+          {/* Mini Dancer Silhouette inside Left Badge */}
+          <g transform="translate(25, 20) scale(0.4)">
+            <path d="M50 20 C35 30 20 50 15 80 C35 88 65 88 85 80 C80 50 65 30 50 20 Z" fill="#F472B6" />
+            <circle cx="50" cy="14" r="7" fill="#FEF08A" />
+          </g>
+        </g>
 
-        <path d="M22 15 L78 15 L70 60 C65 72 35 72 30 60 Z" fill="url(#trophyGold)" stroke="#B8860B" strokeWidth="2" />
-        <polygon points="50,26 53,35 62,35 54,41 57,50 50,44 43,50 46,41 38,35 47,35" fill="#92400E" />
+        {/* 2. Right Scalloped Circle (Red `#881337`) */}
+        <g>
+          <circle cx="95" cy="40" r="34" fill="#881337" stroke="url(#badgeGoldGrad)" strokeWidth="3" />
+          <circle cx="95" cy="40" r="29" fill="none" stroke="#FEF08A" strokeWidth="1" strokeDasharray="3 2" opacity="0.8" />
+          
+          {/* Mini Trophy & Icons inside Right Badge */}
+          <g transform="translate(80, 20) scale(0.35)">
+            <path d="M22 15 L78 15 L70 55 C65 65 35 65 30 55 Z" fill="url(#badgeGoldGrad)" />
+            <rect x="28" y="68" width="44" height="10" fill="#FEF08A" rx="2" />
+          </g>
+        </g>
 
-        <path d="M44 68 L56 68 L54 85 L46 85 Z" fill="url(#trophyGold)" />
-        <rect x="26" y="85" width="48" height="12" rx="3" fill="#451A03" stroke="#FEF08A" strokeWidth="1.5" />
-        <rect x="22" y="97" width="56" height="8" rx="2" fill="url(#trophyGold)" />
+        {/* Gold Interlocking Center Sparkle */}
+        <circle cx="70" cy="40" r="4" fill="#FEF08A" stroke="#92400E" strokeWidth="1" />
       </svg>
     </div>
   );
 }
 
-export function DualMandalaEmblem({ className = "w-32 h-20" }: { className?: string }) {
-  return (
-    <div className={`relative flex items-center justify-center ${className}`}>
-      <div className="w-16 h-16 rounded-full bg-[#1e1b4b] border-2 border-[#FEF08A] shadow-lg flex items-center justify-center z-10 overflow-hidden transform -translate-x-2">
-        <IndianDancerIllustration className="w-12 h-14" />
-      </div>
-      <div className="w-16 h-16 rounded-full bg-[#9f1239] border-2 border-[#FEF08A] shadow-lg flex items-center justify-center z-20 overflow-hidden transform translate-x-2">
-        <GoldTrophyIllustration className="w-12 h-14" />
-      </div>
-    </div>
-  );
-}
-
-/* Rich Glowing Gold Filigree 4-Quadrant Mandala Emblem for Card 3 */
 export function FourIconBundleEmblem({ className = "w-24 h-24" }: { className?: string }) {
-  return (
-    <div className={`relative flex items-center justify-center ${className}`}>
-      <div className="absolute inset-0 bg-amber-400/30 blur-xl rounded-full animate-pulse" />
-      <svg className="w-full h-full relative z-10" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="emblemGoldGrad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#FFF7ED" />
-            <stop offset="35%" stopColor="#FEF08A" />
-            <stop offset="70%" stopColor="#E5C158" />
-            <stop offset="100%" stopColor="#92400E" />
-          </linearGradient>
-          <radialGradient id="quadrantBg" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#500724" />
-            <stop offset="100%" stopColor="#1e1b4b" />
-          </radialGradient>
-        </defs>
-
-        {/* Outer Circular Gold Filigree Ring & Filigree Scallops */}
-        <circle cx="50" cy="50" r="47" fill="url(#quadrantBg)" stroke="url(#emblemGoldGrad)" strokeWidth="3.5" />
-        <circle cx="50" cy="50" r="42" fill="none" stroke="#FEF08A" strokeWidth="1.2" strokeDasharray="4 2" opacity="0.85" />
-
-        {/* 4 Quadrant Background Divisions */}
-        <path d="M50 10 A40 40 0 0 0 10 50 L50 50 Z" fill="#252270" opacity="0.4" />
-        <path d="M50 10 A40 40 0 0 1 90 50 L50 50 Z" fill="#881337" opacity="0.4" />
-        <path d="M10 50 A40 40 0 0 0 50 90 L50 50 Z" fill="#881337" opacity="0.4" />
-        <path d="M90 50 A40 40 0 0 1 50 90 L50 50 Z" fill="#252270" opacity="0.4" />
-
-        {/* Gold Filigree Quadrant Separators */}
-        <line x1="50" y1="10" x2="50" y2="90" stroke="url(#emblemGoldGrad)" strokeWidth="2" opacity="0.9" />
-        <line x1="10" y1="50" x2="90" y2="50" stroke="url(#emblemGoldGrad)" strokeWidth="2" opacity="0.9" />
-        <circle cx="50" cy="50" r="28" fill="none" stroke="#FEF08A" strokeWidth="1" opacity="0.5" />
-
-        {/* 1. Top-Left Quadrant: Indian Dancer Motif */}
-        <g transform="translate(20, 18) scale(0.3)">
-          <path d="M50 15 C35 25, 20 45, 15 75 C35 82, 65 82, 85 75 C80 45, 65 25, 50 15 Z" fill="#F472B6" />
-          <circle cx="50" cy="10" r="7" fill="#FEF08A" />
-        </g>
-
-        {/* 2. Top-Right Quadrant: Gold Trophy Motif */}
-        <g transform="translate(56, 18) scale(0.3)">
-          <path d="M22 15 L78 15 L70 55 C65 65 35 65 30 55 Z" fill="url(#emblemGoldGrad)" />
-          <rect x="28" y="68" width="44" height="12" fill="#FEF08A" rx="2" />
-        </g>
-
-        {/* 3. Bottom-Left Quadrant: Wine Glasses / Dinner Motif */}
-        <g transform="translate(20, 54) scale(0.3)">
-          <path d="M25 20 L45 20 L35 50 L35 70 M22 70 L48 70" stroke="#FEF08A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
-          <path d="M55 20 L75 20 L65 50 L65 70 M52 70 L78 70" stroke="#FEF08A" strokeWidth="3.5" fill="none" strokeLinecap="round" />
-          <path d="M27 30 Q35 35 43 30" stroke="#F59E0B" strokeWidth="2" fill="none" />
-          <path d="M57 30 Q65 35 73 30" stroke="#F59E0B" strokeWidth="2" fill="none" />
-        </g>
-
-        {/* 4. Bottom-Right Quadrant: Fireworks Sparkle Motif */}
-        <g transform="translate(56, 54) scale(0.3)">
-          {[0, 45, 90, 135, 180, 225, 270, 315].map((ang, i) => (
-            <line
-              key={i}
-              x1="50"
-              y1="50"
-              x2={50 + 26 * Math.cos((ang * Math.PI) / 180)}
-              y2={50 + 26 * Math.sin((ang * Math.PI) / 180)}
-              stroke="#FEF08A"
-              strokeWidth="3"
-              strokeLinecap="round"
-            />
-          ))}
-          <circle cx="50" cy="50" r="6" fill="#FFF7ED" />
-        </g>
-
-        {/* Center Golden Filigree Flower Core */}
-        <circle cx="50" cy="50" r="7" fill="#FEF08A" stroke="#92400E" strokeWidth="1.5" />
-        <circle cx="50" cy="50" r="3.5" fill="#BE123C" />
-      </svg>
-    </div>
-  );
+  return <DualInterlockingBadges className={className} />;
 }
 
 export function RangoliMandala({ className = "w-48 h-48" }: { className?: string }) {
