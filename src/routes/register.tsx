@@ -1,12 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { ArrowLeft, Printer } from "lucide-react";
+import { ArrowLeft, Printer, RotateCcw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import icckLogo from "@/assets/logo.svg";
 
-const title = "Registration & Invoice | ICCK Business Awards 2026";
+const title = "Registration & Invoice | ICCK Diwali Celebrations 2026";
 const description =
   "Register as an individual guest, book a table, or add a sponsorship package and generate a printable ICCK invoice instantly.";
 
@@ -84,26 +84,149 @@ function RegisterPage() {
   const generate = () => {
     setIssued({
       number: `ICCK-2026-${Math.floor(1000 + Math.random() * 9000)}`,
-      date: new Date().toLocaleDateString(),
+      date: new Date().toLocaleDateString("en-GB", {
+        day: "2-digit",
+        month: "long",
+        year: "numeric",
+      }),
     });
   };
 
+  const reset = () => setIssued(null);
+
+  /* ─── PHASE 2: Full-screen invoice (form is gone) ─── */
+  if (issued) {
+    return (
+      <main className="min-h-screen bg-gradient-navy px-4 py-10 print:bg-white print:p-0">
+        {/* Action bar — hidden when printing */}
+        <div className="mx-auto mb-6 flex max-w-3xl items-center justify-between print:hidden">
+          <button
+            onClick={reset}
+            className="inline-flex items-center gap-2 rounded-md border border-gold/40 bg-transparent px-4 py-2 text-sm text-gold transition hover:bg-gold/10"
+          >
+            <RotateCcw className="h-4 w-4" />
+            Edit / Start over
+          </button>
+
+          <Button
+            className="bg-gradient-gold text-gold-foreground hover:opacity-90"
+            onClick={() => window.print()}
+          >
+            <Printer className="mr-2 h-4 w-4" />
+            Download / Print PDF
+          </Button>
+        </div>
+
+        {/* Invoice panel — full width */}
+        <div className="mx-auto max-w-3xl rounded-xl border border-slate-200 bg-white p-8 text-slate-900 shadow-elegant print:border-0 print:shadow-none print:rounded-none print:max-w-none">
+          {/* Header */}
+          <header className="flex items-start justify-between gap-4 border-b border-slate-200 pb-6">
+            <img src={icckLogo} alt="ICCK" width={940} height={347} className="h-10 w-auto" />
+            <div className="text-right text-xs">
+              <p className="font-display text-lg font-bold uppercase tracking-wide text-slate-800">
+                Invoice
+              </p>
+              <p className="mt-0.5 text-slate-500">No. {issued.number}</p>
+              <p className="text-slate-500">Date: {issued.date}</p>
+            </div>
+          </header>
+
+          {/* Billing info */}
+          <div className="grid gap-6 py-6 text-sm sm:grid-cols-2">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
+                Billed to
+              </p>
+              <p className="mt-1.5 font-semibold text-slate-800">{name}</p>
+              {company && <p className="text-slate-600">{company}</p>}
+              <p className="text-slate-600">{email}</p>
+              {phone && <p className="text-slate-600">{phone}</p>}
+            </div>
+            <div className="sm:text-right">
+              <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">From</p>
+              <p className="mt-1.5 font-semibold text-slate-800">
+                Indian Chamber of Commerce in Korea
+              </p>
+              <p className="text-slate-600">Seoul, Republic of Korea</p>
+              <p className="text-slate-600">awards@icck.or.kr</p>
+            </div>
+          </div>
+
+          {/* Line items */}
+          <table className="w-full border-collapse text-sm">
+            <thead>
+              <tr className="border-y border-slate-200 text-left text-xs uppercase tracking-wide text-slate-400">
+                <th className="py-3 pr-4">Description</th>
+                <th className="py-3 text-center w-16">Qty</th>
+                <th className="py-3 text-right w-24">Unit price</th>
+                <th className="py-3 text-right w-24">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              {lines.map((l) => (
+                <tr key={l.label} className="border-b border-slate-100">
+                  <td className="py-3 pr-4 font-medium text-slate-800">{l.label}</td>
+                  <td className="py-3 text-center text-slate-600">{l.qty}</td>
+                  <td className="py-3 text-right text-slate-600">${l.unit.toLocaleString()}</td>
+                  <td className="py-3 text-right font-semibold text-slate-800">
+                    ${(l.qty * l.unit).toLocaleString()}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+
+          {/* Totals */}
+          <dl className="ml-auto mt-4 w-64 space-y-1.5 text-sm">
+            <div className="flex justify-between text-slate-600">
+              <dt>Subtotal</dt>
+              <dd>${subtotal.toLocaleString()}</dd>
+            </div>
+            <div className="flex justify-between text-slate-600">
+              <dt>VAT (10%)</dt>
+              <dd>${vat.toLocaleString()}</dd>
+            </div>
+            <div className="flex justify-between border-t border-slate-300 pt-2 text-base font-bold text-slate-900">
+              <dt>Total due</dt>
+              <dd>${total.toLocaleString()}</dd>
+            </div>
+          </dl>
+
+          {/* Footer note */}
+          <p className="mt-8 border-t border-slate-200 pt-4 text-[11px] text-slate-400">
+            Payment due within 14 days of invoice date. This document was generated in-browser for
+            demonstration purposes. Please contact awards@icck.or.kr to confirm your registration.
+          </p>
+        </div>
+
+        {/* Print-only styles */}
+        <style>{`
+          @media print {
+            @page { margin: 1.5cm; }
+          }
+        `}</style>
+      </main>
+    );
+  }
+
+  /* ─── PHASE 1: Registration form + live preview ─── */
   return (
-    <main className="min-h-screen bg-gradient-navy px-4 py-12 print:bg-white">
+    <main className="min-h-screen bg-gradient-navy px-4 py-12">
       <div className="mx-auto max-w-5xl">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-sm text-gold hover:text-gold-light print:hidden"
+          className="inline-flex items-center gap-2 text-sm text-gold hover:text-gold-light"
         >
           <ArrowLeft className="h-4 w-4" /> All events
         </Link>
 
-        <h1 className="mt-6 font-display text-3xl font-bold uppercase tracking-wide text-gradient-gold print:hidden">
-          Registration & Checkout
+        <h1 className="mt-6 font-display text-3xl font-bold uppercase tracking-wide text-gradient-gold">
+          Registration &amp; Checkout
         </h1>
 
         <div className="mt-8 grid gap-8 lg:grid-cols-[1.2fr_1fr]">
-          <section className="space-y-6 rounded-xl border border-gold/25 bg-navy p-6 shadow-elegant print:hidden">
+          {/* Left: form */}
+          <section className="space-y-6 rounded-xl border border-gold/25 bg-navy p-6 shadow-elegant">
             <div className="grid gap-4 sm:grid-cols-2">
               <TextField label="Full name" value={name} onChange={setName} />
               <TextField label="Company" value={company} onChange={setCompany} />
@@ -142,21 +265,23 @@ function RegisterPage() {
 
             <Button
               className="w-full bg-gradient-gold text-gold-foreground hover:opacity-90"
-              disabled={lines.length === 0 || !name}
+              disabled={lines.length === 0 || !name || !email}
               onClick={generate}
             >
-              Generate invoice
+              Generate invoice &amp; confirm registration
             </Button>
           </section>
 
-          <aside className="print:col-span-2">
-            <div className="rounded-xl border border-gold/30 bg-white p-6 text-slate-900 shadow-elegant print:border-0 print:shadow-none">
+          {/* Right: live order summary */}
+          <aside>
+            <div className="rounded-xl border border-gold/30 bg-white p-6 text-slate-900 shadow-elegant">
               <header className="flex items-start justify-between gap-4 border-b border-slate-200 pb-4">
                 <img src={icckLogo} alt="ICCK" width={940} height={347} className="h-8 w-auto" />
                 <div className="text-right text-xs">
-                  <p className="font-display text-base font-bold uppercase tracking-wide">Invoice</p>
-                  <p>No. {issued?.number ?? "—"}</p>
-                  <p>Date: {issued?.date ?? "—"}</p>
+                  <p className="font-display text-base font-bold uppercase tracking-wide">
+                    Order Preview
+                  </p>
+                  <p className="text-slate-400">Invoice generated on submit</p>
                 </div>
               </header>
 
@@ -189,7 +314,7 @@ function RegisterPage() {
                   {lines.length === 0 && (
                     <tr>
                       <td colSpan={4} className="py-6 text-center text-slate-400">
-                        Select at least one item to preview your invoice.
+                        Select at least one item to preview your order.
                       </td>
                     </tr>
                   )}
@@ -205,8 +330,14 @@ function RegisterPage() {
               </table>
 
               <dl className="mt-4 space-y-1 text-xs">
-                <Row label="Subtotal" value={subtotal} />
-                <Row label="VAT (10%)" value={vat} />
+                <div className="flex justify-between text-slate-500">
+                  <dt>Subtotal</dt>
+                  <dd>${subtotal.toLocaleString()}</dd>
+                </div>
+                <div className="flex justify-between text-slate-500">
+                  <dt>VAT (10%)</dt>
+                  <dd>${vat.toLocaleString()}</dd>
+                </div>
                 <div className="flex justify-between border-t border-slate-300 pt-2 font-display text-base font-bold">
                   <dt>Total due</dt>
                   <dd>${total.toLocaleString()}</dd>
@@ -217,28 +348,10 @@ function RegisterPage() {
                 Payment due within 14 days. This is a demo invoice generated in-browser.
               </p>
             </div>
-
-            <Button
-              variant="outline"
-              className="mt-4 w-full border-gold/50 bg-transparent text-gold hover:bg-gold/10 hover:text-gold print:hidden"
-              disabled={!issued}
-              onClick={() => window.print()}
-            >
-              <Printer className="mr-2 h-4 w-4" /> Print / save PDF
-            </Button>
           </aside>
         </div>
       </div>
     </main>
-  );
-}
-
-function Row({ label, value }: { label: string; value: number }) {
-  return (
-    <div className="flex justify-between">
-      <dt className="text-slate-500">{label}</dt>
-      <dd>${value.toLocaleString()}</dd>
-    </div>
   );
 }
 

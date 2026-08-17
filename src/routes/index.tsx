@@ -99,7 +99,7 @@ function Landing() {
       </header>
 
       {/* ---------------- 2. MAIN FESTIVE HERO & TIGHTLY PACKED ARCH CARDS ---------------- */}
-      <main className="relative overflow-hidden z-20 pt-3 pb-4">
+      <main className="relative overflow-hidden z-20 pt-2 pb-6">
         
         {/* Left Vertical Hanging Diya String */}
         <div className="pointer-events-none absolute top-0 left-1 z-30 opacity-90 hidden lg:block">
@@ -114,19 +114,19 @@ function Landing() {
         <section className="relative z-20 mx-auto max-w-4xl px-2 text-center">
           
           {/* Main Compact Title Banner */}
-          <div className="mt-0.5 mb-1.5">
-            <h1 className="font-serif text-xl sm:text-2xl lg:text-3xl font-black leading-[1.05] tracking-wide text-[#FEF08A] drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)] uppercase">
+          <div className="mt-0.5 mb-2">
+            <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-black leading-[1.05] tracking-wide text-[#FEF08A] drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)] uppercase">
               ICCK Diwali Ball:
               <br />
               <span className="italic text-white drop-shadow-[0_2px_10px_rgba(255,255,255,0.4)]">Illuminate Your Celebration!</span>
             </h1>
-            <p className="mt-0.5 text-[9.5px] sm:text-[11px] tracking-[0.16em] text-white/90 uppercase font-semibold">
+            <p className="mt-1 text-[10px] sm:text-xs tracking-[0.16em] text-white/90 uppercase font-semibold">
               Year 2026 &middot; Diwali Theme &middot; Geometric Motifs
             </p>
           </div>
 
           {/* ---------------- 3. TIGHTLY PACKED POINTED ARCH CARDS ---------------- */}
-          <div className="mt-1.5 grid gap-2.5 md:gap-3 md:grid-cols-3 items-end max-w-3xl mx-auto px-1">
+          <div className="mt-2 grid gap-4 md:gap-5 md:grid-cols-3 items-end max-w-5xl mx-auto px-4">
             
             {/* Card 1: ICCK DIWALI BALL */}
             <JharokhaArchCard
@@ -136,7 +136,7 @@ function Landing() {
               noteText="Dinner, dance & performances"
               gradientFrom="#252270"
               gradientTo="#121038"
-              illustration={<IndianDancerIllustration className="w-16 h-22" />}
+              illustration={<IndianDancerIllustration className="w-24 h-28" />}
               to="/register"
               search={{ preset: "ball" }}
             />
@@ -149,7 +149,7 @@ function Landing() {
               noteText="Honoring business excellence"
               gradientFrom="#9f1239"
               gradientTo="#590624"
-              illustration={<GoldTrophyIllustration className="w-16 h-20" />}
+              illustration={<GoldTrophyIllustration className="w-24 h-28" />}
               to="/awards"
             />
 
@@ -165,7 +165,7 @@ function Landing() {
               noteText="Both events at a discounted price"
               gradientFrom="#881337"
               gradientTo="#590624"
-              illustration={<FourIconBundleEmblem className="w-20 h-20" />}
+              illustration={<FourIconBundleEmblem className="w-24 h-24" />}
               to="/register"
               search={{ preset: "bundle" }}
             />

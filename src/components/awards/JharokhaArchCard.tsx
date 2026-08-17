@@ -62,7 +62,7 @@ export function JharokhaArchCard({
   const cardId = title.replace(/[^a-zA-Z0-9]/g, "");
 
   return (
-    <div className="relative flex flex-col items-center w-full max-w-[295px] mx-auto h-[410px] drop-shadow-[0_12px_28px_rgba(0,0,0,0.85)]">
+    <div className="relative flex flex-col items-center w-full max-w-sm mx-auto h-[500px] drop-shadow-[0_12px_28px_rgba(0,0,0,0.85)]">
       
       {/* Top Floating Ribbon Badge if present */}
       {ribbonText && (
@@ -143,16 +143,16 @@ export function JharokhaArchCard({
         
         {/* Top Section: Illustration & Title */}
         <div className="flex flex-col items-center gap-1 w-full">
-          <div className="h-20 flex items-center justify-center">
+          <div className="h-28 flex items-center justify-center">
             {illustration}
           </div>
           
-          <h2 className="font-serif text-xs sm:text-sm font-bold uppercase tracking-wider text-white px-1 leading-tight">
+          <h2 className="font-serif text-sm sm:text-base font-bold uppercase tracking-wider text-white px-1 leading-tight">
             {title}
           </h2>
 
           <div className="flex items-baseline justify-center gap-1.5 mt-0.5">
-            <span className="font-serif text-2xl sm:text-3xl font-black text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+            <span className="font-serif text-3xl sm:text-4xl font-black text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
               {price}
             </span>
             {strikePrice && (
@@ -177,7 +177,7 @@ export function JharokhaArchCard({
           <Link
             to={to}
             search={search}
-            className="w-full inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] px-4 py-2 font-sans text-xs font-black uppercase tracking-wider text-[#0c1445] shadow-md transition hover:brightness-110 hover:scale-[1.02] active:scale-[0.98]"
+            className="w-full inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] px-4 py-3 font-sans text-sm font-black uppercase tracking-wider text-[#0c1445] shadow-md transition hover:brightness-110 hover:scale-[1.02] active:scale-[0.98]"
           >
             {buttonText}
           </Link>
