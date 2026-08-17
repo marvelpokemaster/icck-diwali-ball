@@ -1,24 +1,52 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteHeader } from "@/components/awards/site-header";
+import { Hero } from "@/components/awards/hero";
+import {
+  About,
+  Categories,
+  Contact,
+  Faq,
+  Nomination,
+  Partners,
+  SiteFooter,
+  Timeline,
+  WhyParticipate,
+} from "@/components/awards/sections";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "ICCK Business Awards 2026 | India–Korea Business Excellence";
+const description =
+  "Nominate for the inaugural ICCK Business Awards 2026 honouring India–Korea business excellence. Ceremony Nov 27, 2026 in Seoul.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <SiteHeader />
+      <main>
+        <Hero />
+        <About />
+        <Timeline />
+        <WhyParticipate />
+        <Categories />
+        <Nomination />
+        <Partners />
+        <Faq />
+        <Contact />
+      </main>
+      <SiteFooter />
     </div>
   );
 }
