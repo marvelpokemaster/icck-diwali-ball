@@ -353,7 +353,6 @@ export function FirecrackerCanvas() {
       >
         {/* Rocket Body SVG */}
         <div className="relative group-hover:scale-110 transition-transform">
-          <div className="absolute inset-0 bg-amber-400/40 blur-lg rounded-full animate-pulse" />
           <svg className="w-10 h-14 sm:w-12 sm:h-16 relative z-10 drop-shadow-[0_4px_12px_rgba(245,158,11,0.8)]" viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M20 2 L30 18 L10 18 Z" fill="#EF4444" stroke="#FEF08A" strokeWidth="1.5" />
             <rect x="10" y="18" width="20" height="26" fill="#BE123C" stroke="#FEF08A" strokeWidth="1.5" />
@@ -388,7 +387,6 @@ export function FirecrackerCanvas() {
       >
         {/* Rocket Body SVG */}
         <div className="relative group-hover:scale-110 transition-transform">
-          <div className="absolute inset-0 bg-amber-400/40 blur-lg rounded-full animate-pulse" />
           <svg className="w-10 h-14 sm:w-12 sm:h-16 relative z-10 drop-shadow-[0_4px_12px_rgba(245,158,11,0.8)]" viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M20 2 L30 18 L10 18 Z" fill="#EF4444" stroke="#FEF08A" strokeWidth="1.5" />
             <rect x="10" y="18" width="20" height="26" fill="#BE123C" stroke="#FEF08A" strokeWidth="1.5" />

@@ -38,7 +38,16 @@ export function JharokhaArchCard({
       
       {/* Top Floating Ribbon Badge if present */}
       {ribbonText && (
-        <div className="absolute -top-2.5 sm:-top-3.5 z-40 bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] text-[#0c1445] font-black uppercase text-[7px] xs:text-[8px] sm:text-[9.5px] md:text-xs tracking-tight sm:tracking-[0.14em] px-2 sm:px-4 py-0.5 sm:py-1 rounded-sm sm:rounded-md shadow-xl border border-amber-200 whitespace-nowrap">
+        <div
+          className="absolute -top-2.5 z-40 whitespace-nowrap rounded-sm px-2 py-0.5 font-black uppercase shadow-lg sm:-top-3.5 sm:rounded-md sm:px-4 sm:py-1"
+          style={{
+            background: "linear-gradient(90deg, #A87518, #D9A441, #A87518)",
+            color: "#111A3A",
+            border: "1px solid #7B5522",
+            fontSize: "clamp(7px, 1.5vw, 10px)",
+            letterSpacing: "0.08em",
+          }}
+        >
           {ribbonText}
         </div>
       )}
@@ -58,10 +67,10 @@ export function JharokhaArchCard({
           </linearGradient>
           
           <linearGradient id={`goldGrad-${cardId}`} x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#FFF7ED" />
-            <stop offset="25%" stopColor="#FEF08A" />
-            <stop offset="60%" stopColor="#E5C158" />
-            <stop offset="100%" stopColor="#92400E" />
+            <stop offset="0%" stopColor="#F1C45B" />
+            <stop offset="35%" stopColor="#D9A441" />
+            <stop offset="70%" stopColor="#A87518" />
+            <stop offset="100%" stopColor="#7B5522" />
           </linearGradient>
         </defs>
 
@@ -138,7 +147,13 @@ export function JharokhaArchCard({
           <Link
             to={to}
             search={search}
-            className="w-full inline-flex items-center justify-center rounded-sm sm:rounded-md bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-1.5 sm:px-4 py-1 sm:py-2 font-sans text-[8px] xs:text-[9.5px] sm:text-xs md:text-sm font-black uppercase tracking-tighter sm:tracking-wider text-[#0c1445] shadow-md transition hover:brightness-110"
+            className="inline-flex w-full items-center justify-center rounded-sm px-1.5 py-1 font-sans font-black uppercase tracking-tighter shadow-md transition hover:brightness-110 sm:rounded-md sm:px-4 sm:py-2 sm:tracking-wider"
+            style={{
+              background: "linear-gradient(90deg, #C8891C, #E8B840, #C8891C)",
+              color: "#111A3A",
+              border: "1px solid #A87518",
+              fontSize: "clamp(8px, 2vw, 13px)",
+            }}
           >
             {buttonText}
           </Link>
