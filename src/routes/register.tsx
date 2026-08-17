@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
-import { ArrowLeft, Printer } from "lucide-react";
+import { ArrowLeft, Printer, Pencil } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -58,6 +58,7 @@ function RegisterPage() {
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [individual, setIndividual] = useState<string | null>(preset ?? null);
   const [individualQty, setIndividualQty] = useState(1);
   const [table, setTable] = useState<string | null>(null);
@@ -87,28 +88,67 @@ function RegisterPage() {
     });
   };
 
+  // Phase 3 — on successful checkout the invoice REPLACES the form.
+  if (issued) {
+    return (
+      <main className="min-h-screen bg-gradient-navy px-4 py-12 print:bg-white print:py-0">
+        <div className="mx-auto max-w-3xl">
+          <div className="mb-6 flex flex-wrap items-center justify-between gap-3 print:hidden">
+            <button
+              onClick={() => setIssued(null)}
+              className="inline-flex items-center gap-2 text-sm text-gold hover:text-gold-light"
+            >
+              <Pencil className="h-4 w-4" /> Edit registration
+            </button>
+            <Button
+              className="bg-gradient-gold text-gold-foreground hover:opacity-90"
+              onClick={() => window.print()}
+            >
+              <Printer className="mr-2 h-4 w-4" /> Print / download PDF
+            </Button>
+          </div>
+
+          <Invoice
+            issued={issued}
+            name={name}
+            company={company}
+            email={email}
+            phone={phone}
+            lines={lines}
+            subtotal={subtotal}
+            vat={vat}
+            total={total}
+          />
+        </div>
+      </main>
+    );
+  }
+
   return (
-    <main className="min-h-screen bg-gradient-navy px-4 py-12 print:bg-white">
+    <main className="min-h-screen bg-gradient-navy px-4 py-12">
       <div className="mx-auto max-w-5xl">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-sm text-gold hover:text-gold-light print:hidden"
+          className="inline-flex items-center gap-2 text-sm text-gold hover:text-gold-light"
         >
           <ArrowLeft className="h-4 w-4" /> All events
         </Link>
 
-        <h1 className="mt-6 font-display text-3xl font-bold uppercase tracking-wide text-gradient-gold print:hidden">
+        <h1 className="mt-6 font-display text-3xl font-bold uppercase tracking-wide text-gradient-gold">
           Registration & Checkout
         </h1>
+        <p className="mt-2 text-sm text-primary-foreground/70">
+          Book Diwali Ball tickets or the bundle. Add a table and a sponsorship together — both are
+          combined into one order.
+        </p>
 
-        <div className="mt-8 grid gap-8 lg:grid-cols-[1.2fr_1fr]">
-          <section className="space-y-6 rounded-xl border border-gold/25 bg-navy p-6 shadow-elegant print:hidden">
+        <div className="mt-8 grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-start">
+          <section className="space-y-6 rounded-xl border border-gold/25 bg-navy p-6 shadow-elegant">
             <div className="grid gap-4 sm:grid-cols-2">
-              <TextField label="Full name" value={name} onChange={setName} />
+              <TextField label="Registrant name" value={name} onChange={setName} />
               <TextField label="Company" value={company} onChange={setCompany} />
-              <div className="sm:col-span-2">
-                <TextField label="Email" value={email} onChange={setEmail} type="email" />
-              </div>
+              <TextField label="Email" value={email} onChange={setEmail} type="email" />
+              <TextField label="Phone" value={phone} onChange={setPhone} type="tel" />
             </div>
 
             <Group
@@ -139,92 +179,64 @@ function RegisterPage() {
                 Table booking and sponsorship are aggregated into a single order and invoice.
               </p>
             )}
-
-            <Button
-              className="w-full bg-gradient-gold text-gold-foreground hover:opacity-90"
-              disabled={lines.length === 0 || !name}
-              onClick={generate}
-            >
-              Generate invoice
-            </Button>
           </section>
 
-          <aside className="print:col-span-2">
-            <div className="rounded-xl border border-gold/30 bg-white p-6 text-slate-900 shadow-elegant print:border-0 print:shadow-none">
-              <header className="flex items-start justify-between gap-4 border-b border-slate-200 pb-4">
-                <img src={icckLogo} alt="ICCK" width={940} height={347} className="h-8 w-auto" />
-                <div className="text-right text-xs">
-                  <p className="font-display text-base font-bold uppercase tracking-wide">Invoice</p>
-                  <p>No. {issued?.number ?? "—"}</p>
-                  <p>Date: {issued?.date ?? "—"}</p>
-                </div>
-              </header>
+          {/* Live order summary */}
+          <aside className="lg:sticky lg:top-12">
+            <div className="rounded-xl border border-gold/25 bg-navy p-6 shadow-elegant">
+              <h2 className="font-display text-sm font-bold uppercase tracking-[0.14em] text-gold">
+                Order summary
+              </h2>
 
-              <div className="grid gap-4 py-4 text-xs sm:grid-cols-2">
-                <div>
-                  <p className="font-semibold uppercase tracking-wide text-slate-500">Billed to</p>
-                  <p className="mt-1 font-medium">{name || "—"}</p>
-                  <p>{company || "—"}</p>
-                  <p>{email || "—"}</p>
-                </div>
-                <div className="sm:text-right">
-                  <p className="font-semibold uppercase tracking-wide text-slate-500">From</p>
-                  <p className="mt-1 font-medium">Indian Chamber of Commerce in Korea</p>
-                  <p>Seoul, Republic of Korea</p>
-                  <p>awards@icck.or.kr</p>
-                </div>
+              <div className="mt-4 space-y-3">
+                {lines.length === 0 && (
+                  <p className="text-sm text-primary-foreground/60">
+                    Select at least one item to see your total.
+                  </p>
+                )}
+                {lines.map((l) => (
+                  <div key={l.label} className="flex justify-between gap-4 text-sm">
+                    <span className="text-primary-foreground/85">
+                      {l.label}
+                      {l.qty > 1 && (
+                        <span className="text-primary-foreground/55"> × {l.qty}</span>
+                      )}
+                    </span>
+                    <span className="font-semibold text-primary-foreground">
+                      ${(l.qty * l.unit).toLocaleString()}
+                    </span>
+                  </div>
+                ))}
               </div>
 
-              <table className="w-full text-xs">
-                <thead className="border-y border-slate-200 text-left uppercase tracking-wide text-slate-500">
-                  <tr>
-                    <th className="py-2">Description</th>
-                    <th className="py-2 text-center">Qty</th>
-                    <th className="py-2 text-right">Unit</th>
-                    <th className="py-2 text-right">Amount</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {lines.length === 0 && (
-                    <tr>
-                      <td colSpan={4} className="py-6 text-center text-slate-400">
-                        Select at least one item to preview your invoice.
-                      </td>
-                    </tr>
-                  )}
-                  {lines.map((l) => (
-                    <tr key={l.label} className="border-b border-slate-100">
-                      <td className="py-2">{l.label}</td>
-                      <td className="py-2 text-center">{l.qty}</td>
-                      <td className="py-2 text-right">${l.unit.toLocaleString()}</td>
-                      <td className="py-2 text-right">${(l.qty * l.unit).toLocaleString()}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-
-              <dl className="mt-4 space-y-1 text-xs">
-                <Row label="Subtotal" value={subtotal} />
-                <Row label="VAT (10%)" value={vat} />
-                <div className="flex justify-between border-t border-slate-300 pt-2 font-display text-base font-bold">
-                  <dt>Total due</dt>
+              <dl className="mt-5 space-y-2 border-t border-gold/20 pt-4 text-sm">
+                <div className="flex justify-between text-primary-foreground/75">
+                  <dt>Subtotal</dt>
+                  <dd>${subtotal.toLocaleString()}</dd>
+                </div>
+                <div className="flex justify-between text-primary-foreground/75">
+                  <dt>VAT (10%)</dt>
+                  <dd>${vat.toLocaleString()}</dd>
+                </div>
+                <div className="flex justify-between border-t border-gold/20 pt-3 font-display text-lg font-bold text-gold-light">
+                  <dt>Total payable</dt>
                   <dd>${total.toLocaleString()}</dd>
                 </div>
               </dl>
 
-              <p className="mt-4 border-t border-slate-200 pt-3 text-[10px] text-slate-500">
-                Payment due within 14 days. This is a demo invoice generated in-browser.
-              </p>
+              <Button
+                className="mt-6 w-full bg-gradient-gold text-gold-foreground hover:opacity-90"
+                disabled={lines.length === 0 || !name}
+                onClick={generate}
+              >
+                Complete registration
+              </Button>
+              {lines.length > 0 && !name && (
+                <p className="mt-2 text-center text-xs text-primary-foreground/55">
+                  Enter the registrant name to continue.
+                </p>
+              )}
             </div>
-
-            <Button
-              variant="outline"
-              className="mt-4 w-full border-gold/50 bg-transparent text-gold hover:bg-gold/10 hover:text-gold print:hidden"
-              disabled={!issued}
-              onClick={() => window.print()}
-            >
-              <Printer className="mr-2 h-4 w-4" /> Print / save PDF
-            </Button>
           </aside>
         </div>
       </div>
@@ -232,11 +244,109 @@ function RegisterPage() {
   );
 }
 
-function Row({ label, value }: { label: string; value: number }) {
+function Invoice({
+  issued,
+  name,
+  company,
+  email,
+  phone,
+  lines,
+  subtotal,
+  vat,
+  total,
+}: {
+  issued: { number: string; date: string };
+  name: string;
+  company: string;
+  email: string;
+  phone: string;
+  lines: Line[];
+  subtotal: number;
+  vat: number;
+  total: number;
+}) {
   return (
-    <div className="flex justify-between">
-      <dt className="text-slate-500">{label}</dt>
-      <dd>${value.toLocaleString()}</dd>
+    <div className="rounded-xl border border-gold/30 bg-white p-8 text-slate-900 shadow-elegant print:rounded-none print:border-0 print:p-0 print:shadow-none">
+      <header className="flex flex-wrap items-start justify-between gap-4 border-b border-slate-200 pb-5">
+        <div>
+          <img src={icckLogo} alt="ICCK" width={940} height={347} className="h-9 w-auto" />
+          <p className="mt-2 text-xs text-slate-500">Indian Chamber of Commerce in Korea</p>
+        </div>
+        <div className="text-right text-xs">
+          <p className="font-display text-lg font-bold uppercase tracking-wide">
+            Invoice & Receipt
+          </p>
+          <p className="mt-1">No. {issued.number}</p>
+          <p>Date: {issued.date}</p>
+        </div>
+      </header>
+
+      <div className="grid gap-4 py-5 text-xs sm:grid-cols-2">
+        <div>
+          <p className="font-semibold uppercase tracking-wide text-slate-500">Billed to</p>
+          <p className="mt-1 font-medium">{name || "—"}</p>
+          {company && <p>{company}</p>}
+          {email && <p>{email}</p>}
+          {phone && <p>{phone}</p>}
+        </div>
+        <div className="sm:text-right">
+          <p className="font-semibold uppercase tracking-wide text-slate-500">From</p>
+          <p className="mt-1 font-medium">Indian Chamber of Commerce in Korea</p>
+          <p>Seoul, Republic of Korea</p>
+          <p>awards@icck.or.kr</p>
+        </div>
+      </div>
+
+      <table className="w-full text-xs">
+        <thead className="border-y border-slate-200 text-left uppercase tracking-wide text-slate-500">
+          <tr>
+            <th className="py-2">Description</th>
+            <th className="py-2 text-center">Qty</th>
+            <th className="py-2 text-right">Unit</th>
+            <th className="py-2 text-right">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          {lines.map((l) => (
+            <tr key={l.label} className="border-b border-slate-100">
+              <td className="py-2">{l.label}</td>
+              <td className="py-2 text-center">{l.qty}</td>
+              <td className="py-2 text-right">${l.unit.toLocaleString()}</td>
+              <td className="py-2 text-right">${(l.qty * l.unit).toLocaleString()}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <dl className="mt-4 space-y-1 text-xs">
+        <div className="flex justify-between">
+          <dt className="text-slate-500">Subtotal</dt>
+          <dd>${subtotal.toLocaleString()}</dd>
+        </div>
+        <div className="flex justify-between">
+          <dt className="text-slate-500">VAT (10%)</dt>
+          <dd>${vat.toLocaleString()}</dd>
+        </div>
+        <div className="flex justify-between border-t border-slate-300 pt-2 font-display text-base font-bold">
+          <dt>Total payable</dt>
+          <dd>${total.toLocaleString()}</dd>
+        </div>
+      </dl>
+
+      <div className="mt-6 grid gap-4 border-t border-slate-200 pt-4 text-[11px] text-slate-600 sm:grid-cols-2">
+        <div>
+          <p className="font-semibold uppercase tracking-wide text-slate-500">Payment instructions</p>
+          <p className="mt-1">Bank: Woori Bank &middot; Acct: 1005-000-123456</p>
+          <p>Beneficiary: Indian Chamber of Commerce in Korea</p>
+          <p>Reference: {issued.number}</p>
+          <p>Payment due within 14 days of the invoice date.</p>
+        </div>
+        <div className="sm:text-right">
+          <p className="font-semibold uppercase tracking-wide text-slate-500">Notes</p>
+          <p className="mt-1">Thank you for registering for the ICCK Diwali Celebrations 2026.</p>
+          <p>This document serves as your invoice and receipt.</p>
+        </div>
+      </div>
     </div>
   );
 }
