@@ -39,13 +39,20 @@ export function JharokhaArchCard({
   ribbonText,
 }: JharokhaArchCardProps) {
   const cardId = title.replace(/[^a-zA-Z0-9]/g, "");
+  const isBundle = Boolean(ribbonText);
 
   return (
-    <div className="relative flex flex-col items-center w-full max-w-[290px] xs:max-w-[325px] sm:max-w-[280px] md:max-w-[325px] mx-auto h-[475px] xs:h-[505px] sm:h-[440px] md:h-[475px] drop-shadow-[0_16px_36px_rgba(0,0,0,0.9)]">
+    <div
+      className={`relative flex flex-col items-center w-full max-w-[290px] xs:max-w-[325px] sm:max-w-[280px] md:max-w-[325px] mx-auto h-[475px] xs:h-[505px] sm:h-[440px] md:h-[475px] transition-all duration-300 sm:hover:-translate-y-2 ${
+        isBundle
+          ? "drop-shadow-[0_20px_45px_rgba(251,191,36,0.35)] sm:scale-[1.03]"
+          : "drop-shadow-[0_16px_36px_rgba(0,0,0,0.9)] sm:hover:drop-shadow-[0_22px_45px_rgba(251,191,36,0.35)]"
+      }`}
+    >
       
       {/* Top Floating Ribbon Badge if present */}
       {ribbonText && (
-        <div className="absolute -top-3.5 sm:-top-4 z-40 bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] text-[#0c1445] font-black uppercase text-[10px] xs:text-xs md:text-sm tracking-wide sm:tracking-[0.14em] px-3 sm:px-5 py-1 sm:py-1.5 rounded-sm sm:rounded-md shadow-2xl border border-amber-200 whitespace-nowrap">
+        <div className="absolute -top-3.5 sm:-top-4 z-40 bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] text-[#0c1445] font-black uppercase text-[10px] xs:text-xs md:text-sm tracking-wide sm:tracking-[0.14em] px-3.5 sm:px-5 py-1 sm:py-1.5 rounded-sm sm:rounded-md shadow-2xl border border-amber-200 whitespace-nowrap animate-pulse">
           {ribbonText}
         </div>
       )}
@@ -88,7 +95,7 @@ export function JharokhaArchCard({
           d={ARCH_PATH}
           fill={`url(#bgGrad-${cardId})`}
           stroke={`url(#goldGrad-${cardId})`}
-          strokeWidth="4.5"
+          strokeWidth={isBundle ? "5.5" : "4.5"}
           strokeLinejoin="round"
         />
 
@@ -117,26 +124,26 @@ export function JharokhaArchCard({
         />
       </svg>
 
-      {/* Inner Card Content Overlay — Larger Artwork & Text ONLY on Mobile, PC Web 100% Original */}
+      {/* Inner Card Content Overlay */}
       <div className="relative z-20 w-full h-full px-3.5 sm:px-5 pt-11 xs:pt-13 sm:pt-11 pb-3.5 sm:pb-4 flex flex-col items-center justify-between text-center">
         
-        {/* Top Section: Vector Illustration Shifted Down & Scaled Up ONLY for Mobile */}
-        <div className="h-34 xs:h-40 sm:h-36 md:h-40 flex items-center justify-center shrink-0 mt-3 xs:mt-4 sm:mt-3">
+        {/* Top Section: Vector Illustration */}
+        <div className="h-34 xs:h-40 sm:h-36 md:h-40 flex items-center justify-center shrink-0 mt-3 xs:mt-4 sm:mt-3 transition-transform duration-300 group-hover:scale-105">
           {illustration}
         </div>
         
-        {/* Middle Section: Magnified Bolder ICCK Title & Larger Price ONLY for Mobile */}
+        {/* Middle Section: Title, Price & Badge */}
         <div className="flex flex-col items-center gap-1.5 sm:gap-2 w-full my-auto py-1">
           <h2 className="font-serif text-base xs:text-lg sm:text-sm md:text-base font-black uppercase tracking-wider text-white px-1 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]">
             {title}
           </h2>
 
-          <div className="flex items-baseline justify-center gap-1.5 sm:gap-2 my-1">
+          <div className="flex items-baseline justify-center gap-2 my-1">
             <span className="font-serif text-4xl xs:text-5xl sm:text-4xl md:text-5xl font-black text-[#FEF08A] drop-shadow-[0_4px_14px_rgba(0,0,0,0.95)]">
               {price}
             </span>
             {strikePrice && (
-              <span className="text-xs xs:text-sm line-through text-white/80 font-bold">
+              <span className="text-xs xs:text-sm line-through text-white/80 font-bold bg-black/30 px-1.5 py-0.5 rounded border border-white/20">
                 {strikePrice}
               </span>
             )}
@@ -149,7 +156,7 @@ export function JharokhaArchCard({
           )}
         </div>
 
-        {/* Bottom Section: Fitted CTA Button Box — Mobile Fitted, PC Web 100% Original */}
+        {/* Bottom Section: Fitted CTA Button Box */}
         <div className="w-full space-y-1.5 sm:space-y-2 shrink-0 pt-0.5 flex flex-col items-center">
           <Link
             to={to}
