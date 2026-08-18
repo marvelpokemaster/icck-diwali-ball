@@ -3,12 +3,14 @@ import React from "react";
 export function HeaderCartouche({
   children,
   className = "",
+  style,
 }: {
   children: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
 }) {
   return (
-    <div className={`relative inline-flex items-center justify-center px-6 py-2.5 bg-[#FDF8EC] rounded-2xl border-2 border-amber-400 shadow-2xl ${className}`}>
+    <div className={`relative inline-flex items-center justify-center px-6 py-2.5 bg-[#FDF8EC] rounded-2xl border-2 border-amber-400 shadow-2xl ${className}`} style={style}>
       <div className="relative z-20 flex items-center gap-3">{children}</div>
     </div>
   );

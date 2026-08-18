@@ -87,14 +87,17 @@ function Landing() {
       <header className="relative w-full bg-gradient-to-r from-[#f59e0b] via-[#fbbf24] to-[#f59e0b] py-1.5 shadow-2xl z-40">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-2 sm:px-6">
           
-          {/* Left Side: Dual Extra Prominent Glowing Diya Lamps */}
-          <div className="flex items-center gap-2 sm:gap-3 ml-5 xs:ml-7 sm:ml-0">
+          {/* Left Side: Outer Diya Lamps — desktop only */}
+          <div className="hidden sm:flex items-center gap-2 sm:gap-3 sm:ml-0">
             <DiyaLamp className="w-8 sm:w-11 h-8 sm:h-11 drop-shadow-[0_0_12px_rgba(251,191,36,0.95)]" />
             <DiyaLamp className="hidden sm:block w-9 h-9 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)] opacity-90" />
           </div>
 
-          {/* Center Octagonal Cartouche Badge — 100% PERFECT RESPONSIVE FIT NO CUTOFF */}
-          <HeaderCartouche className="mx-auto py-2.5 px-3 xs:px-4 sm:px-7 border-2 border-amber-400 shadow-[0_0_25px_rgba(251,191,36,0.45)]">
+          {/* Center Octagonal Cartouche Badge */}
+          <HeaderCartouche
+            className="mx-auto py-2.5 px-3 xs:px-4 sm:px-7 border-2 border-amber-400 shadow-[0_0_25px_rgba(251,191,36,0.45)]"
+            style={{ background: "#FDF8EC" }}
+          >
             <DiyaLamp className="hidden sm:block sm:w-8 sm:h-8 drop-shadow-[0_0_10px_rgba(251,191,36,0.95)] shrink-0" />
 
             {/* Prominent Full-Color Official ICCK Logo */}
@@ -103,11 +106,11 @@ function Landing() {
               alt="ICCK Official Logo"
               width={940}
               height={347}
-              className="h-6 xs:h-7 sm:h-9 w-auto object-contain shrink-0"
+              className="h-8 xs:h-10 sm:h-11 w-auto object-contain shrink-0"
             />
 
-            <div className="text-center sm:text-left border-l border-amber-600/60 pl-2 xs:pl-2.5 sm:pl-4">
-              <p className="font-serif text-[11px] xs:text-[13px] sm:text-lg lg:text-xl font-black uppercase tracking-wide xs:tracking-wider sm:tracking-[0.16em] text-[#7C3D0A] leading-tight whitespace-nowrap">
+            <div className="text-center sm:text-left border-l-2 border-amber-600/70 pl-2 xs:pl-3 sm:pl-4">
+              <p className="font-serif text-[13px] xs:text-[15px] sm:text-lg lg:text-xl font-black uppercase tracking-wide xs:tracking-wider sm:tracking-[0.16em] text-[#1A0A00] leading-tight whitespace-nowrap">
                 ICCK DIWALI CELEBRATIONS
               </p>
             </div>
@@ -115,8 +118,8 @@ function Landing() {
             <DiyaLamp className="hidden sm:block sm:w-8 sm:h-8 drop-shadow-[0_0_10px_rgba(251,191,36,0.95)] shrink-0" />
           </HeaderCartouche>
 
-          {/* Right Side: Dual Extra Prominent Glowing Diya Lamps */}
-          <div className="flex items-center gap-2 sm:gap-3 mr-5 xs:mr-7 sm:mr-0">
+          {/* Right Side: Outer Diya Lamps — desktop only */}
+          <div className="hidden sm:flex items-center gap-2 sm:gap-3 sm:mr-0">
             <DiyaLamp className="hidden sm:block w-9 h-9 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)] opacity-90" />
             <DiyaLamp className="w-8 sm:w-11 h-8 sm:h-11 drop-shadow-[0_0_12px_rgba(251,191,36,0.95)]" />
           </div>
