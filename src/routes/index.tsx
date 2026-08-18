@@ -191,29 +191,27 @@ function Landing() {
 
           </div>
 
-          {/* ---------------- 4. BOTTOM ACTION BUTTONS WITH FLANKING DIYA LAMPS ---------------- */}
-          <div className="mt-6 sm:mt-5 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-2.5 w-full max-w-[360px] sm:max-w-none mx-auto relative px-3 sm:px-0">
+          {/* ---------------- 4. BOTTOM ACTION BUTTONS (100% EQUAL & ALIGNED) ---------------- */}
+          <div className="mt-6 sm:mt-5 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-3 w-full max-w-[360px] sm:max-w-none mx-auto relative px-3 sm:px-0">
             
             {/* Button 1: VIEW ALL EVENTS */}
-            <div className="w-full sm:w-auto flex items-center gap-1.5 justify-center">
-              <DiyaLamp className="w-5 h-5 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)] shrink-0" />
+            <div className="w-full sm:w-auto flex items-center justify-center">
               <Link
                 to="/awards"
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-6 sm:px-6 py-3 sm:py-2.5 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110"
+                className="inline-flex w-[88%] xs:w-[90%] sm:w-auto max-w-[320px] items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-6 sm:px-6 py-3 sm:py-2.5 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110 active:scale-[0.98]"
               >
-                <Ticket className="h-4 w-4" /> VIEW ALL EVENTS
+                <Ticket className="h-4 w-4 shrink-0" /> VIEW ALL EVENTS
               </Link>
             </div>
 
             {/* Button 2: SIGN UP FOR UPDATES */}
-            <div className="w-full sm:w-auto flex items-center gap-1.5 justify-center">
+            <div className="w-full sm:w-auto flex items-center justify-center">
               <button
                 onClick={() => toast.success("🎆 Festive firecrackers launched! We'll email you event updates.")}
-                className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-6 sm:px-6 py-3 sm:py-2.5 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110"
+                className="inline-flex w-[88%] xs:w-[90%] sm:w-auto max-w-[320px] items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-6 sm:px-6 py-3 sm:py-2.5 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110 active:scale-[0.98]"
               >
-                SIGN UP FOR UPDATES
+                <FireworkSparkle className="h-4 w-4 text-[#0f172a] shrink-0" /> SIGN UP FOR UPDATES
               </button>
-              <DiyaLamp className="w-5 h-5 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)] shrink-0" />
             </div>
 
           </div>
