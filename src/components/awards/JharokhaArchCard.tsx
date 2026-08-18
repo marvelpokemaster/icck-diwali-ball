@@ -43,10 +43,10 @@ export function JharokhaArchCard({
 
   return (
     <div
-      className={`relative flex flex-col items-center w-full max-w-[285px] xs:max-w-[320px] sm:max-w-[275px] md:max-w-[320px] mx-auto h-[435px] xs:h-[465px] sm:h-[420px] md:h-[445px] transition-all duration-300 sm:hover:-translate-y-1.5 ${
+      className={`relative flex flex-col items-center w-[92%] xs:w-[94%] max-w-[355px] xs:max-w-[375px] sm:max-w-[280px] md:max-w-[325px] mx-auto h-[465px] xs:h-[495px] sm:h-[450px] md:h-[480px] transition-all duration-300 sm:hover:-translate-y-1.5 ${
         isBundle
-          ? "drop-shadow-[0_18px_40px_rgba(251,191,36,0.35)] sm:scale-[1.02]"
-          : "drop-shadow-[0_14px_32px_rgba(0,0,0,0.9)] sm:hover:drop-shadow-[0_20px_40px_rgba(251,191,36,0.35)]"
+          ? "drop-shadow-[0_20px_45px_rgba(251,191,36,0.35)] sm:scale-[1.02]"
+          : "drop-shadow-[0_16px_36px_rgba(0,0,0,0.9)] sm:hover:drop-shadow-[0_22px_45px_rgba(251,191,36,0.35)]"
       }`}
     >
       
@@ -124,51 +124,52 @@ export function JharokhaArchCard({
         />
       </svg>
 
-      {/* Inner Card Content Overlay — CONTINUOUS TIGHT STACK WITH ZERO GAPS */}
-      <div className="relative z-20 w-full h-full px-4 sm:px-4.5 pt-12 xs:pt-14 sm:pt-11 pb-3.5 sm:pb-4 flex flex-col items-center justify-center gap-1.5 sm:gap-2 text-center">
+      {/* Inner Card Content Overlay — EXPANDED MOBILE CARD WIDTH FOR ZERO SIDE WHITE SPACE */}
+      <div className="relative z-20 w-full h-full px-5 xs:px-6 sm:px-5 pt-11 xs:pt-13 sm:pt-11 pb-4 sm:pb-5 flex flex-col items-center justify-between text-center">
         
-        {/* Top Section: Vector Illustration */}
-        <div className="flex items-center justify-center shrink-0">
+        {/* Top Section: Vector Artwork */}
+        <div className="h-38 xs:h-42 sm:h-38 md:h-44 flex items-center justify-center shrink-0 mt-2 xs:mt-3 sm:mt-2">
           {illustration}
         </div>
         
-        {/* Title */}
-        <h2 className="font-serif text-base xs:text-lg sm:text-sm md:text-base font-black uppercase tracking-wider text-white px-1 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]">
-          {title}
-        </h2>
+        {/* Middle Section: Title, Price & Badge */}
+        <div className="flex flex-col items-center gap-1.5 sm:gap-2 w-full my-auto py-1">
+          <h2 className="font-serif text-base xs:text-lg sm:text-base md:text-lg font-black uppercase tracking-wider text-white px-1 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]">
+            {title}
+          </h2>
 
-        {/* Price & Strike Price */}
-        <div className="flex items-baseline justify-center gap-2">
-          <span className="font-serif text-3xl xs:text-4xl sm:text-3xl md:text-4xl font-black text-[#FEF08A] drop-shadow-[0_4px_14px_rgba(0,0,0,0.95)]">
-            {price}
-          </span>
-          {strikePrice && (
-            <span className="text-xs xs:text-sm line-through text-white/80 font-bold bg-black/30 px-1.5 py-0.5 rounded border border-white/20">
-              {strikePrice}
+          <div className="flex items-baseline justify-center gap-2 my-1">
+            <span className="font-serif text-4xl xs:text-5xl sm:text-4xl md:text-5xl font-black text-[#FEF08A] drop-shadow-[0_4px_14px_rgba(0,0,0,0.95)]">
+              {price}
+            </span>
+            {strikePrice && (
+              <span className="text-xs xs:text-sm line-through text-white/80 font-bold bg-black/30 px-1.5 py-0.5 rounded border border-white/20">
+                {strikePrice}
+              </span>
+            )}
+          </div>
+
+          {badgeText && (
+            <span className="rounded-full bg-gradient-to-r from-amber-500/30 via-amber-400/40 to-amber-500/30 px-3.5 sm:px-4.5 py-0.5 text-[10.5px] xs:text-xs font-black uppercase tracking-wider text-[#FEF08A] border border-amber-300/60 shadow-md">
+              {badgeText}
             </span>
           )}
         </div>
 
-        {/* Badge if present */}
-        {badgeText && (
-          <span className="rounded-full bg-gradient-to-r from-amber-500/30 via-amber-400/40 to-amber-500/30 px-3.5 sm:px-4.5 py-0.5 text-[10px] xs:text-xs font-black uppercase tracking-wider text-[#FEF08A] border border-amber-300/60 shadow-md">
-            {badgeText}
-          </span>
-        )}
+        {/* Bottom Section: Fitted CTA Button + Note Text */}
+        <div className="w-full space-y-1.5 sm:space-y-2 shrink-0 pt-0.5 flex flex-col items-center">
+          <Link
+            to={to}
+            search={search}
+            className="w-[86%] xs:w-[88%] sm:w-[84%] md:w-[86%] max-w-[260px] inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-3.5 sm:px-4 py-2.5 xs:py-3 sm:py-2.5 md:py-3 font-sans text-xs xs:text-sm sm:text-xs md:text-sm font-black uppercase tracking-wider text-[#0c1445] shadow-xl transition hover:brightness-110 active:scale-[0.98]"
+          >
+            {buttonText}
+          </Link>
 
-        {/* Bottom CTA Button */}
-        <Link
-          to={to}
-          search={search}
-          className="w-[84%] xs:w-[86%] sm:w-[84%] md:w-[86%] max-w-[245px] inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-3.5 sm:px-4 py-2 xs:py-2.5 sm:py-2 md:py-2.5 font-sans text-xs xs:text-sm sm:text-xs md:text-sm font-black uppercase tracking-wider text-[#0c1445] shadow-xl transition hover:brightness-110 active:scale-[0.98] shrink-0"
-        >
-          {buttonText}
-        </Link>
-
-        {/* Note Text */}
-        <p className="text-[10px] xs:text-xs sm:text-[10px] md:text-xs font-bold text-white/95 leading-tight shrink-0 px-1">
-          {noteText}
-        </p>
+          <p className="text-xs xs:text-xs sm:text-xs md:text-xs font-bold text-white/95 leading-tight px-1">
+            {noteText}
+          </p>
+        </div>
 
       </div>
 
