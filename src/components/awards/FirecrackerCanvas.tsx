@@ -54,8 +54,6 @@ export function FirecrackerCanvas() {
   const textBurstsRef = useRef<TextBurst[]>([]);
 
   const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(null);
-  const [leftLaunching, setLeftLaunching] = useState(false);
-  const [rightLaunching, setRightLaunching] = useState(false);
 
   const colors = [
     "#FEF08A", // Champagne Gold
@@ -96,55 +94,6 @@ export function FirecrackerCanvas() {
         decay: 0.012,
       });
     }
-  };
-
-  const launchArcRocket = (startX: number, startY: number, targetX: number, targetY: number) => {
-    rocketsRef.current.push({
-      x: startX,
-      y: startY,
-      startX,
-      startY,
-      targetX,
-      targetY,
-      progress: 0,
-      speed: 0.024, // 42 frames flight duration
-      color: colors[Math.floor(Math.random() * colors.length)],
-      isArc: true,
-    });
-  };
-
-  const handleIgniteLeftThread = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (leftLaunching) return;
-    setLeftLaunching(true);
-
-    const startX = 40;
-    const startY = window.innerHeight - 180;
-    const targetX = window.innerWidth / 2;
-    const targetY = window.innerHeight * 0.35;
-
-    launchArcRocket(startX, startY, targetX, targetY);
-
-    setTimeout(() => {
-      setLeftLaunching(false);
-    }, 2400);
-  };
-
-  const handleIgniteRightThread = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (rightLaunching) return;
-    setRightLaunching(true);
-
-    const startX = window.innerWidth - 40;
-    const startY = window.innerHeight - 180;
-    const targetX = window.innerWidth / 2;
-    const targetY = window.innerHeight * 0.35;
-
-    launchArcRocket(startX, startY, targetX, targetY);
-
-    setTimeout(() => {
-      setRightLaunching(false);
-    }, 2400);
   };
 
   useEffect(() => {
@@ -215,12 +164,11 @@ export function FirecrackerCanvas() {
         ctx.restore();
       }
 
-      // 2. Render & Update Arc Launch Rockets (Flying from Sides to Center)
+      // 2. Render & Update Arc Launch Rockets
       for (let i = rocketsRef.current.length - 1; i >= 0; i--) {
         const r = rocketsRef.current[i];
         r.progress += r.speed;
 
-        // Curved Arc Trajectory from (startX, startY) to (targetX, targetY)
         const currentX = r.startX + (r.targetX - r.startX) * r.progress;
         const arcPeakY = Math.min(r.startY, r.targetY) - 90;
         const currentY =
@@ -231,7 +179,6 @@ export function FirecrackerCanvas() {
         r.x = currentX;
         r.y = currentY;
 
-        // Emit dense tail sparks behind flying rocket
         for (let k = 0; k < 4; k++) {
           trailSparksRef.current.push({
             x: currentX + (Math.random() - 0.5) * 8,
@@ -245,7 +192,6 @@ export function FirecrackerCanvas() {
           });
         }
 
-        // Draw Rocket Head in Flight
         ctx.save();
         ctx.beginPath();
         ctx.arc(currentX, currentY, 5, 0, Math.PI * 2);
@@ -255,9 +201,8 @@ export function FirecrackerCanvas() {
         ctx.fill();
         ctx.restore();
 
-        // Check if rocket reached center target
         if (r.progress >= 1) {
-          createBurst(r.targetX, r.targetY, 120, true); // Huge "HAPPY DIWALI" Explosion Blast in Center
+          createBurst(r.targetX, r.targetY, 120, true);
           rocketsRef.current.splice(i, 1);
         }
       }
@@ -308,13 +253,11 @@ export function FirecrackerCanvas() {
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
 
-        // Outer Golden Glow Halo
         ctx.shadowBlur = 25;
         ctx.shadowColor = "#F59E0B";
         ctx.fillStyle = "#FEF08A";
         ctx.fillText(t.text, 0, 0);
 
-        // Inner Sharp Stroke
         ctx.strokeStyle = "#92400E";
         ctx.lineWidth = 2;
         ctx.strokeText(t.text, 0, 0);
@@ -342,74 +285,6 @@ export function FirecrackerCanvas() {
         ref={canvasRef}
         className="pointer-events-none fixed inset-0 z-40 h-full w-full"
       />
-
-      {/* ---------------- LEFT SIDE INTERACTIVE FIRECRACKER ROCKET & THREAD ---------------- */}
-      <div
-        className={`fixed left-2 sm:left-4 bottom-20 sm:bottom-24 z-50 flex flex-col items-center cursor-pointer transition-all duration-500 group ${
-          leftLaunching ? "opacity-0 scale-50 translate-y-[-100px]" : "opacity-100 scale-100"
-        }`}
-        onClick={handleIgniteLeftThread}
-        title="Click thread to ignite Left Firecracker!"
-      >
-        {/* Rocket Body SVG */}
-        <div className="relative group-hover:scale-110 transition-transform">
-          <svg className="w-10 h-14 sm:w-12 sm:h-16 relative z-10 drop-shadow-[0_4px_12px_rgba(245,158,11,0.8)]" viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 2 L30 18 L10 18 Z" fill="#EF4444" stroke="#FEF08A" strokeWidth="1.5" />
-            <rect x="10" y="18" width="20" height="26" fill="#BE123C" stroke="#FEF08A" strokeWidth="1.5" />
-            <rect x="10" y="24" width="20" height="4" fill="#FEF08A" />
-            <rect x="10" y="32" width="20" height="4" fill="#F59E0B" />
-            <path d="M10 32 L3 44 L10 44 Z" fill="#92400E" />
-            <path d="M30 32 L37 44 L30 44 Z" fill="#92400E" />
-          </svg>
-        </div>
-
-        {/* Twine Thread / Fuse with Burning Spark Tip */}
-        <div className="relative flex flex-col items-center -mt-1 group-hover:scale-105">
-          <svg className="w-4 h-12 overflow-visible" viewBox="0 0 20 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 0 C15 15, 5 30, 10 45" stroke="#E5C158" strokeWidth="2.5" strokeDasharray="3 2" />
-            <circle cx="10" cy="45" r="4.5" fill="#FEF08A" className="animate-ping" />
-            <circle cx="10" cy="45" r="3" fill="#F59E0B" />
-          </svg>
-          
-          <span className="mt-1 bg-amber-400/90 text-[#0c1445] text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full shadow-lg border border-amber-200 animate-bounce">
-            IGNITE THREAD 💥
-          </span>
-        </div>
-      </div>
-
-      {/* ---------------- RIGHT SIDE INTERACTIVE FIRECRACKER ROCKET & THREAD ---------------- */}
-      <div
-        className={`fixed right-2 sm:right-4 bottom-20 sm:bottom-24 z-50 flex flex-col items-center cursor-pointer transition-all duration-500 group ${
-          rightLaunching ? "opacity-0 scale-50 translate-y-[-100px]" : "opacity-100 scale-100"
-        }`}
-        onClick={handleIgniteRightThread}
-        title="Click thread to ignite Right Firecracker!"
-      >
-        {/* Rocket Body SVG */}
-        <div className="relative group-hover:scale-110 transition-transform">
-          <svg className="w-10 h-14 sm:w-12 sm:h-16 relative z-10 drop-shadow-[0_4px_12px_rgba(245,158,11,0.8)]" viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 2 L30 18 L10 18 Z" fill="#EF4444" stroke="#FEF08A" strokeWidth="1.5" />
-            <rect x="10" y="18" width="20" height="26" fill="#BE123C" stroke="#FEF08A" strokeWidth="1.5" />
-            <rect x="10" y="24" width="20" height="4" fill="#FEF08A" />
-            <rect x="10" y="32" width="20" height="4" fill="#F59E0B" />
-            <path d="M10 32 L3 44 L10 44 Z" fill="#92400E" />
-            <path d="M30 32 L37 44 L30 44 Z" fill="#92400E" />
-          </svg>
-        </div>
-
-        {/* Twine Thread / Fuse with Burning Spark Tip */}
-        <div className="relative flex flex-col items-center -mt-1 group-hover:scale-105">
-          <svg className="w-4 h-12 overflow-visible" viewBox="0 0 20 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 0 C5 15, 15 30, 10 45" stroke="#E5C158" strokeWidth="2.5" strokeDasharray="3 2" />
-            <circle cx="10" cy="45" r="4.5" fill="#FEF08A" className="animate-ping" />
-            <circle cx="10" cy="45" r="3" fill="#F59E0B" />
-          </svg>
-
-          <span className="mt-1 bg-amber-400/90 text-[#0c1445] text-[9px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full shadow-lg border border-amber-200 animate-bounce">
-            IGNITE THREAD 💥
-          </span>
-        </div>
-      </div>
 
       {/* Floating Rocket Firecracker Mouse Cursor */}
       {mousePos && (
