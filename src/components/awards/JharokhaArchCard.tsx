@@ -183,7 +183,7 @@ export function JharokhaArchCard({
         {/* 3D POPPED-UP GOLDEN ACTION BUTTON FOR MOBILE & PC */}
         <button
           onClick={handleButtonClick}
-          className={`w-full sm:w-[82%] md:w-[85%] max-w-[240px] inline-flex items-center justify-center gap-1.5 rounded-lg bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-4 py-3.5 xs:py-4 sm:py-3 md:py-3.5 font-sans text-sm xs:text-[15px] sm:text-xs md:text-sm font-black uppercase tracking-wider text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.65)] transition-all duration-200 hover:scale-105 active:scale-95 shrink-0 ${
+          className={`inline-flex w-fit items-center justify-center gap-1.5 rounded-lg bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-3 sm:px-4 py-1.5 sm:py-3 md:py-3.5 font-sans text-sm xs:text-[15px] sm:text-xs md:text-sm font-black uppercase tracking-wider text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.65)] transition-all duration-200 hover:scale-105 active:scale-95 shrink-0 ${
             isNavigating ? "brightness-125 scale-105 ring-4 ring-amber-300/80" : ""
           }`}
         >
