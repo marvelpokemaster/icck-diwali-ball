@@ -95,8 +95,8 @@ function Landing() {
 
           {/* Center Octagonal Cartouche Badge */}
           <HeaderCartouche
-            className="mx-auto py-2.5 px-3 xs:px-4 sm:px-7 border-2 border-amber-400 shadow-[0_0_25px_rgba(251,191,36,0.45)]"
-            style={{ background: "#FDF8EC" }}
+            className="mx-auto py-3.5 sm:py-2.5 px-3 xs:px-4 sm:px-7 border-2 border-amber-400 shadow-[0_0_25px_rgba(251,191,36,0.45)]"
+            style={{ background: "#FFFFFF" }}
           >
             <DiyaLamp className="hidden sm:block sm:w-8 sm:h-8 drop-shadow-[0_0_10px_rgba(251,191,36,0.95)] shrink-0" />
 
@@ -110,7 +110,7 @@ function Landing() {
             />
 
             <div className="text-center sm:text-left border-l-2 border-amber-600/70 pl-2 xs:pl-3 sm:pl-4">
-              <p className="font-serif text-[13px] xs:text-[15px] sm:text-lg lg:text-xl font-black uppercase tracking-wide xs:tracking-wider sm:tracking-[0.16em] text-[#1A0A00] leading-tight whitespace-nowrap">
+              <p className="font-serif text-[15px] xs:text-[17px] sm:text-lg lg:text-xl font-black uppercase tracking-wide xs:tracking-wider sm:tracking-[0.16em] text-[#1A0A00] leading-tight whitespace-nowrap">
                 ICCK DIWALI CELEBRATIONS
               </p>
             </div>
