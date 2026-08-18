@@ -70,8 +70,8 @@ function Landing() {
         <HangingDiyaString className="w-8 xs:w-9 sm:w-11 h-44 xs:h-52 sm:h-64" />
       </div>
       
-      {/* ---------------- 1. TOP WARM MARIGOLD GOLD HEADER BANNER WITH ENLARGED & DUAL EXTRA DIYA LAMPS ---------------- */}
-      <header className="relative w-full bg-gradient-to-r from-[#f59e0b] via-[#fbbf24] to-[#f59e0b] py-1 shadow-2xl z-40">
+      {/* ---------------- 1. TOP WARM MARIGOLD GOLD HEADER BANNER WITH PROMINENT ICCK LOGO & TITLE ---------------- */}
+      <header className="relative w-full bg-gradient-to-r from-[#f59e0b] via-[#fbbf24] to-[#f59e0b] py-1.5 shadow-2xl z-40">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-3 sm:px-6">
           
           {/* Left Side: Dual Extra Prominent Glowing Diya Lamps */}
@@ -80,29 +80,26 @@ function Landing() {
             <DiyaLamp className="hidden sm:block w-9 h-9 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)] opacity-90" />
           </div>
 
-          {/* Center Octagonal Cartouche Badge with Inner Diya Lamps */}
-          <HeaderCartouche className="mx-auto py-1 px-3 sm:px-5 bg-[#0f172a]/95 border-2 border-amber-300 shadow-2xl">
-            <DiyaLamp className="w-5 sm:w-7 h-5 sm:h-7 drop-shadow-[0_0_10px_rgba(251,191,36,0.95)] shrink-0" />
+          {/* Center Octagonal Cartouche Badge — PROMINENT ICCK LOGO & HIGH-CONTRAST HEADING */}
+          <HeaderCartouche className="mx-auto py-1.5 px-4 sm:px-7 bg-[#0f172a]/95 border-2 border-amber-300 shadow-2xl">
+            <DiyaLamp className="w-6 sm:w-8 h-6 sm:h-8 drop-shadow-[0_0_10px_rgba(251,191,36,0.95)] shrink-0" />
 
-            {/* Full-Color Official ICCK Logo */}
+            {/* Prominent Full-Color Official ICCK Logo */}
             <img
               src={icckLogo}
               alt="ICCK Official Logo"
               width={940}
               height={347}
-              className="h-4.5 sm:h-7 w-auto object-contain"
+              className="h-6 sm:h-9 w-auto object-contain shrink-0 drop-shadow-[0_2px_8px_rgba(251,191,36,0.5)]"
             />
 
-            <div className="text-center sm:text-left border-l-2 border-amber-400/50 pl-2 sm:pl-3">
-              <p className="font-serif text-[9.5px] sm:text-base font-black uppercase tracking-[0.12em] sm:tracking-[0.16em] text-[#FEF08A] drop-shadow leading-none">
+            <div className="text-center sm:text-left border-l-2 border-amber-400/60 pl-2.5 sm:pl-4">
+              <p className="font-serif text-xs xs:text-sm sm:text-lg lg:text-xl font-black uppercase tracking-[0.14em] sm:tracking-[0.18em] text-[#FEF08A] drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] leading-none">
                 ICCK DIWALI CELEBRATIONS
-              </p>
-              <p className="text-[7px] sm:text-[10.5px] tracking-widest text-white/95 uppercase font-semibold mt-0.5 leading-none">
-                Year 2026 &middot; Diwali Theme &middot; Geometric Motifs
               </p>
             </div>
 
-            <DiyaLamp className="w-5 sm:w-7 h-5 sm:h-7 drop-shadow-[0_0_10px_rgba(251,191,36,0.95)] shrink-0" />
+            <DiyaLamp className="w-6 sm:w-8 h-6 sm:h-8 drop-shadow-[0_0_10px_rgba(251,191,36,0.95)] shrink-0" />
           </HeaderCartouche>
 
           {/* Right Side: Dual Extra Prominent Glowing Diya Lamps */}
@@ -120,12 +117,12 @@ function Landing() {
       </header>
 
       {/* ---------------- 2. MAIN FESTIVE HERO & PROPORTIONAL CARDS ---------------- */}
-      <main className="relative overflow-hidden z-20 my-auto pt-3 sm:pt-2 pb-2 sm:pb-1">
+      <main className="relative overflow-hidden z-20 my-auto pt-2 sm:pt-2 pb-2 sm:pb-1">
 
-        <section className="relative z-20 mx-auto max-w-5xl px-3 sm:px-2 text-center">
+        <section className="relative z-20 mx-auto max-w-5xl px-2 sm:px-2 text-center">
           
           {/* Main Title Banner with Flanking Diya Lamps */}
-          <div className="mt-1 mb-4 sm:mb-3 flex items-center justify-center gap-2 sm:gap-3">
+          <div className="mt-1 mb-1 sm:mb-2 flex items-center justify-center gap-2 sm:gap-3">
             <DiyaLamp className="w-7 sm:w-10 h-7 sm:h-10 drop-shadow-[0_0_14px_rgba(251,191,36,0.95)] shrink-0" />
             
             <div>
@@ -134,16 +131,13 @@ function Landing() {
                 <br />
                 <span className="italic text-white drop-shadow-[0_2px_12px_rgba(255,255,255,0.6)]">Illuminate Your Celebration!</span>
               </h1>
-              <p className="mt-1 text-[8.5px] xs:text-[9.5px] sm:text-[11px] tracking-[0.16em] text-white/90 uppercase font-semibold">
-                Year 2026 &middot; Diwali Theme &middot; Geometric Motifs
-              </p>
             </div>
 
             <DiyaLamp className="w-7 sm:w-10 h-7 sm:h-10 drop-shadow-[0_0_14px_rgba(251,191,36,0.95)] shrink-0" />
           </div>
 
-          {/* ---------------- 3. ARCH CARDS: EXPANDED MOBILE WIDTH TO FILL SCREEN SIDE MARGINS ---------------- */}
-          <div className="mt-3 flex flex-col sm:grid sm:grid-cols-3 gap-8 sm:gap-3 md:gap-4 items-center sm:items-end w-full max-w-[360px] xs:max-w-[380px] sm:max-w-4xl mx-auto px-1">
+          {/* ---------------- 3. ARCH CARDS: EXPANDED MOBILE WIDTH TO FILL SCREEN SIDE MARGINS & ZERO TOP GAP ---------------- */}
+          <div className="mt-0.5 sm:mt-1 flex flex-col sm:grid sm:grid-cols-3 gap-8 sm:gap-3 md:gap-4 items-center sm:items-end w-full max-w-[375px] xs:max-w-[395px] sm:max-w-4xl mx-auto px-1">
             
             {/* Card 1: ICCK DIWALI BALL (Vibrant Royal Indigo Blue) */}
             <JharokhaArchCard

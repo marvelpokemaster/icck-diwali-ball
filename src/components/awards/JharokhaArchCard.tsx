@@ -44,7 +44,7 @@ export function JharokhaArchCard({
 
   return (
     <div
-      className={`relative flex flex-col items-center w-[92%] xs:w-[94%] max-w-[355px] xs:max-w-[375px] sm:max-w-[280px] md:max-w-[325px] mx-auto h-[400px] xs:h-[425px] sm:h-[415px] md:h-[440px] transition-all duration-300 sm:hover:-translate-y-1.5 ${
+      className={`relative flex flex-col items-center w-[96%] xs:w-[98%] max-w-[370px] xs:max-w-[390px] sm:max-w-[280px] md:max-w-[325px] mx-auto h-[400px] xs:h-[425px] sm:h-[415px] md:h-[440px] transition-all duration-300 sm:hover:-translate-y-1.5 ${
         isBundle
           ? "drop-shadow-[0_20px_45px_rgba(251,191,36,0.35)] sm:scale-[1.02]"
           : "drop-shadow-[0_16px_36px_rgba(0,0,0,0.9)] sm:hover:drop-shadow-[0_22px_45px_rgba(251,191,36,0.35)]"
