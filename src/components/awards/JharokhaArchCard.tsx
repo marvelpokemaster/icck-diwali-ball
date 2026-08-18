@@ -149,7 +149,7 @@ export function JharokhaArchCard({
       </svg>
 
       {/* Inner Card Content Overlay */}
-      <div className="relative z-20 w-full h-full px-4 xs:px-5 sm:px-4 pt-11 xs:pt-13 sm:pt-11 pb-3.5 xs:pb-4 sm:pb-3.5 flex flex-col items-center justify-center gap-1.5 xs:gap-2 sm:gap-1.5 text-center">
+      <div className="relative z-20 w-full h-full px-8 xs:px-10 sm:px-8 pt-11 xs:pt-13 sm:pt-11 pb-3.5 xs:pb-4 sm:pb-3.5 flex flex-col items-center justify-center gap-1.5 xs:gap-2 sm:gap-1.5 text-center">
         
         {/* Top Section: Vector Artwork */}
         <div className="flex items-center justify-center shrink-0">
