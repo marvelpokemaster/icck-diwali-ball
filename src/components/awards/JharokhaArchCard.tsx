@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "@tanstack/react-router";
+import { DiyaLamp } from "./DiwaliDecorations";
 
 interface JharokhaArchCardProps {
   title: string;
@@ -56,6 +57,14 @@ export function JharokhaArchCard({
           {ribbonText}
         </div>
       )}
+
+      {/* Outer Floating Decorative Diya Lamps Flanking Arch Top */}
+      <div className="absolute top-16 -left-3.5 z-30 pointer-events-none hidden xs:block sm:hidden md:block">
+        <DiyaLamp className="w-5 h-5 opacity-95 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)]" />
+      </div>
+      <div className="absolute top-16 -right-3.5 z-30 pointer-events-none hidden xs:block sm:hidden md:block">
+        <DiyaLamp className="w-5 h-5 opacity-95 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)]" />
+      </div>
 
       {/* Mughal Cusped Arch Background, Geometric Jaali Motifs & Double Gold Border SVG Container */}
       <svg
@@ -124,7 +133,7 @@ export function JharokhaArchCard({
         />
       </svg>
 
-      {/* Inner Card Content Overlay — FITTED THICK BUTTON WITH WIDE SIDE MARGINS */}
+      {/* Inner Card Content Overlay */}
       <div className="relative z-20 w-full h-full px-4 xs:px-5 sm:px-4 pt-11 xs:pt-13 sm:pt-11 pb-3.5 xs:pb-4 sm:pb-3.5 flex flex-col items-center justify-center gap-1.5 xs:gap-2 sm:gap-1.5 text-center">
         
         {/* Top Section: Vector Artwork */}
@@ -156,7 +165,7 @@ export function JharokhaArchCard({
           </span>
         )}
 
-        {/* Bottom CTA Button — DECREASED HORIZONTAL LENGTH, INCREASED VERTICAL THICKNESS & HEIGHT */}
+        {/* Bottom CTA Button */}
         <Link
           to={to}
           search={search}

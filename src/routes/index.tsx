@@ -113,13 +113,13 @@ function Landing() {
       {/* ---------------- 2. MAIN FESTIVE HERO & PROPORTIONAL CARDS ---------------- */}
       <main className="relative overflow-hidden z-20 my-auto pt-3 sm:pt-2 pb-2 sm:pb-1">
         
-        {/* Left Vertical Hanging Diya String & Extra Standing Diya Lamp */}
+        {/* Left Vertical Hanging Diya String & Standing Diya Lamp */}
         <div className="pointer-events-none absolute top-0 left-2 z-30 opacity-90 hidden lg:flex flex-col items-center gap-4">
           <HangingDiyaString className="w-9 h-44" />
           <DiyaLamp className="w-10 h-10 drop-shadow-[0_0_15px_rgba(251,191,36,0.9)]" />
         </div>
 
-        {/* Right Vertical Hanging Diya String & Extra Standing Diya Lamp */}
+        {/* Right Vertical Hanging Diya String & Standing Diya Lamp */}
         <div className="pointer-events-none absolute top-0 right-2 z-30 opacity-90 hidden lg:flex flex-col items-center gap-4">
           <HangingDiyaString className="w-9 h-44" />
           <DiyaLamp className="w-10 h-10 drop-shadow-[0_0_15px_rgba(251,191,36,0.9)]" />
@@ -127,9 +127,9 @@ function Landing() {
 
         <section className="relative z-20 mx-auto max-w-5xl px-3 sm:px-2 text-center">
           
-          {/* Main Title Banner */}
-          <div className="mt-1 mb-4 sm:mb-3 flex items-center justify-center gap-2">
-            <DiyaLamp className="w-7 sm:w-10 h-7 sm:h-10 drop-shadow-[0_0_12px_rgba(251,191,36,0.9)] shrink-0 hidden sm:block" />
+          {/* Main Title Banner with Flanking Diya Lamps */}
+          <div className="mt-1 mb-4 sm:mb-3 flex items-center justify-center gap-2 sm:gap-3">
+            <DiyaLamp className="w-7 sm:w-10 h-7 sm:h-10 drop-shadow-[0_0_14px_rgba(251,191,36,0.95)] shrink-0" />
             
             <div>
               <h1 className="font-serif text-lg xs:text-xl sm:text-3xl lg:text-4xl font-black leading-[1.05] tracking-wide text-[#FEF08A] drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)] uppercase">
@@ -142,7 +142,7 @@ function Landing() {
               </p>
             </div>
 
-            <DiyaLamp className="w-7 sm:w-10 h-7 sm:h-10 drop-shadow-[0_0_12px_rgba(251,191,36,0.9)] shrink-0 hidden sm:block" />
+            <DiyaLamp className="w-7 sm:w-10 h-7 sm:h-10 drop-shadow-[0_0_14px_rgba(251,191,36,0.95)] shrink-0" />
           </div>
 
           {/* ---------------- 3. ARCH CARDS: EXPANDED MOBILE WIDTH TO FILL SCREEN SIDE MARGINS ---------------- */}
@@ -191,12 +191,12 @@ function Landing() {
 
           </div>
 
-          {/* ---------------- 4. BOTTOM ACTION BUTTONS ---------------- */}
+          {/* ---------------- 4. BOTTOM ACTION BUTTONS WITH FLANKING DIYA LAMPS ---------------- */}
           <div className="mt-6 sm:mt-5 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-2.5 w-full max-w-[360px] sm:max-w-none mx-auto relative px-3 sm:px-0">
             
             {/* Button 1: VIEW ALL EVENTS */}
-            <div className="w-full sm:w-auto flex items-center gap-1.5">
-              <FireworkSparkle className="w-5 h-5 text-amber-300 animate-pulse shrink-0 hidden sm:block" />
+            <div className="w-full sm:w-auto flex items-center gap-1.5 justify-center">
+              <DiyaLamp className="w-5 h-5 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)] shrink-0" />
               <Link
                 to="/awards"
                 className="inline-flex w-full sm:w-auto items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-6 sm:px-6 py-3 sm:py-2.5 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110"
@@ -206,14 +206,14 @@ function Landing() {
             </div>
 
             {/* Button 2: SIGN UP FOR UPDATES */}
-            <div className="w-full sm:w-auto flex items-center gap-1.5">
+            <div className="w-full sm:w-auto flex items-center gap-1.5 justify-center">
               <button
                 onClick={() => toast.success("🎆 Festive firecrackers launched! We'll email you event updates.")}
                 className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-6 sm:px-6 py-3 sm:py-2.5 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110"
               >
                 SIGN UP FOR UPDATES
               </button>
-              <FireworkSparkle className="w-5 h-5 text-amber-300 animate-pulse shrink-0 hidden sm:block" />
+              <DiyaLamp className="w-5 h-5 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)] shrink-0" />
             </div>
 
           </div>
