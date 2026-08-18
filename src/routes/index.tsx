@@ -70,40 +70,40 @@ function Landing() {
         <HangingDiyaString className="w-8 xs:w-9 sm:w-11 h-44 xs:h-52 sm:h-64" />
       </div>
       
-      {/* ---------------- 1. TOP WARM MARIGOLD GOLD HEADER BANNER WITH PROMINENT ICCK LOGO & TITLE ---------------- */}
-      <header className="relative w-full bg-gradient-to-r from-[#f59e0b] via-[#fbbf24] to-[#f59e0b] py-1.5 shadow-2xl z-40">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-3 sm:px-6">
+      {/* ---------------- 1. TOP WARM MARIGOLD GOLD HEADER BANNER WITH SUPER-SIZED DOMINANT ICCK LOGO & TITLE ---------------- */}
+      <header className="relative w-full bg-gradient-to-r from-[#f59e0b] via-[#fbbf24] to-[#f59e0b] py-2 shadow-2xl z-40">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-2 sm:px-6">
           
           {/* Left Side: Dual Extra Prominent Glowing Diya Lamps */}
-          <div className="flex items-center gap-2 sm:gap-3 ml-6 xs:ml-8 sm:ml-0">
+          <div className="flex items-center gap-2 sm:gap-3 ml-5 xs:ml-7 sm:ml-0">
             <DiyaLamp className="w-8 sm:w-11 h-8 sm:h-11 drop-shadow-[0_0_12px_rgba(251,191,36,0.95)]" />
             <DiyaLamp className="hidden sm:block w-9 h-9 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)] opacity-90" />
           </div>
 
-          {/* Center Octagonal Cartouche Badge — PROMINENT ICCK LOGO & HIGH-CONTRAST HEADING */}
-          <HeaderCartouche className="mx-auto py-1.5 px-4 sm:px-7 bg-[#0f172a]/95 border-2 border-amber-300 shadow-2xl">
-            <DiyaLamp className="w-6 sm:w-8 h-6 sm:h-8 drop-shadow-[0_0_10px_rgba(251,191,36,0.95)] shrink-0" />
+          {/* Center Octagonal Cartouche Badge — SUPER-SIZED DOMINANT ICCK LOGO & HEADING */}
+          <HeaderCartouche className="mx-auto py-2 sm:py-2.5 px-4 sm:px-8 bg-[#0f172a]/95 border-2 sm:border-3 border-amber-300 shadow-[0_0_25px_rgba(251,191,36,0.6)]">
+            <DiyaLamp className="w-7 sm:w-9 h-7 sm:h-9 drop-shadow-[0_0_12px_rgba(251,191,36,0.95)] shrink-0" />
 
-            {/* Prominent Full-Color Official ICCK Logo */}
+            {/* Super-Sized Official ICCK Logo */}
             <img
               src={icckLogo}
               alt="ICCK Official Logo"
               width={940}
               height={347}
-              className="h-6 sm:h-9 w-auto object-contain shrink-0 drop-shadow-[0_2px_8px_rgba(251,191,36,0.5)]"
+              className="h-8 xs:h-9 sm:h-12 w-auto object-contain shrink-0 drop-shadow-[0_2px_12px_rgba(251,191,36,0.7)]"
             />
 
-            <div className="text-center sm:text-left border-l-2 border-amber-400/60 pl-2.5 sm:pl-4">
-              <p className="font-serif text-xs xs:text-sm sm:text-lg lg:text-xl font-black uppercase tracking-[0.14em] sm:tracking-[0.18em] text-[#FEF08A] drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] leading-none">
+            <div className="text-center sm:text-left border-l-2 border-amber-400/80 pl-3 sm:pl-5">
+              <p className="font-serif text-sm xs:text-base sm:text-2xl lg:text-3xl font-black uppercase tracking-[0.14em] sm:tracking-[0.18em] text-[#FEF08A] drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] leading-none">
                 ICCK DIWALI CELEBRATIONS
               </p>
             </div>
 
-            <DiyaLamp className="w-6 sm:w-8 h-6 sm:h-8 drop-shadow-[0_0_10px_rgba(251,191,36,0.95)] shrink-0" />
+            <DiyaLamp className="w-7 sm:w-9 h-7 sm:h-9 drop-shadow-[0_0_12px_rgba(251,191,36,0.95)] shrink-0" />
           </HeaderCartouche>
 
           {/* Right Side: Dual Extra Prominent Glowing Diya Lamps */}
-          <div className="flex items-center gap-2 sm:gap-3 mr-6 xs:mr-8 sm:mr-0">
+          <div className="flex items-center gap-2 sm:gap-3 mr-5 xs:mr-7 sm:mr-0">
             <DiyaLamp className="hidden sm:block w-9 h-9 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)] opacity-90" />
             <DiyaLamp className="w-8 sm:w-11 h-8 sm:h-11 drop-shadow-[0_0_12px_rgba(251,191,36,0.95)]" />
           </div>
