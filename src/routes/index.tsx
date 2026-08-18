@@ -193,23 +193,23 @@ function Landing() {
 
           </div>
 
-          {/* ---------------- 4. BOTTOM ACTION BUTTONS (100% EQUAL & ALIGNED WITH SPARKLE TRANSITION) ---------------- */}
-          <div className="mt-6 sm:mt-5 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-3 w-full max-w-[360px] sm:max-w-none mx-auto relative px-3 sm:px-0">
+          {/* ---------------- 4. 3D POPPED-UP BOTTOM ACTION BUTTONS (FOR MOBILE & PC) ---------------- */}
+          <div className="mt-6 sm:mt-5 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full max-w-[360px] sm:max-w-none mx-auto relative px-3 sm:px-0">
             
             {/* Button 1: VIEW ALL EVENTS */}
             <div className="w-full sm:w-auto flex items-center justify-center">
               <button
                 onClick={handleViewEventsClick}
-                className={`inline-flex w-[88%] xs:w-[90%] sm:w-auto max-w-[320px] items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-6 sm:px-6 py-3 sm:py-2.5 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.14em] text-[#0f172a] shadow-xl transition-all duration-200 hover:brightness-110 active:scale-95 ${
+                className={`inline-flex w-[88%] xs:w-[90%] sm:w-auto max-w-[320px] items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-6 sm:px-7 py-3.5 sm:py-3 font-sans text-xs xs:text-sm sm:text-base font-black uppercase tracking-[0.14em] text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.65)] transition-all duration-200 hover:scale-105 active:scale-95 ${
                   isNavigatingEvents ? "brightness-125 scale-105 ring-4 ring-amber-300/80" : ""
                 }`}
               >
                 {isNavigatingEvents ? (
-                  <FireworkSparkle className="h-4 w-4 animate-spin text-[#0f172a] shrink-0" />
+                  <FireworkSparkle className="h-4 w-4 animate-spin text-[#060c2c] shrink-0" />
                 ) : (
                   <Ticket className="h-4 w-4 shrink-0" />
                 )}
-                VIEW ALL EVENTS
+                <span className="drop-shadow-[0_1px_2px_rgba(255,255,255,0.7)]">VIEW ALL EVENTS</span>
               </button>
             </div>
 
@@ -217,9 +217,10 @@ function Landing() {
             <div className="w-full sm:w-auto flex items-center justify-center">
               <button
                 onClick={() => toast.success("🎆 Festive firecrackers launched! We'll email you event updates.")}
-                className="inline-flex w-[88%] xs:w-[90%] sm:w-auto max-w-[320px] items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-6 sm:px-6 py-3 sm:py-2.5 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110 active:scale-[0.98]"
+                className="inline-flex w-[88%] xs:w-[90%] sm:w-auto max-w-[320px] items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-6 sm:px-7 py-3.5 sm:py-3 font-sans text-xs xs:text-sm sm:text-base font-black uppercase tracking-[0.14em] text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.65)] transition-all duration-200 hover:scale-105 active:scale-95"
               >
-                <FireworkSparkle className="h-4 w-4 text-[#0f172a] shrink-0" /> SIGN UP FOR UPDATES
+                <FireworkSparkle className="h-4 w-4 text-[#060c2c] shrink-0" />
+                <span className="drop-shadow-[0_1px_2px_rgba(255,255,255,0.7)]">SIGN UP FOR UPDATES</span>
               </button>
             </div>
 

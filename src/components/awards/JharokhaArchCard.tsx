@@ -180,15 +180,15 @@ export function JharokhaArchCard({
           </span>
         )}
 
-        {/* Bottom CTA Button with Festive Sparkle Transition */}
+        {/* 3D POPPED-UP GOLDEN ACTION BUTTON FOR MOBILE & PC */}
         <button
           onClick={handleButtonClick}
-          className={`w-[75%] xs:w-[78%] sm:w-[75%] md:w-[78%] max-w-[210px] xs:max-w-[225px] inline-flex items-center justify-center gap-1.5 rounded-md bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-3.5 sm:px-4 py-3 xs:py-3.5 sm:py-2.5 md:py-3 font-sans text-xs xs:text-sm sm:text-xs md:text-sm font-black uppercase tracking-wider text-[#0c1445] shadow-xl transition-all duration-200 hover:brightness-110 active:scale-95 shrink-0 ${
+          className={`w-[82%] xs:w-[85%] sm:w-[82%] md:w-[85%] max-w-[220px] xs:max-w-[240px] inline-flex items-center justify-center gap-1.5 rounded-lg bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-4 py-3.5 xs:py-4 sm:py-3 md:py-3.5 font-sans text-xs xs:text-sm sm:text-xs md:text-sm font-black uppercase tracking-wider text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.65)] transition-all duration-200 hover:scale-105 active:scale-95 shrink-0 ${
             isNavigating ? "brightness-125 scale-105 ring-4 ring-amber-300/80" : ""
           }`}
         >
-          {isNavigating && <FireworkSparkle className="w-4 h-4 animate-spin text-[#0c1445]" />}
-          {buttonText}
+          {isNavigating && <FireworkSparkle className="w-4 h-4 animate-spin text-[#060c2c]" />}
+          <span className="drop-shadow-[0_1px_2px_rgba(255,255,255,0.7)]">{buttonText}</span>
         </button>
 
         {/* Note Text */}
