@@ -136,8 +136,8 @@ function Landing() {
             <DiyaLamp className="w-7 sm:w-10 h-7 sm:h-10 drop-shadow-[0_0_14px_rgba(251,191,36,0.95)] shrink-0" />
           </div>
 
-          {/* ---------------- 3. ARCH CARDS: EXPANDED MOBILE WIDTH TO FILL SCREEN SIDE MARGINS & ZERO TOP GAP ---------------- */}
-          <div className="mt-0.5 sm:mt-1 flex flex-col sm:grid sm:grid-cols-3 gap-8 sm:gap-3 md:gap-4 items-center sm:items-end w-full max-w-[375px] xs:max-w-[395px] sm:max-w-4xl mx-auto px-1">
+          {/* ---------------- 3. ARCH CARDS: FULL MOBILE WIDTH WITH ZERO SIDE WHITESPACE ---------------- */}
+          <div className="mt-0.5 sm:mt-1 flex flex-col sm:grid sm:grid-cols-3 gap-8 sm:gap-3 md:gap-4 items-center sm:items-end w-full max-w-[440px] sm:max-w-4xl mx-auto px-2 xs:px-3">
             
             {/* Card 1: ICCK DIWALI BALL (Vibrant Royal Indigo Blue) */}
             <JharokhaArchCard
