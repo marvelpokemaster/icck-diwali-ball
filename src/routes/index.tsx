@@ -94,8 +94,8 @@ function Landing() {
           </div>
 
           {/* Center Octagonal Cartouche Badge — 100% PERFECT RESPONSIVE FIT NO CUTOFF */}
-          <HeaderCartouche className="mx-auto py-1.5 px-2.5 xs:px-3 sm:px-7 bg-[#0f172a]/95 border-2 border-amber-300 shadow-[0_0_25px_rgba(251,191,36,0.6)]">
-            <DiyaLamp className="w-3.5 xs:w-4.5 sm:w-8 h-3.5 xs:h-4.5 sm:h-8 drop-shadow-[0_0_10px_rgba(251,191,36,0.95)] shrink-0" />
+          <HeaderCartouche className="mx-auto py-2.5 px-3 xs:px-4 sm:px-7 border-2 border-amber-400 shadow-[0_0_25px_rgba(251,191,36,0.45)]">
+            <DiyaLamp className="hidden sm:block sm:w-8 sm:h-8 drop-shadow-[0_0_10px_rgba(251,191,36,0.95)] shrink-0" />
 
             {/* Prominent Full-Color Official ICCK Logo */}
             <img
@@ -103,16 +103,16 @@ function Landing() {
               alt="ICCK Official Logo"
               width={940}
               height={347}
-              className="h-5 xs:h-6 sm:h-9 w-auto object-contain shrink-0 drop-shadow-[0_2px_10px_rgba(251,191,36,0.6)]"
+              className="h-6 xs:h-7 sm:h-9 w-auto object-contain shrink-0"
             />
 
-            <div className="text-center sm:text-left border-l border-amber-400/80 pl-1.5 xs:pl-2.5 sm:pl-4">
-              <p className="font-serif text-[9px] xs:text-[11px] sm:text-lg lg:text-xl font-black uppercase tracking-normal xs:tracking-wider sm:tracking-[0.16em] text-[#FEF08A] drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] leading-tight whitespace-nowrap">
+            <div className="text-center sm:text-left border-l border-amber-600/60 pl-2 xs:pl-2.5 sm:pl-4">
+              <p className="font-serif text-[11px] xs:text-[13px] sm:text-lg lg:text-xl font-black uppercase tracking-wide xs:tracking-wider sm:tracking-[0.16em] text-[#7C3D0A] leading-tight whitespace-nowrap">
                 ICCK DIWALI CELEBRATIONS
               </p>
             </div>
 
-            <DiyaLamp className="w-3.5 xs:w-4.5 sm:w-8 h-3.5 xs:h-4.5 sm:h-8 drop-shadow-[0_0_10px_rgba(251,191,36,0.95)] shrink-0" />
+            <DiyaLamp className="hidden sm:block sm:w-8 sm:h-8 drop-shadow-[0_0_10px_rgba(251,191,36,0.95)] shrink-0" />
           </HeaderCartouche>
 
           {/* Right Side: Dual Extra Prominent Glowing Diya Lamps */}
