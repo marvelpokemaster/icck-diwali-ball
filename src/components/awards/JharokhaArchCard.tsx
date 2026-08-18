@@ -68,7 +68,7 @@ export function JharokhaArchCard({
       
       {/* Top Floating Ribbon Badge if present */}
       {ribbonText && (
-        <div className="absolute -top-3.5 sm:-top-4 z-40 bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] text-[#0c1445] font-black uppercase text-[10px] xs:text-xs md:text-sm tracking-wide sm:tracking-[0.14em] px-3.5 sm:px-5 py-1 sm:py-1.5 rounded-sm sm:rounded-md shadow-2xl border border-amber-200 whitespace-nowrap animate-pulse">
+        <div className="absolute -top-3.5 sm:-top-4 z-40 bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] text-[#0c1445] font-black uppercase text-[10px] xs:text-xs md:text-sm tracking-wide sm:tracking-[0.14em] px-2 sm:px-3 py-1 sm:py-1.5 rounded-sm sm:rounded-md shadow-2xl border border-amber-200 whitespace-nowrap animate-pulse">
           {ribbonText}
         </div>
       )}
@@ -175,7 +175,7 @@ export function JharokhaArchCard({
 
         {/* Badge if present */}
         {badgeText && (
-          <span className="rounded-full bg-gradient-to-r from-amber-500/30 via-amber-400/40 to-amber-500/30 px-3.5 sm:px-4.5 py-0.5 text-[10px] xs:text-xs font-black uppercase tracking-wider text-[#FEF08A] border border-amber-300/60 shadow-md">
+          <span className="rounded-full bg-gradient-to-r from-amber-500/30 via-amber-400/40 to-amber-500/30 px-2 sm:px-3 py-0.5 text-[10px] xs:text-xs font-black uppercase tracking-wider text-[#FEF08A] border border-amber-300/60 shadow-md">
             {badgeText}
           </span>
         )}
@@ -183,7 +183,7 @@ export function JharokhaArchCard({
         {/* 3D POPPED-UP GOLDEN ACTION BUTTON FOR MOBILE & PC */}
         <button
           onClick={handleButtonClick}
-          className={`inline-flex w-fit items-center justify-center gap-1.5 rounded-lg bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-3 sm:px-4 py-1.5 sm:py-3 md:py-3.5 font-sans text-sm xs:text-[15px] sm:text-xs md:text-sm font-black uppercase tracking-wider text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.65)] transition-all duration-200 hover:scale-105 active:scale-95 shrink-0 ${
+          className={`inline-flex w-fit items-center justify-center gap-1 rounded-lg bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-2 sm:px-3 py-1.5 sm:py-3 md:py-3.5 font-sans text-sm xs:text-[15px] sm:text-xs md:text-sm font-black uppercase tracking-wider text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.65)] transition-all duration-200 hover:scale-105 active:scale-95 shrink-0 ${
             isNavigating ? "brightness-125 scale-105 ring-4 ring-amber-300/80" : ""
           }`}
         >
