@@ -96,7 +96,7 @@ function Landing() {
           {/* Center Octagonal Cartouche Badge */}
           <HeaderCartouche
             className="mx-auto py-3.5 sm:py-2.5 px-3 xs:px-4 sm:px-7 border-2 border-amber-400 shadow-[0_0_25px_rgba(251,191,36,0.45)]"
-            style={{ background: "#FFFFFF" }}
+            style={{ background: "#EEF3FF" }}
           >
             <DiyaLamp className="hidden sm:block sm:w-8 sm:h-8 drop-shadow-[0_0_10px_rgba(251,191,36,0.95)] shrink-0" />
 
