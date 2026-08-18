@@ -1,5 +1,5 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { Ticket } from "lucide-react";
+import { Ticket, Bell } from "lucide-react";
 import { toast } from "sonner";
 import { useEffect, useState } from "react";
 import icckLogo from "@/assets/icck-logo.png";
@@ -203,7 +203,7 @@ function Landing() {
             <div className="flex items-center justify-center">
               <button
                 onClick={handleViewEventsClick}
-                className={`inline-flex w-fit items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-2 sm:px-5 py-2 sm:py-3 font-sans text-[15px] xs:text-base sm:text-base font-black uppercase tracking-[0.14em] text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.65)] transition-all duration-200 hover:scale-105 active:scale-95 ${
+                className={`inline-flex w-fit items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-3 sm:px-5 py-2 sm:py-3 font-sans text-[15px] xs:text-base sm:text-base font-black uppercase tracking-[0.14em] text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.65)] transition-all duration-200 hover:scale-105 active:scale-95 ${
                   isNavigatingEvents ? "brightness-125 scale-105 ring-4 ring-amber-300/80" : ""
                 }`}
               >
@@ -220,9 +220,9 @@ function Landing() {
             <div className="flex items-center justify-center">
               <button
                 onClick={() => toast.success("🎆 Festive firecrackers launched! We'll email you event updates.")}
-                className="inline-flex w-fit items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-2 sm:px-5 py-2 sm:py-3 font-sans text-[15px] xs:text-base sm:text-base font-black uppercase tracking-[0.14em] text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.65)] transition-all duration-200 hover:scale-105 active:scale-95"
+                className="inline-flex w-fit items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-3 sm:px-5 py-2 sm:py-3 font-sans text-[15px] xs:text-base sm:text-base font-black uppercase tracking-[0.14em] text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.65)] transition-all duration-200 hover:scale-105 active:scale-95"
               >
-                <FireworkSparkle className="h-4 w-4 text-[#060c2c] shrink-0" />
+                <Bell className="h-4 w-4 shrink-0" />
                 <span className="drop-shadow-[0_1px_2px_rgba(255,255,255,0.7)]">SIGN UP FOR UPDATES</span>
               </button>
             </div>
