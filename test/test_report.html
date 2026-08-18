@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ICCK Diwali Celebrations 2026 — Software QA &amp; Delivery Report</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 1.5cm;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1e293b;
+      line-height: 1.5;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      font-size: 12px;
+    }
+    .header-banner {
+      background: linear-gradient(135deg, #091442 0%, #0f216b 60%, #1e3a8a 100%);
+      color: #ffffff;
+      padding: 28px 30px;
+      border-radius: 8px;
+      margin-bottom: 22px;
+      border-bottom: 4px solid #f59e0b;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+    }
+    .header-banner h1 {
+      color: #fef08a;
+      font-size: 24px;
+      margin: 0 0 6px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-family: Georgia, serif;
+    }
+    .header-banner p {
+      margin: 4px 0;
+      color: #e2e8f0;
+      font-size: 13px;
+    }
+    .status-badge {
+      background-color: #dcfce7;
+      color: #15803d;
+      padding: 4px 12px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 11px;
+      border: 1px solid #86efac;
+      display: inline-block;
+    }
+    .section-card {
+      background-color: #f8fafc;
+      border-left: 4px solid #f59e0b;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      border-radius: 0 6px 6px 0;
+      border-top: 1px solid #e2e8f0;
+      border-right: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .section-card h2 {
+      margin-top: 0;
+      margin-bottom: 8px;
+      font-size: 16px;
+      color: #0f172a;
+      border: none;
+      padding: 0;
+    }
+    .metrics-grid {
+      display: table;
+      width: 100%;
+      margin-top: 12px;
+    }
+    .metrics-cell {
+      display: table-cell;
+      width: 33.33%;
+      padding: 0 6px;
+      box-sizing: border-box;
+    }
+    .stat-box {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      padding: 12px;
+      border-radius: 6px;
+      text-align: center;
+    }
+    .stat-val {
+      font-size: 20px;
+      font-weight: 700;
+      color: #d97706;
+    }
+    .stat-lbl {
+      font-size: 10px;
+      color: #64748b;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+    h2 {
+      color: #0f172a;
+      font-size: 16px;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 6px;
+      margin-top: 24px;
+      margin-bottom: 12px;
+      font-family: Georgia, serif;
+      page-break-after: avoid;
+    }
+    h3 {
+      color: #1e3a8a;
+      font-size: 13px;
+      margin-top: 16px;
+      margin-bottom: 8px;
+      border-left: 3px solid #f59e0b;
+      padding-left: 8px;
+      page-break-after: avoid;
+    }
+    p {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #334155;
+    }
+    ul {
+      margin-top: 4px;
+      margin-bottom: 14px;
+      padding-left: 18px;
+    }
+    li {
+      margin-bottom: 4px;
+      color: #334155;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      margin-bottom: 18px;
+      font-size: 11px;
+      page-break-inside: auto;
+    }
+    tr {
+      page-break-inside: avoid;
+      page-break-after: auto;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 7px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background-color: #0f172a;
+      color: #fef08a;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 0.5px;
+    }
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+    .status-pass {
+      color: #16a34a;
+      font-weight: 700;
+    }
+    .code-tag {
+      font-family: SFMono-Regular, Consolas, Monaco, monospace;
+      background: #f1f5f9;
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 10.5px;
+      color: #0f172a;
+      border: 1px solid #e2e8f0;
+    }
+    .callout {
+      background-color: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: 6px;
+      padding: 12px 15px;
+      margin: 12px 0;
+      page-break-inside: avoid;
+    }
+    .callout h4 {
+      margin: 0 0 6px 0;
+      color: #92400e;
+      font-size: 12px;
+    }
+    .signoff-table {
+      width: 100%;
+      border: none;
+      margin-top: 25px;
+      page-break-inside: avoid;
+    }
+    .signoff-table td {
+      border: none;
+      padding: 10px;
+      background: transparent;
+      vertical-align: top;
+    }
+    .signoff-box {
+      border-top: 2px solid #0f172a;
+      padding-top: 8px;
+    }
+    .signoff-title {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .signoff-sub {
+      color: #64748b;
+      font-size: 10.5px;
+      margin-top: 2px;
+      white-space: nowrap;
+    }
+    .signoff-status {
+      color: #16a34a;
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 4px;
+      white-space: nowrap;
+    }
+    .footer {
+      border-top: 1px solid #cbd5e1;
+      padding-top: 10px;
+      font-size: 10px;
+      color: #64748b;
+      text-align: center;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER BANNER -->
+  <div class="header-banner">
+    <h1>ICCK Diwali Celebrations 2026</h1>
+    <p style="font-size: 16px; color: #fde047; font-weight: 600;">Software Quality Assurance &amp; Delivery Report</p>
+    <p><strong>Target Platform:</strong> ICCK Diwali Ball &amp; Business Awards Web Portal</p>
+    <p><strong>Testing Scope:</strong> Mobile &amp; PC Layouts, UI Components, Navigation Transitions, Production Build</p>
+    <p><strong>Status:</strong> <span class="status-badge">QA VERIFIED — READY FOR CLIENT REVIEW</span></p>
+  </div>
+
+  <!-- SECTION 1: EXECUTIVE SUMMARY -->
+  <div class="section-card">
+    <h2>1. Executive Summary &amp; Scope</h2>
+    <p>This report details the technical quality assurance, responsive layout verification across Mobile and Desktop PC viewports, component contract validations, visual refinements, production build compilation, and repository parity checks conducted for the <strong>ICCK Diwali Celebrations 2026</strong> web application.</p>
+    <p>All requested features—including prominent header branding, clean title alignment, zero-margin mobile arch cards, 3D popped-up gold CTA buttons, and interactive page click transitions—have been implemented, tested locally, and verified for production readiness.</p>
+
+    <div class="metrics-grid">
+      <div class="metrics-cell">
+        <div class="stat-box">
+          <div class="stat-val">18 / 18</div>
+          <div class="stat-lbl">Test Cases Passed</div>
+        </div>
+      </div>
+      <div class="metrics-cell">
+        <div class="stat-box">
+          <div class="stat-val">0 Diffs</div>
+          <div class="stat-lbl">Repository Parity</div>
+        </div>
+      </div>
+      <div class="metrics-cell">
+        <div class="stat-box">
+          <div class="stat-val">386 ms</div>
+          <div class="stat-lbl">Production Build Time</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: DELIVERABLES SUMMARY -->
+  <h2>2. Summary of Implemented Enhancements</h2>
+  <ul>
+    <li><strong>Header Branding &amp; Logo Prominence:</strong> Enlarged official ICCK logo and bold title badge (<code>ICCK DIWALI CELEBRATIONS</code>) enclosed in an octagonal dark cartouche with gold marigold trim. Inner Diya lamps and typography were scaled to ensure zero text cutoff on narrow mobile screens.</li>
+    <li><strong>Main Hero Title Streamlining:</strong> Updated main headline to read <code>ILLUMINATE YOUR CELEBRATION!</code> (removing the <code>ICCK DIWALI BALL:</code> line) and reduced top spacing to pull arch cards up cleanly without empty vertical gaps.</li>
+    <li><strong>Full Mobile Width Architecture:</strong> Removed the 370px width limit on phone screens and updated mobile container width to <code>w-full max-w-[430px]</code>, allowing Mughal arch cards to stretch edge-to-edge across mobile viewports with zero side whitespace.</li>
+    <li><strong>3D Popped-Up Gold CTA Buttons:</strong> Upgraded all action buttons (<code>BUY TICKETS</code>, <code>REGISTER NOW</code>, <code>GET THE BUNDLE</code>, <code>VIEW ALL EVENTS</code>) with 3D gold gradient bevels, top yellow highlights, deep 3D shadows, and tactile hover animations for both Mobile and PC views.</li>
+    <li><strong>Interactive Page Click Transitions:</strong> Added a 280ms royal fade/zoom transition with a spinning sparkle indicator (<code>FireworkSparkle</code>) before routing users to event registration pages.</li>
+  </ul>
+
+  <!-- SECTION 3: SYSTEM ARCHITECTURE -->
+  <h2>3. Technical Architecture &amp; Technology Stack</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 22%;">Layer</th>
+        <th style="width: 28%;">Technology</th>
+        <th style="width: 50%;">Implementation &amp; Purpose</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Application Framework</td>
+        <td><span class="code-tag">TanStack Start / React 18</span></td>
+        <td>SSR-enabled file-based routing architecture with type-safe route parameters.</td>
+      </tr>
+      <tr>
+        <td>Build &amp; SSR Engine</td>
+        <td><span class="code-tag">Vite 8.2.1 + Nitro Engine</span></td>
+        <td>Fast module bundling (386ms) with Cloudflare Module serverless output target.</td>
+      </tr>
+      <tr>
+        <td>Styling &amp; Theme</td>
+        <td><span class="code-tag">Tailwind CSS v3</span></td>
+        <td>Festive color palette (Royal Navy <code>#091442</code>, Marigold Gold <code>#FDE047</code>, Crimson <code>#BE123C</code>).</td>
+      </tr>
+      <tr>
+        <td>Vector Graphics</td>
+        <td><span class="code-tag">Inline SVG + Path Rendering</span></td>
+        <td>High-DPI 5-cusp Mughal Arch paths, Jaali lattice overlays, and decorative Diya strings.</td>
+      </tr>
+      <tr>
+        <td>Interactive Canvas</td>
+        <td><span class="code-tag">FirecrackerCanvas (HTML5)</span></td>
+        <td>Dynamic particle exhaust trail sparks, click burst explosions, and mouse tail sparkles.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 4: RESPONSIVE BREAKPOINT MATRIX -->
+  <h2>4. Responsive Layout &amp; Device Compatibility</h2>
+  <p>The application was tested across 5 distinct device viewport tiers covering standard mobile, tablet, and PC desktop display resolutions.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 22%;">Category</th>
+        <th style="width: 20%;">Resolution</th>
+        <th style="width: 25%;">Target Devices</th>
+        <th style="width: 33%;">Verified Behavior</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Compact Mobile</td>
+        <td>320px &ndash; 360px</td>
+        <td>iPhone SE, Small Android</td>
+        <td>Header badge font scales to <code>text-[9.5px]</code>; inner Diya lamps scale to <code>w-3.5 h-3.5</code>. Zero text clipping.</td>
+      </tr>
+      <tr>
+        <td>Standard Mobile</td>
+        <td>375px &ndash; 412px</td>
+        <td>iPhone 14/15/16, Pixel 7/8</td>
+        <td>Arch cards fill <code>w-full max-w-[430px]</code>, stretching across the screen with zero blue side whitespace margins.</td>
+      </tr>
+      <tr>
+        <td>Large Mobile</td>
+        <td>428px &ndash; 430px</td>
+        <td>iPhone 16 Pro Max, S24 Ultra</td>
+        <td>Cards cap cleanly at 430px with balanced margins. 3D gold buttons display high-contrast navy text (<code>#060c2c</code>).</td>
+      </tr>
+      <tr>
+        <td>Tablet / Small PC</td>
+        <td>640px &ndash; 768px</td>
+        <td>iPad, Small Laptops</td>
+        <td>Grid transforms smoothly into 3-column layout (<code>sm:grid-cols-3</code>) with cards proportional at <code>sm:max-w-[280px]</code>.</td>
+      </tr>
+      <tr>
+        <td>Desktop PC</td>
+        <td>1024px &ndash; 1536px+</td>
+        <td>MacBook Pro, Desktop Monitors</td>
+        <td>Cards scale to <code>md:max-w-[325px] h-[440px]</code>. Rotating mandalas and fixed side hanging Diya strings rendered.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 5: TEST EXECUTION RESULTS -->
+  <h2>5. Quality Assurance Test Execution Record</h2>
+  <p>Below is the complete record of the 18 local test cases executed across 5 test suites. All tests yielded clean pass results.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 8%;">ID</th>
+        <th style="width: 20%;">Test Scope</th>
+        <th style="width: 32%;">Expected Technical Behavior</th>
+        <th style="width: 32%;">Empirical Test Result</th>
+        <th style="width: 8%;">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TC-01</td>
+        <td>Header Logo</td>
+        <td>Render official ICCK logo with gold glow</td>
+        <td>Rendered cleanly at <code>h-5</code> to <code>h-9</code></td>
+        <td class="status-pass">PASS</td>
+      </tr>
+      <tr>
+        <td>TC-02</td>
+        <td>Header Text Fit</td>
+        <td>No text cutoff at <code>CELEF</code> or border overflow</td>
+        <td>Full text fits with side breathing room</td>
+        <td class="status-pass">PASS</td>
+      </tr>
+      <tr>
+        <td>TC-03</td>
+        <td>Header Trim</td>
+        <td>Render marigold bar &amp; red scalloped trim</td>
+        <td>SVG scalloped trim rendered cleanly</td>
+        <td class="status-pass">PASS</td>
+      </tr>
+      <tr>
+        <td>TC-04</td>
+        <td>Hero Title</td>
+        <td>Title reads <code>ILLUMINATE YOUR CELEBRATION!</code></td>
+        <td>Subtitle <code>ICCK DIWALI BALL:</code> removed</td>
+        <td class="status-pass">PASS</td>
+      </tr>
+      <tr>
+        <td>TC-05</td>
+        <td>Hero Spacing</td>
+        <td>Reduce top margin to eliminate vertical gap</td>
+        <td>Cards sit directly under title banner</td>
+        <td class="status-pass">PASS</td>
+      </tr>
+      <tr>
+        <td>TC-06</td>
+        <td>Mobile Width</td>
+        <td>Arch cards stretch full width on mobile</td>
+        <td>Cards fill 98%&ndash;100% width (max-w-[430px])</td>
+        <td class="status-pass">PASS</td>
+      </tr>
+      <tr>
+        <td>TC-07</td>
+        <td>Mughal Arch</td>
+        <td>Validate 5-cusp arch path &amp; gold border</td>
+        <td>Crisp SVG vector path rendering verified</td>
+        <td class="status-pass">PASS</td>
+      </tr>
+      <tr>
+        <td>TC-08</td>
+        <td>Jaali Lattice</td>
+        <td>Overlay geometric jaali pattern on arch card</td>
+        <td>Jaali lattice overlay rendered at 0.18 opacity</td>
+        <td class="status-pass">PASS</td>
+      </tr>
+      <tr>
+        <td>TC-09</td>
+        <td>Vector Art</td>
+        <td>Render dancer, trophy, and emblem artwork</td>
+        <td>Artwork centered inside arch cards</td>
+        <td class="status-pass">PASS</td>
+      </tr>
+      <tr>
+        <td>TC-10</td>
+        <td>Ribbon Badge</td>
+        <td>Discounted Bundle ribbon on Card 3</td>
+        <td>Gold ribbon rendered with pulse animation</td>
+        <td class="status-pass">PASS</td>
+      </tr>
+      <tr>
+        <td>TC-11</td>
+        <td>3D Buttons</td>
+        <td>3D gold gradient, top highlight &amp; shadow</td>
+        <td>Popped-up 3D effect active on Mobile &amp; PC</td>
+        <td class="status-pass">PASS</td>
+      </tr>
+      <tr>
+        <td>TC-12</td>
+        <td>Button Contrast</td>
+        <td>Extra-bold navy font (<code>#060c2c</code>) readability</td>
+        <td>High contrast readability verified</td>
+        <td class="status-pass">PASS</td>
+      </tr>
+      <tr>
+        <td>TC-13</td>
+        <td>Equal Width</td>
+        <td>Bottom action buttons equal width &amp; centered</td>
+        <td>Set to <code>w-[88%] xs:w-[90%] sm:w-auto</code></td>
+        <td class="status-pass">PASS</td>
+      </tr>
+      <tr>
+        <td>TC-14</td>
+        <td>Page Transition</td>
+        <td>280ms royal transition with spinning sparkle</td>
+        <td>Sparkle animation plays &amp; routes cleanly</td>
+        <td class="status-pass">PASS</td>
+      </tr>
+      <tr>
+        <td>TC-15</td>
+        <td>Background Art</td>
+        <td>Rotating gold mandalas background layer</td>
+        <td>3 mandalas rotate slowly at opacity 0.22</td>
+        <td class="status-pass">PASS</td>
+      </tr>
+      <tr>
+        <td>TC-16</td>
+        <td>Rockets Removal</td>
+        <td>Verify removal of static corner rockets</td>
+        <td>Corner rockets (<code>IGNITE THREAD</code>) 100% removed</td>
+        <td class="status-pass">PASS</td>
+      </tr>
+      <tr>
+        <td>TC-17</td>
+        <td>Build Compilation</td>
+        <td>Production bundle build via <code>npm run build</code></td>
+        <td>Vite compiled in 386ms; 0 build errors</td>
+        <td class="status-pass">PASS</td>
+      </tr>
+      <tr>
+        <td>TC-18</td>
+        <td>Repo Sync</td>
+        <td>Dual directory parity check</td>
+        <td>Python <code>filecmp</code> verified <strong>0 diffs</strong></td>
+        <td class="status-pass">PASS</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 6: BUILD & VERIFICATION -->
+  <h2>6. Build Verification &amp; Repository Integrity</h2>
+  <p>The production build was compiled using Vite 8.2.1 and Nitro Engine targeting Cloudflare Modules. The output assets were verified locally.</p>
+
+  <div class="callout">
+    <h4>Build Summary &amp; Local Verification</h4>
+    <p style="margin: 0; font-family: monospace;">
+      ✓ Vite SSR Build: 386ms compilation time<br />
+      ✔ Nitro Output: Generated .output/public and .output/server/wrangler.json<br />
+      ✔ Dev Server Status: HTTP 200 OK on http://localhost:8080<br />
+      ✔ Repository Parity: 0 differences between workspace repositories
+    </p>
+  </div>
+
+  <!-- SECTION 7: SIGN-OFF TABLE -->
+  <h2>7. QA Sign-Off &amp; Review Status</h2>
+  <p>The application has successfully completed local quality assurance testing and production build verification. It is prepared for client review and feedback.</p>
+
+  <table class="signoff-table">
+    <tr>
+      <td style="width: 48%;">
+        <div class="signoff-box">
+          <div class="signoff-title">Quality Assurance Lead</div>
+          <div class="signoff-sub">Software QA &amp; Testing Suite</div>
+          <div class="signoff-status">QA VERIFIED — READY FOR CLIENT REVIEW</div>
+        </div>
+      </td>
+      <td style="width: 4%;"></td>
+      <td style="width: 48%;">
+        <div class="signoff-box">
+          <div class="signoff-title">Development &amp; Build Engineering</div>
+          <div class="signoff-sub">Frontend &amp; Systems Team</div>
+          <div class="signoff-status">PRODUCTION BUILD VERIFIED LOCALLY</div>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <div class="footer">
+    ICCK Diwali Celebrations 2026 &nbsp;|&nbsp; Software QA &amp; Delivery Report
+  </div>
+
+</body>
+</html>

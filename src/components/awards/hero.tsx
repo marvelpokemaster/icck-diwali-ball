@@ -51,14 +51,6 @@ export function Hero() {
             <a href="#about">Learn More</a>
           </Button>
         </div>
-
-        <div className="mt-10 flex items-center gap-4 text-gold">
-          <span className="h-px w-10 bg-gold/60" />
-          <p className="font-display text-sm font-semibold tracking-[0.15em] md:text-base">
-            Awards Ceremony: Nov 27, 2026
-          </p>
-          <span className="h-px w-10 bg-gold/60" />
-        </div>
       </div>
     </section>
   );
