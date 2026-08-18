@@ -11,7 +11,7 @@ import {
   GoldTrophyIllustration, 
   FourIconBundleEmblem,
   FireworkSparkle,
-  RangoliMandala 
+  RangoliMandala
 } from "@/components/awards/DiwaliDecorations";
 import { JharokhaArchCard } from "@/components/awards/JharokhaArchCard";
 import { HeaderCartouche, ScallopedTrim } from "@/components/awards/JharokhaArchFrame";
@@ -106,8 +106,8 @@ function Landing() {
         </div>
       </header>
 
-      {/* ---------------- 2. MAIN FESTIVE HERO & BALANCED ARCH CARDS ---------------- */}
-      <main className="relative overflow-hidden z-20 my-auto pt-2 pb-1">
+      {/* ---------------- 2. MAIN FESTIVE HERO & PROPORTIONAL CARDS ---------------- */}
+      <main className="relative overflow-hidden z-20 my-auto pt-3 sm:pt-2 pb-2 sm:pb-1">
         
         {/* Left Vertical Hanging Diya String & Extra Standing Diya Lamp */}
         <div className="pointer-events-none absolute top-0 left-2 z-30 opacity-90 hidden lg:flex flex-col items-center gap-4">
@@ -121,19 +121,19 @@ function Landing() {
           <DiyaLamp className="w-10 h-10 drop-shadow-[0_0_15px_rgba(251,191,36,0.9)]" />
         </div>
 
-        <section className="relative z-20 mx-auto max-w-5xl px-1 sm:px-2 text-center">
+        <section className="relative z-20 mx-auto max-w-5xl px-3 sm:px-2 text-center">
           
-          {/* Main Compact Title Banner */}
-          <div className="mt-0.5 mb-1.5 sm:mb-2 flex items-center justify-center gap-2">
+          {/* Main Title Banner */}
+          <div className="mt-1 mb-4 sm:mb-3 flex items-center justify-center gap-2">
             <DiyaLamp className="w-7 sm:w-10 h-7 sm:h-10 drop-shadow-[0_0_12px_rgba(251,191,36,0.9)] shrink-0 hidden sm:block" />
             
             <div>
-              <h1 className="font-serif text-base xs:text-lg sm:text-3xl lg:text-4xl font-black leading-[1.02] tracking-wide text-[#FEF08A] drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)] uppercase">
+              <h1 className="font-serif text-lg xs:text-xl sm:text-3xl lg:text-4xl font-black leading-[1.05] tracking-wide text-[#FEF08A] drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)] uppercase">
                 ICCK Diwali Ball:
                 <br />
                 <span className="italic text-white drop-shadow-[0_2px_12px_rgba(255,255,255,0.6)]">Illuminate Your Celebration!</span>
               </h1>
-              <p className="mt-0.5 text-[7.5px] xs:text-[8.5px] sm:text-[11px] tracking-[0.16em] text-white/90 uppercase font-semibold">
+              <p className="mt-1 text-[8.5px] xs:text-[9.5px] sm:text-[11px] tracking-[0.16em] text-white/90 uppercase font-semibold">
                 Year 2026 &middot; Diwali Theme &middot; Geometric Motifs
               </p>
             </div>
@@ -141,8 +141,8 @@ function Landing() {
             <DiyaLamp className="w-7 sm:w-10 h-7 sm:h-10 drop-shadow-[0_0_12px_rgba(251,191,36,0.9)] shrink-0 hidden sm:block" />
           </div>
 
-          {/* ---------------- 3. TALL MAJESTIC ARCH CARDS FILLING VIEWPORT ---------------- */}
-          <div className="mt-1 grid grid-cols-3 gap-1 sm:gap-3 md:gap-4 items-end w-full max-w-[440px] sm:max-w-4xl mx-auto px-0.5 sm:px-1">
+          {/* ---------------- 3. PROPORTIONAL ARCH CARDS: VERTICAL STACK ON MOBILE, 3-COLUMNS ON DESKTOP ---------------- */}
+          <div className="mt-3 flex flex-col sm:grid sm:grid-cols-3 gap-8 sm:gap-3 md:gap-4 items-center sm:items-end w-full max-w-sm sm:max-w-4xl mx-auto px-1">
             
             {/* Card 1: ICCK DIWALI BALL (Vibrant Royal Indigo Blue) */}
             <JharokhaArchCard
@@ -152,7 +152,7 @@ function Landing() {
               noteText="Dinner, dance & performances"
               gradientFrom="#253494"
               gradientTo="#0f1854"
-              illustration={<IndianDancerIllustration className="w-22 xs:w-26 sm:w-36 md:w-40 h-26 xs:h-30 sm:h-40 md:h-44" />}
+              illustration={<IndianDancerIllustration className="w-28 xs:w-32 sm:w-36 md:w-40 h-32 xs:h-36 sm:h-40 md:h-44" />}
               to="/register"
               search={{ preset: "ball" }}
             />
@@ -165,7 +165,7 @@ function Landing() {
               noteText="Honoring business excellence"
               gradientFrom="#ab1d53"
               gradientTo="#520829"
-              illustration={<GoldTrophyIllustration className="w-20 xs:w-24 sm:w-34 md:w-38 h-24 xs:h-28 sm:h-36 md:h-40" />}
+              illustration={<GoldTrophyIllustration className="w-24 xs:w-28 sm:w-34 md:w-38 h-28 xs:h-32 sm:h-36 md:h-40" />}
               to="/awards"
             />
 
@@ -180,22 +180,22 @@ function Landing() {
               noteText="Both events at a discounted price"
               gradientFrom="#c2185b"
               gradientTo="#880e4f"
-              illustration={<FourIconBundleEmblem className="w-20 xs:w-24 sm:w-34 md:w-38 h-20 xs:h-24 sm:h-34 md:h-38" />}
+              illustration={<FourIconBundleEmblem className="w-24 xs:w-28 sm:w-34 md:w-38 h-24 xs:h-28 sm:h-34 md:h-38" />}
               to="/register"
               search={{ preset: "bundle" }}
             />
 
           </div>
 
-          {/* ---------------- 4. BOTTOM ACTION BUTTONS: FULL-WIDTH STACKED ON MOBILE ---------------- */}
-          <div className="mt-3.5 sm:mt-4 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-2.5 w-full max-w-[360px] sm:max-w-none mx-auto relative px-3 sm:px-0">
+          {/* ---------------- 4. BOTTOM ACTION BUTTONS ---------------- */}
+          <div className="mt-6 sm:mt-5 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-2.5 w-full max-w-[360px] sm:max-w-none mx-auto relative px-3 sm:px-0">
             
             {/* Button 1: VIEW ALL EVENTS */}
             <div className="w-full sm:w-auto flex items-center gap-1.5">
               <FireworkSparkle className="w-5 h-5 text-amber-300 animate-pulse shrink-0 hidden sm:block" />
               <Link
                 to="/awards"
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-5 sm:px-6 py-2.5 sm:py-2 fon[...]"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-6 sm:px-6 py-3 sm:py-2.5 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110"
               >
                 <Ticket className="h-4 w-4" /> VIEW ALL EVENTS
               </Link>
@@ -205,7 +205,7 @@ function Landing() {
             <div className="w-full sm:w-auto flex items-center gap-1.5">
               <button
                 onClick={() => toast.success("🎆 Festive firecrackers launched! We'll email you event updates.")}
-                className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-5 sm:px-6 py-2.5 sm:py-2 font-sans t[...]"
+                className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-6 sm:px-6 py-3 sm:py-2.5 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110"
               >
                 SIGN UP FOR UPDATES
               </button>
@@ -214,15 +214,13 @@ function Landing() {
 
           </div>
 
-          {/* Bottom Rangoli Emblem flanked by Diya Lamps */}
-          <div className="mt-2 flex justify-center items-center gap-3 overflow-hidden">
-            <DiyaLamp className="w-7 sm:w-9 h-7 sm:h-9 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)] opacity-90 shrink-0" />
+          {/* Bottom Rangoli Emblem */}
+          <div className="mt-3 flex justify-center items-center overflow-hidden">
             <RangoliMandala className="w-24 h-24 sm:w-36 sm:h-36 opacity-90 drop-shadow-[0_4px_15px_rgba(251,191,36,0.6)]" />
-            <DiyaLamp className="w-7 sm:w-9 h-7 sm:h-9 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)] opacity-90 shrink-0" />
           </div>
 
           {/* Quick Navigation Footer Links */}
-          <nav className="mt-0.5 pb-1 flex flex-wrap justify-center gap-x-3 sm:gap-x-4 gap-y-0.5 text-[8.5px] sm:text-[10px] font-bold uppercase tracking-wider text-white/80">
+          <nav className="mt-1 pb-2 flex flex-wrap justify-center gap-x-4 gap-y-1 text-[9px] sm:text-[10px] font-bold uppercase tracking-wider text-white/80">
             <Link to="/nominate" className="hover:text-white transition-colors">
               Submit nomination
             </Link>
