@@ -110,7 +110,7 @@ function Landing() {
             />
 
             <div className="text-center sm:text-left border-l-2 border-amber-600/70 pl-2 xs:pl-3 sm:pl-4">
-              <p className="font-serif text-[14px] xs:text-[16px] sm:text-lg lg:text-xl font-black uppercase tracking-normal xs:tracking-wide sm:tracking-[0.16em] text-[#1A0A00] leading-tight whitespace-nowrap">
+              <p className="font-serif text-[18px] xs:text-[20px] sm:text-lg lg:text-xl font-black uppercase tracking-normal xs:tracking-wide sm:tracking-[0.16em] text-[#1A0A00] leading-tight whitespace-normal sm:whitespace-nowrap">
                 ICCK DIWALI CELEBRATIONS
               </p>
             </div>
