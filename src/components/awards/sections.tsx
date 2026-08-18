@@ -610,14 +610,16 @@ export function SiteFooter() {
   return (
     <footer className="border-t-2 border-amber-400/40 bg-[#060d2b] py-8">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 text-center md:flex-row md:justify-between md:px-8 md:text-left">
-        <img
-          src={icckLogo}
-          alt="Indian Chamber of Commerce in Korea"
-          width={940}
-          height={347}
-          loading="lazy"
-          className="h-9 w-auto object-contain drop-shadow-[0_2px_8px_rgba(251,191,36,0.5)]"
-        />
+        <div className="bg-[#FFFDF0] border border-amber-400/60 rounded-lg px-3 py-1.5 shadow-sm inline-flex items-center justify-center">
+          <img
+            src={icckLogo}
+            alt="Indian Chamber of Commerce in Korea"
+            width={940}
+            height={347}
+            loading="lazy"
+            className="h-8 w-auto object-contain"
+          />
+        </div>
         <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-bold uppercase tracking-wide text-amber-100/80">
           <a href="#about" className="hover:text-[#FEF08A]">
             Privacy Policy
