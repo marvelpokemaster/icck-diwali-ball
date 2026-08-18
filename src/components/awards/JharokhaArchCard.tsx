@@ -41,11 +41,11 @@ export function JharokhaArchCard({
   const cardId = title.replace(/[^a-zA-Z0-9]/g, "");
 
   return (
-    <div className="relative flex flex-col items-center w-full max-w-[290px] xs:max-w-[320px] sm:max-w-[280px] md:max-w-[325px] mx-auto h-[430px] xs:h-[450px] sm:h-[440px] md:h-[475px] drop-shadow-[0_16px_36px_rgba(0,0,0,0.9)]">
+    <div className="relative flex flex-col items-center w-full max-w-[265px] xs:max-w-[295px] sm:max-w-[280px] md:max-w-[325px] mx-auto h-[445px] xs:h-[475px] sm:h-[450px] md:h-[485px] drop-shadow-[0_16px_36px_rgba(0,0,0,0.9)]">
       
       {/* Top Floating Ribbon Badge if present */}
       {ribbonText && (
-        <div className="absolute -top-3.5 sm:-top-4 z-40 bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] text-[#0c1445] font-black uppercase text-[9px] xs:text-xs md:text-sm tracking-wide sm:tracking-[0.14em] px-3 sm:px-5 py-1 sm:py-1.5 rounded-sm sm:rounded-md shadow-2xl border border-amber-200 whitespace-nowrap">
+        <div className="absolute -top-3.5 sm:-top-4 z-40 bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] text-[#0c1445] font-black uppercase text-[9.5px] xs:text-xs md:text-sm tracking-wide sm:tracking-[0.14em] px-3 sm:px-5 py-1 sm:py-1.5 rounded-sm sm:rounded-md shadow-2xl border border-amber-200 whitespace-nowrap">
           {ribbonText}
         </div>
       )}
@@ -92,22 +92,22 @@ export function JharokhaArchCard({
         />
       </svg>
 
-      {/* Inner Card Content Overlay — Proportional Layout for Vertical Mobile & Grid Desktop */}
-      <div className="relative z-20 w-full h-full px-3.5 sm:px-5 pt-8 xs:pt-9 sm:pt-11 pb-3 sm:pb-4 flex flex-col items-center justify-between text-center">
+      {/* Inner Card Content Overlay — Illustrations Shifted Down, All Items Enlarged */}
+      <div className="relative z-20 w-full h-full px-4 sm:px-5 pt-10 xs:pt-12 sm:pt-11 pb-3.5 sm:pb-4 flex flex-col items-center justify-between text-center">
         
-        {/* Top Section: Vector Illustration Filling Arch Dome */}
-        <div className="h-28 xs:h-32 sm:h-36 md:h-40 flex items-center justify-center shrink-0 mt-1 sm:mt-3">
+        {/* Top Section: Vector Illustration Shifted Down & Enlarged */}
+        <div className="h-30 xs:h-36 sm:h-36 md:h-40 flex items-center justify-center shrink-0 mt-3 xs:mt-4 sm:mt-3">
           {illustration}
         </div>
         
-        {/* Middle Section: Bolder Title, Larger Price & Badge */}
+        {/* Middle Section: Larger & Bolder Title, Larger Price & Badge */}
         <div className="flex flex-col items-center gap-1.5 sm:gap-2 w-full my-auto">
-          <h2 className="font-serif text-xs xs:text-sm sm:text-sm md:text-base font-black uppercase tracking-wide text-white px-1 leading-tight">
+          <h2 className="font-serif text-xs xs:text-sm sm:text-sm md:text-base font-black uppercase tracking-wider text-white px-1 leading-tight">
             {title}
           </h2>
 
-          <div className="flex items-baseline justify-center gap-1.5 sm:gap-2 my-0.5 sm:my-1">
-            <span className="font-serif text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-black text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+          <div className="flex items-baseline justify-center gap-1.5 sm:gap-2 my-1">
+            <span className="font-serif text-3xl xs:text-4xl sm:text-4xl md:text-5xl font-black text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
               {price}
             </span>
             {strikePrice && (
@@ -118,7 +118,7 @@ export function JharokhaArchCard({
           </div>
 
           {badgeText && (
-            <span className="rounded-full bg-amber-400/25 px-3 sm:px-4 py-0.5 text-[9px] xs:text-xs font-black uppercase tracking-wider text-[#FEF08A] border border-amber-300/50 shadow-md">
+            <span className="rounded-full bg-amber-400/25 px-3 sm:px-4 py-0.5 text-[9.5px] xs:text-xs font-black uppercase tracking-wider text-[#FEF08A] border border-amber-300/50 shadow-md">
               {badgeText}
             </span>
           )}
@@ -134,7 +134,7 @@ export function JharokhaArchCard({
             {buttonText}
           </Link>
 
-          <p className="text-[9.5px] xs:text-xs sm:text-[10px] md:text-xs font-bold text-white/95 leading-tight">
+          <p className="text-[10px] xs:text-xs sm:text-[10px] md:text-xs font-bold text-white/95 leading-tight">
             {noteText}
           </p>
         </div>

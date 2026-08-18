@@ -141,8 +141,8 @@ function Landing() {
             <DiyaLamp className="w-7 sm:w-10 h-7 sm:h-10 drop-shadow-[0_0_12px_rgba(251,191,36,0.9)] shrink-0 hidden sm:block" />
           </div>
 
-          {/* ---------------- 3. PROPORTIONAL ARCH CARDS: VERTICAL STACK ON MOBILE, 3-COLUMNS ON DESKTOP ---------------- */}
-          <div className="mt-3 flex flex-col sm:grid sm:grid-cols-3 gap-8 sm:gap-3 md:gap-4 items-center sm:items-end w-full max-w-sm sm:max-w-4xl mx-auto px-1">
+          {/* ---------------- 3. PROPORTIONAL ARCH CARDS: PERFECTLY FITTED MOBILE STACK & 3-COLUMNS DESKTOP ---------------- */}
+          <div className="mt-3 flex flex-col sm:grid sm:grid-cols-3 gap-8 sm:gap-3 md:gap-4 items-center sm:items-end w-full max-w-[280px] xs:max-w-[310px] sm:max-w-4xl mx-auto px-1">
             
             {/* Card 1: ICCK DIWALI BALL (Vibrant Royal Indigo Blue) */}
             <JharokhaArchCard
@@ -152,7 +152,7 @@ function Landing() {
               noteText="Dinner, dance & performances"
               gradientFrom="#253494"
               gradientTo="#0f1854"
-              illustration={<IndianDancerIllustration className="w-28 xs:w-32 sm:w-36 md:w-40 h-32 xs:h-36 sm:h-40 md:h-44" />}
+              illustration={<IndianDancerIllustration className="w-32 xs:w-36 sm:w-38 md:w-42 h-36 xs:h-40 sm:h-42 md:h-46" />}
               to="/register"
               search={{ preset: "ball" }}
             />
@@ -165,7 +165,7 @@ function Landing() {
               noteText="Honoring business excellence"
               gradientFrom="#ab1d53"
               gradientTo="#520829"
-              illustration={<GoldTrophyIllustration className="w-24 xs:w-28 sm:w-34 md:w-38 h-28 xs:h-32 sm:h-36 md:h-40" />}
+              illustration={<GoldTrophyIllustration className="w-28 xs:w-32 sm:w-36 md:w-40 h-32 xs:h-36 sm:h-38 md:h-42" />}
               to="/awards"
             />
 
@@ -180,7 +180,7 @@ function Landing() {
               noteText="Both events at a discounted price"
               gradientFrom="#c2185b"
               gradientTo="#880e4f"
-              illustration={<FourIconBundleEmblem className="w-24 xs:w-28 sm:w-34 md:w-38 h-24 xs:h-28 sm:h-34 md:h-38" />}
+              illustration={<FourIconBundleEmblem className="w-28 xs:w-32 sm:w-36 md:w-40 h-28 xs:h-32 sm:h-36 md:h-40" />}
               to="/register"
               search={{ preset: "bundle" }}
             />
@@ -188,7 +188,7 @@ function Landing() {
           </div>
 
           {/* ---------------- 4. BOTTOM ACTION BUTTONS ---------------- */}
-          <div className="mt-6 sm:mt-5 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-2.5 w-full max-w-[360px] sm:max-w-none mx-auto relative px-3 sm:px-0">
+          <div className="mt-6 sm:mt-5 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-2.5 w-full max-w-[340px] sm:max-w-none mx-auto relative px-2 sm:px-0">
             
             {/* Button 1: VIEW ALL EVENTS */}
             <div className="w-full sm:w-auto flex items-center gap-1.5">
