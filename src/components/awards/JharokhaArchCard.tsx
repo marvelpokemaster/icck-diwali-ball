@@ -43,10 +43,10 @@ export function JharokhaArchCard({
 
   return (
     <div
-      className={`relative flex flex-col items-center w-full max-w-[290px] xs:max-w-[325px] sm:max-w-[280px] md:max-w-[325px] mx-auto h-[475px] xs:h-[505px] sm:h-[440px] md:h-[475px] transition-all duration-300 sm:hover:-translate-y-2 ${
+      className={`relative flex flex-col items-center w-full max-w-[285px] xs:max-w-[320px] sm:max-w-[275px] md:max-w-[320px] mx-auto h-[450px] xs:h-[480px] sm:h-[435px] md:h-[465px] transition-all duration-300 sm:hover:-translate-y-1.5 ${
         isBundle
-          ? "drop-shadow-[0_20px_45px_rgba(251,191,36,0.35)] sm:scale-[1.03]"
-          : "drop-shadow-[0_16px_36px_rgba(0,0,0,0.9)] sm:hover:drop-shadow-[0_22px_45px_rgba(251,191,36,0.35)]"
+          ? "drop-shadow-[0_18px_40px_rgba(251,191,36,0.35)] sm:scale-[1.02]"
+          : "drop-shadow-[0_14px_32px_rgba(0,0,0,0.9)] sm:hover:drop-shadow-[0_20px_40px_rgba(251,191,36,0.35)]"
       }`}
     >
       
@@ -124,52 +124,51 @@ export function JharokhaArchCard({
         />
       </svg>
 
-      {/* Inner Card Content Overlay */}
-      <div className="relative z-20 w-full h-full px-3.5 sm:px-5 pt-11 xs:pt-13 sm:pt-11 pb-3.5 sm:pb-4 flex flex-col items-center justify-between text-center">
+      {/* Inner Card Content Overlay — FITTED BUTTONS 100% INSIDE CARD BORDERS */}
+      <div className="relative z-20 w-full h-full px-5 sm:px-6 pt-12 xs:pt-14 sm:pt-11 pb-4 sm:pb-4 flex flex-col items-center justify-center gap-1 sm:gap-1.5 text-center">
         
         {/* Top Section: Vector Illustration */}
-        <div className="h-34 xs:h-40 sm:h-36 md:h-40 flex items-center justify-center shrink-0 mt-3 xs:mt-4 sm:mt-3 transition-transform duration-300 group-hover:scale-105">
+        <div className="flex items-center justify-center shrink-0 mt-1 sm:mt-1">
           {illustration}
         </div>
         
-        {/* Middle Section: Title, Price & Badge */}
-        <div className="flex flex-col items-center gap-1.5 sm:gap-2 w-full my-auto py-1">
-          <h2 className="font-serif text-base xs:text-lg sm:text-sm md:text-base font-black uppercase tracking-wider text-white px-1 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]">
-            {title}
-          </h2>
+        {/* Title */}
+        <h2 className="font-serif text-base xs:text-lg sm:text-sm md:text-base font-black uppercase tracking-wider text-white px-1 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)] mt-0.5">
+          {title}
+        </h2>
 
-          <div className="flex items-baseline justify-center gap-2 my-1">
-            <span className="font-serif text-4xl xs:text-5xl sm:text-4xl md:text-5xl font-black text-[#FEF08A] drop-shadow-[0_4px_14px_rgba(0,0,0,0.95)]">
-              {price}
-            </span>
-            {strikePrice && (
-              <span className="text-xs xs:text-sm line-through text-white/80 font-bold bg-black/30 px-1.5 py-0.5 rounded border border-white/20">
-                {strikePrice}
-              </span>
-            )}
-          </div>
-
-          {badgeText && (
-            <span className="rounded-full bg-gradient-to-r from-amber-500/30 via-amber-400/40 to-amber-500/30 px-3.5 sm:px-4.5 py-0.5 text-[10.5px] xs:text-xs sm:text-xs font-black uppercase tracking-wider text-[#FEF08A] border border-amber-300/60 shadow-md">
-              {badgeText}
+        {/* Price & Strike Price */}
+        <div className="flex items-baseline justify-center gap-2 my-0.5">
+          <span className="font-serif text-3xl xs:text-4xl sm:text-3xl md:text-4xl font-black text-[#FEF08A] drop-shadow-[0_4px_14px_rgba(0,0,0,0.95)]">
+            {price}
+          </span>
+          {strikePrice && (
+            <span className="text-xs xs:text-sm line-through text-white/80 font-bold bg-black/30 px-1.5 py-0.5 rounded border border-white/20">
+              {strikePrice}
             </span>
           )}
         </div>
 
-        {/* Bottom Section: Fitted CTA Button Box */}
-        <div className="w-full space-y-1.5 sm:space-y-2 shrink-0 pt-0.5 flex flex-col items-center">
-          <Link
-            to={to}
-            search={search}
-            className="w-[88%] xs:w-[90%] sm:w-[94%] inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-3.5 sm:px-5 py-2.5 xs:py-3 sm:py-2.5 md:py-3 font-sans text-xs xs:text-sm sm:text-xs md:text-sm font-black uppercase tracking-wider text-[#0c1445] shadow-xl transition hover:brightness-110 active:scale-[0.98]"
-          >
-            {buttonText}
-          </Link>
+        {/* Badge if present */}
+        {badgeText && (
+          <span className="rounded-full bg-gradient-to-r from-amber-500/30 via-amber-400/40 to-amber-500/30 px-3.5 sm:px-4.5 py-0.5 text-[10px] xs:text-xs font-black uppercase tracking-wider text-[#FEF08A] border border-amber-300/60 shadow-md">
+            {badgeText}
+          </span>
+        )}
 
-          <p className="text-[10px] xs:text-xs sm:text-[10px] md:text-xs font-bold text-white/95 leading-tight">
-            {noteText}
-          </p>
-        </div>
+        {/* Bottom CTA Button — 100% CONTAINED WITHIN ARCH BORDERS WITH GENEROUS PADDING */}
+        <Link
+          to={to}
+          search={search}
+          className="w-[82%] xs:w-[84%] sm:w-[82%] md:w-[84%] max-w-[240px] inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-3 sm:px-4 py-2 xs:py-2.5 sm:py-2 md:py-2.5 font-sans text-xs xs:text-sm sm:text-xs md:text-sm font-black uppercase tracking-wider text-[#0c1445] shadow-xl transition hover:brightness-110 active:scale-[0.98] mt-1 shrink-0"
+        >
+          {buttonText}
+        </Link>
+
+        {/* Note Text */}
+        <p className="text-[10px] xs:text-xs sm:text-[10px] md:text-xs font-bold text-white/95 leading-tight mt-0.5 shrink-0 px-2">
+          {noteText}
+        </p>
 
       </div>
 

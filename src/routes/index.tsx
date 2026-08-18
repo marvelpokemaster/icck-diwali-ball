@@ -141,8 +141,8 @@ function Landing() {
             <DiyaLamp className="w-7 sm:w-10 h-7 sm:h-10 drop-shadow-[0_0_12px_rgba(251,191,36,0.9)] shrink-0 hidden sm:block" />
           </div>
 
-          {/* ---------------- 3. ARCH CARDS: MAGNIFIED ON MOBILE ONLY, PC WEB 100% UNTOUCHED ---------------- */}
-          <div className="mt-3 flex flex-col sm:grid sm:grid-cols-3 gap-8 sm:gap-3 md:gap-4 items-center sm:items-end w-full max-w-[290px] xs:max-w-[325px] sm:max-w-4xl mx-auto px-1">
+          {/* ---------------- 3. ARCH CARDS: TIGHT CONTINUOUS FLOW WITH ZERO GAPS ---------------- */}
+          <div className="mt-3 flex flex-col sm:grid sm:grid-cols-3 gap-8 sm:gap-3 md:gap-4 items-center sm:items-end w-full max-w-[285px] xs:max-w-[320px] sm:max-w-4xl mx-auto px-1">
             
             {/* Card 1: ICCK DIWALI BALL (Vibrant Royal Indigo Blue) */}
             <JharokhaArchCard
@@ -152,7 +152,7 @@ function Landing() {
               noteText="Dinner, dance & performances"
               gradientFrom="#253494"
               gradientTo="#0f1854"
-              illustration={<IndianDancerIllustration className="w-38 xs:w-42 sm:w-36 md:w-40 h-42 xs:h-46 sm:h-40 md:h-44" />}
+              illustration={<IndianDancerIllustration className="w-32 xs:w-36 sm:w-32 md:w-36 h-34 xs:h-38 sm:h-34 md:h-38" />}
               to="/register"
               search={{ preset: "ball" }}
             />
@@ -165,7 +165,7 @@ function Landing() {
               noteText="Honoring business excellence"
               gradientFrom="#ab1d53"
               gradientTo="#520829"
-              illustration={<GoldTrophyIllustration className="w-34 xs:w-38 sm:w-34 md:w-38 h-38 xs:h-42 sm:h-36 md:h-40" />}
+              illustration={<GoldTrophyIllustration className="w-28 xs:w-32 sm:w-28 md:w-32 h-30 xs:h-34 sm:h-30 md:h-34" />}
               to="/awards"
             />
 
@@ -180,7 +180,7 @@ function Landing() {
               noteText="Both events at a discounted price"
               gradientFrom="#c2185b"
               gradientTo="#880e4f"
-              illustration={<FourIconBundleEmblem className="w-34 xs:w-38 sm:w-34 md:w-38 h-34 xs:h-38 sm:h-34 md:h-38" />}
+              illustration={<FourIconBundleEmblem className="w-28 xs:w-32 sm:w-28 md:w-32 h-28 xs:h-32 sm:h-28 md:h-32" />}
               to="/register"
               search={{ preset: "bundle" }}
             />
