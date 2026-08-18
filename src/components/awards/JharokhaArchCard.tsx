@@ -43,7 +43,7 @@ export function JharokhaArchCard({
 
   return (
     <div
-      className={`relative flex flex-col items-center w-[92%] xs:w-[94%] max-w-[355px] xs:max-w-[375px] sm:max-w-[280px] md:max-w-[325px] mx-auto h-[395px] xs:h-[420px] sm:h-[410px] md:h-[435px] transition-all duration-300 sm:hover:-translate-y-1.5 ${
+      className={`relative flex flex-col items-center w-[92%] xs:w-[94%] max-w-[355px] xs:max-w-[375px] sm:max-w-[280px] md:max-w-[325px] mx-auto h-[400px] xs:h-[425px] sm:h-[415px] md:h-[440px] transition-all duration-300 sm:hover:-translate-y-1.5 ${
         isBundle
           ? "drop-shadow-[0_20px_45px_rgba(251,191,36,0.35)] sm:scale-[1.02]"
           : "drop-shadow-[0_16px_36px_rgba(0,0,0,0.9)] sm:hover:drop-shadow-[0_22px_45px_rgba(251,191,36,0.35)]"
@@ -124,8 +124,8 @@ export function JharokhaArchCard({
         />
       </svg>
 
-      {/* Inner Card Content Overlay — CONTINUOUS TIGHT STACK WITH ZERO GAPS */}
-      <div className="relative z-20 w-full h-full px-4 xs:px-5 sm:px-4 pt-11 xs:pt-12 sm:pt-10 pb-3 xs:pb-3.5 sm:pb-3 flex flex-col items-center justify-center gap-1.5 xs:gap-2 sm:gap-1.5 text-center">
+      {/* Inner Card Content Overlay — FITTED THICK BUTTON WITH WIDE SIDE MARGINS */}
+      <div className="relative z-20 w-full h-full px-4 xs:px-5 sm:px-4 pt-11 xs:pt-13 sm:pt-11 pb-3.5 xs:pb-4 sm:pb-3.5 flex flex-col items-center justify-center gap-1.5 xs:gap-2 sm:gap-1.5 text-center">
         
         {/* Top Section: Vector Artwork */}
         <div className="flex items-center justify-center shrink-0">
@@ -156,11 +156,11 @@ export function JharokhaArchCard({
           </span>
         )}
 
-        {/* Bottom CTA Button */}
+        {/* Bottom CTA Button — DECREASED HORIZONTAL LENGTH, INCREASED VERTICAL THICKNESS & HEIGHT */}
         <Link
           to={to}
           search={search}
-          className="w-[86%] xs:w-[88%] sm:w-[84%] md:w-[86%] max-w-[260px] inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-3.5 sm:px-4 py-2 xs:py-2.5 sm:py-2 md:py-2.5 font-sans text-xs xs:text-sm sm:text-xs md:text-sm font-black uppercase tracking-wider text-[#0c1445] shadow-xl transition hover:brightness-110 active:scale-[0.98] shrink-0"
+          className="w-[75%] xs:w-[78%] sm:w-[75%] md:w-[78%] max-w-[210px] xs:max-w-[225px] inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-3.5 sm:px-4 py-3 xs:py-3.5 sm:py-2.5 md:py-3 font-sans text-xs xs:text-sm sm:text-xs md:text-sm font-black uppercase tracking-wider text-[#0c1445] shadow-xl transition hover:brightness-110 active:scale-[0.98] shrink-0"
         >
           {buttonText}
         </Link>
