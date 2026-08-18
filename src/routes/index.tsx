@@ -1,7 +1,7 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { Ticket } from "lucide-react";
 import { toast } from "sonner";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import icckLogo from "@/assets/icck-logo.png";
 import heroBg from "@/assets/hero-india-korea.jpg";
 import { 
@@ -18,7 +18,7 @@ import { HeaderCartouche, ScallopedTrim } from "@/components/awards/JharokhaArch
 import { FirecrackerCanvas } from "@/components/awards/FirecrackerCanvas";
 import { RotatingMandalasBackground } from "@/components/awards/RotatingMandalasBackground";
 
-const title = "ICCK Diwali Celebrations 2026 | Diwali Ball & Business Awards";
+const title = "ICCK Diwali Celebrations 2026 | Business Awards & Ball";
 const description =
   "Book the ICCK Diwali Ball, register for the ICCK Business Awards, or save 15% with the bundle registration. One festive night of Indian–Korean celebration.";
 
@@ -37,9 +37,22 @@ export const Route = createFileRoute("/")({
 });
 
 function Landing() {
+  const navigate = useNavigate();
+  const [isNavigatingEvents, setIsNavigatingEvents] = useState(false);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const handleViewEventsClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (isNavigatingEvents) return;
+    setIsNavigatingEvents(true);
+
+    setTimeout(() => {
+      navigate({ to: "/awards" });
+    }, 280);
+  };
 
   return (
     <div className="min-h-screen text-white relative font-sans overflow-x-hidden bg-[#091442] flex flex-col justify-between">
@@ -70,8 +83,8 @@ function Landing() {
         <HangingDiyaString className="w-8 xs:w-9 sm:w-11 h-44 xs:h-52 sm:h-64" />
       </div>
       
-      {/* ---------------- 1. TOP WARM MARIGOLD GOLD HEADER BANNER WITH SUPER-SIZED DOMINANT ICCK LOGO & TITLE ---------------- */}
-      <header className="relative w-full bg-gradient-to-r from-[#f59e0b] via-[#fbbf24] to-[#f59e0b] py-2 shadow-2xl z-40">
+      {/* ---------------- 1. TOP WARM MARIGOLD GOLD HEADER BANNER WITH PERFECTLY FITTED CARTOUCHE ---------------- */}
+      <header className="relative w-full bg-gradient-to-r from-[#f59e0b] via-[#fbbf24] to-[#f59e0b] py-1.5 shadow-2xl z-40">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-2 sm:px-6">
           
           {/* Left Side: Dual Extra Prominent Glowing Diya Lamps */}
@@ -80,26 +93,26 @@ function Landing() {
             <DiyaLamp className="hidden sm:block w-9 h-9 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)] opacity-90" />
           </div>
 
-          {/* Center Octagonal Cartouche Badge — SUPER-SIZED DOMINANT ICCK LOGO & HEADING */}
-          <HeaderCartouche className="mx-auto py-2 sm:py-2.5 px-4 sm:px-8 bg-[#0f172a]/95 border-2 sm:border-3 border-amber-300 shadow-[0_0_25px_rgba(251,191,36,0.6)]">
-            <DiyaLamp className="w-7 sm:w-9 h-7 sm:h-9 drop-shadow-[0_0_12px_rgba(251,191,36,0.95)] shrink-0" />
+          {/* Center Octagonal Cartouche Badge — PROMINENT & 100% FITTED INSIDE BOX */}
+          <HeaderCartouche className="mx-auto py-1.5 xs:py-2 px-3 xs:px-4 sm:px-7 bg-[#0f172a]/95 border-2 border-amber-300 shadow-[0_0_25px_rgba(251,191,36,0.6)] max-w-[85%] xs:max-w-none">
+            <DiyaLamp className="w-5 xs:w-6 sm:w-8 h-5 xs:h-6 sm:h-8 drop-shadow-[0_0_10px_rgba(251,191,36,0.95)] shrink-0" />
 
-            {/* Super-Sized Official ICCK Logo */}
+            {/* Prominent Full-Color Official ICCK Logo */}
             <img
               src={icckLogo}
               alt="ICCK Official Logo"
               width={940}
               height={347}
-              className="h-8 xs:h-9 sm:h-12 w-auto object-contain shrink-0 drop-shadow-[0_2px_12px_rgba(251,191,36,0.7)]"
+              className="h-5 xs:h-6 sm:h-9 w-auto object-contain shrink-0 drop-shadow-[0_2px_10px_rgba(251,191,36,0.6)]"
             />
 
-            <div className="text-center sm:text-left border-l-2 border-amber-400/80 pl-3 sm:pl-5">
-              <p className="font-serif text-sm xs:text-base sm:text-2xl lg:text-3xl font-black uppercase tracking-[0.14em] sm:tracking-[0.18em] text-[#FEF08A] drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)] leading-none">
+            <div className="text-center sm:text-left border-l-2 border-amber-400/80 pl-2 xs:pl-3 sm:pl-4 overflow-hidden">
+              <p className="font-serif text-[10px] xs:text-xs sm:text-lg lg:text-xl font-black uppercase tracking-wider sm:tracking-[0.16em] text-[#FEF08A] drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)] leading-tight whitespace-nowrap">
                 ICCK DIWALI CELEBRATIONS
               </p>
             </div>
 
-            <DiyaLamp className="w-7 sm:w-9 h-7 sm:h-9 drop-shadow-[0_0_12px_rgba(251,191,36,0.95)] shrink-0" />
+            <DiyaLamp className="w-5 xs:w-6 sm:w-8 h-5 xs:h-6 sm:h-8 drop-shadow-[0_0_10px_rgba(251,191,36,0.95)] shrink-0" />
           </HeaderCartouche>
 
           {/* Right Side: Dual Extra Prominent Glowing Diya Lamps */}
@@ -121,15 +134,13 @@ function Landing() {
 
         <section className="relative z-20 mx-auto max-w-5xl px-2 sm:px-2 text-center">
           
-          {/* Main Title Banner with Flanking Diya Lamps */}
+          {/* Main Title Banner with Flanking Diya Lamps (WITHOUT ICCK DIWALI BALL) */}
           <div className="mt-1 mb-1 sm:mb-2 flex items-center justify-center gap-2 sm:gap-3">
             <DiyaLamp className="w-7 sm:w-10 h-7 sm:h-10 drop-shadow-[0_0_14px_rgba(251,191,36,0.95)] shrink-0" />
             
             <div>
-              <h1 className="font-serif text-lg xs:text-xl sm:text-3xl lg:text-4xl font-black leading-[1.05] tracking-wide text-[#FEF08A] drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)] uppercase">
-                ICCK Diwali Ball:
-                <br />
-                <span className="italic text-white drop-shadow-[0_2px_12px_rgba(255,255,255,0.6)]">Illuminate Your Celebration!</span>
+              <h1 className="font-serif text-xl xs:text-2xl sm:text-4xl lg:text-5xl font-black leading-[1.05] tracking-wide text-[#FEF08A] drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)] uppercase">
+                ILLUMINATE YOUR CELEBRATION!
               </h1>
             </div>
 
@@ -182,17 +193,24 @@ function Landing() {
 
           </div>
 
-          {/* ---------------- 4. BOTTOM ACTION BUTTONS (100% EQUAL & ALIGNED) ---------------- */}
+          {/* ---------------- 4. BOTTOM ACTION BUTTONS (100% EQUAL & ALIGNED WITH SPARKLE TRANSITION) ---------------- */}
           <div className="mt-6 sm:mt-5 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-3 w-full max-w-[360px] sm:max-w-none mx-auto relative px-3 sm:px-0">
             
             {/* Button 1: VIEW ALL EVENTS */}
             <div className="w-full sm:w-auto flex items-center justify-center">
-              <Link
-                to="/awards"
-                className="inline-flex w-[88%] xs:w-[90%] sm:w-auto max-w-[320px] items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-6 sm:px-6 py-3 sm:py-2.5 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.14em] text-[#0f172a] shadow-xl transition hover:brightness-110 active:scale-[0.98]"
+              <button
+                onClick={handleViewEventsClick}
+                className={`inline-flex w-[88%] xs:w-[90%] sm:w-auto max-w-[320px] items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-6 sm:px-6 py-3 sm:py-2.5 font-sans text-xs sm:text-sm font-black uppercase tracking-[0.14em] text-[#0f172a] shadow-xl transition-all duration-200 hover:brightness-110 active:scale-95 ${
+                  isNavigatingEvents ? "brightness-125 scale-105 ring-4 ring-amber-300/80" : ""
+                }`}
               >
-                <Ticket className="h-4 w-4 shrink-0" /> VIEW ALL EVENTS
-              </Link>
+                {isNavigatingEvents ? (
+                  <FireworkSparkle className="h-4 w-4 animate-spin text-[#0f172a] shrink-0" />
+                ) : (
+                  <Ticket className="h-4 w-4 shrink-0" />
+                )}
+                VIEW ALL EVENTS
+              </button>
             </div>
 
             {/* Button 2: SIGN UP FOR UPDATES */}

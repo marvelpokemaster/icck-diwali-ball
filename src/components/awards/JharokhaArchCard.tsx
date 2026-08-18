@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "@tanstack/react-router";
-import { DiyaLamp } from "./DiwaliDecorations";
+import React, { useState } from "react";
+import { useNavigate } from "@tanstack/react-router";
+import { DiyaLamp, FireworkSparkle } from "./DiwaliDecorations";
 
 interface JharokhaArchCardProps {
   title: string;
@@ -41,10 +41,25 @@ export function JharokhaArchCard({
 }: JharokhaArchCardProps) {
   const cardId = title.replace(/[^a-zA-Z0-9]/g, "");
   const isBundle = Boolean(ribbonText);
+  const navigate = useNavigate();
+  const [isNavigating, setIsNavigating] = useState(false);
+
+  const handleButtonClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (isNavigating) return;
+    setIsNavigating(true);
+
+    // Trigger smooth 280ms royal transition before page navigation
+    setTimeout(() => {
+      navigate({ to, search: search as any });
+    }, 280);
+  };
 
   return (
     <div
       className={`relative flex flex-col items-center w-full max-w-[430px] sm:max-w-[280px] md:max-w-[325px] mx-auto h-[400px] xs:h-[425px] sm:h-[415px] md:h-[440px] transition-all duration-300 sm:hover:-translate-y-1.5 ${
+        isNavigating ? "scale-95 opacity-60 filter blur-[1px]" : ""
+      } ${
         isBundle
           ? "drop-shadow-[0_20px_45px_rgba(251,191,36,0.35)] sm:scale-[1.02]"
           : "drop-shadow-[0_16px_36px_rgba(0,0,0,0.9)] sm:hover:drop-shadow-[0_22px_45px_rgba(251,191,36,0.35)]"
@@ -165,14 +180,16 @@ export function JharokhaArchCard({
           </span>
         )}
 
-        {/* Bottom CTA Button */}
-        <Link
-          to={to}
-          search={search}
-          className="w-[75%] xs:w-[78%] sm:w-[75%] md:w-[78%] max-w-[210px] xs:max-w-[225px] inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-3.5 sm:px-4 py-3 xs:py-3.5 sm:py-2.5 md:py-3 font-sans text-xs xs:text-sm sm:text-xs md:text-sm font-black uppercase tracking-wider text-[#0c1445] shadow-xl transition hover:brightness-110 active:scale-[0.98] shrink-0"
+        {/* Bottom CTA Button with Festive Sparkle Transition */}
+        <button
+          onClick={handleButtonClick}
+          className={`w-[75%] xs:w-[78%] sm:w-[75%] md:w-[78%] max-w-[210px] xs:max-w-[225px] inline-flex items-center justify-center gap-1.5 rounded-md bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-3.5 sm:px-4 py-3 xs:py-3.5 sm:py-2.5 md:py-3 font-sans text-xs xs:text-sm sm:text-xs md:text-sm font-black uppercase tracking-wider text-[#0c1445] shadow-xl transition-all duration-200 hover:brightness-110 active:scale-95 shrink-0 ${
+            isNavigating ? "brightness-125 scale-105 ring-4 ring-amber-300/80" : ""
+          }`}
         >
+          {isNavigating && <FireworkSparkle className="w-4 h-4 animate-spin text-[#0c1445]" />}
           {buttonText}
-        </Link>
+        </button>
 
         {/* Note Text */}
         <p className="text-[10px] xs:text-xs sm:text-[10px] md:text-xs font-bold text-white/95 leading-tight shrink-0 px-1">
