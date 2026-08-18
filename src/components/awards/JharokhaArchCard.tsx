@@ -41,16 +41,16 @@ export function JharokhaArchCard({
   const cardId = title.replace(/[^a-zA-Z0-9]/g, "");
 
   return (
-    <div className="relative flex flex-col items-center w-full max-w-[290px] xs:max-w-[320px] sm:max-w-[280px] md:max-w-[325px] mx-auto h-[460px] xs:h-[490px] sm:h-[460px] md:h-[495px] drop-shadow-[0_16px_36px_rgba(0,0,0,0.9)]">
+    <div className="relative flex flex-col items-center w-full max-w-[295px] xs:max-w-[330px] sm:max-w-[285px] md:max-w-[330px] mx-auto h-[465px] xs:h-[495px] sm:h-[465px] md:h-[500px] drop-shadow-[0_18px_40px_rgba(0,0,0,0.95)]">
       
       {/* Top Floating Ribbon Badge if present */}
       {ribbonText && (
-        <div className="absolute -top-3.5 sm:-top-4 z-40 bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] text-[#0c1445] font-black uppercase text-[9.5px] xs:text-xs md:text-sm tracking-wide sm:tracking-[0.14em] px-3 sm:px-5 py-1 sm:py-1.5 rounded-sm sm:rounded-md shadow-2xl border border-amber-200 whitespace-nowrap">
+        <div className="absolute -top-3.5 sm:-top-4 z-40 bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] text-[#0c1445] font-black uppercase text-[10px] xs:text-xs md:text-sm tracking-wide sm:tracking-[0.14em] px-3.5 sm:px-5 py-1 sm:py-1.5 rounded-sm sm:rounded-md shadow-2xl border border-amber-200 whitespace-nowrap">
           {ribbonText}
         </div>
       )}
 
-      {/* Mughal Cusped Arch Background & Double Gold/White Border SVG Container */}
+      {/* Mughal Cusped Arch Background, Geometric Jaali Motifs & Double Gold Border SVG Container */}
       <svg
         className="absolute inset-0 w-full h-full z-0 pointer-events-none overflow-visible"
         viewBox="0 0 400 480"
@@ -70,9 +70,23 @@ export function JharokhaArchCard({
             <stop offset="60%" stopColor="#E5C158" />
             <stop offset="100%" stopColor="#92400E" />
           </linearGradient>
+
+          {/* Traditional Geometric Jaali Lattice Motif Pattern */}
+          <pattern id={`jaaliPattern-${cardId}`} width="30" height="30" patternUnits="userSpaceOnUse">
+            {/* Diamond Lattice Grid */}
+            <path d="M15 0 L30 15 L15 30 L0 15 Z" fill="none" stroke="#FDE047" strokeWidth="0.6" opacity="0.18" />
+            {/* Inner Star Motif */}
+            <circle cx="15" cy="15" r="4" fill="none" stroke="#FDE047" strokeWidth="0.5" opacity="0.15" />
+            <path d="M8 8 L22 22 M22 8 L8 22" stroke="#FDE047" strokeWidth="0.4" opacity="0.12" />
+            {/* Intersecting Geometric Dots */}
+            <circle cx="15" cy="0" r="1.2" fill="#FDE047" opacity="0.25" />
+            <circle cx="30" cy="15" r="1.2" fill="#FDE047" opacity="0.25" />
+            <circle cx="15" cy="30" r="1.2" fill="#FDE047" opacity="0.25" />
+            <circle cx="0" cy="15" r="1.2" fill="#FDE047" opacity="0.25" />
+          </pattern>
         </defs>
 
-        {/* Outer Official Mughal Cusped Arch Path Fill & Gold Outer Border */}
+        {/* Outer Official Mughal Cusped Arch Path Fill */}
         <path
           d={ARCH_PATH}
           fill={`url(#bgGrad-${cardId})`}
@@ -80,6 +94,20 @@ export function JharokhaArchCard({
           strokeWidth="4.5"
           strokeLinejoin="round"
         />
+
+        {/* Rich Geometric Jaali Lattice Overlay Filling Interior Background */}
+        <path
+          d={ARCH_PATH}
+          fill={`url(#jaaliPattern-${cardId})`}
+        />
+
+        {/* Geometric Corner Starburst Motifs */}
+        <g stroke="#FEF08A" strokeWidth="0.8" opacity="0.35" fill="none">
+          <circle cx="70" cy="190" r="8" />
+          <path d="M70 178 L70 202 M58 190 L82 190" />
+          <circle cx="330" cy="190" r="8" />
+          <path d="M330 178 L330 202 M318 190 L342 190" />
+        </g>
 
         {/* Inner Crisp White Accent Filigree Border */}
         <path
@@ -92,22 +120,22 @@ export function JharokhaArchCard({
         />
       </svg>
 
-      {/* Inner Card Content Overlay — Illustrations Shifted Down, Interior Items Scaled Up Cleanly */}
-      <div className="relative z-20 w-full h-full px-4 sm:px-5 pt-11 xs:pt-13 sm:pt-12 pb-3.5 sm:pb-4 flex flex-col items-center justify-between text-center">
+      {/* Inner Card Content Overlay — Filled Space, Larger Illustrations & Text */}
+      <div className="relative z-20 w-full h-full px-4 sm:px-5 pt-10 xs:pt-12 sm:pt-11 pb-4 sm:pb-4 flex flex-col items-center justify-between text-center">
         
-        {/* Top Section: Vector Illustration Shifted Down lower into arch dome */}
-        <div className="h-32 xs:h-36 sm:h-38 md:h-42 flex items-center justify-center shrink-0 mt-4 xs:mt-5 sm:mt-3.5">
+        {/* Top Section: Vector Illustration Shifted Down & Scaled Up */}
+        <div className="h-34 xs:h-38 sm:h-40 md:h-44 flex items-center justify-center shrink-0 mt-3.5 xs:mt-4.5 sm:mt-3">
           {illustration}
         </div>
         
-        {/* Middle Section: Larger & Bolder Title, Larger Price & Badge */}
-        <div className="flex flex-col items-center gap-1.5 sm:gap-2 w-full my-auto">
-          <h2 className="font-serif text-sm xs:text-base sm:text-base md:text-lg font-black uppercase tracking-wider text-white px-1 leading-tight">
+        {/* Middle Section: Larger & Bolder Title, Magnified Price & Geometric Badge */}
+        <div className="flex flex-col items-center gap-1.5 sm:gap-2 w-full my-auto py-1">
+          <h2 className="font-serif text-sm xs:text-base sm:text-base md:text-lg font-black uppercase tracking-wider text-white px-1 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
             {title}
           </h2>
 
           <div className="flex items-baseline justify-center gap-1.5 sm:gap-2 my-1">
-            <span className="font-serif text-4xl xs:text-5xl sm:text-4xl md:text-5xl font-black text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
+            <span className="font-serif text-4xl xs:text-5xl sm:text-4xl md:text-5xl font-black text-[#FEF08A] drop-shadow-[0_4px_14px_rgba(0,0,0,0.95)]">
               {price}
             </span>
             {strikePrice && (
@@ -118,13 +146,13 @@ export function JharokhaArchCard({
           </div>
 
           {badgeText && (
-            <span className="rounded-full bg-amber-400/25 px-3.5 sm:px-4.5 py-0.5 text-[10px] xs:text-xs font-black uppercase tracking-wider text-[#FEF08A] border border-amber-300/50 shadow-md">
+            <span className="rounded-full bg-gradient-to-r from-amber-500/30 via-amber-400/40 to-amber-500/30 px-3.5 sm:px-4.5 py-0.5 text-[10px] xs:text-xs font-black uppercase tracking-wider text-[#FEF08A] border border-amber-300/60 shadow-md">
               {badgeText}
             </span>
           )}
         </div>
 
-        {/* Bottom Section: Fitted Gold CTA Button Box (Never Overflows Arch Edges) + Note Text */}
+        {/* Bottom Section: Fitted Thick Gold CTA Button Box + Note Text */}
         <div className="w-full space-y-1.5 sm:space-y-2 shrink-0 pt-0.5 flex flex-col items-center">
           <Link
             to={to}
