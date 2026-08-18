@@ -61,17 +61,17 @@ export function DiyaLamp({ className = "w-8 h-8" }: { className?: string }) {
 export function HangingDiyaString({ className = "w-8 h-48" }: { className?: string }) {
   return (
     <div className={`flex flex-col items-center ${className}`}>
-      {/* Vertical Beaded String */}
-      <svg className="w-full h-full" viewBox="0 0 40 240" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <line x1="20" y1="0" x2="20" y2="200" stroke="#FEF08A" strokeWidth="2" strokeDasharray="3 3" />
-        <circle cx="20" cy="30" r="4" fill="#F59E0B" stroke="#78350F" strokeWidth="1" />
-        <circle cx="20" cy="70" r="5" fill="#DC2626" stroke="#78350F" strokeWidth="1" />
-        <circle cx="20" cy="110" r="4" fill="#F59E0B" stroke="#78350F" strokeWidth="1" />
-        <circle cx="20" cy="150" r="6" fill="#FEF08A" stroke="#78350F" strokeWidth="1.5" />
-        <g transform="translate(-10, 150) scale(0.6)">
-          <DiyaLamp className="w-16 h-16" />
-        </g>
-      </svg>
+      {/* Vertical Brass Beaded String */}
+      <div className="w-0.5 h-full bg-gradient-to-b from-[#FEF08A] via-[#F59E0B] to-[#FEF08A] relative flex flex-col items-center justify-between py-2 border-r border-amber-300/40">
+        <div className="w-2.5 h-2.5 rounded-full bg-amber-400 border border-amber-800 shadow" />
+        <div className="w-3 h-3 rounded-full bg-red-600 border border-amber-800 shadow" />
+        <div className="w-2.5 h-2.5 rounded-full bg-amber-400 border border-amber-800 shadow" />
+        <div className="w-3.5 h-3.5 rounded-full bg-yellow-300 border border-amber-800 shadow" />
+      </div>
+      {/* Glowing Diya Lamp Hanging at the Bottom of String */}
+      <div className="-mt-1 shrink-0 drop-shadow-[0_0_15px_rgba(251,191,36,0.95)] animate-pulse">
+        <DiyaLamp className="w-9 h-9 sm:w-11 sm:h-11" />
+      </div>
     </div>
   );
 }

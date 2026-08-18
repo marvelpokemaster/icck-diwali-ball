@@ -55,18 +55,27 @@ function Landing() {
         <div className="absolute inset-0 bg-rangoli opacity-70" />
       </div>
 
-      {/* Slow Rotating Geometric Mandalas Moving Background Layer */}
+      {/* Restore Subtle Rotating Geometric Mandalas Moving Background Layer */}
       <RotatingMandalasBackground />
 
       {/* Dynamic Interactive Firecracker Blasting Canvas Overlay */}
       <FirecrackerCanvas />
+
+      {/* ---------------- 2 HANGING DIYA LAMPS (FIXED OVERLAY ON LEFT & RIGHT SIDES) ---------------- */}
+      <div className="fixed top-0 left-1 xs:left-2 sm:left-6 md:left-10 z-50 pointer-events-none drop-shadow-[0_0_15px_rgba(251,191,36,0.95)]">
+        <HangingDiyaString className="w-8 xs:w-9 sm:w-11 h-44 xs:h-52 sm:h-64" />
+      </div>
+
+      <div className="fixed top-0 right-1 xs:right-2 sm:right-6 md:right-10 z-50 pointer-events-none drop-shadow-[0_0_15px_rgba(251,191,36,0.95)]">
+        <HangingDiyaString className="w-8 xs:w-9 sm:w-11 h-44 xs:h-52 sm:h-64" />
+      </div>
       
       {/* ---------------- 1. TOP WARM MARIGOLD GOLD HEADER BANNER WITH ENLARGED & DUAL EXTRA DIYA LAMPS ---------------- */}
-      <header className="relative w-full bg-gradient-to-r from-[#f59e0b] via-[#fbbf24] to-[#f59e0b] py-1 shadow-2xl z-30">
+      <header className="relative w-full bg-gradient-to-r from-[#f59e0b] via-[#fbbf24] to-[#f59e0b] py-1 shadow-2xl z-40">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-3 sm:px-6">
           
           {/* Left Side: Dual Extra Prominent Glowing Diya Lamps */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 ml-6 xs:ml-8 sm:ml-0">
             <DiyaLamp className="w-8 sm:w-11 h-8 sm:h-11 drop-shadow-[0_0_12px_rgba(251,191,36,0.95)]" />
             <DiyaLamp className="hidden sm:block w-9 h-9 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)] opacity-90" />
           </div>
@@ -97,7 +106,7 @@ function Landing() {
           </HeaderCartouche>
 
           {/* Right Side: Dual Extra Prominent Glowing Diya Lamps */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 mr-6 xs:mr-8 sm:mr-0">
             <DiyaLamp className="hidden sm:block w-9 h-9 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)] opacity-90" />
             <DiyaLamp className="w-8 sm:w-11 h-8 sm:h-11 drop-shadow-[0_0_12px_rgba(251,191,36,0.95)]" />
           </div>
@@ -112,18 +121,6 @@ function Landing() {
 
       {/* ---------------- 2. MAIN FESTIVE HERO & PROPORTIONAL CARDS ---------------- */}
       <main className="relative overflow-hidden z-20 my-auto pt-3 sm:pt-2 pb-2 sm:pb-1">
-        
-        {/* Left Vertical Hanging Diya String & Standing Diya Lamp */}
-        <div className="pointer-events-none absolute top-0 left-2 z-30 opacity-90 hidden lg:flex flex-col items-center gap-4">
-          <HangingDiyaString className="w-9 h-44" />
-          <DiyaLamp className="w-10 h-10 drop-shadow-[0_0_15px_rgba(251,191,36,0.9)]" />
-        </div>
-
-        {/* Right Vertical Hanging Diya String & Standing Diya Lamp */}
-        <div className="pointer-events-none absolute top-0 right-2 z-30 opacity-90 hidden lg:flex flex-col items-center gap-4">
-          <HangingDiyaString className="w-9 h-44" />
-          <DiyaLamp className="w-10 h-10 drop-shadow-[0_0_15px_rgba(251,191,36,0.9)]" />
-        </div>
 
         <section className="relative z-20 mx-auto max-w-5xl px-3 sm:px-2 text-center">
           
