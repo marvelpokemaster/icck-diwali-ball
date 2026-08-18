@@ -157,7 +157,7 @@ export function JharokhaArchCard({
         </div>
         
         {/* Title */}
-        <h2 className="font-serif text-xl xs:text-2xl sm:text-sm md:text-base font-black uppercase tracking-wider text-white px-1 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]">
+        <h2 className="font-serif text-2xl xs:text-3xl sm:text-sm md:text-base font-black uppercase tracking-wider text-white px-1 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]">
           {title}
         </h2>
 
@@ -183,7 +183,7 @@ export function JharokhaArchCard({
         {/* 3D POPPED-UP GOLDEN ACTION BUTTON FOR MOBILE & PC */}
         <button
           onClick={handleButtonClick}
-          className={`inline-flex w-fit items-center justify-center gap-1 rounded-lg bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-2 sm:px-3 py-1.5 sm:py-3 md:py-3.5 font-sans text-base xs:text-lg sm:text-xs md:text-sm font-black uppercase tracking-wider text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.65)] transition-all duration-200 hover:scale-105 active:scale-95 shrink-0 ${
+          className={`inline-flex w-fit items-center justify-center gap-1 rounded-lg bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-2 sm:px-3 py-1.5 sm:py-3 md:py-3.5 font-sans text-2xl xs:text-3xl sm:text-xs md:text-sm font-black uppercase tracking-wider text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.65)] transition-all duration-200 hover:scale-105 active:scale-95 shrink-0 ${
             isNavigating ? "brightness-125 scale-105 ring-4 ring-amber-300/80" : ""
           }`}
         >
@@ -192,7 +192,7 @@ export function JharokhaArchCard({
         </button>
 
         {/* Note Text */}
-        <p className="text-[10px] xs:text-xs sm:text-[10px] md:text-xs font-bold text-white/95 leading-tight shrink-0 px-1">
+        <p className="text-xs xs:text-sm sm:text-[10px] md:text-xs font-bold text-white/95 leading-tight shrink-0 px-1">
           {noteText}
         </p>
 

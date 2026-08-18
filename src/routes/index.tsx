@@ -110,7 +110,7 @@ function Landing() {
             />
 
             <div className="text-center sm:text-left border-l-2 border-amber-600/70 pl-2 xs:pl-3 sm:pl-4">
-              <p className="font-serif text-[15px] xs:text-[17px] sm:text-lg lg:text-xl font-black uppercase tracking-wide xs:tracking-wider sm:tracking-[0.16em] text-[#1A0A00] leading-tight whitespace-nowrap">
+              <p className="font-serif text-[18px] xs:text-[20px] sm:text-lg lg:text-xl font-black uppercase tracking-wide xs:tracking-wider sm:tracking-[0.16em] text-[#1A0A00] leading-tight whitespace-nowrap">
                 ICCK DIWALI CELEBRATIONS
               </p>
             </div>
@@ -142,7 +142,7 @@ function Landing() {
             <DiyaLamp className="w-7 sm:w-10 h-7 sm:h-10 drop-shadow-[0_0_14px_rgba(251,191,36,0.95)] shrink-0" />
             
             <div>
-              <h1 className="font-serif text-3xl xs:text-[32px] sm:text-4xl lg:text-5xl font-black leading-[1.05] tracking-wide text-[#FEF08A] drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)] uppercase">
+              <h1 className="font-serif text-4xl xs:text-5xl sm:text-4xl lg:text-5xl font-black leading-[1.05] tracking-wide text-[#FEF08A] drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)] uppercase">
                 ILLUMINATE YOUR CELEBRATION!
               </h1>
             </div>
@@ -203,7 +203,7 @@ function Landing() {
             <div className="flex items-center justify-center">
               <button
                 onClick={handleViewEventsClick}
-                className={`inline-flex w-fit items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-3 sm:px-5 py-2 sm:py-3 font-sans text-lg xs:text-xl sm:text-base font-black uppercase tracking-[0.14em] text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.65)] transition-all duration-200 hover:scale-105 active:scale-95 ${
+                className={`inline-flex w-fit items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-3 sm:px-5 py-2 sm:py-3 font-sans text-xl xs:text-2xl sm:text-base font-black uppercase tracking-[0.14em] text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.65)] transition-all duration-200 hover:scale-105 active:scale-95 ${
                   isNavigatingEvents ? "brightness-125 scale-105 ring-4 ring-amber-300/80" : ""
                 }`}
               >
@@ -220,7 +220,7 @@ function Landing() {
             <div className="flex items-center justify-center">
               <button
                 onClick={() => toast.success("🎆 Festive firecrackers launched! We'll email you event updates.")}
-                className="inline-flex w-fit items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-3 sm:px-5 py-2 sm:py-3 font-sans text-lg xs:text-xl sm:text-base font-black uppercase tracking-[0.14em] text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.65)] transition-all duration-200 hover:scale-105 active:scale-95"
+                className="inline-flex w-fit items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-3 sm:px-5 py-2 sm:py-3 font-sans text-xl xs:text-2xl sm:text-base font-black uppercase tracking-[0.14em] text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.65)] transition-all duration-200 hover:scale-105 active:scale-95"
               >
                 <Bell className="h-4 w-4 shrink-0" />
                 <span className="drop-shadow-[0_1px_2px_rgba(255,255,255,0.7)]">SIGN UP FOR UPDATES</span>
@@ -235,7 +235,7 @@ function Landing() {
           </div>
 
           {/* Quick Navigation Footer Links */}
-          <nav className="mt-1 pb-2 flex flex-wrap justify-center gap-x-4 gap-y-1 text-[11px] xs:text-xs sm:text-[10px] font-bold uppercase tracking-wider text-white/80">
+          <nav className="mt-1 pb-2 flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm xs:text-sm sm:text-[10px] font-bold uppercase tracking-wider text-white/80">
             <Link to="/nominate" className="hover:text-white transition-colors">
               Submit nomination
             </Link>
