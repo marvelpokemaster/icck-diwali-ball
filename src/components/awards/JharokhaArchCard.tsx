@@ -43,7 +43,7 @@ export function JharokhaArchCard({
 
   return (
     <div
-      className={`relative flex flex-col items-center w-full max-w-[285px] xs:max-w-[320px] sm:max-w-[275px] md:max-w-[320px] mx-auto h-[450px] xs:h-[480px] sm:h-[435px] md:h-[465px] transition-all duration-300 sm:hover:-translate-y-1.5 ${
+      className={`relative flex flex-col items-center w-full max-w-[285px] xs:max-w-[320px] sm:max-w-[275px] md:max-w-[320px] mx-auto h-[435px] xs:h-[465px] sm:h-[420px] md:h-[445px] transition-all duration-300 sm:hover:-translate-y-1.5 ${
         isBundle
           ? "drop-shadow-[0_18px_40px_rgba(251,191,36,0.35)] sm:scale-[1.02]"
           : "drop-shadow-[0_14px_32px_rgba(0,0,0,0.9)] sm:hover:drop-shadow-[0_20px_40px_rgba(251,191,36,0.35)]"
@@ -124,21 +124,21 @@ export function JharokhaArchCard({
         />
       </svg>
 
-      {/* Inner Card Content Overlay — FITTED BUTTONS 100% INSIDE CARD BORDERS */}
-      <div className="relative z-20 w-full h-full px-5 sm:px-6 pt-12 xs:pt-14 sm:pt-11 pb-4 sm:pb-4 flex flex-col items-center justify-center gap-1 sm:gap-1.5 text-center">
+      {/* Inner Card Content Overlay — CONTINUOUS TIGHT STACK WITH ZERO GAPS */}
+      <div className="relative z-20 w-full h-full px-4 sm:px-4.5 pt-12 xs:pt-14 sm:pt-11 pb-3.5 sm:pb-4 flex flex-col items-center justify-center gap-1.5 sm:gap-2 text-center">
         
         {/* Top Section: Vector Illustration */}
-        <div className="flex items-center justify-center shrink-0 mt-1 sm:mt-1">
+        <div className="flex items-center justify-center shrink-0">
           {illustration}
         </div>
         
         {/* Title */}
-        <h2 className="font-serif text-base xs:text-lg sm:text-sm md:text-base font-black uppercase tracking-wider text-white px-1 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)] mt-0.5">
+        <h2 className="font-serif text-base xs:text-lg sm:text-sm md:text-base font-black uppercase tracking-wider text-white px-1 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]">
           {title}
         </h2>
 
         {/* Price & Strike Price */}
-        <div className="flex items-baseline justify-center gap-2 my-0.5">
+        <div className="flex items-baseline justify-center gap-2">
           <span className="font-serif text-3xl xs:text-4xl sm:text-3xl md:text-4xl font-black text-[#FEF08A] drop-shadow-[0_4px_14px_rgba(0,0,0,0.95)]">
             {price}
           </span>
@@ -156,17 +156,17 @@ export function JharokhaArchCard({
           </span>
         )}
 
-        {/* Bottom CTA Button — 100% CONTAINED WITHIN ARCH BORDERS WITH GENEROUS PADDING */}
+        {/* Bottom CTA Button */}
         <Link
           to={to}
           search={search}
-          className="w-[82%] xs:w-[84%] sm:w-[82%] md:w-[84%] max-w-[240px] inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-3 sm:px-4 py-2 xs:py-2.5 sm:py-2 md:py-2.5 font-sans text-xs xs:text-sm sm:text-xs md:text-sm font-black uppercase tracking-wider text-[#0c1445] shadow-xl transition hover:brightness-110 active:scale-[0.98] mt-1 shrink-0"
+          className="w-[84%] xs:w-[86%] sm:w-[84%] md:w-[86%] max-w-[245px] inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-3.5 sm:px-4 py-2 xs:py-2.5 sm:py-2 md:py-2.5 font-sans text-xs xs:text-sm sm:text-xs md:text-sm font-black uppercase tracking-wider text-[#0c1445] shadow-xl transition hover:brightness-110 active:scale-[0.98] shrink-0"
         >
           {buttonText}
         </Link>
 
         {/* Note Text */}
-        <p className="text-[10px] xs:text-xs sm:text-[10px] md:text-xs font-bold text-white/95 leading-tight mt-0.5 shrink-0 px-2">
+        <p className="text-[10px] xs:text-xs sm:text-[10px] md:text-xs font-bold text-white/95 leading-tight shrink-0 px-1">
           {noteText}
         </p>
 
