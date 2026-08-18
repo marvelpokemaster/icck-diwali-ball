@@ -41,11 +41,11 @@ export function JharokhaArchCard({
   const cardId = title.replace(/[^a-zA-Z0-9]/g, "");
 
   return (
-    <div className="relative flex flex-col items-center w-full max-w-[295px] xs:max-w-[330px] sm:max-w-[285px] md:max-w-[330px] mx-auto h-[465px] xs:h-[495px] sm:h-[465px] md:h-[500px] drop-shadow-[0_18px_40px_rgba(0,0,0,0.95)]">
+    <div className="relative flex flex-col items-center w-full max-w-[290px] xs:max-w-[325px] sm:max-w-[280px] md:max-w-[325px] mx-auto h-[475px] xs:h-[505px] sm:h-[440px] md:h-[475px] drop-shadow-[0_16px_36px_rgba(0,0,0,0.9)]">
       
       {/* Top Floating Ribbon Badge if present */}
       {ribbonText && (
-        <div className="absolute -top-3.5 sm:-top-4 z-40 bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] text-[#0c1445] font-black uppercase text-[10px] xs:text-xs md:text-sm tracking-wide sm:tracking-[0.14em] px-3.5 sm:px-5 py-1 sm:py-1.5 rounded-sm sm:rounded-md shadow-2xl border border-amber-200 whitespace-nowrap">
+        <div className="absolute -top-3.5 sm:-top-4 z-40 bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] text-[#0c1445] font-black uppercase text-[10px] xs:text-xs md:text-sm tracking-wide sm:tracking-[0.14em] px-3 sm:px-5 py-1 sm:py-1.5 rounded-sm sm:rounded-md shadow-2xl border border-amber-200 whitespace-nowrap">
           {ribbonText}
         </div>
       )}
@@ -73,12 +73,9 @@ export function JharokhaArchCard({
 
           {/* Traditional Geometric Jaali Lattice Motif Pattern */}
           <pattern id={`jaaliPattern-${cardId}`} width="30" height="30" patternUnits="userSpaceOnUse">
-            {/* Diamond Lattice Grid */}
             <path d="M15 0 L30 15 L15 30 L0 15 Z" fill="none" stroke="#FDE047" strokeWidth="0.6" opacity="0.18" />
-            {/* Inner Star Motif */}
             <circle cx="15" cy="15" r="4" fill="none" stroke="#FDE047" strokeWidth="0.5" opacity="0.15" />
             <path d="M8 8 L22 22 M22 8 L8 22" stroke="#FDE047" strokeWidth="0.4" opacity="0.12" />
-            {/* Intersecting Geometric Dots */}
             <circle cx="15" cy="0" r="1.2" fill="#FDE047" opacity="0.25" />
             <circle cx="30" cy="15" r="1.2" fill="#FDE047" opacity="0.25" />
             <circle cx="15" cy="30" r="1.2" fill="#FDE047" opacity="0.25" />
@@ -86,7 +83,7 @@ export function JharokhaArchCard({
           </pattern>
         </defs>
 
-        {/* Outer Official Mughal Cusped Arch Path Fill */}
+        {/* Outer Official Mughal Cusped Arch Path Fill & Gold Outer Border */}
         <path
           d={ARCH_PATH}
           fill={`url(#bgGrad-${cardId})`}
@@ -95,7 +92,7 @@ export function JharokhaArchCard({
           strokeLinejoin="round"
         />
 
-        {/* Rich Geometric Jaali Lattice Overlay Filling Interior Background */}
+        {/* Rich Geometric Jaali Lattice Overlay */}
         <path
           d={ARCH_PATH}
           fill={`url(#jaaliPattern-${cardId})`}
@@ -120,17 +117,17 @@ export function JharokhaArchCard({
         />
       </svg>
 
-      {/* Inner Card Content Overlay — Filled Space, Larger Illustrations & Text */}
-      <div className="relative z-20 w-full h-full px-4 sm:px-5 pt-10 xs:pt-12 sm:pt-11 pb-4 sm:pb-4 flex flex-col items-center justify-between text-center">
+      {/* Inner Card Content Overlay — Larger Artwork & Text ONLY on Mobile, PC Web 100% Original */}
+      <div className="relative z-20 w-full h-full px-3.5 sm:px-5 pt-11 xs:pt-13 sm:pt-11 pb-3.5 sm:pb-4 flex flex-col items-center justify-between text-center">
         
-        {/* Top Section: Vector Illustration Shifted Down & Scaled Up */}
-        <div className="h-34 xs:h-38 sm:h-40 md:h-44 flex items-center justify-center shrink-0 mt-3.5 xs:mt-4.5 sm:mt-3">
+        {/* Top Section: Vector Illustration Shifted Down & Scaled Up ONLY for Mobile */}
+        <div className="h-34 xs:h-40 sm:h-36 md:h-40 flex items-center justify-center shrink-0 mt-3 xs:mt-4 sm:mt-3">
           {illustration}
         </div>
         
-        {/* Middle Section: Larger & Bolder Title, Magnified Price & Geometric Badge */}
+        {/* Middle Section: Magnified Bolder ICCK Title & Larger Price ONLY for Mobile */}
         <div className="flex flex-col items-center gap-1.5 sm:gap-2 w-full my-auto py-1">
-          <h2 className="font-serif text-sm xs:text-base sm:text-base md:text-lg font-black uppercase tracking-wider text-white px-1 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+          <h2 className="font-serif text-base xs:text-lg sm:text-sm md:text-base font-black uppercase tracking-wider text-white px-1 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]">
             {title}
           </h2>
 
@@ -146,18 +143,18 @@ export function JharokhaArchCard({
           </div>
 
           {badgeText && (
-            <span className="rounded-full bg-gradient-to-r from-amber-500/30 via-amber-400/40 to-amber-500/30 px-3.5 sm:px-4.5 py-0.5 text-[10px] xs:text-xs font-black uppercase tracking-wider text-[#FEF08A] border border-amber-300/60 shadow-md">
+            <span className="rounded-full bg-gradient-to-r from-amber-500/30 via-amber-400/40 to-amber-500/30 px-3.5 sm:px-4.5 py-0.5 text-[10.5px] xs:text-xs sm:text-xs font-black uppercase tracking-wider text-[#FEF08A] border border-amber-300/60 shadow-md">
               {badgeText}
             </span>
           )}
         </div>
 
-        {/* Bottom Section: Fitted Thick Gold CTA Button Box + Note Text */}
+        {/* Bottom Section: Fitted CTA Button Box — Mobile Fitted, PC Web 100% Original */}
         <div className="w-full space-y-1.5 sm:space-y-2 shrink-0 pt-0.5 flex flex-col items-center">
           <Link
             to={to}
             search={search}
-            className="w-[88%] xs:w-[90%] sm:w-[92%] inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-3.5 sm:px-4.5 py-2.5 xs:py-3 sm:py-2.5 md:py-3 font-sans text-xs xs:text-sm font-black uppercase tracking-wider text-[#0c1445] shadow-xl transition hover:brightness-110 active:scale-[0.98]"
+            className="w-[88%] xs:w-[90%] sm:w-[94%] inline-flex items-center justify-center rounded-md bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-3.5 sm:px-5 py-2.5 xs:py-3 sm:py-2.5 md:py-3 font-sans text-xs xs:text-sm sm:text-xs md:text-sm font-black uppercase tracking-wider text-[#0c1445] shadow-xl transition hover:brightness-110 active:scale-[0.98]"
           >
             {buttonText}
           </Link>

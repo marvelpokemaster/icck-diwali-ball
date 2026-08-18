@@ -67,7 +67,7 @@ function Landing() {
             <DiyaLamp className="hidden sm:block w-9 h-9 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)] opacity-90" />
           </div>
 
-          {/* Center Octagonal Cartouche Badge with Enlarged Inner Diya Lamps */}
+          {/* Center Octagonal Cartouche Badge with Inner Diya Lamps */}
           <HeaderCartouche className="mx-auto py-1 px-3 sm:px-5 bg-[#0f172a]/95 border-2 border-amber-300 shadow-2xl">
             <DiyaLamp className="w-5 sm:w-7 h-5 sm:h-7 drop-shadow-[0_0_10px_rgba(251,191,36,0.95)] shrink-0" />
 
@@ -141,8 +141,8 @@ function Landing() {
             <DiyaLamp className="w-7 sm:w-10 h-7 sm:h-10 drop-shadow-[0_0_12px_rgba(251,191,36,0.9)] shrink-0 hidden sm:block" />
           </div>
 
-          {/* ---------------- 3. RICHLY FILLED ARCH CARDS WITH GEOMETRIC MOTIFS ---------------- */}
-          <div className="mt-3 flex flex-col sm:grid sm:grid-cols-3 gap-8 sm:gap-3 md:gap-4 items-center sm:items-end w-full max-w-[295px] xs:max-w-[330px] sm:max-w-4xl mx-auto px-1">
+          {/* ---------------- 3. ARCH CARDS: MAGNIFIED ON MOBILE ONLY, PC WEB 100% UNTOUCHED ---------------- */}
+          <div className="mt-3 flex flex-col sm:grid sm:grid-cols-3 gap-8 sm:gap-3 md:gap-4 items-center sm:items-end w-full max-w-[290px] xs:max-w-[325px] sm:max-w-4xl mx-auto px-1">
             
             {/* Card 1: ICCK DIWALI BALL (Vibrant Royal Indigo Blue) */}
             <JharokhaArchCard
@@ -152,7 +152,7 @@ function Landing() {
               noteText="Dinner, dance & performances"
               gradientFrom="#253494"
               gradientTo="#0f1854"
-              illustration={<IndianDancerIllustration className="w-36 xs:w-40 sm:w-42 md:w-46 h-40 xs:h-44 sm:h-46 md:h-50" />}
+              illustration={<IndianDancerIllustration className="w-38 xs:w-42 sm:w-36 md:w-40 h-42 xs:h-46 sm:h-40 md:h-44" />}
               to="/register"
               search={{ preset: "ball" }}
             />
@@ -165,7 +165,7 @@ function Landing() {
               noteText="Honoring business excellence"
               gradientFrom="#ab1d53"
               gradientTo="#520829"
-              illustration={<GoldTrophyIllustration className="w-32 xs:w-36 sm:w-40 md:w-44 h-36 xs:h-40 sm:h-42 md:h-46" />}
+              illustration={<GoldTrophyIllustration className="w-34 xs:w-38 sm:w-34 md:w-38 h-38 xs:h-42 sm:h-36 md:h-40" />}
               to="/awards"
             />
 
@@ -180,7 +180,7 @@ function Landing() {
               noteText="Both events at a discounted price"
               gradientFrom="#c2185b"
               gradientTo="#880e4f"
-              illustration={<FourIconBundleEmblem className="w-32 xs:w-36 sm:w-40 md:w-44 h-32 xs:h-36 sm:h-40 md:h-44" />}
+              illustration={<FourIconBundleEmblem className="w-34 xs:w-38 sm:w-34 md:w-38 h-34 xs:h-38 sm:h-34 md:h-38" />}
               to="/register"
               search={{ preset: "bundle" }}
             />
@@ -209,7 +209,7 @@ function Landing() {
               >
                 SIGN UP FOR UPDATES
               </button>
-              <FireworkSparkle className="w-5 h-5 text-amber-[#fde047] animate-pulse shrink-0 hidden sm:block" />
+              <FireworkSparkle className="w-5 h-5 text-amber-300 animate-pulse shrink-0 hidden sm:block" />
             </div>
 
           </div>
