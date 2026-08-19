@@ -81,7 +81,7 @@ function Landing() {
           alt="Festive Diwali Background"
           className="w-full h-full object-cover object-center opacity-90 scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#091442]/60 via-transparent to-[#070d36]/95" />
+        <div className="absolute inset-0 bg-[#091442]/50" />
       </div>
 
       {/* Dynamic Interactive Firecracker Canvas Overlay */}
@@ -141,7 +141,7 @@ function Landing() {
       <main className="relative overflow-hidden z-20 my-auto pt-4 pb-12 space-y-16">
 
         {/* ---------------- HERO & PROPORTIONAL CARDS ---------------- */}
-        <section className="relative z-20 mx-auto max-w-5xl px-2 sm:px-4 text-center">
+        <section className="relative z-20 mx-auto max-w-6xl px-2 sm:px-4 text-center">
           
           {/* Main Title Banner */}
           <div className="mt-1 mb-2 flex items-center justify-center">
@@ -159,8 +159,8 @@ function Landing() {
             <span className="flex items-center gap-1.5"><MapPin className="size-4 text-[#F59E0B]" /> Fairmont Ambassador Seoul, Yeouido</span>
           </div>
 
-          {/* 3 ARCH CARDS WITH POINTED DOME ROOFS INTACT */}
-          <div className="mt-1 flex flex-col sm:grid sm:grid-cols-3 gap-8 sm:gap-3 md:gap-4 items-center sm:items-end w-full max-w-[440px] sm:max-w-4xl mx-auto px-2 xs:px-3">
+          {/* 3 ARCH CARDS SPREAD OUT BEAUTIFULLY TO FILL THE SCREEN SPACE */}
+          <div className="mt-1 flex flex-col sm:grid sm:grid-cols-3 gap-8 sm:gap-4 md:gap-6 lg:gap-8 items-center sm:items-end w-full max-w-[440px] sm:max-w-5xl lg:max-w-[1060px] mx-auto px-2 xs:px-4">
             
             {/* Card 1: ICCK DIWALI BALL */}
             <JharokhaArchCard
