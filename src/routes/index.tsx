@@ -24,9 +24,8 @@ import real2025Stage from "@/assets/real-2025-diwali-stage.png";
 import eventPic1 from "@/assets/event-pic-1.png";
 import eventPic2 from "@/assets/event-pic-2.png";
 import eventPic6 from "@/assets/event-pic-6.png";
+import lanternImg from "@/assets/lantern.png";
 import { 
-  DiyaLamp, 
-  HangingDiyaString, 
   IndianDancerIllustration, 
   GoldTrophyIllustration, 
   FourIconBundleEmblem,
@@ -87,33 +86,35 @@ function Landing() {
 
       {/* Dynamic Interactive Firecracker Canvas Overlay */}
       <FirecrackerCanvas />
-
-      {/* ---------------- 2 HANGING LANTERNS (LEFT & RIGHT SIDES) ---------------- */}
-      <div className="fixed top-0 left-1 xs:left-2 sm:left-6 md:left-10 z-50 pointer-events-none drop-shadow-[0_0_15px_rgba(251,191,36,0.95)]">
-        <HangingDiyaString className="w-8 xs:w-9 sm:w-11 h-44 xs:h-52 sm:h-64" />
-      </div>
-
-      <div className="fixed top-0 right-1 xs:right-2 sm:right-6 md:right-10 z-50 pointer-events-none drop-shadow-[0_0_15px_rgba(251,191,36,0.95)]">
-        <HangingDiyaString className="w-8 xs:w-9 sm:w-11 h-44 xs:h-52 sm:h-64" />
-      </div>
       
+      {/* ---------------- 2 REAL GLOWING LANTERNS (LEFT & RIGHT SIDES) ---------------- */}
+      <div className="fixed top-0 left-1 xs:left-2 sm:left-4 md:left-6 z-50 pointer-events-none flex flex-col items-center">
+        <div className="w-0.5 h-8 sm:h-12 bg-gradient-to-b from-amber-200/60 to-amber-500/80" />
+        <img
+          src={lanternImg}
+          alt="Glowing Diwali Lantern"
+          className="w-16 xs:w-20 sm:w-24 md:w-28 h-auto lantern lantern-left"
+        />
+      </div>
+
+      <div className="fixed top-0 right-1 xs:right-2 sm:right-4 md:right-6 z-50 pointer-events-none flex flex-col items-center">
+        <div className="w-0.5 h-8 sm:h-12 bg-gradient-to-b from-amber-200/60 to-amber-500/80" />
+        <img
+          src={lanternImg}
+          alt="Glowing Diwali Lantern"
+          className="w-16 xs:w-20 sm:w-24 md:w-28 h-auto lantern lantern-right"
+        />
+      </div>
+
       {/* ---------------- 1. TOP WARM MARIGOLD GOLD HEADER BANNER ---------------- */}
       <header className="relative w-full bg-gradient-to-r from-[#f59e0b] via-[#fbbf24] to-[#f59e0b] py-1.5 shadow-2xl z-40">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-2 sm:px-6">
           
-          {/* Left Side: Outer Diya Lamps */}
-          <div className="hidden sm:flex items-center gap-2 sm:gap-3 sm:ml-0">
-            <DiyaLamp className="w-8 sm:w-11 h-8 sm:h-11 drop-shadow-[0_0_12px_rgba(251,191,36,0.95)]" />
-            <DiyaLamp className="hidden sm:block w-9 h-9 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)] opacity-90" />
-          </div>
-
           {/* Center Cartouche Badge */}
           <HeaderCartouche
-            className="mx-auto py-3.5 sm:py-2.5 px-3 xs:px-4 sm:px-7 border-2 border-amber-400 shadow-[0_0_25px_rgba(251,191,36,0.45)]"
+            className="mx-auto py-3.5 sm:py-2.5 px-3 xs:px-4 sm:px-7 border-2 border-amber-400 shadow-[0_0_25px_rgba(251,191,36,0.45)] flex items-center justify-center gap-3"
             style={{ background: "#EEF3FF" }}
           >
-            <DiyaLamp className="hidden sm:block sm:w-8 sm:h-8 drop-shadow-[0_0_10px_rgba(251,191,36,0.95)] shrink-0" />
-
             {/* Official Full-Color ICCK Logo */}
             <img
               src={icckLogo}
@@ -128,15 +129,7 @@ function Landing() {
                 ICCK DIWALI CELEBRATIONS
               </p>
             </div>
-
-            <DiyaLamp className="hidden sm:block sm:w-8 sm:h-8 drop-shadow-[0_0_10px_rgba(251,191,36,0.95)] shrink-0" />
           </HeaderCartouche>
-
-          {/* Right Side: Outer Diya Lamps */}
-          <div className="hidden sm:flex items-center gap-2 sm:gap-3 sm:mr-0">
-            <DiyaLamp className="hidden sm:block w-9 h-9 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)] opacity-90" />
-            <DiyaLamp className="w-8 sm:w-11 h-8 sm:h-11 drop-shadow-[0_0_12px_rgba(251,191,36,0.95)]" />
-          </div>
 
         </div>
 
@@ -153,16 +146,12 @@ function Landing() {
         <section className="relative z-20 mx-auto max-w-5xl px-2 sm:px-4 text-center">
           
           {/* Main Title Banner */}
-          <div className="mt-1 mb-2 flex items-center justify-center gap-2 sm:gap-3">
-            <DiyaLamp className="w-7 sm:w-10 h-7 sm:h-10 drop-shadow-[0_0_14px_rgba(251,191,36,0.95)] shrink-0" />
-            
+          <div className="mt-1 mb-2 flex items-center justify-center">
             <div>
               <h1 className="font-serif text-4xl xs:text-5xl sm:text-4xl lg:text-5xl font-black leading-[1.05] tracking-wide text-[#FEF08A] drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)] uppercase">
                 ILLUMINATE YOUR CELEBRATION!
               </h1>
             </div>
-
-            <DiyaLamp className="w-7 sm:w-10 h-7 sm:h-10 drop-shadow-[0_0_14px_rgba(251,191,36,0.95)] shrink-0" />
           </div>
 
           {/* Date & Location Badge */}
@@ -172,7 +161,7 @@ function Landing() {
             <span className="flex items-center gap-1.5"><MapPin className="size-4 text-[#F59E0B]" /> Fairmont Ambassador Seoul, Yeouido</span>
           </div>
 
-          {/* 3 ARCH CARDS */}
+          {/* 3 ARCH CARDS WITH POINTED DOME ROOFS INTACT */}
           <div className="mt-1 flex flex-col sm:grid sm:grid-cols-3 gap-8 sm:gap-3 md:gap-4 items-center sm:items-end w-full max-w-[440px] sm:max-w-4xl mx-auto px-2 xs:px-3">
             
             {/* Card 1: ICCK DIWALI BALL */}

@@ -12,8 +12,8 @@ interface JharokhaArchCardProps {
   gradientFrom: string;
   gradientTo: string;
   illustration: React.ReactNode;
-  to?: string;
-  onAction?: () => void;
+  to: "/register" | "/awards";
+  search?: { preset: "ball" | "bundle" };
   ribbonText?: string;
   isTwinArch?: boolean;
 }
@@ -36,7 +36,7 @@ export function JharokhaArchCard({
   gradientTo,
   illustration,
   to,
-  onAction,
+  search,
   ribbonText,
 }: JharokhaArchCardProps) {
   const cardId = title.replace(/[^a-zA-Z0-9]/g, "");
@@ -49,17 +49,9 @@ export function JharokhaArchCard({
     if (isNavigating) return;
     setIsNavigating(true);
 
+    // Trigger smooth 280ms royal transition before page navigation
     setTimeout(() => {
-      setIsNavigating(false);
-      if (onAction) {
-        onAction();
-      } else if (to) {
-        if (to.startsWith("mailto:") || to.startsWith("http")) {
-          window.location.href = to;
-        } else {
-          navigate({ to: to as any });
-        }
-      }
+      navigate({ to, search: search as any });
     }, 280);
   };
 
