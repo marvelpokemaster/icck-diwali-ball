@@ -1,9 +1,29 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { Ticket, Sparkles, Building2, Phone, Mail, Youtube } from "lucide-react";
+import { 
+  Ticket, 
+  Sparkles, 
+  Building2, 
+  Phone, 
+  Mail, 
+  Youtube, 
+  Users, 
+  Utensils, 
+  Music, 
+  Gift, 
+  Award,
+  Calendar,
+  MapPin,
+  HeartHandshake,
+  Instagram
+} from "lucide-react";
 import { useEffect, useState } from "react";
 import icckLogo from "@/assets/icck-logo.png";
 import icckGoldLogo from "@/assets/icck-gold-vertical-logo-bright.png";
 import diwaliFlyerBg from "@/assets/diwali-flyer-bg.jpg";
+import real2025Stage from "@/assets/real-2025-diwali-stage.png";
+import eventPic1 from "@/assets/event-pic-1.png";
+import eventPic2 from "@/assets/event-pic-2.png";
+import eventPic6 from "@/assets/event-pic-6.png";
 import { 
   DiyaLamp, 
   HangingDiyaString, 
@@ -18,7 +38,7 @@ import { FirecrackerCanvas } from "@/components/awards/FirecrackerCanvas";
 
 const title = "ICCK Diwali Celebrations 2026 | Business Awards & Ball";
 const description =
-  "Book the ICCK Diwali Ball, register for the ICCK Business Awards, or save 15% with the bundle registration. One festive night of Indian–Korean celebration.";
+  "Join industry leaders for the ICCK Diwali Ball & Business Awards 2026. Celebrate culture, networking, cuisine, and excellence in Seoul.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -62,7 +82,7 @@ function Landing() {
           alt="Festive Diwali Background"
           className="w-full h-full object-cover object-center opacity-90 scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#091442]/50 via-transparent to-[#070d36]/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#091442]/60 via-transparent to-[#070d36]/95" />
       </div>
 
       {/* Dynamic Interactive Firecracker Canvas Overlay */}
@@ -126,13 +146,14 @@ function Landing() {
         </div>
       </header>
 
-      {/* ---------------- 2. MAIN FESTIVE HERO & PROPORTIONAL CARDS ---------------- */}
-      <main className="relative overflow-hidden z-20 my-auto pt-2 sm:pt-2 pb-6">
+      {/* ---------------- 2. MAIN CONTENT SECTIONS ---------------- */}
+      <main className="relative overflow-hidden z-20 my-auto pt-4 pb-12 space-y-16">
 
-        <section className="relative z-20 mx-auto max-w-5xl px-2 sm:px-2 text-center">
+        {/* ---------------- HERO & PROPORTIONAL CARDS ---------------- */}
+        <section className="relative z-20 mx-auto max-w-5xl px-2 sm:px-4 text-center">
           
           {/* Main Title Banner */}
-          <div className="mt-1 mb-1 sm:mb-2 flex items-center justify-center gap-2 sm:gap-3">
+          <div className="mt-1 mb-2 flex items-center justify-center gap-2 sm:gap-3">
             <DiyaLamp className="w-7 sm:w-10 h-7 sm:h-10 drop-shadow-[0_0_14px_rgba(251,191,36,0.95)] shrink-0" />
             
             <div>
@@ -144,8 +165,15 @@ function Landing() {
             <DiyaLamp className="w-7 sm:w-10 h-7 sm:h-10 drop-shadow-[0_0_14px_rgba(251,191,36,0.95)] shrink-0" />
           </div>
 
-          {/* ---------------- 3. ARCH CARDS ---------------- */}
-          <div className="mt-0.5 sm:mt-1 flex flex-col sm:grid sm:grid-cols-3 gap-8 sm:gap-3 md:gap-4 items-center sm:items-end w-full max-w-[440px] sm:max-w-4xl mx-auto px-2 xs:px-3">
+          {/* Date & Location Badge */}
+          <div className="mt-2 mb-6 inline-flex flex-wrap items-center justify-center gap-4 rounded-xl border border-amber-300/40 bg-[#060D2B]/80 backdrop-blur-md px-4 py-2 text-xs sm:text-sm font-bold text-amber-200 shadow-xl">
+            <span className="flex items-center gap-1.5"><Calendar className="size-4 text-[#F59E0B]" /> December 5th, 2026 | 18:30</span>
+            <span className="hidden sm:inline text-amber-500">•</span>
+            <span className="flex items-center gap-1.5"><MapPin className="size-4 text-[#F59E0B]" /> Fairmont Ambassador Seoul, Yeouido</span>
+          </div>
+
+          {/* 3 ARCH CARDS */}
+          <div className="mt-1 flex flex-col sm:grid sm:grid-cols-3 gap-8 sm:gap-3 md:gap-4 items-center sm:items-end w-full max-w-[440px] sm:max-w-4xl mx-auto px-2 xs:px-3">
             
             {/* Card 1: ICCK DIWALI BALL */}
             <JharokhaArchCard
@@ -156,15 +184,14 @@ function Landing() {
               gradientFrom="#253494"
               gradientTo="#0f1854"
               illustration={<IndianDancerIllustration className="w-38 xs:w-42 sm:w-36 md:w-42 h-42 xs:h-46 sm:h-40 md:h-46" />}
-              to="/register"
-              search={{ preset: "ball" }}
+              to="mailto:events@indochamkorea.org?subject=Diwali%20Ball%20Ticket%20Enquiry"
             />
 
             {/* Card 2: ICCK BUSINESS AWARDS */}
             <JharokhaArchCard
               title="ICCK BUSINESS AWARDS"
               price="$125"
-              buttonText="Register Now"
+              buttonText="Nominate Now"
               noteText="Honoring business excellence"
               gradientFrom="#ab1d53"
               gradientTo="#520829"
@@ -184,14 +211,13 @@ function Landing() {
               gradientFrom="#c2185b"
               gradientTo="#880e4f"
               illustration={<FourIconBundleEmblem className="w-34 xs:w-38 sm:w-32 md:w-38 h-36 xs:h-40 sm:h-34 md:h-38" />}
-              to="/register"
-              search={{ preset: "bundle" }}
+              to="mailto:events@indochamkorea.org?subject=Bundle%20Registration%20Enquiry"
             />
 
           </div>
 
-          {/* ---------------- 4. BOTTOM ACTION BUTTONS ---------------- */}
-          <div className="mt-6 sm:mt-5 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full max-w-[360px] sm:max-w-none mx-auto relative px-3 sm:px-0">
+          {/* BOTTOM ACTION BUTTONS */}
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full max-w-[360px] sm:max-w-none mx-auto relative px-3 sm:px-0">
             
             {/* Button 1: VIEW ALL EVENTS */}
             <div className="flex items-center justify-center">
@@ -223,20 +249,198 @@ function Landing() {
 
           </div>
 
-          {/* ---------------- 5. 2025 DIWALI BALL HIGHLIGHTS & YOUTUBE VIDEO SECTION ---------------- */}
-          <div className="mt-12 max-w-4xl mx-auto rounded-2xl border-2 border-[#D97706] bg-[#FAF9F6] p-6 sm:p-8 text-left shadow-2xl text-[#060D2B]">
-            <div className="flex items-center gap-3">
-              <Youtube className="size-7 text-[#B7182E]" />
-              <h2 className="font-serif text-2xl font-black uppercase tracking-wide">
-                2025 Diwali Ball: A Glimpse of Last Year&apos;s Energy
-              </h2>
+        </section>
+
+        {/* ---------------- (a) ABOUT THE FESTIVAL ---------------- */}
+        <section id="about" className="relative z-20 max-w-5xl mx-auto px-4">
+          <div className="rounded-2xl border-2 border-amber-400/40 bg-gradient-to-b from-[#060D2B]/95 via-[#091442]/95 to-[#060D2B]/95 backdrop-blur-md p-6 sm:p-10 text-center shadow-2xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-amber-300/40 bg-amber-400/10 px-4 py-1.5 text-xs font-black uppercase tracking-widest text-[#FEF08A] mb-4">
+              <Sparkles className="size-4 text-[#F59E0B]" /> ABOUT THE FESTIVAL
             </div>
             
-            <p className="mt-3 text-sm leading-relaxed text-[#1E293B] font-medium">
+            <h2 className="font-serif text-3xl sm:text-4xl font-black uppercase tracking-wide text-white mb-4">
+              The Festival of Lights & Victory
+            </h2>
+
+            <p className="max-w-3xl mx-auto text-base sm:text-lg leading-relaxed text-amber-100/90 font-medium">
+              Diwali, or the Festival of Lights, is one of the most important and widely observed festivals in India and across global communities. 
+              It represents the triumph of light over darkness, good over evil, and wisdom over ignorance. 
+              During this festive season, families and business communities gather to light oil lamps, decorate with colorful motifs, enjoy authentic gourmet cuisine, 
+              and foster lasting international connections of joy, prosperity, and hope.
+            </p>
+          </div>
+        </section>
+
+        {/* ---------------- (b) HIGHLIGHTS OF DIWALI BALL 2026 ---------------- */}
+        <section id="highlights" className="relative z-20 max-w-5xl mx-auto px-4">
+          <div className="rounded-2xl border-2 border-amber-300 bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#D97706] p-6 sm:p-10 text-left shadow-[0_10px_35px_rgba(245,158,11,0.4)] text-[#060D2B]">
+            <div className="flex items-center gap-3 mb-6 border-b-2 border-amber-800/20 pb-4">
+              <Sparkles className="size-8 text-[#B7182E]" />
+              <div>
+                <h2 className="font-serif text-2xl sm:text-3xl font-black uppercase tracking-wide">
+                  Highlights of Diwali Ball 2026
+                </h2>
+                <p className="text-xs sm:text-sm font-bold text-[#1A0A00]/80">
+                  An exclusive gala evening of networking, culture, gourmet dining, and recognition.
+                </p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm font-bold text-[#060D2B]">
+              <div className="flex items-start gap-3 bg-white/60 p-3.5 rounded-xl border border-amber-800/20 shadow-sm">
+                <Users className="size-5 text-[#B7182E] shrink-0 mt-0.5" />
+                <span>Networking Opportunities with ICCK&apos;s Global Business Network (250+ distinguished C-level executives & leaders).</span>
+              </div>
+
+              <div className="flex items-start gap-3 bg-white/60 p-3.5 rounded-xl border border-amber-800/20 shadow-sm">
+                <HeartHandshake className="size-5 text-[#B7182E] shrink-0 mt-0.5" />
+                <span>Deep Indo-Korea Corporate & Strategic Community Engagement.</span>
+              </div>
+
+              <div className="flex items-start gap-3 bg-white/60 p-3.5 rounded-xl border border-amber-800/20 shadow-sm">
+                <Music className="size-5 text-[#B7182E] shrink-0 mt-0.5" />
+                <span>Authentic Cultural Dance Performances by Renowned Indian Dance Troupes.</span>
+              </div>
+
+              <div className="flex items-start gap-3 bg-white/60 p-3.5 rounded-xl border border-amber-800/20 shadow-sm">
+                <Utensils className="size-5 text-[#B7182E] shrink-0 mt-0.5" />
+                <span>Multi-Course Fine-Dining Indian & International Culinary Experience.</span>
+              </div>
+
+              <div className="flex items-start gap-3 bg-white/60 p-3.5 rounded-xl border border-amber-800/20 shadow-sm">
+                <Gift className="size-5 text-[#B7182E] shrink-0 mt-0.5" />
+                <span>Exclusive Gala Raffle & Auction Grand Prize Giveaways.</span>
+              </div>
+
+              <div className="flex items-start gap-3 bg-white/60 p-3.5 rounded-xl border border-amber-800/20 shadow-sm">
+                <Award className="size-5 text-[#B7182E] shrink-0 mt-0.5" />
+                <span>Distinguished Guests of Honor including H.E. Ambassador of India to the Republic of Korea.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ---------------- (c) SPONSORS & SPONSORSHIP CONTACT ---------------- */}
+        <section id="sponsors" className="relative z-20 max-w-5xl mx-auto px-4 text-center">
+          <div className="rounded-2xl border-2 border-amber-400/40 bg-gradient-to-b from-[#060D2B]/95 via-[#091442]/95 to-[#060D2B]/95 backdrop-blur-md p-6 sm:p-10 shadow-2xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-amber-300/40 bg-amber-400/10 px-4 py-1.5 text-xs font-black uppercase tracking-widest text-[#FEF08A] mb-3">
+              <Building2 className="size-4 text-[#F59E0B]" /> SPONSORSHIP & PARTNERS
+            </div>
+            
+            <h2 className="font-serif text-3xl font-black uppercase tracking-wide text-white mb-2">
+              Our Corporate Sponsors & Partners
+            </h2>
+            
+            <p className="text-sm text-amber-100/80 mb-8 max-w-2xl mx-auto">
+              Thank you to our valued corporate partners making this bilateral celebration possible.
+            </p>
+
+            {/* Tier Grid */}
+            <div className="space-y-6 text-left">
+              <div>
+                <h3 className="text-xs font-black uppercase tracking-widest text-[#FEF08A] mb-3 border-b border-amber-400/20 pb-1">
+                  Platinum Sponsors
+                </h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  <div className="bg-[#091442] border border-amber-400/30 rounded-xl p-4 flex items-center justify-center font-serif text-base font-black text-amber-200 h-20 shadow-inner">
+                    PLATINUM PARTNER
+                  </div>
+                  <div className="bg-[#091442] border border-amber-400/30 rounded-xl p-4 flex items-center justify-center font-serif text-base font-black text-amber-200 h-20 shadow-inner">
+                    GLOBAL LEADER
+                  </div>
+                  <div className="bg-[#091442] border border-amber-400/30 rounded-xl p-4 flex items-center justify-center font-serif text-base font-black text-amber-200 h-20 shadow-inner">
+                    INDO-KOREA CORP
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xs font-black uppercase tracking-widest text-amber-300 mb-3 border-b border-amber-400/20 pb-1">
+                  Gold Sponsors
+                </h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  <div className="bg-[#091442] border border-amber-400/20 rounded-xl p-3 flex items-center justify-center font-sans text-xs font-bold text-amber-100 h-16">
+                    GOLD SPONSOR I
+                  </div>
+                  <div className="bg-[#091442] border border-amber-400/20 rounded-xl p-3 flex items-center justify-center font-sans text-xs font-bold text-amber-100 h-16">
+                    GOLD SPONSOR II
+                  </div>
+                  <div className="bg-[#091442] border border-amber-400/20 rounded-xl p-3 flex items-center justify-center font-sans text-xs font-bold text-amber-100 h-16">
+                    GOLD SPONSOR III
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Sponsorship Contact Action */}
+            <div className="mt-8 pt-6 border-t border-amber-400/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
+              <div>
+                <h4 className="font-serif text-lg font-black text-[#FEF08A]">Interested in Sponsoring Diwali Ball 2026?</h4>
+                <p className="text-xs text-amber-200/80">Showcase your brand to top Korean & Indian business executives.</p>
+              </div>
+
+              <a
+                href="mailto:events@indochamkorea.org?subject=Diwali%20Ball%20Sponsorship%20Enquiry"
+                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-5 py-3 font-black text-xs uppercase tracking-wider text-[#060c2c] shadow-lg hover:brightness-110 shrink-0"
+              >
+                <Mail className="size-4" /> Contact Sponsorships
+              </a>
+            </div>
+
+          </div>
+        </section>
+
+        {/* ---------------- (d) EXACT USER-PROVIDED 2025 STAGE PHOTO & YOUTUBE VIDEO SECTION ---------------- */}
+        <section id="gallery" className="relative z-20 max-w-5xl mx-auto px-4">
+          <div className="rounded-2xl border-2 border-amber-300 bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#D97706] p-6 sm:p-8 text-left shadow-[0_10px_35px_rgba(245,158,11,0.4)] text-[#060D2B]">
+            
+            <div className="flex items-center justify-between gap-3 mb-4 flex-wrap">
+              <div className="flex items-center gap-3">
+                <Youtube className="size-7 text-[#B7182E]" />
+                <h2 className="font-serif text-2xl font-black uppercase tracking-wide drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)]">
+                  2025 Diwali Ball: A Glimpse of Last Year&apos;s Energy
+                </h2>
+              </div>
+
+              <a
+                href="https://www.instagram.com/p/DSZOiEPE-4g/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-[#B7182E] hover:underline bg-white/70 px-3 py-1.5 rounded-lg border border-amber-800/20 shadow-sm"
+              >
+                <Instagram className="size-4 text-[#E4405F]" /> View Official Instagram Post
+              </a>
+            </div>
+            
+            <p className="text-sm leading-relaxed text-[#1A0A00] font-bold mb-6">
               Relive the grandeur, cultural performances, VIP networking, and festive celebration of the ICCK Diwali Ball!
             </p>
 
-            <div className="mt-6 aspect-video w-full rounded-xl overflow-hidden shadow-lg border border-amber-300">
+            {/* PHOTO GALLERY WITH EXACT USER-PROVIDED 2025 STAGE PHOTO IN 1ST POSITION */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+              {/* 1st Position: EXACT User-Provided Official 2025 Stage Photo */}
+              <div className="overflow-hidden rounded-xl shadow-md border-2 border-amber-800/30 bg-black aspect-square">
+                <img src={real2025Stage} alt="Official ICCK 2025 Diwali Ball Stage Photo" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+              </div>
+              
+              {/* 2nd Position: VIP Guest Reception & Networking */}
+              <div className="overflow-hidden rounded-xl shadow-md border-2 border-amber-800/30 bg-black aspect-square">
+                <img src={eventPic1} alt="Diwali Ball VIP Guest Networking" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+              </div>
+
+              {/* 3rd Position: Fairmont Grand Ballroom Dining Setup */}
+              <div className="overflow-hidden rounded-xl shadow-md border-2 border-amber-800/30 bg-black aspect-square">
+                <img src={eventPic2} alt="Diwali Ball Grand Ballroom Dining Setup" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+              </div>
+
+              {/* 4th Position: Live Stage Cultural Dance Performance */}
+              <div className="overflow-hidden rounded-xl shadow-md border-2 border-amber-800/30 bg-black aspect-square">
+                <img src={eventPic6} alt="Live Indian Cultural Stage Performance" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+              </div>
+            </div>
+
+            {/* Official 2025 YouTube Video Embed */}
+            <div className="aspect-video w-full rounded-xl overflow-hidden shadow-2xl border-2 border-amber-800/40 bg-black">
               <iframe
                 src="https://www.youtube-nocookie.com/embed/zyKLqCDevnA"
                 title="2025 ICCK Diwali Ball Video"
@@ -245,43 +449,51 @@ function Landing() {
                 className="w-full h-full border-0"
               />
             </div>
-          </div>
 
+          </div>
         </section>
+
       </main>
 
-      {/* ---------------- 6. OFFICIAL FOOTER WITH OFFICIAL VERTICAL GOLD ICCK LOGO ---------------- */}
-      <footer className="relative z-30 border-t-2 border-amber-400/40 bg-[#060d2b] py-8 text-center text-amber-100/90 text-sm font-medium">
-        <div className="mx-auto max-w-5xl px-4 flex flex-col sm:flex-row items-center justify-between gap-6">
+      {/* ---------------- 3. CONTACT US & OFFICIAL FOOTER ---------------- */}
+      <footer className="relative z-30 border-t-2 border-amber-400/40 bg-[#060d2b] py-10 text-center text-amber-100/90 text-sm font-medium">
+        <div className="mx-auto max-w-5xl px-4 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+          
           <img
             src={icckGoldLogo}
             alt="Indian Chamber of Commerce in Korea"
             width={218}
             height={248}
-            className="h-16 sm:h-20 w-auto object-contain drop-shadow-[0_2px_12px_rgba(245,158,11,0.5)]"
+            className="h-20 w-auto object-contain drop-shadow-[0_2px_12px_rgba(245,158,11,0.5)]"
           />
 
-          <div className="text-center sm:text-left space-y-1.5 text-xs text-amber-200/90 font-medium">
-            <p className="flex items-center justify-center sm:justify-start gap-2">
-              <Building2 className="size-4 text-[#F59E0B]" />
+          <div className="space-y-2 text-xs text-amber-200/90 font-medium">
+            <h4 className="font-serif text-sm font-black uppercase text-[#FEF08A] tracking-wider mb-1">
+              Contact Us
+            </h4>
+
+            <p className="flex items-center justify-center md:justify-start gap-2">
+              <Building2 className="size-4 text-[#F59E0B] shrink-0" />
               <span>ICCK, 405(4F) IKP 7 Heolleung-ro, Seocho-gu, Seoul, Republic of Korea (06792)</span>
             </p>
-            <p className="flex items-center justify-center sm:justify-start gap-4">
+
+            <p className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3 sm:gap-6">
               <span className="flex items-center gap-1.5">
-                <Phone className="size-3.5 text-[#F59E0B]" /> TEL: +82-2-776-1583
+                <Phone className="size-3.5 text-[#F59E0B] shrink-0" /> TEL: +82-2-776-1583
               </span>
               <span className="flex items-center gap-1.5">
-                <Mail className="size-3.5 text-[#F59E0B]" />
-                <a href="mailto:events@indochamkorea.org" className="hover:text-[#FEF08A] underline">
+                <Mail className="size-3.5 text-[#F59E0B] shrink-0" />
+                <a href="mailto:events@indochamkorea.org" className="hover:text-[#FEF08A] underline font-bold">
                   events@indochamkorea.org
                 </a>
               </span>
             </p>
           </div>
 
-          <p className="text-xs text-amber-200/60">
-            &copy; 2026 ICCK. All rights reserved.
-          </p>
+          <div className="text-xs text-amber-200/60">
+            <p>&copy; 2026 ICCK. All rights reserved.</p>
+          </div>
+
         </div>
       </footer>
     </div>
