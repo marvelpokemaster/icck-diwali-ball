@@ -48,9 +48,9 @@ export function About() {
         </p>
 
         <div className="mt-12 grid gap-10 sm:grid-cols-2">
-          <div className="flex flex-col items-center bg-[#FEF3C7] border-2 border-amber-500 p-6 rounded-xl shadow-xl transition-transform hover:-translate-y-1">
-            <Target className="size-10 text-[#D97706] drop-shadow-sm" />
-            <h4 className="mt-4 font-display text-lg font-black text-[#0F172A]">
+          <div className="flex flex-col items-center bg-[#FAF9F6] border-2 border-[#D97706] p-7 rounded-2xl shadow-xl transition-transform hover:-translate-y-1">
+            <Target className="size-11 text-[#D97706] drop-shadow-sm" />
+            <h4 className="mt-4 font-display text-lg font-black tracking-wide text-[#060D2B]">
               Recognizing Excellence
             </h4>
             <p className="mt-2 text-sm leading-relaxed text-[#1E293B] font-medium">
@@ -58,9 +58,9 @@ export function About() {
               innovation and sustainability across the India&ndash;Korea corridor.
             </p>
           </div>
-          <div className="flex flex-col items-center bg-[#FEF3C7] border-2 border-amber-500 p-6 rounded-xl shadow-xl transition-transform hover:-translate-y-1">
-            <Users className="size-10 text-[#D97706] drop-shadow-sm" />
-            <h4 className="mt-4 font-display text-lg font-black text-[#0F172A]">
+          <div className="flex flex-col items-center bg-[#FAF9F6] border-2 border-[#D97706] p-7 rounded-2xl shadow-xl transition-transform hover:-translate-y-1">
+            <Users className="size-11 text-[#D97706] drop-shadow-sm" />
+            <h4 className="mt-4 font-display text-lg font-black tracking-wide text-[#060D2B]">
               Building Bilateral Ties
             </h4>
             <p className="mt-2 text-sm leading-relaxed text-[#1E293B] font-medium">
@@ -73,14 +73,14 @@ export function About() {
         <div className="mx-auto my-12 size-2 rounded-full bg-[#F59E0B] drop-shadow-[0_0_8px_rgba(245,158,11,0.8)]" />
 
         <h3 className="font-display text-xl font-bold text-[#F59E0B] tracking-wider uppercase">Event Program</h3>
-        <div className="mx-auto mt-5 max-w-xl divide-y divide-amber-300 rounded-xl border-2 border-amber-500 bg-[#FEF3C7] text-left shadow-xl">
+        <div className="mx-auto mt-5 max-w-xl divide-y divide-amber-300 rounded-2xl border-2 border-[#D97706] bg-[#FAF9F6] text-left shadow-xl">
           {[
             ["5:30 PM – 6:00 PM", "Reception & Registration"],
             ["6:00 PM – 7:00 PM", "Awards Ceremony"],
           ].map(([time, title]) => (
             <div key={time} className="flex flex-wrap items-center justify-between gap-2 px-6 py-4">
               <span className="font-display text-sm font-black text-[#D97706]">{time}</span>
-              <span className="text-sm font-bold text-[#0F172A]">{title}</span>
+              <span className="text-sm font-bold text-[#060D2B]">{title}</span>
             </div>
           ))}
         </div>
@@ -204,9 +204,9 @@ export function WhyParticipate() {
         </h2>
         <div className="mt-12 grid gap-8 sm:grid-cols-3">
           {benefits.map((b) => (
-            <div key={b.title} className="flex flex-col items-center bg-[#FEF3C7] border-2 border-amber-500 p-8 rounded-xl shadow-xl transition-transform hover:-translate-y-1">
-              <b.icon className="size-10 text-[#D97706]" strokeWidth={1.5} />
-              <h3 className="mt-5 font-display text-lg font-black uppercase tracking-wider text-[#0F172A]">{b.title}</h3>
+            <div key={b.title} className="flex flex-col items-center bg-[#FAF9F6] border-2 border-[#D97706] p-8 rounded-2xl shadow-xl transition-transform hover:-translate-y-1">
+              <b.icon className="size-11 text-[#D97706]" strokeWidth={1.5} />
+              <h3 className="mt-5 font-display text-lg font-black uppercase tracking-wider text-[#060D2B]">{b.title}</h3>
               <p className="mt-3 max-w-xs text-sm leading-relaxed text-[#1E293B] font-medium">{b.body}</p>
             </div>
           ))}
@@ -289,10 +289,10 @@ export function Categories() {
           {categories.map((c) => (
             <article
               key={c.title}
-              className="group rounded-xl border-2 border-amber-500 bg-[#FEF3C7] p-6 text-center shadow-xl transition-transform hover:-translate-y-1 hover:border-amber-600"
+              className="group rounded-2xl border-2 border-[#D97706] bg-[#FAF9F6] p-6 text-center shadow-xl transition-transform hover:-translate-y-1 hover:border-amber-600"
             >
-              <c.icon className="mx-auto size-10 text-[#D97706]" strokeWidth={1.5} />
-              <h3 className="mt-4 font-display text-base font-bold leading-snug text-[#0F172A]">
+              <c.icon className="mx-auto size-11 text-[#D97706]" strokeWidth={1.5} />
+              <h3 className="mt-4 font-display text-base font-black leading-snug text-[#060D2B]">
                 {c.title}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-[#1E293B] font-medium">{c.body}</p>
@@ -301,7 +301,7 @@ export function Categories() {
         </div>
 
         <div className="mt-10 flex justify-center">
-          <article className="w-full max-w-md rounded-xl bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] p-8 text-center shadow-2xl border-2 border-amber-200">
+          <article className="w-full max-w-md rounded-2xl bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] p-8 text-center shadow-2xl border-2 border-amber-200">
             <Trophy className="mx-auto size-11 text-[#060c2c]" strokeWidth={1.5} />
             <h3 className="mt-4 font-display text-xl font-black uppercase tracking-wide text-[#060c2c]">
               Company of the Year
@@ -338,9 +338,9 @@ export function Nomination() {
         </h2>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-3">
-          <div className="rounded-xl border-2 border-amber-500 bg-[#FEF3C7] p-6 shadow-xl">
-            <ScrollText className="size-9 text-[#D97706]" strokeWidth={1.5} />
-            <h3 className="mt-4 font-display text-lg font-black text-[#0F172A]">Eligibility</h3>
+          <div className="rounded-2xl border-2 border-[#D97706] bg-[#FAF9F6] p-7 shadow-xl">
+            <ScrollText className="size-10 text-[#D97706]" strokeWidth={1.5} />
+            <h3 className="mt-4 font-display text-lg font-black text-[#060D2B]">Eligibility</h3>
             <ul className="mt-3 space-y-2 text-sm leading-relaxed text-[#1E293B] font-medium">
               <li>
                 Legally registered in India, Korea or another jurisdiction, with activity that
@@ -351,45 +351,45 @@ export function Nomination() {
             </ul>
           </div>
 
-          <div className="rounded-xl border-2 border-amber-500 bg-[#FEF3C7] p-6 shadow-xl">
-            <Award className="size-9 text-[#D97706]" strokeWidth={1.5} />
-            <h3 className="mt-4 font-display text-lg font-black text-[#0F172A]">
+          <div className="rounded-2xl border-2 border-[#D97706] bg-[#FAF9F6] p-7 shadow-xl">
+            <Award className="size-10 text-[#D97706]" strokeWidth={1.5} />
+            <h3 className="mt-4 font-display text-lg font-black text-[#060D2B]">
               Assessment Criteria
             </h3>
             <ul className="mt-3 space-y-2 text-sm leading-relaxed text-[#1E293B] font-medium">
               <li>
-                <strong className="text-[#0F172A]">Impact</strong> &mdash; measurable difference
+                <strong className="text-[#060D2B]">Impact</strong> &mdash; measurable difference
                 created.
               </li>
               <li>
-                <strong className="text-[#0F172A]">Bilateral contribution</strong> &mdash;
+                <strong className="text-[#060D2B]">Bilateral contribution</strong> &mdash;
                 strengthening India&ndash;Korea ties.
               </li>
               <li>
-                <strong className="text-[#0F172A]">Excellence &amp; Innovation</strong> &mdash;
+                <strong className="text-[#060D2B]">Excellence &amp; Innovation</strong> &mdash;
                 distinctiveness versus industry standards.
               </li>
               <li>
-                <strong className="text-[#0F172A]">Sustainability &amp; Evidence</strong> &mdash;
+                <strong className="text-[#060D2B]">Sustainability &amp; Evidence</strong> &mdash;
                 long-term value, credibly documented.
               </li>
             </ul>
           </div>
 
-          <div className="rounded-xl border-2 border-amber-500 bg-[#FEF3C7] p-6 shadow-xl">
-            <Building2 className="size-9 text-[#D97706]" strokeWidth={1.5} />
-            <h3 className="mt-4 font-display text-lg font-black text-[#0F172A]">Judging Process</h3>
+          <div className="rounded-2xl border-2 border-[#D97706] bg-[#FAF9F6] p-7 shadow-xl">
+            <Building2 className="size-10 text-[#D97706]" strokeWidth={1.5} />
+            <h3 className="mt-4 font-display text-lg font-black text-[#060D2B]">Judging Process</h3>
             <ol className="mt-3 space-y-2 text-sm leading-relaxed text-[#1E293B] font-medium">
               <li>
-                <strong className="text-[#0F172A]">Stage 1</strong> &mdash; eligibility screening by
+                <strong className="text-[#060D2B]">Stage 1</strong> &mdash; eligibility screening by
                 ICCK.
               </li>
               <li>
-                <strong className="text-[#0F172A]">Stage 2</strong> &mdash; evaluation and
+                <strong className="text-[#060D2B]">Stage 2</strong> &mdash; evaluation and
                 shortlisting by the judging panel.
               </li>
               <li>
-                <strong className="text-[#0F172A]">Stage 3</strong> &mdash; final selection of
+                <strong className="text-[#060D2B]">Stage 3</strong> &mdash; final selection of
                 category winners and Company of the Year.
               </li>
             </ol>
@@ -437,7 +437,7 @@ export function Partners() {
           {partners.map((p) => (
             <div
               key={p}
-              className="flex h-24 items-center justify-center rounded-xl border-2 border-amber-500 bg-[#FEF3C7] px-4 text-center text-xs font-black uppercase tracking-wide text-[#0F172A] shadow-md"
+              className="flex h-24 items-center justify-center rounded-2xl border-2 border-[#D97706] bg-[#FAF9F6] px-4 text-center text-xs font-black uppercase tracking-wide text-[#060D2B] shadow-md"
             >
               {p}
             </div>
@@ -452,10 +452,10 @@ export function Partners() {
           ].map((s) => (
             <div
               key={s.tier}
-              className="rounded-xl border-2 border-amber-500 bg-[#FEF3C7] p-6 text-center shadow-xl"
+              className="rounded-2xl border-2 border-[#D97706] bg-[#FAF9F6] p-7 text-center shadow-xl"
             >
-              <Sparkles className="mx-auto size-8 text-[#D97706]" strokeWidth={1.5} />
-              <h3 className="mt-3 font-display text-lg font-black uppercase tracking-wide text-[#0F172A]">
+              <Sparkles className="mx-auto size-9 text-[#D97706]" strokeWidth={1.5} />
+              <h3 className="mt-3 font-display text-lg font-black uppercase tracking-wide text-[#060D2B]">
                 {s.tier}
               </h3>
               <p className="mt-2 text-sm text-[#1E293B] font-medium">{s.note}</p>
@@ -515,9 +515,9 @@ export function Faq() {
             <AccordionItem
               key={f.q}
               value={`item-${i}`}
-              className="overflow-hidden rounded-xl border-2 border-amber-500 bg-[#FEF3C7] px-5 py-1 shadow-lg"
+              className="overflow-hidden rounded-2xl border-2 border-[#D97706] bg-[#FAF9F6] px-6 py-1 shadow-lg"
             >
-              <AccordionTrigger className="text-left font-black text-[#0F172A] hover:no-underline text-base">
+              <AccordionTrigger className="text-left font-black text-[#060D2B] hover:no-underline text-base">
                 {f.q}
               </AccordionTrigger>
               <AccordionContent className="text-sm leading-relaxed text-[#1E293B] font-medium">
@@ -552,21 +552,21 @@ export function Contact() {
               required
               placeholder="Name"
               aria-label="Name"
-              className="border-2 border-amber-500 bg-[#FEF3C7] text-[#0F172A] placeholder:text-slate-600 font-medium"
+              className="border-2 border-[#D97706] bg-[#FAF9F6] text-[#060D2B] placeholder:text-slate-500 font-medium"
             />
             <Input
               required
               type="email"
               placeholder="Email"
               aria-label="Email"
-              className="border-2 border-amber-500 bg-[#FEF3C7] text-[#0F172A] placeholder:text-slate-600 font-medium"
+              className="border-2 border-[#D97706] bg-[#FAF9F6] text-[#060D2B] placeholder:text-slate-500 font-medium"
             />
             <Textarea
               required
               rows={5}
               placeholder="Message"
               aria-label="Message"
-              className="border-2 border-amber-500 bg-[#FEF3C7] text-[#0F172A] placeholder:text-slate-600 font-medium"
+              className="border-2 border-[#D97706] bg-[#FAF9F6] text-[#060D2B] placeholder:text-slate-500 font-medium"
             />
             <Button
               type="submit"
