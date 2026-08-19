@@ -73,14 +73,6 @@ export function JharokhaArchCard({
         </div>
       )}
 
-      {/* Outer Floating Decorative Diya Lamps Flanking Arch Top */}
-      <div className="absolute top-16 -left-3.5 z-30 pointer-events-none hidden xs:block sm:hidden md:block">
-        <DiyaLamp className="w-5 h-5 opacity-95 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)]" />
-      </div>
-      <div className="absolute top-16 -right-3.5 z-30 pointer-events-none hidden xs:block sm:hidden md:block">
-        <DiyaLamp className="w-5 h-5 opacity-95 drop-shadow-[0_0_10px_rgba(251,191,36,0.9)]" />
-      </div>
-
       {/* Mughal Cusped Arch Background, Geometric Jaali Motifs & Double Gold Border SVG Container */}
       <svg
         className="absolute inset-0 w-full h-full z-0 pointer-events-none overflow-visible"

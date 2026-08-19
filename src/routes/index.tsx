@@ -87,22 +87,20 @@ function Landing() {
       {/* Dynamic Interactive Firecracker Canvas Overlay */}
       <FirecrackerCanvas />
       
-      {/* ---------------- 2 REAL GLOWING LANTERNS (LEFT & RIGHT SIDES) ---------------- */}
-      <div className="fixed top-0 left-1 xs:left-2 sm:left-4 md:left-6 z-50 pointer-events-none flex flex-col items-center">
-        <div className="w-0.5 h-8 sm:h-12 bg-gradient-to-b from-amber-200/60 to-amber-500/80" />
+      {/* ---------------- 2 REAL GLOWING ORNATE BRASS LANTERNS (LEFT & RIGHT SIDES) ---------------- */}
+      <div className="fixed top-0 left-1 xs:left-2 sm:left-3 md:left-5 z-50 pointer-events-none flex flex-col items-center">
         <img
           src={lanternImg}
-          alt="Glowing Diwali Lantern"
-          className="w-16 xs:w-20 sm:w-24 md:w-28 h-auto lantern lantern-left"
+          alt="Glowing Ornate Brass Diwali Lantern"
+          className="w-20 xs:w-24 sm:w-28 md:w-36 h-auto lantern lantern-left drop-shadow-[0_0_30px_rgba(251,191,36,0.85)]"
         />
       </div>
 
-      <div className="fixed top-0 right-1 xs:right-2 sm:right-4 md:right-6 z-50 pointer-events-none flex flex-col items-center">
-        <div className="w-0.5 h-8 sm:h-12 bg-gradient-to-b from-amber-200/60 to-amber-500/80" />
+      <div className="fixed top-0 right-1 xs:right-2 sm:right-3 md:right-5 z-50 pointer-events-none flex flex-col items-center">
         <img
           src={lanternImg}
-          alt="Glowing Diwali Lantern"
-          className="w-16 xs:w-20 sm:w-24 md:w-28 h-auto lantern lantern-right"
+          alt="Glowing Ornate Brass Diwali Lantern"
+          className="w-20 xs:w-24 sm:w-28 md:w-36 h-auto lantern lantern-right drop-shadow-[0_0_30px_rgba(251,191,36,0.85)]"
         />
       </div>
 
