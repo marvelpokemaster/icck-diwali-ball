@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 interface Particle {
   x: number;
@@ -53,8 +53,6 @@ export function FirecrackerCanvas() {
   const trailSparksRef = useRef<TrailSpark[]>([]);
   const textBurstsRef = useRef<TextBurst[]>([]);
 
-  const [mousePos, setMousePos] = useState<{ x: number; y: number } | null>(null);
-
   const colors = [
     "#FEF08A", // Champagne Gold
     "#F59E0B", // Marigold Amber
@@ -97,8 +95,6 @@ export function FirecrackerCanvas() {
   };
 
   useEffect(() => {
-    document.body.classList.add("festive-cursor-active");
-
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
@@ -114,8 +110,6 @@ export function FirecrackerCanvas() {
     window.addEventListener("resize", handleResize);
 
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePos({ x: e.clientX, y: e.clientY });
-
       for (let i = 0; i < 2; i++) {
         trailSparksRef.current.push({
           x: e.clientX + (Math.random() - 0.5) * 6,
@@ -271,7 +265,6 @@ export function FirecrackerCanvas() {
     render();
 
     return () => {
-      document.body.classList.remove("festive-cursor-active");
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("click", handleClick);
@@ -280,33 +273,9 @@ export function FirecrackerCanvas() {
   }, []);
 
   return (
-    <>
-      <canvas
-        ref={canvasRef}
-        className="pointer-events-none fixed inset-0 z-40 h-full w-full"
-      />
-
-      {/* Floating Rocket Firecracker Mouse Cursor */}
-      {mousePos && (
-        <div
-          className="pointer-events-none fixed z-50 transition-transform duration-75 ease-out"
-          style={{
-            left: `${mousePos.x}px`,
-            top: `${mousePos.y}px`,
-            transform: "translate(-50%, -50%) rotate(-45deg)",
-          }}
-        >
-          <svg className="w-8 h-8 drop-shadow-[0_0_12px_rgba(245,158,11,0.9)]" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20 2 L27 15 L13 15 Z" fill="#EF4444" stroke="#FEF08A" strokeWidth="1" />
-            <rect x="13" y="15" width="14" height="18" fill="#F59E0B" stroke="#FEF08A" strokeWidth="1" />
-            <rect x="13" y="20" width="14" height="3" fill="#BE123C" />
-            <rect x="13" y="26" width="14" height="3" fill="#FEF08A" />
-            <path d="M13 25 L6 33 L13 33 Z" fill="#BE123C" />
-            <path d="M27 25 L34 33 L27 33 Z" fill="#BE123C" />
-            <path d="M16 33 L20 40 L24 33 Z" fill="#FEF08A" className="animate-pulse" />
-          </svg>
-        </div>
-      )}
-    </>
+    <canvas
+      ref={canvasRef}
+      className="pointer-events-none fixed inset-0 z-40 h-full w-full"
+    />
   );
 }

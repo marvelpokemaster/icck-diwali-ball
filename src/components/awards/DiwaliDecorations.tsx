@@ -1,76 +1,76 @@
 import React from "react";
 
-export function DiyaLamp({ className = "w-8 h-8" }: { className?: string }) {
+/* ── Ornate Traditional Hanging Lantern (Matching flyer lantern style) ── */
+export function DiyaLamp({ className = "w-8 h-10" }: { className?: string }) {
   return (
-    <svg className={className} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className={className} viewBox="0 0 100 140" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <radialGradient id="flameGlow" cx="50%" cy="50%" r="50%">
+        <radialGradient id="lanternGlow" cx="50%" cy="45%" r="45%">
           <stop offset="0%" stopColor="#FFF7ED" />
-          <stop offset="30%" stopColor="#F59E0B" />
-          <stop offset="70%" stopColor="#D97706" />
+          <stop offset="30%" stopColor="#FDE047" />
+          <stop offset="70%" stopColor="#F59E0B" />
           <stop offset="100%" stopColor="#78350F" stopOpacity="0" />
         </radialGradient>
-        <linearGradient id="brassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#FEF08A" />
-          <stop offset="40%" stopColor="#F59E0B" />
-          <stop offset="80%" stopColor="#B45309" />
-          <stop offset="100%" stopColor="#78350F" />
+        <linearGradient id="brassFrame" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#FFF7ED" />
+          <stop offset="25%" stopColor="#FEF08A" />
+          <stop offset="65%" stopColor="#D97706" />
+          <stop offset="90%" stopColor="#92400E" />
+          <stop offset="100%" stopColor="#451A03" />
         </linearGradient>
       </defs>
-      {/* Outer Flame Glow */}
-      <circle cx="50" cy="30" r="28" fill="url(#flameGlow)" opacity="0.85" />
-      {/* Flame Drop */}
-      <path
-        d="M50 8 Q60 25 50 42 Q40 25 50 8 Z"
-        fill="#FFF7ED"
-        stroke="#F59E0B"
-        strokeWidth="1.5"
-      />
-      <path
-        d="M50 16 Q55 27 50 38 Q45 27 50 16 Z"
-        fill="#F59E0B"
-      />
-      <circle cx="50" cy="32" r="4" fill="#FEF08A" />
+
+      {/* Top Suspended Ring */}
+      <circle cx="50" cy="8" r="5" fill="none" stroke="url(#brassFrame)" strokeWidth="2" />
+      <line x1="50" y1="13" x2="50" y2="22" stroke="url(#brassFrame)" strokeWidth="2" strokeDasharray="3 2" />
+
+      {/* Outer Lantern Glow */}
+      <circle cx="50" cy="65" r="38" fill="url(#lanternGlow)" opacity="0.9" />
+
+      {/* Top Metallic Dome Cap */}
+      <path d="M30 24 Q50 16 70 24 L76 34 L24 34 Z" fill="url(#brassFrame)" stroke="#451A03" strokeWidth="1.5" />
+      <circle cx="50" cy="22" r="3" fill="#FFF7ED" />
+
+      {/* Central Hexagonal Glass Body */}
+      <path d="M24 34 L76 34 L84 65 L76 96 L24 96 L16 65 Z" fill="#F59E0B" opacity="0.25" />
+      <path d="M24 34 L76 34 L84 65 L76 96 L24 96 L16 65 Z" stroke="url(#brassFrame)" strokeWidth="2.5" fill="none" />
+
+      {/* Inner Glowing Oil Flame */}
+      <path d="M50 42 Q60 58 50 76 Q40 58 50 42 Z" fill="#FFF7ED" stroke="#FDE047" strokeWidth="1.5" />
+      <path d="M50 50 Q55 60 50 70 Q45 60 50 50 Z" fill="#F59E0B" />
+      <circle cx="50" cy="64" r="3" fill="#FEF08A" />
+
+      {/* Lattice Filigree Carvings & Panels */}
+      <line x1="50" y1="34" x2="50" y2="96" stroke="url(#brassFrame)" strokeWidth="1.5" />
+      <line x1="37" y1="34" x2="33" y2="96" stroke="url(#brassFrame)" strokeWidth="1" strokeDasharray="3 2" />
+      <line x1="63" y1="34" x2="67" y2="96" stroke="url(#brassFrame)" strokeWidth="1" strokeDasharray="3 2" />
       
-      {/* Diya Clay / Brass Bowl Base */}
-      <path
-        d="M15 50 Q50 90 85 50 Q50 62 15 50 Z"
-        fill="url(#brassGrad)"
-        stroke="#451A03"
-        strokeWidth="2"
-      />
-      {/* Ornate Rim Motifs */}
-      <path
-        d="M20 52 Q50 64 80 52"
-        stroke="#FEF08A"
-        strokeWidth="2.5"
-        strokeDasharray="4 2"
-        fill="none"
-      />
-      {/* Stand Base */}
-      <path
-        d="M38 72 L62 72 L68 85 L32 85 Z"
-        fill="url(#brassGrad)"
-        stroke="#451A03"
-        strokeWidth="1.5"
-      />
+      {/* Horizontal Metallic Ribs */}
+      <path d="M20 50 Q50 54 80 50" stroke="url(#brassFrame)" strokeWidth="1.5" fill="none" />
+      <path d="M18 78 Q50 82 82 78" stroke="url(#brassFrame)" strokeWidth="1.5" fill="none" />
+
+      {/* Bottom Base Cap & Hanging Gold Tassel */}
+      <path d="M24 96 L76 96 L68 106 L32 106 Z" fill="url(#brassFrame)" stroke="#451A03" strokeWidth="1.5" />
+      <line x1="50" y1="106" x2="50" y2="124" stroke="url(#brassFrame)" strokeWidth="2" strokeDasharray="2 2" />
+      <polygon points="50,124 44,136 56,136" fill="url(#brassFrame)" stroke="#451A03" strokeWidth="1" />
+      <circle cx="50" cy="138" r="2.5" fill="#FEF08A" />
     </svg>
   );
 }
 
-export function HangingDiyaString({ className = "w-8 h-48" }: { className?: string }) {
+export function HangingDiyaString({ className = "w-8 h-56" }: { className?: string }) {
   return (
     <div className={`flex flex-col items-center ${className}`}>
-      {/* Vertical Brass Beaded String */}
+      {/* Vertical Brass Beaded Chain */}
       <div className="w-0.5 h-full bg-gradient-to-b from-[#FEF08A] via-[#F59E0B] to-[#FEF08A] relative flex flex-col items-center justify-between py-2 border-r border-amber-300/40">
         <div className="w-2.5 h-2.5 rounded-full bg-amber-400 border border-amber-800 shadow" />
         <div className="w-3 h-3 rounded-full bg-red-600 border border-amber-800 shadow" />
         <div className="w-2.5 h-2.5 rounded-full bg-amber-400 border border-amber-800 shadow" />
         <div className="w-3.5 h-3.5 rounded-full bg-yellow-300 border border-amber-800 shadow" />
       </div>
-      {/* Glowing Diya Lamp Hanging at the Bottom of String */}
+      {/* Ornate Hanging Lantern at the Bottom of String */}
       <div className="-mt-1 shrink-0 drop-shadow-[0_0_15px_rgba(251,191,36,0.95)] animate-pulse">
-        <DiyaLamp className="w-9 h-9 sm:w-11 sm:h-11" />
+        <DiyaLamp className="w-9 h-11 sm:w-11 sm:h-14" />
       </div>
     </div>
   );
@@ -294,31 +294,6 @@ export function DualInterlockingBadges({ className = "w-24 h-22" }: { className?
 
 export function FourIconBundleEmblem({ className = "w-24 h-24" }: { className?: string }) {
   return <DualInterlockingBadges className={className} />;
-}
-
-export function RangoliMandala({ className = "w-48 h-48" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="100" cy="100" r="95" stroke="#E5C158" strokeWidth="2" strokeDasharray="6 3" />
-      <circle cx="100" cy="100" r="85" fill="#BE123C" opacity="0.25" stroke="#F5E3A1" strokeWidth="1.5" />
-      
-      {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((angle, i) => (
-        <g key={i} transform={`rotate(${angle} 100 100)`}>
-          <path d="M100 15 C110 40, 115 60, 100 75 C85 60, 90 40, 100 15 Z" fill="#E5C158" opacity="0.9" />
-          <circle cx="100" cy="20" r="3" fill="#FFF7ED" />
-        </g>
-      ))}
-      
-      <circle cx="100" cy="100" r="45" fill="#881337" stroke="#FEF08A" strokeWidth="2" />
-      {[0, 45, 90, 135, 180, 225, 270, 315].map((angle, i) => (
-        <g key={i} transform={`rotate(${angle} 100 100)`}>
-          <polygon points="100,60 106,85 100,95 94,85" fill="#F5E3A1" />
-        </g>
-      ))}
-      <circle cx="100" cy="100" r="18" fill="#FEF08A" />
-      <circle cx="100" cy="100" r="10" fill="#BE123C" />
-    </svg>
-  );
 }
 
 export function FireworkSparkle({ className = "w-12 h-12" }: { className?: string }) {

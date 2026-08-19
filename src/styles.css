@@ -77,12 +77,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Scope custom cursor hiding ONLY to the Diwali landing page when active */
-body.festive-cursor-active,
-body.festive-cursor-active * {
-  cursor: none !important;
-}
-
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -296,11 +290,4 @@ body.festive-cursor-active * {
 
 @utility bg-gradient-marigold {
   background-image: var(--gradient-marigold);
-}
-
-@utility bg-rangoli {
-  background-image:
-    radial-gradient(circle at 12% 88%, oklch(0.55 0.21 5 / 0.35) 0 12%, transparent 13%),
-    radial-gradient(circle at 88% 90%, oklch(0.46 0.21 349 / 0.3) 0 10%, transparent 11%),
-    radial-gradient(circle at 50% 0%, oklch(0.79 0.128 85 / 0.18) 0 22%, transparent 23%);
 }

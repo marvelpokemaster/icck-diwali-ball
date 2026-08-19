@@ -5,12 +5,15 @@ import {
   BookOpen,
   Building2,
   Cpu,
+  Download,
   Factory,
   Globe2,
   Handshake,
   HeartPulse,
   Leaf,
+  Mail,
   Megaphone,
+  Phone,
   Rocket,
   ScrollText,
   Sparkles,
@@ -18,6 +21,7 @@ import {
   TrendingUp,
   Trophy,
   Users,
+  X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -28,7 +32,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import icckLogo from "@/assets/icck-logo.png";
+import icckGoldLogo from "@/assets/icck-gold-vertical-logo-bright.png";
 
 /* ---------------- About the Awards ---------------- */
 
@@ -398,10 +402,11 @@ export function Nomination() {
 
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <Button
+            asChild
             size="lg"
             className="bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] font-black uppercase tracking-wide text-[#060c2c] shadow-xl hover:brightness-110"
           >
-            Start Nomination
+            <a href="mailto:events@indochamkorea.org?subject=ICCK%20Business%20Awards%20Nomination">Nominate Now</a>
           </Button>
           <Button asChild size="lg" variant="outline" className="border-amber-400/70 bg-transparent font-bold uppercase tracking-wide text-[#FEF08A] hover:bg-amber-400/10">
             <a href="#faq">Read the FAQ</a>
@@ -426,6 +431,8 @@ const partners = [
 ];
 
 export function Partners() {
+  const [showSponsorModal, setShowSponsorModal] = useState(false);
+
   return (
     <section id="sponsors" className="bg-gradient-to-b from-[#0a1544] via-[#091442] to-[#0d194d] py-16 md:py-20 border-t border-amber-400/30">
       <div className="mx-auto max-w-6xl px-4 md:px-8">
@@ -463,15 +470,55 @@ export function Partners() {
           ))}
         </div>
 
+        {/* Sponsor Enquiry Trigger Button */}
         <div className="mt-8 flex justify-center">
           <Button
-            asChild
             size="lg"
+            onClick={() => setShowSponsorModal(true)}
             className="bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] font-black uppercase tracking-wide text-[#060c2c] shadow-xl hover:brightness-110"
           >
-            <a href="#contact">Sponsor Enquiry</a>
+            Sponsor Enquiry
           </Button>
         </div>
+
+        {/* Sponsor Enquiry Modal Pop-up */}
+        {showSponsorModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-4">
+            <div className="relative w-full max-w-lg rounded-2xl border-2 border-[#D97706] bg-[#FAF9F6] p-6 sm:p-8 shadow-2xl text-left">
+              <button
+                onClick={() => setShowSponsorModal(false)}
+                className="absolute top-4 right-4 text-[#060D2B] hover:text-[#D97706]"
+              >
+                <X className="size-6" />
+              </button>
+              
+              <div className="flex items-center gap-3">
+                <Sparkles className="size-7 text-[#D97706]" />
+                <h3 className="font-serif text-xl font-black text-[#060D2B] uppercase">Sponsorship Opportunities</h3>
+              </div>
+              
+              <p className="mt-3 text-sm leading-relaxed text-[#1E293B] font-medium">
+                Partner with the Indian Chamber of Commerce in Korea to showcase your brand across key India–Korea business leaders.
+              </p>
+
+              <div className="mt-6 flex flex-col gap-3">
+                <a
+                  href="mailto:events@indochamkorea.org?subject=Request%20Sponsorship%20Guidelines"
+                  className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-5 py-3 font-black text-xs sm:text-sm uppercase tracking-wide text-[#060c2c] shadow-md hover:brightness-105"
+                >
+                  <Download className="size-4" /> Download Sponsorship Guidelines
+                </a>
+
+                <a
+                  href="mailto:events@indochamkorea.org?subject=Sponsor%20Registration%20Enquiry"
+                  className="flex items-center justify-center gap-2 rounded-xl border-2 border-[#060D2B] bg-[#060D2B] px-5 py-3 font-black text-xs sm:text-sm uppercase tracking-wide text-[#FEF08A] shadow-md hover:bg-[#0f1b54]"
+                >
+                  <Mail className="size-4" /> Register as a Sponsor
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
@@ -546,6 +593,7 @@ export function Contact() {
             className="space-y-4"
             onSubmit={(e) => {
               e.preventDefault();
+              window.location.href = "mailto:events@indochamkorea.org?subject=Contact%20Enquiry";
             }}
           >
             <Input
@@ -577,17 +625,30 @@ export function Contact() {
           </form>
 
           <div className="text-center md:text-left">
-            <h3 className="font-display text-xl font-bold text-[#F59E0B]">Address</h3>
-            <p className="mt-2 text-sm leading-relaxed text-amber-100/90">
-              Indian Chamber of Commerce in Korea
-              <br />
-              Gangnam-gu, Seoul, Republic of Korea
-              <br />
-              info@icck.or.kr
-            </p>
+            <h3 className="font-display text-xl font-bold text-[#F59E0B]">Contact Information</h3>
+            <div className="mt-4 space-y-3 text-sm leading-relaxed text-amber-100/90 font-medium">
+              <p className="flex items-start gap-2.5 justify-center md:justify-start">
+                <Building2 className="size-5 text-[#F59E0B] shrink-0 mt-0.5" />
+                <span>
+                  ICCK, 405(4F) IKP 7 Heolleung-ro,
+                  <br />
+                  Seocho-gu, Seoul, Republic of Korea (06792)
+                </span>
+              </p>
+              <p className="flex items-center gap-2.5 justify-center md:justify-start">
+                <Phone className="size-4 text-[#F59E0B] shrink-0" />
+                <span>TEL: +82-2-776-1583</span>
+              </p>
+              <p className="flex items-center gap-2.5 justify-center md:justify-start">
+                <Mail className="size-4 text-[#F59E0B] shrink-0" />
+                <a href="mailto:events@indochamkorea.org" className="hover:text-[#FEF08A] underline">
+                  events@indochamkorea.org
+                </a>
+              </p>
+            </div>
 
             <a
-              href="https://maps.google.com/?q=Gangnam-gu+Seoul"
+              href="https://maps.google.com/?q=Heolleung-ro+Seocho-gu+Seoul"
               target="_blank"
               rel="noreferrer"
               className="mt-6 inline-flex flex-col items-center gap-2 text-[#FEF08A]"
@@ -595,7 +656,7 @@ export function Contact() {
               <span className="flex size-12 items-center justify-center rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] shadow-lg">
                 <Globe2 className="size-6 text-[#060c2c]" />
               </span>
-              <span className="font-display text-sm font-black tracking-widest">MAP</span>
+              <span className="font-display text-sm font-black tracking-widest">VIEW ON MAP</span>
             </a>
           </div>
         </div>
@@ -610,16 +671,14 @@ export function SiteFooter() {
   return (
     <footer className="border-t-2 border-amber-400/40 bg-[#060d2b] py-8">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 text-center md:flex-row md:justify-between md:px-8 md:text-left">
-        <div className="bg-[#FFFDF0] border border-amber-400/60 rounded-lg px-3 py-1.5 shadow-sm inline-flex items-center justify-center">
-          <img
-            src={icckLogo}
-            alt="Indian Chamber of Commerce in Korea"
-            width={940}
-            height={347}
-            loading="lazy"
-            className="h-8 w-auto object-contain"
-          />
-        </div>
+        <img
+          src={icckGoldLogo}
+          alt="Indian Chamber of Commerce in Korea"
+          width={940}
+          height={347}
+          loading="lazy"
+          className="h-16 sm:h-20 w-auto object-contain drop-shadow-[0_2px_12px_rgba(245,158,11,0.5)]"
+        />
         <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-bold uppercase tracking-wide text-amber-100/80">
           <a href="#about" className="hover:text-[#FEF08A]">
             Privacy Policy
@@ -627,7 +686,7 @@ export function SiteFooter() {
           <a href="#nomination" className="hover:text-[#FEF08A]">
             Nomination Guide Download
           </a>
-          <a href="#contact" className="hover:text-[#FEF08A]">
+          <a href="mailto:events@indochamkorea.org" className="hover:text-[#FEF08A]">
             Contact
           </a>
         </nav>
