@@ -105,16 +105,12 @@ function Landing() {
         />
       </div>
 
-      {/* ---------------- 1. TOP WARM MARIGOLD GOLD HEADER BANNER ---------------- */}
-      <header className="relative w-full bg-gradient-to-r from-[#f59e0b] via-[#fbbf24] to-[#f59e0b] py-1.5 shadow-2xl z-40">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-2 sm:px-6">
-          
-          {/* Center Cartouche Badge with Pointed < > Chevron Edges */}
-          <HeaderCartouche
-            className="mx-auto flex items-center justify-center gap-2 xs:gap-3 max-w-[80vw] sm:max-w-none"
-            style={{ background: "#060D2B" }}
-          >
-            {/* Official Gold ICCK Horizontal Logo */}
+      {/* ---------------- 1. TOP NAVY HEADER BANNER ---------------- */}
+      <header className="relative w-full bg-[#060D2B] py-1.5 shadow-2xl z-40 border-b border-amber-400/30">
+        <div className="mx-auto flex h-14 max-w-7xl items-center px-4 sm:px-8">
+
+          {/* Left-aligned Gold ICCK Logo */}
+          <a href="#top" className="flex items-center gap-3">
             <img
               src={icckGoldLogoHorizontal}
               alt="ICCK Official Gold Logo"
@@ -122,20 +118,11 @@ function Landing() {
               height={347}
               className="h-7 xs:h-9 sm:h-11 w-auto object-contain shrink-0 brightness-115 saturate-130 drop-shadow-[0_0_15px_rgba(251,191,36,0.85)] drop-shadow-[0_2px_8px_rgba(245,158,11,0.6)]"
             />
-
-            <div className="text-center sm:text-left border-l-2 border-amber-400/80 pl-2 xs:pl-3 sm:pl-4">
-              <p className="font-serif text-[15px] xs:text-[18px] sm:text-lg lg:text-xl font-black uppercase tracking-normal xs:tracking-wide sm:tracking-[0.16em] text-[#FEF08A] leading-tight whitespace-normal sm:whitespace-nowrap drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-                ICCK DIWALI CELEBRATIONS
-              </p>
-            </div>
-          </HeaderCartouche>
+            <span className="sr-only">ICCK Diwali Celebrations 2026</span>
+          </a>
 
         </div>
 
-        {/* Bottom Scalloped Red Floral Trim */}
-        <div className="absolute top-full left-0 right-0 z-30 pointer-events-none">
-          <ScallopedTrim className="w-full h-3" />
-        </div>
       </header>
 
       {/* ---------------- 2. MAIN CONTENT SECTIONS ---------------- */}
@@ -207,22 +194,6 @@ function Landing() {
           {/* BOTTOM ACTION BUTTONS */}
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full max-w-[360px] sm:max-w-none mx-auto relative px-3 sm:px-0">
             
-            {/* Button 1: VIEW ALL EVENTS */}
-            <div className="flex items-center justify-center">
-              <button
-                onClick={handleViewEventsClick}
-                className={`inline-flex w-fit items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-3 sm:px-5 py-2 sm:py-3 font-sans text-xl xs:text-2xl sm:text-base font-black uppercase tracking-[0.14em] text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.65)] transition-all duration-200 hover:scale-105 active:scale-95 ${
-                  isNavigatingEvents ? "brightness-125 scale-105 ring-4 ring-amber-300/80" : ""
-                }`}
-              >
-                {isNavigatingEvents ? (
-                  <FireworkSparkle className="h-4 w-4 animate-spin text-[#060c2c] shrink-0" />
-                ) : (
-                  <Ticket className="h-4 w-4 shrink-0" />
-                )}
-                <span className="drop-shadow-[0_1px_2px_rgba(255,255,255,0.7)]">VIEW ALL EVENTS</span>
-              </button>
-            </div>
 
             {/* Button 2: SPONSOR ENQUIRY */}
             <div className="flex items-center justify-center">
