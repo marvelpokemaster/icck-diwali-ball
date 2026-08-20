@@ -109,12 +109,6 @@ export function FirecrackerCanvas() {
     handleResize();
     window.addEventListener("resize", handleResize);
 
-    const handleClick = (e: MouseEvent) => {
-      createBurst(e.clientX, e.clientY, 50, false);
-    };
-
-    window.addEventListener("click", handleClick);
-
     // Animation Render Loop
     const render = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -250,7 +244,6 @@ export function FirecrackerCanvas() {
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      window.removeEventListener("click", handleClick);
       cancelAnimationFrame(animId);
     };
   }, []);
