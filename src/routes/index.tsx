@@ -135,7 +135,7 @@ function Landing() {
           <div className="mt-1 mb-2 flex items-center justify-center">
             <div>
               <h1 className="font-serif text-4xl xs:text-5xl sm:text-4xl lg:text-5xl font-black leading-[1.05] tracking-wide text-[#FEF08A] drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)] uppercase">
-                ILLUMINATE YOUR CELEBRATION!
+                ICCK DIWALI BALL 2026
               </h1>
             </div>
           </div>
