@@ -26,12 +26,12 @@ export function Hero() {
             alt="Official Indian Chamber of Commerce in Korea Gold Emblem"
             width={1024}
             height={1024}
-            className="w-48 xs:w-56 sm:w-64 md:w-72 h-auto object-contain animate-rise drop-shadow-[0_4px_25px_rgba(245,158,11,0.5)]"
+            className="w-48 xs:w-56 sm:w-64 md:w-72 h-auto object-contain animate-rise brightness-110 saturate-125 drop-shadow-[0_4px_35px_rgba(251,191,36,0.85)] drop-shadow-[0_0_15px_rgba(245,158,11,0.6)]"
           />
         </div>
 
-        <h1 className="mt-6 font-display text-3xl font-bold uppercase leading-tight tracking-wide text-gradient-gold md:text-5xl">
-          Celebrating India&ndash;Korea Business Excellence
+        <h1 className="mt-6 font-serif text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-black uppercase leading-tight tracking-[0.06em] text-transparent bg-clip-text bg-gradient-to-b from-[#FFFDF0] via-[#FEF08A] to-[#F59E0B] drop-shadow-[0_4px_14px_rgba(0,0,0,0.95)]">
+          Celebrating India&ndash;Korea<br className="hidden sm:inline" /> Business Excellence
         </h1>
         <p className="mt-4 text-base text-primary-foreground/85 md:text-lg">
           ICCK Business Awards 2026 &middot; Honoring Bilateral Collaboration

@@ -120,7 +120,7 @@ function Landing() {
               alt="ICCK Official Gold Logo"
               width={940}
               height={347}
-              className="h-7 xs:h-9 sm:h-11 w-auto object-contain shrink-0 drop-shadow-[0_2px_8px_rgba(251,191,36,0.5)]"
+              className="h-7 xs:h-9 sm:h-11 w-auto object-contain shrink-0 brightness-115 saturate-130 drop-shadow-[0_0_15px_rgba(251,191,36,0.85)] drop-shadow-[0_2px_8px_rgba(245,158,11,0.6)]"
             />
 
             <div className="text-center sm:text-left border-l-2 border-amber-400/80 pl-2 xs:pl-3 sm:pl-4">
@@ -452,7 +452,7 @@ function Landing() {
             alt="Indian Chamber of Commerce in Korea"
             width={940}
             height={347}
-            className="h-10 xs:h-12 md:h-14 w-auto object-contain drop-shadow-[0_2px_12px_rgba(245,158,11,0.5)]"
+            className="h-10 xs:h-12 md:h-14 w-auto object-contain brightness-115 saturate-130 drop-shadow-[0_0_15px_rgba(251,191,36,0.85)] drop-shadow-[0_2px_12px_rgba(245,158,11,0.6)]"
           />
 
           <div className="space-y-2 text-xs text-amber-200/90 font-medium">

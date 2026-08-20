@@ -669,7 +669,7 @@ export function SiteFooter() {
           width={940}
           height={347}
           loading="lazy"
-          className="h-10 xs:h-12 md:h-14 w-auto object-contain drop-shadow-[0_2px_12px_rgba(245,158,11,0.5)]"
+          className="h-10 xs:h-12 md:h-14 w-auto object-contain brightness-115 saturate-130 drop-shadow-[0_0_15px_rgba(251,191,36,0.85)] drop-shadow-[0_2px_12px_rgba(245,158,11,0.6)]"
         />
         <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-bold uppercase tracking-wide text-amber-100/80">
           <a href="#about" className="hover:text-[#FEF08A]">

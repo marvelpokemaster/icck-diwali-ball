@@ -22,7 +22,7 @@ export function SiteHeader() {
             alt="Indian Chamber of Commerce in Korea"
             width={940}
             height={347}
-            className="h-8 xs:h-9 sm:h-10 w-auto object-contain drop-shadow-[0_2px_8px_rgba(251,191,36,0.5)]"
+            className="h-8 xs:h-9 sm:h-10 w-auto object-contain brightness-115 saturate-130 drop-shadow-[0_0_15px_rgba(251,191,36,0.85)] drop-shadow-[0_2px_8px_rgba(245,158,11,0.6)]"
           />
           <span className="sr-only">ICCK Business Awards 2026</span>
         </a>
