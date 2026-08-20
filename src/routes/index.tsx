@@ -448,11 +448,11 @@ function Landing() {
         <div className="mx-auto max-w-5xl px-4 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           
           <img
-            src={icckGoldLogo}
+            src={icckGoldLogoHorizontal}
             alt="Indian Chamber of Commerce in Korea"
-            width={218}
-            height={248}
-            className="h-20 w-auto object-contain drop-shadow-[0_2px_12px_rgba(245,158,11,0.5)]"
+            width={940}
+            height={347}
+            className="h-10 xs:h-12 md:h-14 w-auto object-contain drop-shadow-[0_2px_12px_rgba(245,158,11,0.5)]"
           />
 
           <div className="space-y-2 text-xs text-amber-200/90 font-medium">

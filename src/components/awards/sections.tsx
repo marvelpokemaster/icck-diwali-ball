@@ -32,7 +32,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import icckGoldLogo from "@/assets/icck-identity/240919_ICCK_vertical_ENG-gold.svg";
+import icckGoldLogoHorizontal from "@/assets/icck-identity/240919_ICCK_horizontal_A_ENG_KOR-gold.svg";
 
 /* ---------------- About the Awards ---------------- */
 
@@ -650,18 +650,6 @@ export function Contact() {
                 </a>
               </p>
             </div>
-
-            <a
-              href="https://maps.google.com/?q=Heolleung-ro+Seocho-gu+Seoul"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-6 inline-flex flex-col items-center gap-2 text-[#FEF08A]"
-            >
-              <span className="flex size-12 items-center justify-center rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] shadow-lg">
-                <Globe2 className="size-6 text-[#060c2c]" />
-              </span>
-              <span className="font-display text-sm font-black tracking-widest">VIEW ON MAP</span>
-            </a>
           </div>
         </div>
       </div>
@@ -676,12 +664,12 @@ export function SiteFooter() {
     <footer className="border-t-2 border-amber-400/40 bg-[#060d2b] py-8">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 text-center md:flex-row md:justify-between md:px-8 md:text-left">
         <img
-          src={icckGoldLogo}
+          src={icckGoldLogoHorizontal}
           alt="Indian Chamber of Commerce in Korea"
           width={940}
           height={347}
           loading="lazy"
-          className="h-16 sm:h-20 w-auto object-contain drop-shadow-[0_2px_12px_rgba(245,158,11,0.5)]"
+          className="h-10 xs:h-12 md:h-14 w-auto object-contain drop-shadow-[0_2px_12px_rgba(245,158,11,0.5)]"
         />
         <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-bold uppercase tracking-wide text-amber-100/80">
           <a href="#about" className="hover:text-[#FEF08A]">
