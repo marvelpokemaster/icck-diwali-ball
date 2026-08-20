@@ -9,9 +9,37 @@ export function HeaderCartouche({
   className?: string;
   style?: React.CSSProperties;
 }) {
+  const bgFill = (style?.background as string) || "#060D2B";
+
   return (
-    <div className={`relative inline-flex items-center justify-center px-6 py-2.5 rounded-2xl border-2 border-amber-400 shadow-2xl ${className}`} style={style}>
-      <div className="relative z-20 flex items-center gap-3">{children}</div>
+    <div className={`relative inline-flex items-center justify-center px-7 xs:px-9 sm:px-12 py-3 sm:py-2.5 ${className}`}>
+      {/* Outer Gold Chevron Ribbon Border & Fill SVG with < > Pointed Edges */}
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none drop-shadow-[0_0_15px_rgba(251,191,36,0.5)]"
+        preserveAspectRatio="none"
+        viewBox="0 0 400 60"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {/* Main Ribbon Polygon Background with Gold Border */}
+        <path
+          d="M22,2 L378,2 L398,30 L378,58 L22,58 L2,30 Z"
+          fill={bgFill}
+          stroke="#F59E0B"
+          strokeWidth="3"
+        />
+        {/* Inner Decorative Gold Filigree Accent Line */}
+        <path
+          d="M25,6 L375,6 L392,30 L375,54 L25,54 L8,30 Z"
+          fill="none"
+          stroke="#FEF08A"
+          strokeWidth="1.2"
+          strokeDasharray="4 2"
+          opacity="0.8"
+        />
+      </svg>
+
+      <div className="relative z-20 flex items-center gap-2.5 xs:gap-3">{children}</div>
     </div>
   );
 }

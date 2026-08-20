@@ -17,8 +17,9 @@ import {
   Instagram
 } from "lucide-react";
 import { useEffect, useState } from "react";
-import icckLogo from "@/assets/icck-logo.png";
-import icckGoldLogo from "@/assets/icck-gold-vertical-logo-bright.png";
+import icckLogo from "@/assets/icck-identity/240919_ICCK_horizontal_A_ENG_KOR-color.svg";
+import icckGoldLogoHorizontal from "@/assets/icck-identity/240919_ICCK_horizontal_A_ENG_KOR-gold.svg";
+import icckGoldLogo from "@/assets/icck-identity/240919_ICCK_vertical_ENG-gold.svg";
 import diwaliFlyerBg from "@/assets/diwali-flyer-bg.jpg";
 import real2025Stage from "@/assets/real-2025-diwali-stage.png";
 import eventPic1 from "@/assets/event-pic-1.png";
@@ -88,19 +89,19 @@ function Landing() {
       <FirecrackerCanvas />
       
       {/* ---------------- 2 REAL GLOWING ORNATE BRASS LANTERNS (LEFT & RIGHT SIDES) ---------------- */}
-      <div className="fixed top-0 left-1 xs:left-2 sm:left-3 md:left-5 z-50 pointer-events-none flex flex-col items-center">
+      <div className="fixed top-0 left-0 xs:left-0.5 sm:left-2 md:left-4 z-50 pointer-events-none flex flex-col items-center">
         <img
           src={lanternImg}
           alt="Glowing Ornate Brass Diwali Lantern"
-          className="w-20 xs:w-24 sm:w-28 md:w-36 h-auto lantern lantern-left drop-shadow-[0_0_30px_rgba(251,191,36,0.85)]"
+          className="w-20 xs:w-24 sm:w-30 md:w-40 h-auto lantern lantern-left drop-shadow-[0_0_25px_rgba(251,191,36,0.85)]"
         />
       </div>
 
-      <div className="fixed top-0 right-1 xs:right-2 sm:right-3 md:right-5 z-50 pointer-events-none flex flex-col items-center">
+      <div className="fixed top-0 right-0 xs:right-0.5 sm:right-2 md:right-4 z-50 pointer-events-none flex flex-col items-center">
         <img
           src={lanternImg}
           alt="Glowing Ornate Brass Diwali Lantern"
-          className="w-20 xs:w-24 sm:w-28 md:w-36 h-auto lantern lantern-right drop-shadow-[0_0_30px_rgba(251,191,36,0.85)]"
+          className="w-20 xs:w-24 sm:w-30 md:w-40 h-auto lantern lantern-right drop-shadow-[0_0_25px_rgba(251,191,36,0.85)]"
         />
       </div>
 
@@ -108,22 +109,22 @@ function Landing() {
       <header className="relative w-full bg-gradient-to-r from-[#f59e0b] via-[#fbbf24] to-[#f59e0b] py-1.5 shadow-2xl z-40">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-2 sm:px-6">
           
-          {/* Center Cartouche Badge */}
+          {/* Center Cartouche Badge with Pointed < > Chevron Edges */}
           <HeaderCartouche
-            className="mx-auto py-3.5 sm:py-2.5 px-3 xs:px-4 sm:px-7 border-2 border-amber-400 shadow-[0_0_25px_rgba(251,191,36,0.45)] flex items-center justify-center gap-3"
-            style={{ background: "#EEF3FF" }}
+            className="mx-auto flex items-center justify-center gap-2 xs:gap-3 max-w-[80vw] sm:max-w-none"
+            style={{ background: "#060D2B" }}
           >
-            {/* Official Full-Color ICCK Logo */}
+            {/* Official Gold ICCK Horizontal Logo */}
             <img
-              src={icckLogo}
-              alt="ICCK Official Logo"
+              src={icckGoldLogoHorizontal}
+              alt="ICCK Official Gold Logo"
               width={940}
               height={347}
-              className="h-8 xs:h-10 sm:h-11 w-auto object-contain shrink-0"
+              className="h-7 xs:h-9 sm:h-11 w-auto object-contain shrink-0 drop-shadow-[0_2px_8px_rgba(251,191,36,0.5)]"
             />
 
-            <div className="text-center sm:text-left border-l-2 border-amber-600/70 pl-2 xs:pl-3 sm:pl-4">
-              <p className="font-serif text-[18px] xs:text-[20px] sm:text-lg lg:text-xl font-black uppercase tracking-normal xs:tracking-wide sm:tracking-[0.16em] text-[#1A0A00] leading-tight whitespace-normal sm:whitespace-nowrap">
+            <div className="text-center sm:text-left border-l-2 border-amber-400/80 pl-2 xs:pl-3 sm:pl-4">
+              <p className="font-serif text-[15px] xs:text-[18px] sm:text-lg lg:text-xl font-black uppercase tracking-normal xs:tracking-wide sm:tracking-[0.16em] text-[#FEF08A] leading-tight whitespace-normal sm:whitespace-nowrap drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                 ICCK DIWALI CELEBRATIONS
               </p>
             </div>

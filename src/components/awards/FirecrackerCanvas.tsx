@@ -109,26 +109,10 @@ export function FirecrackerCanvas() {
     handleResize();
     window.addEventListener("resize", handleResize);
 
-    const handleMouseMove = (e: MouseEvent) => {
-      for (let i = 0; i < 2; i++) {
-        trailSparksRef.current.push({
-          x: e.clientX + (Math.random() - 0.5) * 6,
-          y: e.clientY + 12 + (Math.random() - 0.5) * 6,
-          vx: (Math.random() - 0.5) * 1.5,
-          vy: Math.random() * 2 + 1,
-          alpha: 1,
-          decay: Math.random() * 0.04 + 0.03,
-          size: Math.random() * 2.5 + 1,
-          color: colors[Math.floor(Math.random() * colors.length)],
-        });
-      }
-    };
-
     const handleClick = (e: MouseEvent) => {
       createBurst(e.clientX, e.clientY, 50, false);
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("click", handleClick);
 
     // Animation Render Loop
@@ -266,7 +250,6 @@ export function FirecrackerCanvas() {
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("click", handleClick);
       cancelAnimationFrame(animId);
     };

@@ -32,7 +32,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import icckGoldLogo from "@/assets/icck-gold-vertical-logo-bright.png";
+import icckGoldLogo from "@/assets/icck-identity/240919_ICCK_vertical_ENG-gold.svg";
 
 /* ---------------- About the Awards ---------------- */
 
@@ -52,39 +52,45 @@ export function About() {
         </p>
 
         <div className="mt-12 grid gap-10 sm:grid-cols-2">
-          <div className="flex flex-col items-center bg-[#FAF9F6] border-2 border-[#D97706] p-7 rounded-2xl shadow-xl transition-transform hover:-translate-y-1">
-            <Target className="size-11 text-[#D97706] drop-shadow-sm" />
-            <h4 className="mt-4 font-display text-lg font-black tracking-wide text-[#060D2B]">
+          <div className="flex flex-col items-center bg-[#060D2B]/95 border-2 border-amber-400/50 p-7 rounded-2xl shadow-2xl backdrop-blur-md transition-transform hover:-translate-y-1">
+            <Target className="size-11 text-[#F59E0B] drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]" />
+            <h4 className="mt-4 font-display text-lg font-black tracking-wide text-[#FEF08A] drop-shadow-sm">
               Recognizing Excellence
             </h4>
-            <p className="mt-2 text-sm leading-relaxed text-[#1E293B] font-medium">
+            <p className="mt-2 text-sm leading-relaxed text-amber-100/90 font-medium">
               Eight sectoral categories honour measurable achievement in trade, investment,
               innovation and sustainability across the India&ndash;Korea corridor.
             </p>
           </div>
-          <div className="flex flex-col items-center bg-[#FAF9F6] border-2 border-[#D97706] p-7 rounded-2xl shadow-xl transition-transform hover:-translate-y-1">
-            <Users className="size-11 text-[#D97706] drop-shadow-sm" />
-            <h4 className="mt-4 font-display text-lg font-black tracking-wide text-[#060D2B]">
+          <div className="flex flex-col items-center bg-[#060D2B]/95 border-2 border-amber-400/50 p-7 rounded-2xl shadow-2xl backdrop-blur-md transition-transform hover:-translate-y-1">
+            <Users className="size-11 text-[#F59E0B] drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]" />
+            <h4 className="mt-4 font-display text-lg font-black tracking-wide text-[#FEF08A] drop-shadow-sm">
               Building Bilateral Ties
             </h4>
-            <p className="mt-2 text-sm leading-relaxed text-[#1E293B] font-medium">
+            <p className="mt-2 text-sm leading-relaxed text-amber-100/90 font-medium">
               A platform that connects companies, institutions and leaders driving commercial,
               technological and people-to-people links between the two markets.
             </p>
           </div>
         </div>
 
-        <div className="mx-auto my-12 size-2 rounded-full bg-[#F59E0B] drop-shadow-[0_0_8px_rgba(245,158,11,0.8)]" />
+        <div className="mx-auto my-12 inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#F59E0B] via-[#FEF08A] to-[#D97706] border-2 border-amber-300/80 px-6 py-2.5 shadow-[0_0_25px_rgba(245,158,11,0.5)]">
+          <Sparkles className="size-4 text-[#060D2B]" />
+          <span className="font-sans text-xs sm:text-sm font-black uppercase tracking-[0.16em] text-[#060D2B] drop-shadow-[0_1px_1px_rgba(255,255,255,0.7)]">
+            INDO–KOREA EXCELLENCE 2026
+          </span>
+          <Sparkles className="size-4 text-[#060D2B]" />
+        </div>
 
         <h3 className="font-display text-xl font-bold text-[#F59E0B] tracking-wider uppercase">Event Program</h3>
-        <div className="mx-auto mt-5 max-w-xl divide-y divide-amber-300 rounded-2xl border-2 border-[#D97706] bg-[#FAF9F6] text-left shadow-xl">
+        <div className="mx-auto mt-5 max-w-xl divide-y divide-amber-400/30 rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 text-left shadow-2xl backdrop-blur-md">
           {[
             ["5:30 PM – 6:00 PM", "Reception & Registration"],
             ["6:00 PM – 7:00 PM", "Awards Ceremony"],
           ].map(([time, title]) => (
             <div key={time} className="flex flex-wrap items-center justify-between gap-2 px-6 py-4">
-              <span className="font-display text-sm font-black text-[#D97706]">{time}</span>
-              <span className="text-sm font-bold text-[#060D2B]">{title}</span>
+              <span className="font-display text-sm font-black text-[#FEF08A]">{time}</span>
+              <span className="text-sm font-bold text-amber-100/90">{title}</span>
             </div>
           ))}
         </div>
@@ -98,48 +104,46 @@ export function About() {
 const milestones = [
   { date: "Aug 15", label: "Nominations Open", note: "Sat, 12:00 KST" },
   { date: "Oct 16", label: "Nominations Close", note: "Fri, 23:59 KST" },
-  { date: "Nov 2", label: "Finalists Announced", note: "Mon, 15:00 KST" },
-  { date: "Nov 27", label: "Awards Ceremony", note: "Fri, 17:30 KST" },
+  { date: "Nov 02", label: "Shortlist Announced", note: "Mon, 10:00 KST" },
+  { date: "Nov 27", label: "Gala Awards Ceremony", note: "Fri, 18:00 KST" },
 ];
 
-function useCountdown(target: string) {
+export function Timeline() {
   const [left, setLeft] = useState<{ d: number; h: number; m: number; s: number } | null>(null);
 
   useEffect(() => {
-    const tick = () => {
-      const diff = Math.max(0, new Date(target).getTime() - Date.now());
+    const target = new Date("2026-11-27T18:00:00+09:00").getTime();
+    const update = () => {
+      const diff = Math.max(0, target - Date.now());
       setLeft({
         d: Math.floor(diff / 86400000),
-        h: Math.floor((diff / 3600000) % 24),
-        m: Math.floor((diff / 60000) % 60),
-        s: Math.floor((diff / 1000) % 60),
+        h: Math.floor((diff % 86400000) / 3600000),
+        m: Math.floor((diff % 3600000) / 60000),
+        s: Math.floor((diff % 60000) / 1000),
       });
     };
-    tick();
-    const id = setInterval(tick, 1000);
+    update();
+    const id = setInterval(update, 1000);
     return () => clearInterval(id);
-  }, [target]);
-
-  return left;
-}
-
-export function Timeline() {
-  const left = useCountdown("2026-11-27T17:30:00+09:00");
+  }, []);
 
   return (
-    <section id="timeline" className="bg-gradient-to-b from-[#0c1854] via-[#091442] to-[#0b1648] py-16 md:py-20 border-t border-amber-400/30">
-      <div className="mx-auto max-w-6xl px-4 text-center md:px-8">
+    <section className="bg-gradient-to-b from-[#0c1854] via-[#091442] to-[#0b1648] py-16 md:py-20 border-t border-amber-400/30">
+      <div className="mx-auto max-w-5xl px-4 text-center md:px-8">
         <h2 className="font-serif text-3xl font-black uppercase tracking-wide text-[#FEF08A] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:text-4xl">
-          Timeline
+          Timeline &amp; Key Dates
         </h2>
 
         <div className="relative mt-12">
-          <div className="absolute left-0 right-0 top-5 hidden h-0.5 bg-amber-400/40 md:block" />
-          <ol className="grid gap-8 md:grid-cols-4">
+          <div className="absolute top-1/2 hidden h-0.5 w-full -translate-y-1/2 bg-amber-400/40 md:block" />
+          <ol className="relative z-10 grid gap-6 sm:grid-cols-2 md:grid-cols-4">
             {milestones.map((m) => (
-              <li key={m.date} className="relative flex flex-col items-center">
-                <span className="relative z-10 flex size-10 items-center justify-center rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] shadow-[0_0_12px_rgba(245,158,11,0.6)]">
-                  <Trophy className="size-5 text-[#060c2c]" />
+              <li
+                key={m.label}
+                className="flex flex-col items-center rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 p-6 shadow-2xl backdrop-blur-md"
+              >
+                <span className="flex size-10 items-center justify-center rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] text-xs font-black text-[#060c2c] shadow-lg">
+                  ★
                 </span>
                 <span className="mt-4 font-display text-lg font-black text-[#FEF08A]">{m.date}</span>
                 <span className="mt-1 text-sm font-bold text-white/90">
@@ -208,10 +212,10 @@ export function WhyParticipate() {
         </h2>
         <div className="mt-12 grid gap-8 sm:grid-cols-3">
           {benefits.map((b) => (
-            <div key={b.title} className="flex flex-col items-center bg-[#FAF9F6] border-2 border-[#D97706] p-8 rounded-2xl shadow-xl transition-transform hover:-translate-y-1">
-              <b.icon className="size-11 text-[#D97706]" strokeWidth={1.5} />
-              <h3 className="mt-5 font-display text-lg font-black uppercase tracking-wider text-[#060D2B]">{b.title}</h3>
-              <p className="mt-3 max-w-xs text-sm leading-relaxed text-[#1E293B] font-medium">{b.body}</p>
+            <div key={b.title} className="flex flex-col items-center bg-[#060D2B]/95 border-2 border-amber-400/50 p-8 rounded-2xl shadow-2xl backdrop-blur-md transition-transform hover:-translate-y-1">
+              <b.icon className="size-11 text-[#F59E0B] drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]" strokeWidth={1.5} />
+              <h3 className="mt-5 font-display text-lg font-black uppercase tracking-wider text-[#FEF08A]">{b.title}</h3>
+              <p className="mt-3 max-w-xs text-sm leading-relaxed text-amber-100/90 font-medium">{b.body}</p>
             </div>
           ))}
         </div>
@@ -245,7 +249,7 @@ const categories = [
   },
   {
     icon: Cpu,
-    title: "Software, AI & Digital Transformation",
+    title: "Digital Transformation & Technology",
     body: "Companies leveraging technology to transform business across the two markets.",
   },
   {
@@ -293,13 +297,13 @@ export function Categories() {
           {categories.map((c) => (
             <article
               key={c.title}
-              className="group rounded-2xl border-2 border-[#D97706] bg-[#FAF9F6] p-6 text-center shadow-xl transition-transform hover:-translate-y-1 hover:border-amber-600"
+              className="group rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 p-6 text-center shadow-2xl backdrop-blur-md transition-transform hover:-translate-y-1 hover:border-amber-300"
             >
-              <c.icon className="mx-auto size-11 text-[#D97706]" strokeWidth={1.5} />
-              <h3 className="mt-4 font-display text-base font-black leading-snug text-[#060D2B]">
+              <c.icon className="mx-auto size-11 text-[#F59E0B] drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]" strokeWidth={1.5} />
+              <h3 className="mt-4 font-display text-base font-black leading-snug text-[#FEF08A]">
                 {c.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-[#1E293B] font-medium">{c.body}</p>
+              <p className="mt-3 text-sm leading-relaxed text-amber-100/90 font-medium">{c.body}</p>
             </article>
           ))}
         </div>
@@ -342,10 +346,10 @@ export function Nomination() {
         </h2>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-3">
-          <div className="rounded-2xl border-2 border-[#D97706] bg-[#FAF9F6] p-7 shadow-xl">
-            <ScrollText className="size-10 text-[#D97706]" strokeWidth={1.5} />
-            <h3 className="mt-4 font-display text-lg font-black text-[#060D2B]">Eligibility</h3>
-            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-[#1E293B] font-medium">
+          <div className="rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 p-7 shadow-2xl backdrop-blur-md">
+            <ScrollText className="size-10 text-[#F59E0B]" strokeWidth={1.5} />
+            <h3 className="mt-4 font-display text-lg font-black text-[#FEF08A]">Eligibility</h3>
+            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-amber-100/90 font-medium">
               <li>
                 Legally registered in India, Korea or another jurisdiction, with activity that
                 creates commercial, economic or institutional India&ndash;Korea linkages.
@@ -355,45 +359,45 @@ export function Nomination() {
             </ul>
           </div>
 
-          <div className="rounded-2xl border-2 border-[#D97706] bg-[#FAF9F6] p-7 shadow-xl">
-            <Award className="size-10 text-[#D97706]" strokeWidth={1.5} />
-            <h3 className="mt-4 font-display text-lg font-black text-[#060D2B]">
+          <div className="rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 p-7 shadow-2xl backdrop-blur-md">
+            <Award className="size-10 text-[#F59E0B]" strokeWidth={1.5} />
+            <h3 className="mt-4 font-display text-lg font-black text-[#FEF08A]">
               Assessment Criteria
             </h3>
-            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-[#1E293B] font-medium">
+            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-amber-100/90 font-medium">
               <li>
-                <strong className="text-[#060D2B]">Impact</strong> &mdash; measurable difference
+                <strong className="text-[#FEF08A]">Impact</strong> &mdash; measurable difference
                 created.
               </li>
               <li>
-                <strong className="text-[#060D2B]">Bilateral contribution</strong> &mdash;
+                <strong className="text-[#FEF08A]">Bilateral contribution</strong> &mdash;
                 strengthening India&ndash;Korea ties.
               </li>
               <li>
-                <strong className="text-[#060D2B]">Excellence &amp; Innovation</strong> &mdash;
+                <strong className="text-[#FEF08A]">Excellence &amp; Innovation</strong> &mdash;
                 distinctiveness versus industry standards.
               </li>
               <li>
-                <strong className="text-[#060D2B]">Sustainability &amp; Evidence</strong> &mdash;
+                <strong className="text-[#FEF08A]">Sustainability &amp; Evidence</strong> &mdash;
                 long-term value, credibly documented.
               </li>
             </ul>
           </div>
 
-          <div className="rounded-2xl border-2 border-[#D97706] bg-[#FAF9F6] p-7 shadow-xl">
-            <Building2 className="size-10 text-[#D97706]" strokeWidth={1.5} />
-            <h3 className="mt-4 font-display text-lg font-black text-[#060D2B]">Judging Process</h3>
-            <ol className="mt-3 space-y-2 text-sm leading-relaxed text-[#1E293B] font-medium">
+          <div className="rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 p-7 shadow-2xl backdrop-blur-md">
+            <Building2 className="size-10 text-[#F59E0B]" strokeWidth={1.5} />
+            <h3 className="mt-4 font-display text-lg font-black text-[#FEF08A]">Judging Process</h3>
+            <ol className="mt-3 space-y-2 text-sm leading-relaxed text-amber-100/90 font-medium">
               <li>
-                <strong className="text-[#060D2B]">Stage 1</strong> &mdash; eligibility screening by
+                <strong className="text-[#FEF08A]">Stage 1</strong> &mdash; eligibility screening by
                 ICCK.
               </li>
               <li>
-                <strong className="text-[#060D2B]">Stage 2</strong> &mdash; evaluation and
+                <strong className="text-[#FEF08A]">Stage 2</strong> &mdash; evaluation and
                 shortlisting by the judging panel.
               </li>
               <li>
-                <strong className="text-[#060D2B]">Stage 3</strong> &mdash; final selection of
+                <strong className="text-[#FEF08A]">Stage 3</strong> &mdash; final selection of
                 category winners and Company of the Year.
               </li>
             </ol>
@@ -444,7 +448,7 @@ export function Partners() {
           {partners.map((p) => (
             <div
               key={p}
-              className="flex h-24 items-center justify-center rounded-2xl border-2 border-[#D97706] bg-[#FAF9F6] px-4 text-center text-xs font-black uppercase tracking-wide text-[#060D2B] shadow-md"
+              className="flex h-24 items-center justify-center rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 px-4 text-center text-xs font-black uppercase tracking-wide text-[#FEF08A] shadow-xl backdrop-blur-md"
             >
               {p}
             </div>
@@ -459,13 +463,13 @@ export function Partners() {
           ].map((s) => (
             <div
               key={s.tier}
-              className="rounded-2xl border-2 border-[#D97706] bg-[#FAF9F6] p-7 text-center shadow-xl"
+              className="rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 p-7 text-center shadow-2xl backdrop-blur-md"
             >
-              <Sparkles className="mx-auto size-9 text-[#D97706]" strokeWidth={1.5} />
-              <h3 className="mt-3 font-display text-lg font-black uppercase tracking-wide text-[#060D2B]">
+              <Sparkles className="mx-auto size-9 text-[#F59E0B]" strokeWidth={1.5} />
+              <h3 className="mt-3 font-display text-lg font-black uppercase tracking-wide text-[#FEF08A]">
                 {s.tier}
               </h3>
-              <p className="mt-2 text-sm text-[#1E293B] font-medium">{s.note}</p>
+              <p className="mt-2 text-sm text-amber-100/90 font-medium">{s.note}</p>
             </div>
           ))}
         </div>
@@ -484,20 +488,20 @@ export function Partners() {
         {/* Sponsor Enquiry Modal Pop-up */}
         {showSponsorModal && (
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-4">
-            <div className="relative w-full max-w-lg rounded-2xl border-2 border-[#D97706] bg-[#FAF9F6] p-6 sm:p-8 shadow-2xl text-left">
+            <div className="relative w-full max-w-lg rounded-2xl border-2 border-amber-400/60 bg-[#060D2B] p-6 sm:p-8 shadow-2xl text-left border">
               <button
                 onClick={() => setShowSponsorModal(false)}
-                className="absolute top-4 right-4 text-[#060D2B] hover:text-[#D97706]"
+                className="absolute top-4 right-4 text-amber-300 hover:text-[#FEF08A]"
               >
                 <X className="size-6" />
               </button>
               
               <div className="flex items-center gap-3">
-                <Sparkles className="size-7 text-[#D97706]" />
-                <h3 className="font-serif text-xl font-black text-[#060D2B] uppercase">Sponsorship Opportunities</h3>
+                <Sparkles className="size-7 text-[#F59E0B]" />
+                <h3 className="font-serif text-xl font-black text-[#FEF08A] uppercase">Sponsorship Opportunities</h3>
               </div>
               
-              <p className="mt-3 text-sm leading-relaxed text-[#1E293B] font-medium">
+              <p className="mt-3 text-sm leading-relaxed text-amber-100/90 font-medium">
                 Partner with the Indian Chamber of Commerce in Korea to showcase your brand across key India–Korea business leaders.
               </p>
 
@@ -511,7 +515,7 @@ export function Partners() {
 
                 <a
                   href="mailto:events@indochamkorea.org?subject=Sponsor%20Registration%20Enquiry"
-                  className="flex items-center justify-center gap-2 rounded-xl border-2 border-[#060D2B] bg-[#060D2B] px-5 py-3 font-black text-xs sm:text-sm uppercase tracking-wide text-[#FEF08A] shadow-md hover:bg-[#0f1b54]"
+                  className="flex items-center justify-center gap-2 rounded-xl border-2 border-amber-400/50 bg-[#091442] px-5 py-3 font-black text-xs sm:text-sm uppercase tracking-wide text-[#FEF08A] shadow-md hover:bg-[#0f1b54]"
                 >
                   <Mail className="size-4" /> Register as a Sponsor
                 </a>
@@ -562,12 +566,12 @@ export function Faq() {
             <AccordionItem
               key={f.q}
               value={`item-${i}`}
-              className="overflow-hidden rounded-2xl border-2 border-[#D97706] bg-[#FAF9F6] px-6 py-1 shadow-lg"
+              className="overflow-hidden rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 px-6 py-1 shadow-xl backdrop-blur-md"
             >
-              <AccordionTrigger className="text-left font-black text-[#060D2B] hover:no-underline text-base">
+              <AccordionTrigger className="text-left font-black text-[#FEF08A] hover:no-underline text-base">
                 {f.q}
               </AccordionTrigger>
-              <AccordionContent className="text-sm leading-relaxed text-[#1E293B] font-medium">
+              <AccordionContent className="text-sm leading-relaxed text-amber-100/90 font-medium">
                 {f.a}
               </AccordionContent>
             </AccordionItem>
@@ -600,21 +604,21 @@ export function Contact() {
               required
               placeholder="Name"
               aria-label="Name"
-              className="border-2 border-[#D97706] bg-[#FAF9F6] text-[#060D2B] placeholder:text-slate-500 font-medium"
+              className="border-2 border-amber-400/50 bg-[#060D2B]/90 text-[#FEF08A] placeholder:text-amber-200/50 font-medium"
             />
             <Input
               required
               type="email"
               placeholder="Email"
               aria-label="Email"
-              className="border-2 border-[#D97706] bg-[#FAF9F6] text-[#060D2B] placeholder:text-slate-500 font-medium"
+              className="border-2 border-amber-400/50 bg-[#060D2B]/90 text-[#FEF08A] placeholder:text-amber-200/50 font-medium"
             />
             <Textarea
               required
               rows={5}
               placeholder="Message"
               aria-label="Message"
-              className="border-2 border-[#D97706] bg-[#FAF9F6] text-[#060D2B] placeholder:text-slate-500 font-medium"
+              className="border-2 border-amber-400/50 bg-[#060D2B]/90 text-[#FEF08A] placeholder:text-amber-200/50 font-medium"
             />
             <Button
               type="submit"

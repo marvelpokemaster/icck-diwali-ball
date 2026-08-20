@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-india-korea.jpg";
-import emblem from "@/assets/awards-emblem.png";
+import goldOnlyEmblem from "@/assets/icck-official-emblem-gold-only.png";
 
 export function Hero() {
   return (
@@ -19,13 +19,16 @@ export function Hero() {
           2026
         </span>
 
-        <img
-          src={emblem}
-          alt="ICCK Business Awards 2026 emblem"
-          width={1024}
-          height={768}
-          className="w-56 animate-rise md:w-72"
-        />
+        {/* Pure 100% Gold-Only Transparent Official ICCK Circular Emblem */}
+        <div className="relative my-3 flex flex-col items-center">
+          <img
+            src={goldOnlyEmblem}
+            alt="Official Indian Chamber of Commerce in Korea Gold Emblem"
+            width={1024}
+            height={1024}
+            className="w-48 xs:w-56 sm:w-64 md:w-72 h-auto object-contain animate-rise drop-shadow-[0_4px_25px_rgba(245,158,11,0.5)]"
+          />
+        </div>
 
         <h1 className="mt-6 font-display text-3xl font-bold uppercase leading-tight tracking-wide text-gradient-gold md:text-5xl">
           Celebrating India&ndash;Korea Business Excellence

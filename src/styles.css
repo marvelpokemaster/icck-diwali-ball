@@ -1,5 +1,62 @@
 @import "tailwindcss";
 
+/* Official ICCK Designated Typeface — Pretendard */
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("@/assets/fonts/Pretendard-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("@/assets/fonts/Pretendard-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("@/assets/fonts/Pretendard-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("@/assets/fonts/Pretendard-SemiBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("@/assets/fonts/Pretendard-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("@/assets/fonts/Pretendard-ExtraBold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("@/assets/fonts/Pretendard-Black.otf") format("opentype");
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -53,8 +110,8 @@
   --color-navy-light: var(--navy-light);
 
   --font-serif: "Cinzel Decorative", "Playfair Display", Georgia, serif;
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-display: "Cinzel Decorative", "Playfair Display", Georgia, serif;
+  --font-sans: "Pretendard", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Pretendard", "Cinzel Decorative", "Playfair Display", Georgia, serif;
 }
 
 :root {
