@@ -91,13 +91,13 @@ function Landing() {
         <div className="flex min-h-[3.5rem] py-1 w-full items-center px-4 sm:px-8 lg:px-12">
 
           {/* Left-aligned Gold ICCK Logo */}
-          <a href="#top" className="flex items-center gap-3">
+          <a href="#top" className="flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl px-3 py-1.5 sm:px-4 sm:py-2 shadow-lg transition-transform hover:bg-white/10">
             <img
               src={icckGoldLogoHorizontal}
               alt="ICCK Official Gold Logo"
               width={940}
               height={347}
-              className="h-10 xs:h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain shrink-0 brightness-115 saturate-130 drop-shadow-[0_0_15px_rgba(251,191,36,0.85)] drop-shadow-[0_2px_8px_rgba(245,158,11,0.6)]"
+              className="h-8 xs:h-10 sm:h-12 md:h-16 lg:h-20 w-auto object-contain shrink-0 brightness-115 saturate-130 drop-shadow-[0_0_15px_rgba(251,191,36,0.85)] drop-shadow-[0_2px_8px_rgba(245,158,11,0.6)]"
             />
             <span className="sr-only">ICCK Diwali Celebrations 2026</span>
           </a>
