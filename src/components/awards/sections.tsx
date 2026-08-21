@@ -479,15 +479,6 @@ export function Partners() {
             size="lg"
             className="bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] font-black uppercase tracking-wide text-[#060c2c] shadow-xl hover:brightness-110"
           >
-            <a href="mailto:events@indochamkorea.org?subject=Request%20Sponsorship%20Guidelines">
-              <Download className="mr-2 size-4" /> Download Guidelines
-            </a>
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            className="bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] font-black uppercase tracking-wide text-[#060c2c] shadow-xl hover:brightness-110"
-          >
             <a href="mailto:events@indochamkorea.org">
               <Mail className="mr-2 size-4" /> Sponsor Enquiry
             </a>
