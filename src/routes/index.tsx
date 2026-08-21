@@ -88,7 +88,7 @@ function Landing() {
 
       {/* ---------------- 1. TOP NAVY HEADER BANNER ---------------- */}
       <header className="relative w-full bg-[#060D2B] py-1.5 shadow-2xl z-40 border-b border-amber-400/30">
-        <div className="flex h-14 w-full items-center px-4 sm:px-8 lg:px-12">
+        <div className="flex min-h-[3.5rem] py-1 w-full items-center px-4 sm:px-8 lg:px-12">
 
           {/* Left-aligned Gold ICCK Logo */}
           <a href="#top" className="flex items-center gap-3">
