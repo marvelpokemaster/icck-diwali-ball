@@ -23,8 +23,6 @@ The official event landing page and awards nomination portal for the **Indian Ch
 - **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) with native CSS custom properties and dynamic arbitrary values
 - **Icons**: [Lucide React](https://lucide.dev/)
 - **State Management & Data Fetching**: [TanStack Query](https://tanstack.com/query/latest)
-- **Deployment & Architecture**: Built in collaboration with [Lovable](https://lovable.dev)
-
 ## 🚀 Development Setup
 
 To run this project locally, ensure you have [Node.js](https://nodejs.org/) installed, then follow these steps:
@@ -56,10 +54,3 @@ To run this project locally, ensure you have [Node.js](https://nodejs.org/) inst
 - `src/components/shared/` - Houses reusable UI blocks like `InitialLoader`, `SharedSiteHeader`, `SharedSiteFooter`, and `ICCKEventShowcase`.
 - `src/components/awards/` - Route-specific sections and UI for the Business Awards portal.
 - `src/routes/` - Defines the application routes (`__root.tsx`, `index.tsx`, `awards.tsx`).
-
-## 🤝 Lovable Integration
-
-This project is actively connected to the [Lovable Editor](https://lovable.dev/projects/63b7ce7f-9b9b-45a5-ad6d-e7b385e2c173).
-Any changes pushed to the `main` branch on this repository will automatically sync back into Lovable, allowing for seamless AI-assisted pair programming.
-
-> **Note**: Avoid rewriting published git history (e.g. force pushing, rebasing, or squashing) to maintain a stable sync state with Lovable.
