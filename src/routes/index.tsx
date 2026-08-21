@@ -20,7 +20,7 @@ import { useEffect, useState } from "react";
 import icckLogo from "@/assets/icck-identity/240919_ICCK_horizontal_A_ENG_KOR-color.svg";
 import icckGoldLogoHorizontal from "@/assets/icck-identity/240919_ICCK_horizontal_A_ENG_KOR-gold.svg";
 import icckGoldLogo from "@/assets/icck-identity/240919_ICCK_vertical_ENG-gold.svg";
-import diwaliFlyerBg from "@/assets/diwali-flyer-bg.jpg";
+import diwaliFlyerBg from "@/assets/Background_hero.png";
 import real2025Stage from "@/assets/real-2025-diwali-stage.png";
 import eventPic1 from "@/assets/event-pic-1.png";
 import eventPic2 from "@/assets/event-pic-2.png";
