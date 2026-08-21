@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SharedSiteHeader } from "@/components/shared/SharedSiteHeader";
-import { ICCKEventShowcase } from "@/components/shared/ICCKEventShowcase";
+import { SharedSiteFooter } from "@/components/shared/SharedSiteFooter";
+import { Hero } from "@/components/awards/hero";
 import {
   About,
   Categories,
@@ -8,7 +9,6 @@ import {
   Faq,
   Nomination,
   Partners,
-  SiteFooter,
   Timeline,
   WhyParticipate,
 } from "@/components/awards/sections";
@@ -44,7 +44,7 @@ function AwardsPage() {
     <div className="min-h-screen bg-background">
       <SharedSiteHeader links={links} />
       <main>
-        <ICCKEventShowcase />
+        <Hero />
         <About />
         <Timeline />
         <WhyParticipate />
@@ -54,7 +54,7 @@ function AwardsPage() {
         <Faq />
         <Contact />
       </main>
-      <SiteFooter />
+      <SharedSiteFooter />
     </div>
   );
 }

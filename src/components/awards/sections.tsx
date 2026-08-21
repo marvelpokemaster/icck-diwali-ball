@@ -618,35 +618,4 @@ export function Contact() {
   );
 }
 
-/* ---------------- Footer ---------------- */
 
-export function SiteFooter() {
-  return (
-    <footer className="border-t-2 border-amber-400/40 bg-[#060d2b] py-8">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 text-center md:flex-row md:justify-between md:px-8 md:text-left">
-        <img
-          src={icckGoldLogoHorizontal}
-          alt="Indian Chamber of Commerce in Korea"
-          width={940}
-          height={347}
-          loading="lazy"
-          className="h-10 xs:h-12 md:h-14 w-auto object-contain brightness-115 saturate-130 drop-shadow-[0_0_15px_rgba(251,191,36,0.85)] drop-shadow-[0_2px_12px_rgba(245,158,11,0.6)]"
-        />
-        <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-bold uppercase tracking-wide text-amber-100/80">
-          <a href="#about" className="hover:text-white">
-            Privacy Policy
-          </a>
-          <a href="#nomination" className="hover:text-white">
-            Nomination Guide Download
-          </a>
-          <a href="mailto:events@indochamkorea.org" className="hover:text-white">
-            Contact
-          </a>
-        </nav>
-        <p className="text-xs font-medium text-amber-100/60">
-          &copy; 2026 ICCK Business Awards. All rights reserved.
-        </p>
-      </div>
-    </footer>
-  );
-}
