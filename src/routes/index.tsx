@@ -86,23 +86,26 @@ function Landing() {
       <FirecrackerCanvas />
       
 
-      {/* ---------------- 1. TOP NAVY HEADER BANNER ---------------- */}
-      <header className="relative w-full bg-[#060D2B] py-1.5 shadow-2xl z-40 border-b border-amber-400/30">
-        <div className="flex min-h-[3.5rem] py-1 w-full items-center px-4 sm:px-8 lg:px-12">
+      {/* ---------------- 1. TOP NAVY HEADER BANNER (GLASSMORPHISM) ---------------- */}
+      <header className="sticky top-0 w-full bg-[#060D2B]/75 backdrop-blur-md py-1 shadow-2xl z-50 border-b border-amber-400/20">
+        <div className="flex w-full items-center px-4 sm:px-8 lg:px-12">
 
           {/* Left-aligned Gold ICCK Logo */}
-          <a href="#top" className="flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl px-3 py-1.5 sm:px-4 sm:py-2 shadow-lg transition-transform hover:bg-white/10">
+          <a href="#top" className="flex items-center gap-3">
             <img
               src={icckGoldLogoHorizontal}
               alt="ICCK Official Gold Logo"
               width={940}
               height={347}
-              className="h-8 xs:h-10 sm:h-12 md:h-16 lg:h-20 w-auto object-contain shrink-0 brightness-115 saturate-130 drop-shadow-[0_0_15px_rgba(251,191,36,0.85)] drop-shadow-[0_2px_8px_rgba(245,158,11,0.6)]"
+              className="h-9 xs:h-11 sm:h-14 md:h-16 lg:h-[5.5rem] w-auto object-contain shrink-0 brightness-115 saturate-130 drop-shadow-[0_0_15px_rgba(251,191,36,0.85)] drop-shadow-[0_2px_8px_rgba(245,158,11,0.6)]"
             />
             <span className="sr-only">ICCK Diwali Celebrations 2026</span>
           </a>
 
         </div>
+
+        {/* Trailing Glass Transition */}
+        <div className="absolute top-full left-0 right-0 h-12 sm:h-16 pointer-events-none bg-gradient-to-b from-[#060D2B]/75 to-transparent backdrop-blur-md [mask-image:linear-gradient(to_bottom,black,transparent)] [-webkit-mask-image:linear-gradient(to_bottom,black,transparent)]" />
 
       </header>
 
@@ -387,7 +390,7 @@ function Landing() {
             alt="Indian Chamber of Commerce in Korea"
             width={940}
             height={347}
-            className="h-14 xs:h-16 md:h-20 lg:h-24 w-auto object-contain brightness-115 saturate-130 drop-shadow-[0_0_15px_rgba(251,191,36,0.85)] drop-shadow-[0_2px_12px_rgba(245,158,11,0.6)]"
+            className="h-12 xs:h-14 md:h-16 lg:h-[5.5rem] w-auto object-contain brightness-115 saturate-130 drop-shadow-[0_0_15px_rgba(251,191,36,0.85)] drop-shadow-[0_2px_12px_rgba(245,158,11,0.6)]"
           />
 
           <div className="space-y-2 text-xs text-amber-200/90 font-medium">
