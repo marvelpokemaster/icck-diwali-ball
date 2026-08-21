@@ -25,7 +25,7 @@ import real2025Stage from "@/assets/real-2025-diwali-stage.png";
 import eventPic1 from "@/assets/event-pic-1.png";
 import eventPic2 from "@/assets/event-pic-2.png";
 import eventPic6 from "@/assets/event-pic-6.png";
-import lanternImg from "@/assets/lantern.png";
+
 import { 
   IndianDancerIllustration, 
   GoldTrophyIllustration, 
@@ -88,22 +88,6 @@ function Landing() {
       {/* Dynamic Interactive Firecracker Canvas Overlay */}
       <FirecrackerCanvas />
       
-      {/* ---------------- 2 REAL GLOWING ORNATE BRASS LANTERNS (LEFT & RIGHT SIDES) ---------------- */}
-      <div className="fixed top-0 left-0 xs:left-0.5 sm:left-2 md:left-4 z-50 pointer-events-none flex flex-col items-center">
-        <img
-          src={lanternImg}
-          alt="Glowing Ornate Brass Diwali Lantern"
-          className="w-20 xs:w-24 sm:w-30 md:w-40 h-auto lantern lantern-left drop-shadow-[0_0_25px_rgba(251,191,36,0.85)]"
-        />
-      </div>
-
-      <div className="fixed top-0 right-0 xs:right-0.5 sm:right-2 md:right-4 z-50 pointer-events-none flex flex-col items-center">
-        <img
-          src={lanternImg}
-          alt="Glowing Ornate Brass Diwali Lantern"
-          className="w-20 xs:w-24 sm:w-30 md:w-40 h-auto lantern lantern-right drop-shadow-[0_0_25px_rgba(251,191,36,0.85)]"
-        />
-      </div>
 
       {/* ---------------- 1. TOP NAVY HEADER BANNER ---------------- */}
       <header className="relative w-full bg-[#060D2B] py-1.5 shadow-2xl z-40 border-b border-amber-400/30">
