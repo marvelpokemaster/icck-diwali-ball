@@ -152,8 +152,8 @@ function Landing() {
               price="$125"
               buttonText="Nominate Now"
               noteText="Honoring business excellence"
-              gradientFrom="#ab1d53"
-              gradientTo="#520829"
+              gradientFrom="#253494"
+              gradientTo="#0f1854"
               illustration={<GoldTrophyIllustration className="w-34 xs:w-38 sm:w-32 md:w-38 lg:w-44 xl:w-52 h-38 xs:h-42 sm:h-36 md:h-42 lg:h-48 xl:h-56" />}
               to="/awards"
             />
