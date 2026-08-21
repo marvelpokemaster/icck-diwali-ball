@@ -57,7 +57,7 @@ export function JharokhaArchCard({
 
   return (
     <div
-      className={`relative flex flex-col items-center w-full max-w-[430px] sm:max-w-[280px] md:max-w-[325px] mx-auto h-[400px] xs:h-[425px] sm:h-[415px] md:h-[440px] transition-all duration-300 sm:hover:-translate-y-1.5 ${
+      className={`relative flex flex-col items-center w-full max-w-[430px] sm:max-w-none mx-auto h-[400px] xs:h-[425px] sm:h-[415px] md:h-[440px] lg:h-[520px] xl:h-[600px] transition-all duration-300 sm:hover:-translate-y-1.5 ${
         isNavigating ? "scale-95 opacity-60 filter blur-[1px]" : ""
       } ${
         isBundle
@@ -68,7 +68,7 @@ export function JharokhaArchCard({
       
       {/* Top Floating Ribbon Badge if present */}
       {ribbonText && (
-        <div className="absolute -top-3.5 sm:-top-4 z-40 bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] text-[#0c1445] font-black uppercase text-xs xs:text-sm md:text-base tracking-wide sm:tracking-[0.14em] px-2 sm:px-3 py-1 sm:py-1.5 rounded-sm sm:rounded-md shadow-2xl border border-amber-200 whitespace-nowrap animate-pulse">
+        <div className="absolute -top-3.5 sm:-top-4 lg:-top-5 xl:-top-6 z-40 bg-gradient-to-r from-[#f59e0b] via-[#f7b731] to-[#d97706] text-[#0c1445] font-black uppercase text-xs xs:text-sm md:text-base lg:text-lg xl:text-xl tracking-wide sm:tracking-[0.14em] px-2 sm:px-3 lg:px-4 xl:px-6 py-1 sm:py-1.5 lg:py-2 xl:py-2.5 rounded-sm sm:rounded-md lg:rounded-lg shadow-2xl border border-amber-200 whitespace-nowrap animate-pulse">
           {ribbonText}
         </div>
       )}
@@ -141,7 +141,7 @@ export function JharokhaArchCard({
       </svg>
 
       {/* Inner Card Content Overlay */}
-      <div className="relative z-20 w-full h-full px-8 xs:px-10 sm:px-8 pt-11 xs:pt-13 sm:pt-11 pb-3.5 xs:pb-4 sm:pb-3.5 flex flex-col items-center justify-center gap-1.5 xs:gap-2 sm:gap-1.5 text-center">
+      <div className="relative z-20 w-full h-full px-8 xs:px-10 sm:px-8 lg:px-12 xl:px-16 pt-11 xs:pt-13 sm:pt-11 lg:pt-14 xl:pt-16 pb-3.5 xs:pb-4 sm:pb-3.5 lg:pb-6 xl:pb-8 flex flex-col items-center justify-center gap-1.5 xs:gap-2 sm:gap-1.5 lg:gap-3 xl:gap-4 text-center">
         
         {/* Top Section: Vector Artwork */}
         <div className="flex items-center justify-center shrink-0">
@@ -149,17 +149,17 @@ export function JharokhaArchCard({
         </div>
         
         {/* Title */}
-        <h2 className="font-serif text-2xl xs:text-3xl sm:text-sm md:text-base font-black uppercase tracking-normal xs:tracking-wide sm:tracking-wider text-white px-1 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]">
+        <h2 className="font-serif text-2xl xs:text-3xl sm:text-sm md:text-base lg:text-xl xl:text-3xl font-black uppercase tracking-normal xs:tracking-wide sm:tracking-wider text-white px-1 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]">
           {title}
         </h2>
 
         {/* Price & Strike Price */}
         <div className="flex items-baseline justify-center gap-2">
-          <span className="font-serif text-4xl xs:text-5xl sm:text-3xl md:text-4xl font-black text-[#FEF08A] drop-shadow-[0_4px_14px_rgba(0,0,0,0.95)]">
+          <span className="font-serif text-4xl xs:text-5xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-[#FEF08A] drop-shadow-[0_4px_14px_rgba(0,0,0,0.95)]">
             {price}
           </span>
           {strikePrice && (
-            <span className="text-xs xs:text-sm line-through text-white/80 font-bold bg-black/30 px-1.5 py-0.5 rounded border border-white/20">
+            <span className="text-xs xs:text-sm lg:text-base xl:text-lg line-through text-white/80 font-bold bg-black/30 px-1.5 lg:px-2 py-0.5 lg:py-1 rounded border border-white/20">
               {strikePrice}
             </span>
           )}
@@ -167,7 +167,7 @@ export function JharokhaArchCard({
 
         {/* Badge if present */}
         {badgeText && (
-          <span className="rounded-full bg-gradient-to-r from-amber-500/30 via-amber-400/40 to-amber-500/30 px-2 sm:px-3 py-0.5 text-xs xs:text-sm font-black uppercase tracking-wider text-[#FEF08A] border border-amber-300/60 shadow-md">
+          <span className="rounded-full bg-gradient-to-r from-amber-500/30 via-amber-400/40 to-amber-500/30 px-2 sm:px-3 lg:px-4 py-0.5 lg:py-1 text-xs xs:text-sm lg:text-base xl:text-lg font-black uppercase tracking-wider text-[#FEF08A] border border-amber-300/60 shadow-md">
             {badgeText}
           </span>
         )}
@@ -175,7 +175,7 @@ export function JharokhaArchCard({
         {/* 3D POPPED-UP GOLDEN ACTION BUTTON FOR MOBILE & PC */}
         <button
           onClick={handleButtonClick}
-          className={`inline-flex w-fit items-center justify-center gap-1 rounded-lg bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-2 sm:px-3 py-1.5 sm:py-3 md:py-3.5 font-sans text-2xl xs:text-3xl sm:text-xs md:text-sm font-black uppercase tracking-normal sm:tracking-wider text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.65)] transition-all duration-200 hover:scale-105 active:scale-95 shrink-0 ${
+          className={`inline-flex w-fit items-center justify-center gap-1 lg:gap-2 rounded-lg bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-2 sm:px-3 lg:px-5 xl:px-6 py-1.5 sm:py-3 md:py-3.5 lg:py-4 xl:py-5 font-sans text-2xl xs:text-3xl sm:text-xs md:text-sm lg:text-base xl:text-xl font-black uppercase tracking-normal sm:tracking-wider text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.65)] transition-all duration-200 hover:scale-105 active:scale-95 shrink-0 ${
             isNavigating ? "brightness-125 scale-105 ring-4 ring-amber-300/80" : ""
           }`}
         >
@@ -184,7 +184,7 @@ export function JharokhaArchCard({
         </button>
 
         {/* Note Text */}
-        <p className="text-xs xs:text-sm sm:text-[10px] md:text-xs font-bold text-white/95 leading-tight shrink-0 px-1">
+        <p className="text-xs xs:text-sm sm:text-[10px] md:text-xs lg:text-sm xl:text-base font-bold text-white/95 leading-tight shrink-0 px-1">
           {noteText}
         </p>
 

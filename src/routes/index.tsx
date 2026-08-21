@@ -113,7 +113,7 @@ function Landing() {
       <main className="relative overflow-hidden z-20 my-auto pt-4 pb-12 space-y-16">
 
         {/* ---------------- HERO & PROPORTIONAL CARDS ---------------- */}
-        <section className="relative z-20 mx-auto max-w-6xl px-2 sm:px-4 text-center">
+        <section className="relative z-20 mx-auto w-[92vw] max-w-[1500px] px-2 sm:px-4 text-center">
           
           {/* Main Title Banner */}
           <div className="mt-1 mb-2 flex items-center justify-center">
@@ -132,7 +132,7 @@ function Landing() {
           </div>
 
           {/* 3 ARCH CARDS SPREAD OUT BEAUTIFULLY TO FILL THE SCREEN SPACE */}
-          <div className="mt-1 flex flex-col sm:grid sm:grid-cols-3 gap-8 sm:gap-4 md:gap-6 lg:gap-8 items-center sm:items-end w-full max-w-[440px] sm:max-w-5xl lg:max-w-[1060px] mx-auto px-2 xs:px-4">
+          <div className="mt-1 flex flex-col sm:grid sm:grid-cols-3 gap-8 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-12 items-center sm:items-end w-full max-w-[440px] sm:max-w-none mx-auto px-2 xs:px-4">
             
             {/* Card 1: ICCK DIWALI BALL */}
             <JharokhaArchCard
@@ -142,7 +142,7 @@ function Landing() {
               noteText="Dinner, dance & performances"
               gradientFrom="#253494"
               gradientTo="#0f1854"
-              illustration={<IndianDancerIllustration className="w-38 xs:w-42 sm:w-36 md:w-42 h-42 xs:h-46 sm:h-40 md:h-46" />}
+              illustration={<IndianDancerIllustration className="w-38 xs:w-42 sm:w-36 md:w-42 lg:w-48 xl:w-56 h-42 xs:h-46 sm:h-40 md:h-46 lg:h-52 xl:h-64" />}
               to="mailto:events@indochamkorea.org?subject=Diwali%20Ball%20Ticket%20Enquiry"
             />
 
@@ -154,7 +154,7 @@ function Landing() {
               noteText="Honoring business excellence"
               gradientFrom="#ab1d53"
               gradientTo="#520829"
-              illustration={<GoldTrophyIllustration className="w-34 xs:w-38 sm:w-32 md:w-38 h-38 xs:h-42 sm:h-36 md:h-42" />}
+              illustration={<GoldTrophyIllustration className="w-34 xs:w-38 sm:w-32 md:w-38 lg:w-44 xl:w-52 h-38 xs:h-42 sm:h-36 md:h-42 lg:h-48 xl:h-56" />}
               to="/awards"
             />
 
@@ -169,7 +169,7 @@ function Landing() {
               noteText="Both events at a discounted price"
               gradientFrom="#c2185b"
               gradientTo="#880e4f"
-              illustration={<FourIconBundleEmblem className="w-34 xs:w-38 sm:w-32 md:w-38 h-36 xs:h-40 sm:h-34 md:h-38" />}
+              illustration={<FourIconBundleEmblem className="w-34 xs:w-38 sm:w-32 md:w-38 lg:w-44 xl:w-52 h-36 xs:h-40 sm:h-34 md:h-38 lg:h-44 xl:h-52" />}
               to="mailto:events@indochamkorea.org?subject=Bundle%20Registration%20Enquiry"
             />
 
@@ -195,7 +195,7 @@ function Landing() {
         </section>
 
         {/* ---------------- (a) ABOUT THE FESTIVAL ---------------- */}
-        <section id="about" className="relative z-20 max-w-5xl mx-auto px-4">
+        <section id="about" className="relative z-20 w-[92vw] max-w-[1500px] mx-auto px-4">
           <div className="rounded-2xl border-2 border-amber-400/40 bg-gradient-to-b from-[#060D2B]/95 via-[#091442]/95 to-[#060D2B]/95 backdrop-blur-md p-6 sm:p-10 text-center shadow-2xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-amber-300/40 bg-amber-400/10 px-4 py-1.5 text-xs font-black uppercase tracking-widest text-[#FEF08A] mb-4">
               <Sparkles className="size-4 text-[#F59E0B]" /> ABOUT THE FESTIVAL
@@ -215,7 +215,7 @@ function Landing() {
         </section>
 
         {/* ---------------- (b) HIGHLIGHTS OF DIWALI BALL 2026 ---------------- */}
-        <section id="highlights" className="relative z-20 max-w-5xl mx-auto px-4">
+        <section id="highlights" className="relative z-20 w-[92vw] max-w-[1500px] mx-auto px-4">
           <div className="rounded-2xl border-2 border-amber-300 bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#D97706] p-6 sm:p-10 text-left shadow-[0_10px_35px_rgba(245,158,11,0.4)] text-[#060D2B]">
             <div className="flex items-center gap-3 mb-6 border-b-2 border-amber-800/20 pb-4">
               <Sparkles className="size-8 text-[#B7182E]" />
@@ -264,7 +264,7 @@ function Landing() {
         </section>
 
         {/* ---------------- (c) SPONSORS & SPONSORSHIP CONTACT ---------------- */}
-        <section id="sponsors" className="relative z-20 max-w-5xl mx-auto px-4 text-center">
+        <section id="sponsors" className="relative z-20 w-[92vw] max-w-[1500px] mx-auto px-4 text-center">
           <div className="rounded-2xl border-2 border-amber-400/40 bg-gradient-to-b from-[#060D2B]/95 via-[#091442]/95 to-[#060D2B]/95 backdrop-blur-md p-6 sm:p-10 shadow-2xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-amber-300/40 bg-amber-400/10 px-4 py-1.5 text-xs font-black uppercase tracking-widest text-[#FEF08A] mb-3">
               <Building2 className="size-4 text-[#F59E0B]" /> SPONSORSHIP & PARTNERS
@@ -334,7 +334,7 @@ function Landing() {
         </section>
 
         {/* ---------------- (d) EXACT USER-PROVIDED 2025 STAGE PHOTO & YOUTUBE VIDEO SECTION ---------------- */}
-        <section id="gallery" className="relative z-20 max-w-5xl mx-auto px-4">
+        <section id="gallery" className="relative z-20 w-[92vw] max-w-[1500px] mx-auto px-4">
           <div className="rounded-2xl border-2 border-amber-300 bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#D97706] p-6 sm:p-8 text-left shadow-[0_10px_35px_rgba(245,158,11,0.4)] text-[#060D2B]">
             
             <div className="flex items-center justify-between gap-3 mb-4 flex-wrap">
@@ -400,7 +400,7 @@ function Landing() {
 
       {/* ---------------- 3. CONTACT US & OFFICIAL FOOTER ---------------- */}
       <footer className="relative z-30 border-t-2 border-amber-400/40 bg-[#060d2b] py-10 text-center text-amber-100/90 text-sm font-medium">
-        <div className="mx-auto max-w-5xl px-4 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+        <div className="mx-auto w-[92vw] max-w-[1500px] px-4 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           
           <img
             src={icckGoldLogoHorizontal}
