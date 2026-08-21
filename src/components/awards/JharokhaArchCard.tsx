@@ -11,7 +11,7 @@ interface JharokhaArchCardProps {
   noteText: string;
   gradientFrom: string;
   gradientTo: string;
-  illustration: React.ReactNode;
+
   to: "/register" | "/awards";
   search?: { preset: "ball" | "bundle" };
   ribbonText?: string;
@@ -34,7 +34,7 @@ export function JharokhaArchCard({
   noteText,
   gradientFrom,
   gradientTo,
-  illustration,
+
   to,
   search,
   ribbonText,
@@ -143,10 +143,7 @@ export function JharokhaArchCard({
       {/* Inner Card Content Overlay */}
       <div className="relative z-20 w-full h-full px-8 xs:px-10 sm:px-8 lg:px-12 xl:px-16 pt-11 xs:pt-13 sm:pt-11 lg:pt-14 xl:pt-16 pb-3.5 xs:pb-4 sm:pb-3.5 lg:pb-6 xl:pb-8 flex flex-col items-center justify-center gap-1.5 xs:gap-2 sm:gap-1.5 lg:gap-3 xl:gap-4 text-center">
         
-        {/* Top Section: Vector Artwork */}
-        <div className="flex items-center justify-center shrink-0">
-          {illustration}
-        </div>
+
         
         {/* Title */}
         <h2 className="font-serif text-2xl xs:text-3xl sm:text-sm md:text-base lg:text-xl xl:text-3xl font-black uppercase tracking-normal xs:tracking-wide sm:tracking-wider text-white px-1 leading-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.85)]">

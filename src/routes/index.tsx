@@ -27,9 +27,6 @@ import eventPic2 from "@/assets/event-pic-2.png";
 import eventPic6 from "@/assets/event-pic-6.png";
 
 import { 
-  IndianDancerIllustration, 
-  GoldTrophyIllustration, 
-  FourIconBundleEmblem,
   FireworkSparkle
 } from "@/components/awards/DiwaliDecorations";
 import { JharokhaArchCard } from "@/components/awards/JharokhaArchCard";
@@ -100,7 +97,7 @@ function Landing() {
               alt="ICCK Official Gold Logo"
               width={940}
               height={347}
-              className="h-7 xs:h-9 sm:h-11 w-auto object-contain shrink-0 brightness-115 saturate-130 drop-shadow-[0_0_15px_rgba(251,191,36,0.85)] drop-shadow-[0_2px_8px_rgba(245,158,11,0.6)]"
+              className="h-10 xs:h-12 sm:h-16 md:h-20 lg:h-24 w-auto object-contain shrink-0 brightness-115 saturate-130 drop-shadow-[0_0_15px_rgba(251,191,36,0.85)] drop-shadow-[0_2px_8px_rgba(245,158,11,0.6)]"
             />
             <span className="sr-only">ICCK Diwali Celebrations 2026</span>
           </a>
@@ -142,7 +139,6 @@ function Landing() {
               noteText="Dinner, dance & performances"
               gradientFrom="#253494"
               gradientTo="#0f1854"
-              illustration={<IndianDancerIllustration className="w-38 xs:w-42 sm:w-36 md:w-42 lg:w-48 xl:w-56 h-42 xs:h-46 sm:h-40 md:h-46 lg:h-52 xl:h-64" />}
               to="mailto:events@indochamkorea.org?subject=Diwali%20Ball%20Ticket%20Enquiry"
             />
 
@@ -154,7 +150,6 @@ function Landing() {
               noteText="Honoring business excellence"
               gradientFrom="#253494"
               gradientTo="#0f1854"
-              illustration={<GoldTrophyIllustration className="w-34 xs:w-38 sm:w-32 md:w-38 lg:w-44 xl:w-52 h-38 xs:h-42 sm:h-36 md:h-42 lg:h-48 xl:h-56" />}
               to="/awards"
             />
 
@@ -392,7 +387,7 @@ function Landing() {
             alt="Indian Chamber of Commerce in Korea"
             width={940}
             height={347}
-            className="h-10 xs:h-12 md:h-14 w-auto object-contain brightness-115 saturate-130 drop-shadow-[0_0_15px_rgba(251,191,36,0.85)] drop-shadow-[0_2px_12px_rgba(245,158,11,0.6)]"
+            className="h-14 xs:h-16 md:h-20 lg:h-24 w-auto object-contain brightness-115 saturate-130 drop-shadow-[0_0_15px_rgba(251,191,36,0.85)] drop-shadow-[0_2px_12px_rgba(245,158,11,0.6)]"
           />
 
           <div className="space-y-2 text-xs text-amber-200/90 font-medium">
