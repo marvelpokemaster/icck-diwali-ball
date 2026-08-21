@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteHeader } from "@/components/awards/site-header";
-import { Hero } from "@/components/awards/hero";
+import { SharedSiteHeader } from "@/components/shared/SharedSiteHeader";
+import { ICCKEventShowcase } from "@/components/shared/ICCKEventShowcase";
 import {
   About,
   Categories,
@@ -12,6 +12,14 @@ import {
   Timeline,
   WhyParticipate,
 } from "@/components/awards/sections";
+
+const links = [
+  { label: "About", href: "#about" },
+  { label: "Nomination & Eligibility", href: "#nomination" },
+  { label: "Sponsorship", href: "#sponsors" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Contact Us", href: "#contact" },
+];
 
 const title = "ICCK Business Awards 2026 | India–Korea Business Excellence";
 const description =
@@ -34,9 +42,9 @@ export const Route = createFileRoute("/awards")({
 function AwardsPage() {
   return (
     <div className="min-h-screen bg-background">
-      <SiteHeader />
+      <SharedSiteHeader links={links} />
       <main>
-        <Hero />
+        <ICCKEventShowcase />
         <About />
         <Timeline />
         <WhyParticipate />

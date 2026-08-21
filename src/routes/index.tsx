@@ -29,7 +29,8 @@ import eventPic6 from "@/assets/event-pic-6.png";
 import { 
   FireworkSparkle
 } from "@/components/awards/DiwaliDecorations";
-import { PremiumEventPanel } from "@/components/home/PremiumEventPanel";
+import { ICCKEventShowcase } from "@/components/shared/ICCKEventShowcase";
+import { SharedSiteHeader } from "@/components/shared/SharedSiteHeader";
 import { HeaderCartouche, ScallopedTrim } from "@/components/awards/JharokhaArchFrame";
 import { FirecrackerCanvas } from "@/components/awards/FirecrackerCanvas";
 
@@ -87,33 +88,13 @@ function Landing() {
       
 
       {/* ---------------- 1. TOP NAVY HEADER BANNER (GLASSMORPHISM) ---------------- */}
-      <header className="sticky top-0 w-full bg-[#060D2B]/75 backdrop-blur-md py-1 shadow-2xl z-50 border-b border-amber-400/20">
-        <div className="flex w-full items-center px-4 sm:px-8 lg:px-12">
-
-          {/* Left-aligned Gold ICCK Logo */}
-          <a href="#top" className="flex items-center gap-3">
-            <img
-              src={icckGoldLogoHorizontal}
-              alt="ICCK Official Gold Logo"
-              width={940}
-              height={347}
-              className="h-9 xs:h-11 sm:h-14 md:h-16 lg:h-[5.5rem] w-auto object-contain shrink-0 brightness-115 saturate-130 drop-shadow-[0_0_15px_rgba(251,191,36,0.85)] drop-shadow-[0_2px_8px_rgba(245,158,11,0.6)]"
-            />
-            <span className="sr-only">ICCK Diwali Celebrations 2026</span>
-          </a>
-
-        </div>
-
-        {/* Trailing Glass Transition */}
-        <div className="absolute top-full left-0 right-0 h-12 sm:h-16 pointer-events-none bg-gradient-to-b from-[#060D2B]/75 to-transparent backdrop-blur-md [mask-image:linear-gradient(to_bottom,black,transparent)] [-webkit-mask-image:linear-gradient(to_bottom,black,transparent)]" />
-
-      </header>
+      <SharedSiteHeader />
 
       {/* ---------------- 2. MAIN CONTENT SECTIONS ---------------- */}
       <main className="relative overflow-hidden z-20 my-auto pt-4 pb-12 space-y-16">
 
         {/* ---------------- HERO & PROPORTIONAL CARDS ---------------- */}
-        <PremiumEventPanel />
+        <ICCKEventShowcase />
 
         {/* ---------------- (a) ABOUT THE FESTIVAL ---------------- */}
         <section id="about" className="relative z-20 w-[92vw] max-w-[1500px] mx-auto px-4">
