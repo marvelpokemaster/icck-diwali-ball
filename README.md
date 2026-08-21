@@ -1,26 +1,65 @@
-# Pixel Perfect Designs
+# ICCK Business Awards & Diwali Ball 2026
 
-i have attached the exact interface screenshot for the website go through all the details and make it perf3ectly use all the exact images as given in the document
+![ICCK Business Excellence](https://github.com/marvelpokemaster/pixel-perfect-canvas-155/blob/main/src/assets/Background_hero.png?raw=true)
 
-This project was built with [Lovable](https://lovable.dev).
+The official event landing page and awards nomination portal for the **Indian Chamber of Commerce in Korea (ICCK)**. This premium web experience showcases the upcoming 2026 Diwali Ball & Business Excellence Awards, providing attendees with event details, ticket purchasing, and an awards nomination interface.
 
-**Live app**: https://pixel-perfect-canvas-155.lovable.app
+**Live Application**: [https://diwali.indochamkorea.org](https://diwali.indochamkorea.org)
 
-## Build with Lovable
+---
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/63b7ce7f-9b9b-45a5-ad6d-e7b385e2c173).
+## 🌟 Key Features
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+- **Premium Design System**: A luxurious aesthetic utilizing deep midnight navy, rich indigo, and warm metallic gold, perfectly suited for a high-end gala.
+- **Initial Asset Preloader**: A bespoke initial loading screen that halts rendering until critical visual assets (like hero background images and typography) are fully loaded, ensuring a perfectly assembled first frame with zero layout shifting.
+- **Glassmorphism UI**: Beautiful, subtly blurred sticky headers and transparent interaction panels allowing background art to peek through naturally.
+- **Responsive Landscape Event Cards**: Premium horizontal event showcase panels designed to maximize screen real estate and legibility on desktop while gracefully collapsing into elegant portrait cards on mobile.
+- **Dual-Route Architecture**: Contains a landing page (`/`) for the primary Diwali Ball event details, and a dedicated awards portal (`/awards`) for business excellence nominations, built on a unified set of shared React components.
 
-## Development
+## 🛠️ Technology Stack
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+- **Framework**: React via [Vite](https://vitejs.dev/)
+- **Routing**: [TanStack Router](https://tanstack.com/router/latest)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) with native CSS custom properties and dynamic arbitrary values
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **State Management & Data Fetching**: [TanStack Query](https://tanstack.com/query/latest)
+- **Deployment & Architecture**: Built in collaboration with [Lovable](https://lovable.dev)
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+## 🚀 Development Setup
+
+To run this project locally, ensure you have [Node.js](https://nodejs.org/) installed, then follow these steps:
+
+1. **Clone the repository**
+   ```sh
+   git clone https://github.com/marvelpokemaster/pixel-perfect-canvas-155.git
+   cd pixel-perfect-canvas-155
+   ```
+
+2. **Install dependencies**
+   ```sh
+   npm install
+   ```
+
+3. **Start the development server**
+   ```sh
+   npm run dev
+   ```
+
+4. **Build for production**
+   ```sh
+   npm run build
+   ```
+
+## 📐 Project Structure
+
+- `src/assets/` - Contains all static visual assets, event photography, logos, and custom web fonts (Pretendard).
+- `src/components/shared/` - Houses reusable UI blocks like `InitialLoader`, `SharedSiteHeader`, `SharedSiteFooter`, and `ICCKEventShowcase`.
+- `src/components/awards/` - Route-specific sections and UI for the Business Awards portal.
+- `src/routes/` - Defines the application routes (`__root.tsx`, `index.tsx`, `awards.tsx`).
+
+## 🤝 Lovable Integration
+
+This project is actively connected to the [Lovable Editor](https://lovable.dev/projects/63b7ce7f-9b9b-45a5-ad6d-e7b385e2c173).
+Any changes pushed to the `main` branch on this repository will automatically sync back into Lovable, allowing for seamless AI-assisted pair programming.
+
+> **Note**: Avoid rewriting published git history (e.g. force pushing, rebasing, or squashing) to maintain a stable sync state with Lovable.
