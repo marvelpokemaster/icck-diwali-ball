@@ -131,8 +131,8 @@ function Landing() {
             <span className="flex items-center gap-1.5"><MapPin className="size-4 text-[#F59E0B]" /> Fairmont Ambassador Seoul, Yeouido</span>
           </div>
 
-          {/* 3 ARCH CARDS SPREAD OUT BEAUTIFULLY TO FILL THE SCREEN SPACE */}
-          <div className="mt-1 flex flex-col sm:grid sm:grid-cols-3 gap-8 sm:gap-4 md:gap-6 lg:gap-8 xl:gap-12 items-center sm:items-end w-full max-w-[440px] sm:max-w-none mx-auto px-2 xs:px-4">
+          {/* 2 ARCH CARDS SPREAD OUT BEAUTIFULLY TO FILL THE SCREEN SPACE */}
+          <div className="mt-1 flex flex-col sm:grid sm:grid-cols-2 gap-8 sm:gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center sm:items-stretch w-full max-w-[440px] sm:max-w-4xl lg:max-w-5xl mx-auto px-2 xs:px-4">
             
             {/* Card 1: ICCK DIWALI BALL */}
             <JharokhaArchCard
@@ -156,21 +156,6 @@ function Landing() {
               gradientTo="#520829"
               illustration={<GoldTrophyIllustration className="w-34 xs:w-38 sm:w-32 md:w-38 lg:w-44 xl:w-52 h-38 xs:h-42 sm:h-36 md:h-42 lg:h-48 xl:h-56" />}
               to="/awards"
-            />
-
-            {/* Card 3: BUNDLE REGISTRATION */}
-            <JharokhaArchCard
-              ribbonText="DISCOUNTED BUNDLE"
-              title="BUNDLE REGISTRATION"
-              price="$190"
-              strikePrice="($225)"
-              badgeText="SAVE 15%"
-              buttonText="GET THE BUNDLE"
-              noteText="Both events at a discounted price"
-              gradientFrom="#c2185b"
-              gradientTo="#880e4f"
-              illustration={<FourIconBundleEmblem className="w-34 xs:w-38 sm:w-32 md:w-38 lg:w-44 xl:w-52 h-36 xs:h-40 sm:h-34 md:h-38 lg:h-44 xl:h-52" />}
-              to="mailto:events@indochamkorea.org?subject=Bundle%20Registration%20Enquiry"
             />
 
           </div>
