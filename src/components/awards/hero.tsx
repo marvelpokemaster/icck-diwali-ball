@@ -4,9 +4,9 @@ import goldOnlyEmblem from "@/assets/icck-official-emblem-gold-only.png";
 
 export function Hero() {
   return (
-    <section id="top" className="relative isolate overflow-hidden bg-[#091442]">
+    <section id="top" className="relative isolate overflow-hidden bg-[#091442] min-h-[calc(100vh-4rem)] sm:min-h-[calc(100vh-5rem)] lg:min-h-[calc(100vh-6rem)] flex items-center justify-center">
 
-      <div className="relative mx-auto flex max-w-4xl flex-col items-center px-4 py-16 text-center md:py-24">
+      <div className="relative mx-auto flex w-full max-w-4xl flex-col items-center px-4 py-12 md:py-16 text-center">
         <span className="mb-6 rounded-b-md bg-gradient-gold px-5 py-1 font-display text-sm font-bold tracking-[0.2em] text-gold-foreground">
           2026
         </span>
