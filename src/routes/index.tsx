@@ -70,7 +70,7 @@ function Landing() {
   };
 
   return (
-    <div className="min-h-screen text-white relative font-sans overflow-x-hidden bg-[#091442] flex flex-col justify-between">
+    <div className="min-h-screen text-white relative font-sans bg-[#091442] flex flex-col justify-between">
       
       {/* ---------------- CONFIRMED DIWALI FLYER BACKDROP ---------------- */}
       <div className="fixed inset-0 z-0 pointer-events-none">
