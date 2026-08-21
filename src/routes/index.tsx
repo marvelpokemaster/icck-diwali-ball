@@ -29,7 +29,7 @@ import eventPic6 from "@/assets/event-pic-6.png";
 import { 
   FireworkSparkle
 } from "@/components/awards/DiwaliDecorations";
-import { JharokhaArchCard } from "@/components/awards/JharokhaArchCard";
+import { PremiumEventPanel } from "@/components/home/PremiumEventPanel";
 import { HeaderCartouche, ScallopedTrim } from "@/components/awards/JharokhaArchFrame";
 import { FirecrackerCanvas } from "@/components/awards/FirecrackerCanvas";
 
@@ -113,69 +113,7 @@ function Landing() {
       <main className="relative overflow-hidden z-20 my-auto pt-4 pb-12 space-y-16">
 
         {/* ---------------- HERO & PROPORTIONAL CARDS ---------------- */}
-        <section className="relative z-20 mx-auto w-[92vw] max-w-[1500px] px-2 sm:px-4 text-center">
-          
-          {/* Main Title Banner */}
-          <div className="mt-1 mb-2 flex items-center justify-center">
-            <div>
-              <h1 className="font-serif text-4xl xs:text-5xl sm:text-4xl lg:text-5xl font-black leading-[1.05] tracking-wide text-[#FEF08A] drop-shadow-[0_2px_15px_rgba(0,0,0,0.9)] uppercase">
-                ICCK DIWALI BALL 2026
-              </h1>
-            </div>
-          </div>
-
-          {/* Date & Location Badge */}
-          <div className="mt-2 mb-6 inline-flex flex-wrap items-center justify-center gap-4 rounded-xl border border-amber-300/40 bg-[#060D2B]/80 backdrop-blur-md px-4 py-2 text-xs sm:text-sm font-bold text-amber-200 shadow-xl">
-            <span className="flex items-center gap-1.5"><Calendar className="size-4 text-[#F59E0B]" /> December 5th, 2026 | 18:30</span>
-            <span className="hidden sm:inline text-amber-500">•</span>
-            <span className="flex items-center gap-1.5"><MapPin className="size-4 text-[#F59E0B]" /> Fairmont Ambassador Seoul, Yeouido</span>
-          </div>
-
-          {/* 2 ARCH CARDS SPREAD OUT BEAUTIFULLY TO FILL THE SCREEN SPACE */}
-          <div className="mt-1 flex flex-col sm:grid sm:grid-cols-2 gap-8 sm:gap-6 md:gap-8 lg:gap-12 xl:gap-16 items-center sm:items-stretch w-full max-w-[440px] sm:max-w-4xl lg:max-w-5xl mx-auto px-2 xs:px-4">
-            
-            {/* Card 1: ICCK DIWALI BALL */}
-            <JharokhaArchCard
-              title="ICCK DIWALI BALL"
-              price="$100"
-              buttonText="Buy Tickets"
-              noteText="Dinner, dance & performances"
-              gradientFrom="#253494"
-              gradientTo="#0f1854"
-              to="mailto:events@indochamkorea.org?subject=Diwali%20Ball%20Ticket%20Enquiry"
-            />
-
-            {/* Card 2: ICCK BUSINESS AWARDS */}
-            <JharokhaArchCard
-              title="ICCK BUSINESS AWARDS"
-              price="$125"
-              buttonText="Nominate Now"
-              noteText="Honoring business excellence"
-              gradientFrom="#253494"
-              gradientTo="#0f1854"
-              to="/awards"
-            />
-
-          </div>
-
-          {/* BOTTOM ACTION BUTTONS */}
-          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full max-w-[360px] sm:max-w-none mx-auto relative px-3 sm:px-0">
-            
-
-            {/* Button 2: SPONSOR ENQUIRY */}
-            <div className="flex items-center justify-center">
-              <a
-                href="mailto:events@indochamkorea.org?subject=Diwali%20Ball%20Sponsorship%20Enquiry"
-                className="inline-flex w-fit items-center justify-center gap-2 rounded-xl bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-3 sm:px-5 py-2 sm:py-3 font-sans text-xl xs:text-2xl sm:text-base font-black uppercase tracking-[0.14em] text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.65)] transition-all duration-200 hover:scale-105 active:scale-95"
-              >
-                <Sparkles className="h-4 w-4 shrink-0" />
-                <span className="drop-shadow-[0_1px_2px_rgba(255,255,255,0.7)]">SPONSOR ENQUIRY</span>
-              </a>
-            </div>
-
-          </div>
-
-        </section>
+        <PremiumEventPanel />
 
         {/* ---------------- (a) ABOUT THE FESTIVAL ---------------- */}
         <section id="about" className="relative z-20 w-[92vw] max-w-[1500px] mx-auto px-4">
