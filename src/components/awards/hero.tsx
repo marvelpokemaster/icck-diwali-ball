@@ -1,18 +1,10 @@
 import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-india-korea.jpg";
+
 import goldOnlyEmblem from "@/assets/icck-official-emblem-gold-only.png";
 
 export function Hero() {
   return (
-    <section id="top" className="relative isolate overflow-hidden bg-navy-deep">
-      <img
-        src={heroBg}
-        alt="Seoul skyline with the South Korean flag and the Taj Mahal with the Indian flag"
-        width={1920}
-        height={912}
-        className="absolute inset-0 h-full w-full object-cover opacity-90"
-      />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,oklch(0.19_0.055_262/0.72)_0%,oklch(0.19_0.055_262/0.92)_70%)]" />
+    <section id="top" className="relative isolate overflow-hidden bg-[#091442]">
 
       <div className="relative mx-auto flex max-w-4xl flex-col items-center px-4 py-16 text-center md:py-24">
         <span className="mb-6 rounded-b-md bg-gradient-gold px-5 py-1 font-display text-sm font-bold tracking-[0.2em] text-gold-foreground">
@@ -33,7 +25,7 @@ export function Hero() {
         <h1 className="mt-6 font-serif text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-black uppercase leading-tight tracking-[0.06em] text-transparent bg-clip-text bg-gradient-to-b from-[#FFFDF0] via-[#FEF08A] to-[#F59E0B] drop-shadow-[0_4px_14px_rgba(0,0,0,0.95)]">
           Celebrating India&ndash;Korea<br className="hidden sm:inline" /> Business Excellence
         </h1>
-        <p className="mt-4 text-base text-primary-foreground/85 md:text-lg">
+        <p className="mt-4 text-base text-white md:text-lg">
           ICCK Business Awards 2026 &middot; Honoring Bilateral Collaboration
         </p>
 

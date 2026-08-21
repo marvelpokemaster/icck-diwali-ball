@@ -21,7 +21,6 @@ import {
   TrendingUp,
   Trophy,
   Users,
-  X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -40,11 +39,11 @@ export function About() {
   return (
     <section id="about" className="bg-gradient-to-b from-[#091442] via-[#0f216b] to-[#0c1854] py-16 md:py-20 border-t border-amber-400/30">
       <div className="mx-auto max-w-5xl px-4 text-center md:px-8">
-        <h2 className="font-serif text-3xl font-black uppercase tracking-wide text-[#FEF08A] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:text-4xl">
+        <h2 className="font-serif text-3xl font-black uppercase tracking-wide text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:text-4xl">
           About the Awards
         </h2>
-        <h3 className="mt-6 font-display text-xl font-bold text-[#F59E0B] tracking-wider uppercase">Vision &amp; Objectives</h3>
-        <p className="mx-auto mt-3 max-w-3xl text-sm leading-relaxed text-amber-100/90 md:text-base">
+        <h3 className="mt-6 font-display text-xl font-bold text-white tracking-wider uppercase">Vision &amp; Objectives</h3>
+        <p className="mx-auto mt-3 max-w-3xl text-sm leading-relaxed text-white md:text-base">
           The Indian Chamber of Commerce in Korea (ICCK) Business Awards recognize companies that
           have made outstanding contributions to strengthening India&ndash;Korea business relations
           and demonstrated excellence, innovation, leadership and meaningful impact across key
@@ -53,21 +52,21 @@ export function About() {
 
         <div className="mt-12 grid gap-10 sm:grid-cols-2">
           <div className="flex flex-col items-center bg-[#060D2B]/95 border-2 border-amber-400/50 p-7 rounded-2xl shadow-2xl backdrop-blur-md transition-transform hover:-translate-y-1">
-            <Target className="size-11 text-[#F59E0B] drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]" />
-            <h4 className="mt-4 font-display text-lg font-black tracking-wide text-[#FEF08A] drop-shadow-sm">
+            <Target className="size-11 text-white drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]" />
+            <h4 className="mt-4 font-display text-lg font-black tracking-wide text-white drop-shadow-sm">
               Recognizing Excellence
             </h4>
-            <p className="mt-2 text-sm leading-relaxed text-amber-100/90 font-medium">
+            <p className="mt-2 text-sm leading-relaxed text-white font-medium">
               Eight sectoral categories honour measurable achievement in trade, investment,
               innovation and sustainability across the India&ndash;Korea corridor.
             </p>
           </div>
           <div className="flex flex-col items-center bg-[#060D2B]/95 border-2 border-amber-400/50 p-7 rounded-2xl shadow-2xl backdrop-blur-md transition-transform hover:-translate-y-1">
-            <Users className="size-11 text-[#F59E0B] drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]" />
-            <h4 className="mt-4 font-display text-lg font-black tracking-wide text-[#FEF08A] drop-shadow-sm">
+            <Users className="size-11 text-white drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]" />
+            <h4 className="mt-4 font-display text-lg font-black tracking-wide text-white drop-shadow-sm">
               Building Bilateral Ties
             </h4>
-            <p className="mt-2 text-sm leading-relaxed text-amber-100/90 font-medium">
+            <p className="mt-2 text-sm leading-relaxed text-white font-medium">
               A platform that connects companies, institutions and leaders driving commercial,
               technological and people-to-people links between the two markets.
             </p>
@@ -82,15 +81,15 @@ export function About() {
           <Sparkles className="size-4 text-[#060D2B]" />
         </div>
 
-        <h3 className="font-display text-xl font-bold text-[#F59E0B] tracking-wider uppercase">Event Program</h3>
+        <h3 className="font-display text-xl font-bold text-white tracking-wider uppercase">Event Program</h3>
         <div className="mx-auto mt-5 max-w-xl divide-y divide-amber-400/30 rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 text-left shadow-2xl backdrop-blur-md">
           {[
             ["5:30 PM – 6:00 PM", "Reception & Registration"],
             ["6:00 PM – 7:00 PM", "Awards Ceremony"],
           ].map(([time, title]) => (
             <div key={time} className="flex flex-wrap items-center justify-between gap-2 px-6 py-4">
-              <span className="font-display text-sm font-black text-[#FEF08A]">{time}</span>
-              <span className="text-sm font-bold text-amber-100/90">{title}</span>
+              <span className="font-display text-sm font-black text-white">{time}</span>
+              <span className="text-sm font-bold text-white">{title}</span>
             </div>
           ))}
         </div>
@@ -130,7 +129,7 @@ export function Timeline() {
   return (
     <section className="bg-gradient-to-b from-[#0c1854] via-[#091442] to-[#0b1648] py-16 md:py-20 border-t border-amber-400/30">
       <div className="mx-auto max-w-5xl px-4 text-center md:px-8">
-        <h2 className="font-serif text-3xl font-black uppercase tracking-wide text-[#FEF08A] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:text-4xl">
+        <h2 className="font-serif text-3xl font-black uppercase tracking-wide text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:text-4xl">
           Timeline &amp; Key Dates
         </h2>
 
@@ -145,18 +144,18 @@ export function Timeline() {
                 <span className="flex size-10 items-center justify-center rounded-full bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] text-xs font-black text-[#060c2c] shadow-lg">
                   ★
                 </span>
-                <span className="mt-4 font-display text-lg font-black text-[#FEF08A]">{m.date}</span>
+                <span className="mt-4 font-display text-lg font-black text-white">{m.date}</span>
                 <span className="mt-1 text-sm font-bold text-white/90">
                   {m.label}
                 </span>
-                <span className="mt-1 text-xs text-amber-200/70">{m.note}</span>
+                <span className="mt-1 text-xs text-white/70">{m.note}</span>
               </li>
             ))}
           </ol>
         </div>
 
         <div className="mx-auto mt-14 max-w-2xl border-t border-amber-400/30 pt-8">
-          <p className="font-display text-sm font-black uppercase tracking-[0.25em] text-[#F59E0B]">
+          <p className="font-display text-sm font-black uppercase tracking-[0.25em] text-white">
             Countdown Timer
           </p>
           <div className="mt-4 flex flex-wrap items-end justify-center gap-x-4 gap-y-2">
@@ -169,7 +168,7 @@ export function Timeline() {
               <div key={unit as string} className="flex items-end gap-4">
                 {i > 0 && <span className="pb-1 text-2xl text-amber-400/40">|</span>}
                 <div className="flex items-baseline gap-1">
-                  <span className="font-display text-3xl font-black text-[#FEF08A] md:text-4xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
+                  <span className="font-display text-3xl font-black text-white md:text-4xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
                     {value ?? "--"}
                   </span>
                   <span className="text-sm font-semibold text-amber-100/80">{unit as string}</span>
@@ -207,15 +206,15 @@ export function WhyParticipate() {
   return (
     <section id="why" className="bg-gradient-to-b from-[#0b1648] via-[#091442] to-[#0e1a52] py-16 md:py-20 border-t border-amber-400/30">
       <div className="mx-auto max-w-6xl px-4 text-center md:px-8">
-        <h2 className="font-serif text-3xl font-black uppercase tracking-wide text-[#FEF08A] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:text-4xl">
+        <h2 className="font-serif text-3xl font-black uppercase tracking-wide text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:text-4xl">
           Why Participate
         </h2>
         <div className="mt-12 grid gap-8 sm:grid-cols-3">
           {benefits.map((b) => (
             <div key={b.title} className="flex flex-col items-center bg-[#060D2B]/95 border-2 border-amber-400/50 p-8 rounded-2xl shadow-2xl backdrop-blur-md transition-transform hover:-translate-y-1">
-              <b.icon className="size-11 text-[#F59E0B] drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]" strokeWidth={1.5} />
-              <h3 className="mt-5 font-display text-lg font-black uppercase tracking-wider text-[#FEF08A]">{b.title}</h3>
-              <p className="mt-3 max-w-xs text-sm leading-relaxed text-amber-100/90 font-medium">{b.body}</p>
+              <b.icon className="size-11 text-white drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]" strokeWidth={1.5} />
+              <h3 className="mt-5 font-display text-lg font-black uppercase tracking-wider text-white">{b.title}</h3>
+              <p className="mt-3 max-w-xs text-sm leading-relaxed text-white font-medium">{b.body}</p>
             </div>
           ))}
         </div>
@@ -273,7 +272,7 @@ export function Categories() {
   return (
     <section id="categories" className="bg-gradient-to-b from-[#0e1a52] via-[#091442] to-[#0c1854] py-16 md:py-20 border-t border-amber-400/30">
       <div className="mx-auto max-w-6xl px-4 md:px-8">
-        <h2 className="font-serif text-3xl font-black uppercase tracking-wide text-[#FEF08A] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:text-4xl text-center">
+        <h2 className="font-serif text-3xl font-black uppercase tracking-wide text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:text-4xl text-center">
           Award Categories
         </h2>
 
@@ -287,8 +286,8 @@ export function Categories() {
             { icon: Cpu, label: "Digital" },
           ].map((t) => (
             <div key={t.label} className="flex flex-col items-center gap-1">
-              <t.icon className="size-5 text-[#F59E0B]" strokeWidth={1.5} />
-              <span className="text-[11px] font-bold uppercase tracking-wider text-[#FEF08A]">{t.label}</span>
+              <t.icon className="size-5 text-white" strokeWidth={1.5} />
+              <span className="text-[11px] font-bold uppercase tracking-wider text-white">{t.label}</span>
             </div>
           ))}
         </div>
@@ -299,11 +298,11 @@ export function Categories() {
               key={c.title}
               className="group rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 p-6 text-center shadow-2xl backdrop-blur-md transition-transform hover:-translate-y-1 hover:border-amber-300"
             >
-              <c.icon className="mx-auto size-11 text-[#F59E0B] drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]" strokeWidth={1.5} />
-              <h3 className="mt-4 font-display text-base font-black leading-snug text-[#FEF08A]">
+              <c.icon className="mx-auto size-11 text-white drop-shadow-[0_0_10px_rgba(245,158,11,0.5)]" strokeWidth={1.5} />
+              <h3 className="mt-4 font-display text-base font-black leading-snug text-white">
                 {c.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-amber-100/90 font-medium">{c.body}</p>
+              <p className="mt-3 text-sm leading-relaxed text-white font-medium">{c.body}</p>
             </article>
           ))}
         </div>
@@ -341,15 +340,15 @@ export function Nomination() {
   return (
     <section id="nomination" className="bg-gradient-to-b from-[#0c1854] via-[#091442] to-[#0a1544] py-16 md:py-20 border-t border-amber-400/30">
       <div className="mx-auto max-w-6xl px-4 md:px-8">
-        <h2 className="font-serif text-3xl font-black uppercase tracking-wide text-[#FEF08A] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:text-4xl text-center">
+        <h2 className="font-serif text-3xl font-black uppercase tracking-wide text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:text-4xl text-center">
           Nomination &amp; Eligibility
         </h2>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-3">
           <div className="rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 p-7 shadow-2xl backdrop-blur-md">
-            <ScrollText className="size-10 text-[#F59E0B]" strokeWidth={1.5} />
-            <h3 className="mt-4 font-display text-lg font-black text-[#FEF08A]">Eligibility</h3>
-            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-amber-100/90 font-medium">
+            <ScrollText className="size-10 text-white" strokeWidth={1.5} />
+            <h3 className="mt-4 font-display text-lg font-black text-white">Eligibility</h3>
+            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-white font-medium">
               <li>
                 Legally registered in India, Korea or another jurisdiction, with activity that
                 creates commercial, economic or institutional India&ndash;Korea linkages.
@@ -360,44 +359,44 @@ export function Nomination() {
           </div>
 
           <div className="rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 p-7 shadow-2xl backdrop-blur-md">
-            <Award className="size-10 text-[#F59E0B]" strokeWidth={1.5} />
-            <h3 className="mt-4 font-display text-lg font-black text-[#FEF08A]">
+            <Award className="size-10 text-white" strokeWidth={1.5} />
+            <h3 className="mt-4 font-display text-lg font-black text-white">
               Assessment Criteria
             </h3>
-            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-amber-100/90 font-medium">
+            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-white font-medium">
               <li>
-                <strong className="text-[#FEF08A]">Impact</strong> &mdash; measurable difference
+                <strong className="text-white">Impact</strong> &mdash; measurable difference
                 created.
               </li>
               <li>
-                <strong className="text-[#FEF08A]">Bilateral contribution</strong> &mdash;
+                <strong className="text-white">Bilateral contribution</strong> &mdash;
                 strengthening India&ndash;Korea ties.
               </li>
               <li>
-                <strong className="text-[#FEF08A]">Excellence &amp; Innovation</strong> &mdash;
+                <strong className="text-white">Excellence &amp; Innovation</strong> &mdash;
                 distinctiveness versus industry standards.
               </li>
               <li>
-                <strong className="text-[#FEF08A]">Sustainability &amp; Evidence</strong> &mdash;
+                <strong className="text-white">Sustainability &amp; Evidence</strong> &mdash;
                 long-term value, credibly documented.
               </li>
             </ul>
           </div>
 
           <div className="rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 p-7 shadow-2xl backdrop-blur-md">
-            <Building2 className="size-10 text-[#F59E0B]" strokeWidth={1.5} />
-            <h3 className="mt-4 font-display text-lg font-black text-[#FEF08A]">Judging Process</h3>
-            <ol className="mt-3 space-y-2 text-sm leading-relaxed text-amber-100/90 font-medium">
+            <Building2 className="size-10 text-white" strokeWidth={1.5} />
+            <h3 className="mt-4 font-display text-lg font-black text-white">Judging Process</h3>
+            <ol className="mt-3 space-y-2 text-sm leading-relaxed text-white font-medium">
               <li>
-                <strong className="text-[#FEF08A]">Stage 1</strong> &mdash; eligibility screening by
+                <strong className="text-white">Stage 1</strong> &mdash; eligibility screening by
                 ICCK.
               </li>
               <li>
-                <strong className="text-[#FEF08A]">Stage 2</strong> &mdash; evaluation and
+                <strong className="text-white">Stage 2</strong> &mdash; evaluation and
                 shortlisting by the judging panel.
               </li>
               <li>
-                <strong className="text-[#FEF08A]">Stage 3</strong> &mdash; final selection of
+                <strong className="text-white">Stage 3</strong> &mdash; final selection of
                 category winners and Company of the Year.
               </li>
             </ol>
@@ -412,7 +411,7 @@ export function Nomination() {
           >
             <a href="mailto:events@indochamkorea.org?subject=ICCK%20Business%20Awards%20Nomination">Nominate Now</a>
           </Button>
-          <Button asChild size="lg" variant="outline" className="border-amber-400/70 bg-transparent font-bold uppercase tracking-wide text-[#FEF08A] hover:bg-amber-400/10">
+          <Button asChild size="lg" variant="outline" className="border-amber-400/70 bg-transparent font-bold uppercase tracking-wide text-white hover:bg-amber-400/10">
             <a href="#faq">Read the FAQ</a>
           </Button>
         </div>
@@ -435,12 +434,11 @@ const partners = [
 ];
 
 export function Partners() {
-  const [showSponsorModal, setShowSponsorModal] = useState(false);
 
   return (
     <section id="sponsors" className="bg-gradient-to-b from-[#0a1544] via-[#091442] to-[#0d194d] py-16 md:py-20 border-t border-amber-400/30">
       <div className="mx-auto max-w-6xl px-4 md:px-8">
-        <h2 className="font-serif text-3xl font-black uppercase tracking-wide text-[#FEF08A] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:text-4xl text-center">
+        <h2 className="font-serif text-3xl font-black uppercase tracking-wide text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:text-4xl text-center">
           Our Partners &amp; Sponsors
         </h2>
 
@@ -448,14 +446,14 @@ export function Partners() {
           {partners.map((p) => (
             <div
               key={p}
-              className="flex h-24 items-center justify-center rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 px-4 text-center text-xs font-black uppercase tracking-wide text-[#FEF08A] shadow-xl backdrop-blur-md"
+              className="flex h-24 items-center justify-center rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 px-4 text-center text-xs font-black uppercase tracking-wide text-white shadow-xl backdrop-blur-md"
             >
               {p}
             </div>
           ))}
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-3">
+        {/* <div className="mt-12 grid gap-6 sm:grid-cols-3">
           {[
             { tier: "Title", note: "Headline naming rights, keynote slot and full media package." },
             { tier: "Platinum", note: "Premium branding, on-stage recognition and VIP seating." },
@@ -465,64 +463,36 @@ export function Partners() {
               key={s.tier}
               className="rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 p-7 text-center shadow-2xl backdrop-blur-md"
             >
-              <Sparkles className="mx-auto size-9 text-[#F59E0B]" strokeWidth={1.5} />
-              <h3 className="mt-3 font-display text-lg font-black uppercase tracking-wide text-[#FEF08A]">
+              <Sparkles className="mx-auto size-9 text-white" strokeWidth={1.5} />
+              <h3 className="mt-3 font-display text-lg font-black uppercase tracking-wide text-white">
                 {s.tier}
               </h3>
-              <p className="mt-2 text-sm text-amber-100/90 font-medium">{s.note}</p>
+              <p className="mt-2 text-sm text-white font-medium">{s.note}</p>
             </div>
           ))}
-        </div>
+        </div> */}
 
-        {/* Sponsor Enquiry Trigger Button */}
-        <div className="mt-8 flex justify-center">
+        {/* Sponsor Enquiry Buttons */}
+        <div className="mt-8 flex flex-wrap justify-center gap-4">
           <Button
+            asChild
             size="lg"
-            onClick={() => setShowSponsorModal(true)}
             className="bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] font-black uppercase tracking-wide text-[#060c2c] shadow-xl hover:brightness-110"
           >
-            Sponsor Enquiry
+            <a href="mailto:events@indochamkorea.org?subject=Request%20Sponsorship%20Guidelines">
+              <Download className="mr-2 size-4" /> Download Guidelines
+            </a>
+          </Button>
+          <Button
+            asChild
+            size="lg"
+            className="bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] font-black uppercase tracking-wide text-[#060c2c] shadow-xl hover:brightness-110"
+          >
+            <a href="mailto:events@indochamkorea.org">
+              <Mail className="mr-2 size-4" /> Sponsor Enquiry
+            </a>
           </Button>
         </div>
-
-        {/* Sponsor Enquiry Modal Pop-up */}
-        {showSponsorModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/75 backdrop-blur-sm p-4">
-            <div className="relative w-full max-w-lg rounded-2xl border-2 border-amber-400/60 bg-[#060D2B] p-6 sm:p-8 shadow-2xl text-left border">
-              <button
-                onClick={() => setShowSponsorModal(false)}
-                className="absolute top-4 right-4 text-amber-300 hover:text-[#FEF08A]"
-              >
-                <X className="size-6" />
-              </button>
-              
-              <div className="flex items-center gap-3">
-                <Sparkles className="size-7 text-[#F59E0B]" />
-                <h3 className="font-serif text-xl font-black text-[#FEF08A] uppercase">Sponsorship Opportunities</h3>
-              </div>
-              
-              <p className="mt-3 text-sm leading-relaxed text-amber-100/90 font-medium">
-                Partner with the Indian Chamber of Commerce in Korea to showcase your brand across key India–Korea business leaders.
-              </p>
-
-              <div className="mt-6 flex flex-col gap-3">
-                <a
-                  href="mailto:events@indochamkorea.org?subject=Request%20Sponsorship%20Guidelines"
-                  className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-5 py-3 font-black text-xs sm:text-sm uppercase tracking-wide text-[#060c2c] shadow-md hover:brightness-105"
-                >
-                  <Download className="size-4" /> Download Sponsorship Guidelines
-                </a>
-
-                <a
-                  href="mailto:events@indochamkorea.org?subject=Sponsor%20Registration%20Enquiry"
-                  className="flex items-center justify-center gap-2 rounded-xl border-2 border-amber-400/50 bg-[#091442] px-5 py-3 font-black text-xs sm:text-sm uppercase tracking-wide text-[#FEF08A] shadow-md hover:bg-[#0f1b54]"
-                >
-                  <Mail className="size-4" /> Register as a Sponsor
-                </a>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );
@@ -557,7 +527,7 @@ export function Faq() {
   return (
     <section id="faq" className="bg-gradient-to-b from-[#0d194d] via-[#091442] to-[#0a1646] py-16 md:py-20 border-t border-amber-400/30">
       <div className="mx-auto max-w-3xl px-4 md:px-8">
-        <h2 className="font-serif text-3xl font-black uppercase tracking-wide text-[#FEF08A] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:text-4xl text-center">
+        <h2 className="font-serif text-3xl font-black uppercase tracking-wide text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:text-4xl text-center">
           Frequently Asked Questions
         </h2>
 
@@ -568,10 +538,10 @@ export function Faq() {
               value={`item-${i}`}
               className="overflow-hidden rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 px-6 py-1 shadow-xl backdrop-blur-md"
             >
-              <AccordionTrigger className="text-left font-black text-[#FEF08A] hover:no-underline text-base">
+              <AccordionTrigger className="text-left font-black text-white hover:no-underline text-base">
                 {f.q}
               </AccordionTrigger>
-              <AccordionContent className="text-sm leading-relaxed text-amber-100/90 font-medium">
+              <AccordionContent className="text-sm leading-relaxed text-white font-medium">
                 {f.a}
               </AccordionContent>
             </AccordionItem>
@@ -588,7 +558,7 @@ export function Contact() {
   return (
     <section id="contact" className="bg-gradient-to-b from-[#0a1646] via-[#091442] to-[#070e30] py-16 md:py-20 border-t border-amber-400/30">
       <div className="mx-auto max-w-5xl px-4 md:px-8">
-        <h2 className="font-serif text-3xl font-black uppercase tracking-wide text-[#FEF08A] drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:text-4xl text-center">
+        <h2 className="font-serif text-3xl font-black uppercase tracking-wide text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:text-4xl text-center">
           Contact Us
         </h2>
 
@@ -604,21 +574,21 @@ export function Contact() {
               required
               placeholder="Name"
               aria-label="Name"
-              className="border-2 border-amber-400/50 bg-[#060D2B]/90 text-[#FEF08A] placeholder:text-amber-200/50 font-medium"
+              className="border-2 border-amber-400/50 bg-[#060D2B]/90 text-white placeholder:text-white/50 font-medium"
             />
             <Input
               required
               type="email"
               placeholder="Email"
               aria-label="Email"
-              className="border-2 border-amber-400/50 bg-[#060D2B]/90 text-[#FEF08A] placeholder:text-amber-200/50 font-medium"
+              className="border-2 border-amber-400/50 bg-[#060D2B]/90 text-white placeholder:text-white/50 font-medium"
             />
             <Textarea
               required
               rows={5}
               placeholder="Message"
               aria-label="Message"
-              className="border-2 border-amber-400/50 bg-[#060D2B]/90 text-[#FEF08A] placeholder:text-amber-200/50 font-medium"
+              className="border-2 border-amber-400/50 bg-[#060D2B]/90 text-white placeholder:text-white/50 font-medium"
             />
             <Button
               type="submit"
@@ -629,10 +599,10 @@ export function Contact() {
           </form>
 
           <div className="text-center md:text-left">
-            <h3 className="font-display text-xl font-bold text-[#F59E0B]">Contact Information</h3>
-            <div className="mt-4 space-y-3 text-sm leading-relaxed text-amber-100/90 font-medium">
+            <h3 className="font-display text-xl font-bold text-white">Contact Information</h3>
+            <div className="mt-4 space-y-3 text-sm leading-relaxed text-white font-medium">
               <p className="flex items-start gap-2.5 justify-center md:justify-start">
-                <Building2 className="size-5 text-[#F59E0B] shrink-0 mt-0.5" />
+                <Building2 className="size-5 text-white shrink-0 mt-0.5" />
                 <span>
                   ICCK, 405(4F) IKP 7 Heolleung-ro,
                   <br />
@@ -640,12 +610,12 @@ export function Contact() {
                 </span>
               </p>
               <p className="flex items-center gap-2.5 justify-center md:justify-start">
-                <Phone className="size-4 text-[#F59E0B] shrink-0" />
+                <Phone className="size-4 text-white shrink-0" />
                 <span>TEL: +82-2-776-1583</span>
               </p>
               <p className="flex items-center gap-2.5 justify-center md:justify-start">
-                <Mail className="size-4 text-[#F59E0B] shrink-0" />
-                <a href="mailto:events@indochamkorea.org" className="hover:text-[#FEF08A] underline">
+                <Mail className="size-4 text-white shrink-0" />
+                <a href="mailto:events@indochamkorea.org" className="hover:text-white underline">
                   events@indochamkorea.org
                 </a>
               </p>
@@ -672,13 +642,13 @@ export function SiteFooter() {
           className="h-10 xs:h-12 md:h-14 w-auto object-contain brightness-115 saturate-130 drop-shadow-[0_0_15px_rgba(251,191,36,0.85)] drop-shadow-[0_2px_12px_rgba(245,158,11,0.6)]"
         />
         <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-bold uppercase tracking-wide text-amber-100/80">
-          <a href="#about" className="hover:text-[#FEF08A]">
+          <a href="#about" className="hover:text-white">
             Privacy Policy
           </a>
-          <a href="#nomination" className="hover:text-[#FEF08A]">
+          <a href="#nomination" className="hover:text-white">
             Nomination Guide Download
           </a>
-          <a href="mailto:events@indochamkorea.org" className="hover:text-[#FEF08A]">
+          <a href="mailto:events@indochamkorea.org" className="hover:text-white">
             Contact
           </a>
         </nav>
