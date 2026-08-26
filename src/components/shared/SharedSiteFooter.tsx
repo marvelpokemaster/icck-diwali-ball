@@ -11,7 +11,7 @@ export function SharedSiteFooter() {
           alt="Indian Chamber of Commerce in Korea"
           width={940}
           height={347}
-          className="h-12 xs:h-14 md:h-16 lg:h-[5.5rem] w-auto object-contain brightness-115 saturate-130 drop-shadow-[0_0_15px_rgba(251,191,36,0.85)] drop-shadow-[0_2px_12px_rgba(245,158,11,0.6)]"
+          className="h-12 xs:h-14 md:h-16 lg:h-[5.5rem] w-auto object-contain brightness-115 saturate-130"
         />
 
 

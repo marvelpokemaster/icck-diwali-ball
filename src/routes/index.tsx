@@ -22,9 +22,10 @@ import icckGoldLogoHorizontal from "@/assets/icck-identity/240919_ICCK_horizonta
 import icckGoldLogo from "@/assets/icck-identity/240919_ICCK_vertical_ENG-gold.svg";
 import diwaliFlyerBg from "@/assets/Background_hero.png";
 import real2025Stage from "@/assets/real-2025-diwali-stage.png";
-import eventPic1 from "@/assets/event-pic-1.png";
-import eventPic2 from "@/assets/event-pic-2.png";
-import eventPic6 from "@/assets/event-pic-6.png";
+// 2025 Diwali Ball — supplied ref images (Dec 2025, from AUG photography)
+import ref2025Aug00418 from "@/assets/ref-2025-aug00418.jpg";
+import ref2025Aug00548 from "@/assets/ref-2025-aug00548.jpg";
+import ref2025Aug01400 from "@/assets/ref-2025-aug01400.jpg";
 
 import { 
   FireworkSparkle
@@ -181,40 +182,19 @@ function Landing() {
               Thank you to our valued corporate partners making this bilateral celebration possible.
             </p>
 
-            {/* Tier Grid */}
-            <div className="space-y-6 text-left">
-              <div>
-                <h3 className="text-xs font-black uppercase tracking-widest text-[#FEF08A] mb-3 border-b border-amber-400/20 pb-1">
-                  Platinum Sponsors
-                </h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  <div className="bg-[#091442] border border-amber-400/30 rounded-xl p-4 flex items-center justify-center font-serif text-base font-black text-amber-200 h-20 shadow-inner">
-                    PLATINUM PARTNER
-                  </div>
-                  <div className="bg-[#091442] border border-amber-400/30 rounded-xl p-4 flex items-center justify-center font-serif text-base font-black text-amber-200 h-20 shadow-inner">
-                    GLOBAL LEADER
-                  </div>
-                  <div className="bg-[#091442] border border-amber-400/30 rounded-xl p-4 flex items-center justify-center font-serif text-base font-black text-amber-200 h-20 shadow-inner">
-                    INDO-KOREA CORP
-                  </div>
-                </div>
+            {/* Sponsor Tiers — Title / Platinum / Gold (names TBC by client) */}
+            <div className="space-y-4 text-left">
+              <div className="rounded-xl border border-amber-400/20 bg-[#091442]/60 p-4">
+                <h3 className="text-xs font-black uppercase tracking-widest text-[#FEF08A] mb-2">Title Sponsors</h3>
+                <p className="text-amber-200/60 text-xs italic">To be announced</p>
               </div>
-
-              <div>
-                <h3 className="text-xs font-black uppercase tracking-widest text-amber-300 mb-3 border-b border-amber-400/20 pb-1">
-                  Gold Sponsors
-                </h3>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  <div className="bg-[#091442] border border-amber-400/20 rounded-xl p-3 flex items-center justify-center font-sans text-xs font-bold text-amber-100 h-16">
-                    GOLD SPONSOR I
-                  </div>
-                  <div className="bg-[#091442] border border-amber-400/20 rounded-xl p-3 flex items-center justify-center font-sans text-xs font-bold text-amber-100 h-16">
-                    GOLD SPONSOR II
-                  </div>
-                  <div className="bg-[#091442] border border-amber-400/20 rounded-xl p-3 flex items-center justify-center font-sans text-xs font-bold text-amber-100 h-16">
-                    GOLD SPONSOR III
-                  </div>
-                </div>
+              <div className="rounded-xl border border-amber-400/20 bg-[#091442]/60 p-4">
+                <h3 className="text-xs font-black uppercase tracking-widest text-amber-300 mb-2">Platinum Sponsors</h3>
+                <p className="text-amber-200/60 text-xs italic">To be announced</p>
+              </div>
+              <div className="rounded-xl border border-amber-400/20 bg-[#091442]/60 p-4">
+                <h3 className="text-xs font-black uppercase tracking-widest text-amber-200 mb-2">Gold Sponsors</h3>
+                <p className="text-amber-200/60 text-xs italic">To be announced</p>
               </div>
             </div>
 
@@ -265,23 +245,21 @@ function Landing() {
             {/* PHOTO GALLERY WITH EXACT USER-PROVIDED 2025 STAGE PHOTO IN 1ST POSITION */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
               {/* 1st Position: EXACT User-Provided Official 2025 Stage Photo */}
-              <div className="overflow-hidden rounded-xl shadow-md border-2 border-amber-800/30 bg-black aspect-square">
-                <img src={real2025Stage} alt="Official ICCK 2025 Diwali Ball Stage Photo" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+              <div className="overflow-hidden rounded-xl shadow-md border-2 border-amber-800/30 bg-black aspect-video">
+                <img src={real2025Stage} alt="Official ICCK 2025 Diwali Ball Stage Photo" className="w-full h-full object-contain hover:scale-105 transition-transform duration-300" />
               </div>
               
-              {/* 2nd Position: VIP Guest Reception & Networking */}
-              <div className="overflow-hidden rounded-xl shadow-md border-2 border-amber-800/30 bg-black aspect-square">
-                <img src={eventPic1} alt="Diwali Ball VIP Guest Networking" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+              {/* 2nd–4th Positions: 2025 Diwali Ball — supplied ref photos (AUG photography, Dec 2025) */}
+              <div className="overflow-hidden rounded-xl shadow-md border-2 border-amber-800/30 bg-black aspect-video">
+                <img src={ref2025Aug00418} alt="ICCK 2025 Diwali Ball — Official Photography" className="w-full h-full object-contain hover:scale-105 transition-transform duration-300" />
               </div>
 
-              {/* 3rd Position: Fairmont Grand Ballroom Dining Setup */}
-              <div className="overflow-hidden rounded-xl shadow-md border-2 border-amber-800/30 bg-black aspect-square">
-                <img src={eventPic2} alt="Diwali Ball Grand Ballroom Dining Setup" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+              <div className="overflow-hidden rounded-xl shadow-md border-2 border-amber-800/30 bg-black aspect-video">
+                <img src={ref2025Aug00548} alt="ICCK 2025 Diwali Ball — Official Photography" className="w-full h-full object-contain hover:scale-105 transition-transform duration-300" />
               </div>
 
-              {/* 4th Position: Live Stage Cultural Dance Performance */}
-              <div className="overflow-hidden rounded-xl shadow-md border-2 border-amber-800/30 bg-black aspect-square">
-                <img src={eventPic6} alt="Live Indian Cultural Stage Performance" className="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+              <div className="overflow-hidden rounded-xl shadow-md border-2 border-amber-800/30 bg-black aspect-video">
+                <img src={ref2025Aug01400} alt="ICCK 2025 Diwali Ball — Official Photography" className="w-full h-full object-contain hover:scale-105 transition-transform duration-300" />
               </div>
             </div>
 

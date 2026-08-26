@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "@tanstack/react-router";
 
 import goldOnlyEmblem from "@/assets/icck-official-emblem-gold-only.png";
 
@@ -18,12 +19,14 @@ export function Hero() {
             alt="Official Indian Chamber of Commerce in Korea Gold Emblem"
             width={1024}
             height={1024}
-            className="w-48 xs:w-56 sm:w-64 md:w-72 h-auto object-contain animate-rise brightness-110 saturate-125 drop-shadow-[0_4px_35px_rgba(251,191,36,0.85)] drop-shadow-[0_0_15px_rgba(245,158,11,0.6)]"
+            className="w-48 xs:w-56 sm:w-64 md:w-72 h-auto object-contain animate-rise brightness-110 saturate-125"
           />
         </div>
 
         <h1 className="mt-6 font-serif text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-black uppercase leading-tight tracking-[0.06em] text-transparent bg-clip-text bg-gradient-to-b from-[#FFFDF0] via-[#FEF08A] to-[#F59E0B] drop-shadow-[0_4px_14px_rgba(0,0,0,0.95)]">
-          Celebrating India&ndash;Korea<br className="hidden sm:inline" /> Business Excellence
+          Celebrating<br />
+          <span className="whitespace-nowrap">India&ndash;Korea</span><br />
+          Business Excellence
         </h1>
         <p className="mt-4 text-base text-white md:text-lg">
           ICCK Business Awards 2026 &middot; Honoring Bilateral Collaboration
@@ -35,17 +38,10 @@ export function Hero() {
             size="lg"
             className="bg-gradient-gold font-semibold uppercase tracking-wide text-gold-foreground shadow-gold hover:opacity-90"
           >
-            <a href="#nomination">Nominate Now</a>
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="border-gold/70 bg-transparent font-semibold uppercase tracking-wide text-gold hover:bg-gold/10 hover:text-gold"
-          >
-            <a href="#about">Learn More</a>
+            <Link to="/awards/eligibility">Nominate Now</Link>
           </Button>
         </div>
+
       </div>
     </section>
   );

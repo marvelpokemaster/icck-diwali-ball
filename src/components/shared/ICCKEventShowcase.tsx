@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Calendar, MapPin, Sparkles, ChevronRight, Award, Ticket } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { DiwaliTicketModal } from "@/components/shared/DiwaliTicketModal";
 
 export function ICCKEventShowcase() {
+  const [isTicketModalOpen, setIsTicketModalOpen] = useState(false);
+
   return (
     <section className="relative z-20 mx-auto w-[92vw] max-w-[1600px] px-2 sm:px-4 mb-8">
       
@@ -76,7 +79,7 @@ export function ICCKEventShowcase() {
             {/* Card 1: Business Awards */}
             <Link
               to="/awards"
-              className="group relative flex-1 flex flex-col justify-between rounded-2xl border border-amber-400/20 bg-[#0A1136]/60 backdrop-blur-sm p-6 sm:p-8 transition-all duration-300 hover:bg-[#0C164A]/80 hover:border-amber-400/40 hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(0,0,0,0.4)]"
+              className="group relative flex-1 flex flex-col justify-between rounded-2xl border border-amber-400/20 bg-[#0A1136]/60 backdrop-blur-sm p-6 sm:p-8 transition-all duration-300 hover:bg-[#0C164A]/80 hover:border-amber-400/40 hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(0,0,0,0.4)] text-left"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-amber-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
               
@@ -93,7 +96,8 @@ export function ICCKEventShowcase() {
               </div>
 
               <div className="relative z-10 flex flex-col mt-auto pt-6 border-t border-amber-400/10 gap-5">
-                <div className="text-2xl font-bold text-amber-400 text-center xl:text-left">$125</div>
+                {/* Price: 50,000 KRW */}
+                <div className="text-2xl font-bold text-amber-400 text-center xl:text-left">₩50,000 KRW</div>
                 <div className="flex items-center justify-center w-full rounded-xl bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-6 py-4 font-sans text-lg sm:text-xl font-black uppercase tracking-widest text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.4)] transition-all duration-300 group-hover:shadow-[0_12px_35px_rgba(245,158,11,0.6)] group-active:scale-95">
                   <span className="drop-shadow-[0_1px_2px_rgba(255,255,255,0.7)]">Nominate Now</span>
                   <ChevronRight className="ml-2 size-6 drop-shadow-[0_1px_2px_rgba(255,255,255,0.7)]" strokeWidth={3} />
@@ -102,9 +106,10 @@ export function ICCKEventShowcase() {
             </Link>
 
             {/* Card 2: Diwali Ball Tickets */}
-            <a
-              href="mailto:events@indochamkorea.org?subject=Diwali%20Ball%20Ticket%20Enquiry"
-              className="group relative flex-1 flex flex-col justify-between rounded-2xl border border-amber-400/20 bg-[#0A1136]/60 backdrop-blur-sm p-6 sm:p-8 transition-all duration-300 hover:bg-[#0C164A]/80 hover:border-amber-400/40 hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(0,0,0,0.4)]"
+            {/* Buy Tickets → opens interactive DiwaliTicketModal */}
+            <div
+              onClick={() => setIsTicketModalOpen(true)}
+              className="group relative flex-1 flex flex-col justify-between rounded-2xl border border-amber-400/20 bg-[#0A1136]/60 backdrop-blur-sm p-6 sm:p-8 transition-all duration-300 hover:bg-[#0C164A]/80 hover:border-amber-400/40 hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(0,0,0,0.4)] cursor-pointer text-left"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-amber-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
               
@@ -121,17 +126,31 @@ export function ICCKEventShowcase() {
               </div>
 
               <div className="relative z-10 flex flex-col mt-auto pt-6 border-t border-amber-400/10 gap-5">
-                <div className="text-2xl font-bold text-amber-400 text-center xl:text-left">$100</div>
-                <div className="flex items-center justify-center w-full rounded-xl bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-6 py-4 font-sans text-lg sm:text-xl font-black uppercase tracking-widest text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.4)] transition-all duration-300 group-hover:shadow-[0_12px_35px_rgba(245,158,11,0.6)] group-active:scale-95">
+                {/* Price: 300,000 KRW */}
+                <div className="text-2xl font-bold text-amber-400 text-center xl:text-left">₩300,000 KRW</div>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsTicketModalOpen(true);
+                  }}
+                  className="flex items-center justify-center w-full rounded-xl bg-gradient-to-b from-[#FFF7ED] via-[#FDE047] to-[#CA8A04] border-t-2 border-yellow-100 border-b-2 border-amber-800/60 px-6 py-4 font-sans text-lg sm:text-xl font-black uppercase tracking-widest text-[#060c2c] shadow-[0_8px_25px_rgba(245,158,11,0.4)] transition-all duration-300 group-hover:shadow-[0_12px_35px_rgba(245,158,11,0.6)] group-active:scale-95 cursor-pointer"
+                >
                   <span className="drop-shadow-[0_1px_2px_rgba(255,255,255,0.7)]">Buy Tickets</span>
                   <ChevronRight className="ml-2 size-6 drop-shadow-[0_1px_2px_rgba(255,255,255,0.7)]" strokeWidth={3} />
-                </div>
+                </button>
               </div>
-            </a>
+            </div>
 
           </div>
         </div>
       </div>
+
+      {/* DIWALI BALL TICKET BOOKING MODAL */}
+      <DiwaliTicketModal
+        isOpen={isTicketModalOpen}
+        onClose={() => setIsTicketModalOpen(false)}
+      />
     </section>
   );
 }

@@ -7,15 +7,15 @@ import {
   Categories,
   Contact,
   Faq,
-  Nomination,
   Partners,
   Timeline,
   WhyParticipate,
 } from "@/components/awards/sections";
 
 const links = [
+  { label: "Diwali Ball 2026", href: "/" },
   { label: "About", href: "#about" },
-  { label: "Nomination & Eligibility", href: "#nomination" },
+  { label: "Nomination & Eligibility", href: "/awards/eligibility" },
   { label: "Sponsorship", href: "#sponsors" },
   { label: "FAQ", href: "#faq" },
   { label: "Contact Us", href: "#contact" },
@@ -49,7 +49,6 @@ function AwardsPage() {
         <Timeline />
         <WhyParticipate />
         <Categories />
-        <Nomination />
         <Partners />
         <Faq />
         <Contact />

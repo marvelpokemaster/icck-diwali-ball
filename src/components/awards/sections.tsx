@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "@tanstack/react-router";
 import {
   Award,
   BadgeCheck,
@@ -326,7 +327,7 @@ export function Categories() {
             size="lg"
             className="bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] font-black uppercase tracking-wide text-[#060c2c] shadow-xl hover:brightness-110"
           >
-            <a href="#nomination">Learn More &rsaquo;</a>
+            <Link to="/awards/eligibility">Learn More &rsaquo;</Link>
           </Button>
         </div>
       </div>
@@ -334,158 +335,63 @@ export function Categories() {
   );
 }
 
-/* ---------------- Nomination & eligibility ---------------- */
 
-export function Nomination() {
-  return (
-    <section id="nomination" className="bg-gradient-to-b from-[#0c1854] via-[#091442] to-[#0a1544] py-16 md:py-20 border-t border-amber-400/30">
-      <div className="mx-auto max-w-6xl px-4 md:px-8">
-        <h2 className="font-serif text-3xl font-black uppercase tracking-wide text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:text-4xl text-center">
-          Nomination &amp; Eligibility
-        </h2>
-
-        <div className="mt-12 grid gap-8 lg:grid-cols-3">
-          <div className="rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 p-7 shadow-2xl backdrop-blur-md">
-            <ScrollText className="size-10 text-white" strokeWidth={1.5} />
-            <h3 className="mt-4 font-display text-lg font-black text-white">Eligibility</h3>
-            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-white font-medium">
-              <li>
-                Legally registered in India, Korea or another jurisdiction, with activity that
-                creates commercial, economic or institutional India&ndash;Korea linkages.
-              </li>
-              <li>Both ICCK members and non-members may submit nominations.</li>
-              <li>Companies may enter more than one category; only one sector award is granted.</li>
-            </ul>
-          </div>
-
-          <div className="rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 p-7 shadow-2xl backdrop-blur-md">
-            <Award className="size-10 text-white" strokeWidth={1.5} />
-            <h3 className="mt-4 font-display text-lg font-black text-white">
-              Assessment Criteria
-            </h3>
-            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-white font-medium">
-              <li>
-                <strong className="text-white">Impact</strong> &mdash; measurable difference
-                created.
-              </li>
-              <li>
-                <strong className="text-white">Bilateral contribution</strong> &mdash;
-                strengthening India&ndash;Korea ties.
-              </li>
-              <li>
-                <strong className="text-white">Excellence &amp; Innovation</strong> &mdash;
-                distinctiveness versus industry standards.
-              </li>
-              <li>
-                <strong className="text-white">Sustainability &amp; Evidence</strong> &mdash;
-                long-term value, credibly documented.
-              </li>
-            </ul>
-          </div>
-
-          <div className="rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 p-7 shadow-2xl backdrop-blur-md">
-            <Building2 className="size-10 text-white" strokeWidth={1.5} />
-            <h3 className="mt-4 font-display text-lg font-black text-white">Judging Process</h3>
-            <ol className="mt-3 space-y-2 text-sm leading-relaxed text-white font-medium">
-              <li>
-                <strong className="text-white">Stage 1</strong> &mdash; eligibility screening by
-                ICCK.
-              </li>
-              <li>
-                <strong className="text-white">Stage 2</strong> &mdash; evaluation and
-                shortlisting by the judging panel.
-              </li>
-              <li>
-                <strong className="text-white">Stage 3</strong> &mdash; final selection of
-                category winners and Company of the Year.
-              </li>
-            </ol>
-          </div>
-        </div>
-
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <Button
-            asChild
-            size="lg"
-            className="bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] font-black uppercase tracking-wide text-[#060c2c] shadow-xl hover:brightness-110"
-          >
-            <a href="mailto:events@indochamkorea.org?subject=ICCK%20Business%20Awards%20Nomination">Nominate Now</a>
-          </Button>
-          <Button asChild size="lg" variant="outline" className="border-amber-400/70 bg-transparent font-bold uppercase tracking-wide text-white hover:bg-amber-400/10">
-            <a href="#faq">Read the FAQ</a>
-          </Button>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* ---------------- Partners & sponsors ---------------- */
 
-const partners = [
-  "Embassy of India, Seoul",
-  "KOTRA",
-  "Invest India",
-  "Korea Chamber of Commerce",
-  "FICCI",
-  "Korea Trade Association",
-  "Indo-Korean Business Council",
-  "Talamanda",
-];
+const partners: string[] = [];
 
 export function Partners() {
 
   return (
     <section id="sponsors" className="bg-gradient-to-b from-[#0a1544] via-[#091442] to-[#0d194d] py-16 md:py-20 border-t border-amber-400/30">
       <div className="mx-auto max-w-6xl px-4 md:px-8">
-        <h2 className="font-serif text-3xl font-black uppercase tracking-wide text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)] md:text-4xl text-center">
-          Our Partners &amp; Sponsors
-        </h2>
+        <div className="rounded-2xl border-2 border-amber-400/40 bg-gradient-to-b from-[#060D2B]/95 via-[#091442]/95 to-[#060D2B]/95 backdrop-blur-md p-6 sm:p-10 shadow-2xl">
+          <div className="inline-flex items-center gap-2 rounded-full border border-amber-300/40 bg-amber-400/10 px-4 py-1.5 text-xs font-black uppercase tracking-widest text-[#FEF08A] mb-3">
+            <Building2 className="size-4 text-[#F59E0B]" /> Sponsorship &amp; Partners
+          </div>
 
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {partners.map((p) => (
-            <div
-              key={p}
-              className="flex h-24 items-center justify-center rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 px-4 text-center text-xs font-black uppercase tracking-wide text-white shadow-xl backdrop-blur-md"
-            >
-              {p}
+          <h2 className="font-serif text-3xl font-black uppercase tracking-wide text-white mb-2">
+            Our Corporate Sponsors &amp; Partners
+          </h2>
+
+          <p className="text-sm text-amber-100/80 mb-8 max-w-2xl">
+            Thank you to our valued corporate partners making this bilateral celebration possible.
+          </p>
+
+          {/* Sponsor Tiers — Title / Platinum / Gold (names TBC by client) */}
+          <div className="space-y-4 text-left">
+            <div className="rounded-xl border border-amber-400/20 bg-[#091442]/60 p-4">
+              <h3 className="text-xs font-black uppercase tracking-widest text-[#FEF08A] mb-2">Title Sponsors</h3>
+              <p className="text-amber-200/60 text-xs italic">To be announced</p>
             </div>
-          ))}
-        </div>
-
-        {/* <div className="mt-12 grid gap-6 sm:grid-cols-3">
-          {[
-            { tier: "Title", note: "Headline naming rights, keynote slot and full media package." },
-            { tier: "Platinum", note: "Premium branding, on-stage recognition and VIP seating." },
-            { tier: "Gold", note: "Category branding, event listing and reserved seating." },
-          ].map((s) => (
-            <div
-              key={s.tier}
-              className="rounded-2xl border-2 border-amber-400/50 bg-[#060D2B]/95 p-7 text-center shadow-2xl backdrop-blur-md"
-            >
-              <Sparkles className="mx-auto size-9 text-white" strokeWidth={1.5} />
-              <h3 className="mt-3 font-display text-lg font-black uppercase tracking-wide text-white">
-                {s.tier}
-              </h3>
-              <p className="mt-2 text-sm text-white font-medium">{s.note}</p>
+            <div className="rounded-xl border border-amber-400/20 bg-[#091442]/60 p-4">
+              <h3 className="text-xs font-black uppercase tracking-widest text-amber-300 mb-2">Platinum Sponsors</h3>
+              <p className="text-amber-200/60 text-xs italic">To be announced</p>
             </div>
-          ))}
-        </div> */}
+            <div className="rounded-xl border border-amber-400/20 bg-[#091442]/60 p-4">
+              <h3 className="text-xs font-black uppercase tracking-widest text-amber-200 mb-2">Gold Sponsors</h3>
+              <p className="text-amber-200/60 text-xs italic">To be announced</p>
+            </div>
+          </div>
 
-        {/* Sponsor Enquiry Buttons */}
-        <div className="mt-8 flex flex-wrap justify-center gap-4">
-          <Button
-            asChild
-            size="lg"
-            className="bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] font-black uppercase tracking-wide text-[#060c2c] shadow-xl hover:brightness-110"
-          >
-            <a href="mailto:events@indochamkorea.org">
-              <Mail className="mr-2 size-4" /> Sponsor Enquiry
+          {/* Sponsor Enquiry CTA */}
+          <div className="mt-8 pt-6 border-t border-amber-400/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-left">
+            <div>
+              <h4 className="font-serif text-lg font-black text-[#FEF08A]">Interested in Sponsoring ICCK Business Awards 2026?</h4>
+              <p className="text-xs text-amber-200/80">Showcase your brand to top Korean &amp; Indian business executives.</p>
+            </div>
+            <a
+              href="mailto:events@indochamkorea.org?subject=Sponsorship%20Enquiry%20%E2%80%94%20ICCK%20Business%20Awards%202026"
+              className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[#fde047] via-[#eab308] to-[#ca8a04] px-5 py-3 font-black text-xs uppercase tracking-wider text-[#060c2c] shadow-lg hover:brightness-110 shrink-0"
+            >
+              <Mail className="size-4" /> Sponsor Enquiry
             </a>
-          </Button>
+          </div>
         </div>
       </div>
     </section>
+
   );
 }
 

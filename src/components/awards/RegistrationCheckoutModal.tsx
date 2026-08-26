@@ -52,7 +52,7 @@ export function RegistrationCheckoutModal({
   if (!isOpen) return null;
 
   // Prices in KRW
-  const INDIVIDUAL_PRICE_KRW = 165000; // ~ $125
+  const INDIVIDUAL_PRICE_KRW = 50000;  // ₩50,000 — ICCK Business Awards official price
   const TABLE_PRICE_KRW = 1500000;     // Standard Table (10 Seats)
   const TITLE_SPONSOR_KRW = 25000000;
   const PLATINUM_SPONSOR_KRW = 10000000;

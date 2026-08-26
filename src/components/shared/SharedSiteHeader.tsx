@@ -26,7 +26,7 @@ export function SharedSiteHeader({ links = [] }: SharedSiteHeaderProps) {
             alt="ICCK Official Gold Logo"
             width={940}
             height={347}
-            className="h-9 xs:h-11 sm:h-14 md:h-16 lg:h-[5.5rem] w-auto object-contain shrink-0 brightness-115 saturate-130 drop-shadow-[0_0_15px_rgba(251,191,36,0.85)] drop-shadow-[0_2px_8px_rgba(245,158,11,0.6)]"
+            className="h-9 xs:h-11 sm:h-14 md:h-16 lg:h-[5.5rem] w-auto object-contain shrink-0 brightness-115 saturate-130"
           />
           <span className="sr-only">ICCK Business Awards 2026</span>
         </a>
@@ -36,13 +36,26 @@ export function SharedSiteHeader({ links = [] }: SharedSiteHeaderProps) {
           <nav className="hidden items-center gap-1 lg:flex z-10">
             {links.map((l, i) => (
               <span key={l.href} className="flex items-center">
-                {i > 0 && <span className="mx-1.5 h-4 w-px bg-amber-400/30" aria-hidden />}
-                <a
-                  href={l.href}
-                  className="px-2.5 py-2 text-sm font-bold tracking-wide text-[#FEF08A] transition-colors hover:text-amber-300 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]"
-                >
-                  {l.label}
-                </a>
+                {l.href === "/" ? (
+                  <a
+                    href="/"
+                    className="mr-3 px-3.5 py-1.5 text-xs font-black uppercase tracking-wider text-amber-300 border border-amber-400/40 rounded-full bg-amber-400/10 hover:bg-amber-400/20 transition-all flex items-center gap-1.5 shadow-sm"
+                  >
+                    <span>&larr;</span> {l.label}
+                  </a>
+                ) : (
+                  <>
+                    {i > 0 && links[i - 1]?.href !== "/" && (
+                      <span className="mx-1.5 h-4 w-px bg-amber-400/30" aria-hidden />
+                    )}
+                    <a
+                      href={l.href}
+                      className="px-2.5 py-2 text-sm font-bold tracking-wide text-[#FEF08A] transition-colors hover:text-amber-300 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]"
+                    >
+                      {l.label}
+                    </a>
+                  </>
+                )}
               </span>
             ))}
           </nav>

@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AwardsRouteImport } from './routes/awards'
+import { Route as AwardsEligibilityRouteImport } from './routes/awards_.eligibility'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +23,40 @@ const AwardsRoute = AwardsRouteImport.update({
   path: '/awards',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AwardsEligibilityRoute = AwardsEligibilityRouteImport.update({
+  id: '/awards_/eligibility',
+  path: '/awards/eligibility',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/awards': typeof AwardsRoute
+  '/awards/eligibility': typeof AwardsEligibilityRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/awards': typeof AwardsRoute
+  '/awards/eligibility': typeof AwardsEligibilityRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/awards': typeof AwardsRoute
+  '/awards_/eligibility': typeof AwardsEligibilityRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/awards'
+  fullPaths: '/' | '/awards' | '/awards/eligibility'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/awards'
-  id: '__root__' | '/' | '/awards'
+  to: '/' | '/awards' | '/awards/eligibility'
+  id: '__root__' | '/' | '/awards' | '/awards_/eligibility'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AwardsRoute: typeof AwardsRoute
+  AwardsEligibilityRoute: typeof AwardsEligibilityRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +75,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AwardsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/awards_/eligibility': {
+      id: '/awards_/eligibility'
+      path: '/awards/eligibility'
+      fullPath: '/awards/eligibility'
+      preLoaderRoute: typeof AwardsEligibilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AwardsRoute: AwardsRoute,
+  AwardsEligibilityRoute: AwardsEligibilityRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
